@@ -27,7 +27,7 @@ REPO_ECLIPSE35="${BASE_URL}/eclipse/updates/3.5.x/"
 REPO_GALILEO="${BASE_URL}/releases/galileo/"
 REPO_STAGING="${BASE_URL}/releases/maintenance/"
 #REPO_EPP_GALILEO="${BASE_URL}/technology/epp/packages/galileo/milestones"
-REPO_EPP_GALILEO="file:///shared/technology/epp/epp_repo/galileo/epp.build/buildresult/org.eclipse.epp.allpackages.feature_1.2.1-eclipse.feature/site.p2"
+REPO_EPP_GALILEO="file:///shared/technology/epp/epp_repo/galileo/epp.build/buildresult/org.eclipse.epp.allpackages.feature_1.2.2-eclipse.feature/site.p2"
 
 # Repositories (Galileo)
 METADATAREPOSITORIES="${REPO_ECLIPSE35},${REPO_STAGING},${REPO_EPP_GALILEO}"
@@ -52,7 +52,7 @@ MARKERFILENAME=".epp.nightlybuild"
 STATUSFILENAME="status.stub"
 CVSPATH="org.eclipse.epp/releng/org.eclipse.epp.config"
 CVSPROJECTPATH="org.eclipse.epp/packages"
-RELEASE_NAME="-galileo-SR1-RC4"
+RELEASE_NAME="-galileo-SR2-RC1"
 
 ###############################################################################
 
