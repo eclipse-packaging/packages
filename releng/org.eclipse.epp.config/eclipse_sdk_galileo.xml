@@ -26,7 +26,7 @@
     </packageTesters>
     <FakePackage>True</FakePackage>
     <FakePackageLocation>
-      /eclipse/downloads/drops/R-3.5.2-200909170800/
+      /eclipse/downloads/drops/S-3.5.2RC2-201001200800/
     </FakePackageLocation>
   </packageMetaData>
   <MoreInfo>
@@ -41,6 +41,6 @@
   <rcp version="3.5.2" />
 
   <!-- name, the name of the product, used in naming the created files. -->
-  <product name="eclipse-SDK-3.5.2" />
+  <product name="eclipse-SDK-3.5.2RC2" />
 
 </configuration>
