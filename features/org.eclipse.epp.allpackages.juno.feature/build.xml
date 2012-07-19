@@ -6,7 +6,8 @@
 	<property name="build.root" location="${user.home}/epp.build" />
 	<property file="${build.root}/build.properties" />
 	<property name="bm.headless.site" value="http://download.eclipse.org/tools/buckminster/headless-3.5/" />
-	<property name="juno.site" value="http://download.eclipse.org/releases/staging" />
+	<property name="juno.site" value="http://download.eclipse.org/releases/juno" />
+	<property name="platform.site" value="http://download.eclipse.org/eclipse/updates/3.8" />
 	<property name="buildtools" location="${build.root}/tools" />
 	<property name="workspace" location="${build.root}/ws" />
 	<property name="targetPlatformPath" location="${build.root}/TP" />
@@ -86,6 +87,7 @@
 		</eclipse.launch>
 		<eclipse.launch app="buckminster">
 			<args>
+				<jvmarg value="-Dplatform.site=${platform.site}" />
 				<jvmarg value="-Djuno.site=${juno.site}" />
 				<arg value="-data" />
 				<arg value="${workspace}" />
@@ -106,6 +108,7 @@
 	<target name="build.workspace" depends="build.tp">
 		<eclipse.launch app="buckminster">
 			<args>
+				<jvmarg value="-Dplatform.site=${platform.site}" />
 				<jvmarg value="-Djuno.site=${juno.site}" />
 				<arg value="-data" />
 				<arg value="${workspace}" />
@@ -124,7 +127,7 @@
 		<eclipse.launch app="buckminster">
 			<args>
 				<jvmarg value="-Dqualifier.replacement.*=generator:lastModified" />
-				<jvmarg value="-Dgenerator.lastModified.format=yyyyMMdd-HHmm" />
+				<jvmarg value="-Dgenerator.lastModified.format=yyyyMMdd-HHmm'-38'" />
 				<jvmarg value="-Dtarget.os=*" />
 				<jvmarg value="-Dtarget.ws=*" />
 				<jvmarg value="-Dtarget.arch=*" />
@@ -143,7 +146,7 @@
 		<eclipse.launch app="buckminster">
 			<args>
 				<jvmarg value="-Dqualifier.replacement.*=generator:lastModified" />
-				<jvmarg value="-Dgenerator.lastModified.format=yyyyMMdd-HHmm" />
+				<jvmarg value="-Dgenerator.lastModified.format=yyyyMMdd-HHmm'-38'" />
 				<jvmarg value="-Dtarget.os=*" />
 				<jvmarg value="-Dtarget.ws=*" />
 				<jvmarg value="-Dtarget.arch=*" />
@@ -152,9 +155,8 @@
 				<jvmarg value="-Dbuild.id=${build.id}" />
 				<jvmarg value="-Dcbi.include.source=false" />
                 <jvmarg value="-Dsite.pack200=true" />
-                <jvmarg value="-Dsite.signing=true" />
                 <jvmarg value="-Dstaging.area=/home/data/httpd/download-staging.priv/technology/epp/" />
-                <jvmarg value="-Dsigning.type=eclipse.local" />
+<!--                <jvmarg value="-Dsigning.type=eclipse.local" />   -->
 				<arg value="-data" />
 				<arg value="${workspace}" />
 				<arg value="perform" />

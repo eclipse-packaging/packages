@@ -2,13 +2,29 @@
 properties.1.name=org.eclipse.equinox.p2.type.category
 properties.1.value=false
 
+
+# Temporary fix for bug 382574 (Juno)
+# An internal error occurred during: "Indexing help...". 
+# Help system needs property set if Lucene 3.x present
 #instructions.configure=\
-#org.eclipse.equinox.p2.touchpoint.eclipse.addRepository(type:0,location:http${#58}//download.eclipse.org/technology/epp/packages/juno,name:EPP Packages Repository);\
-#org.eclipse.equinox.p2.touchpoint.eclipse.addRepository(type:1,location:http${#58}//download.eclipse.org/technology/epp/packages/juno,name:EPP Packages Repository);
-
+#org.eclipse.equinox.p2.touchpoint.eclipse.addJvmArg(jvmArg:-Dhelp.lucene.tokenizer=standard);
+#
 #instructions.unconfigure=\
-#org.eclipse.equinox.p2.touchpoint.eclipse.removeRepository(type:0,location:http${#58}//download.eclipse.org/technology/epp/packages/juno);\
-#org.eclipse.equinox.p2.touchpoint.eclipse.removeRepository(type:1,location:http${#58}//download.eclipse.org/technology/epp/packages/juno);
+#org.eclipse.equinox.p2.touchpoint.eclipse.removeJvmArg(jvmArg:-Dhelp.lucene.tokenizer=standard);
 
+# Adding a virtual dependency to platform 3.x
+requires.1.namespace=org.eclipse.equinox.p2.iu
+requires.1.name=org.eclipse.rcp.feature.group
+requires.1.range=[3.0.0,4.0.0)
+requires.2.namespace=org.eclipse.equinox.p2.iu
+requires.2.name=org.eclipse.platform.feature.group
+requires.2.range=[3.0.0,4.0.0)
 
+instructions.configure=\
+org.eclipse.equinox.p2.touchpoint.eclipse.addRepository(type:0,location:http${#58}//download.eclipse.org/eclipse/updates/3.8/,name:Eclipse 3.8);\
+org.eclipse.equinox.p2.touchpoint.eclipse.addRepository(type:1,location:http${#58}//download.eclipse.org/eclipse/updates/3.8/,name:Eclipse 3.8);
+
+instructions.unconfigure=\
+org.eclipse.equinox.p2.touchpoint.eclipse.removeRepository(type:0,location:http${#58}//download.eclipse.org/eclipse/updates/3.8/);\
+org.eclipse.equinox.p2.touchpoint.eclipse.removeRepository(type:1,location:http${#58}//download.eclipse.org/eclipse/updates/3.8/);
 
