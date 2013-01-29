@@ -28,6 +28,6 @@
   <rcp version="4.2.1" />
 
   <!-- name, the name of the product, used in naming the created files. -->
-  <product name="eclipse-dsl-juno-SR2-RC1" />
+  <product name="eclipse-dsl-juno-SR2-RC2" />
 
 </configuration>
