@@ -18,12 +18,18 @@
       <programArgsWin>--launcher.XXMaxPermSize
 256M</programArgsWin>
       <vmArgs>-Dosgi.requiredJavaVersion=1.5
--Dhelp.lucene.tokenizer=standard
+-Dhelp.lucene.tokenizer=standard</vmArgs>
+      <vmArgsLin>-XX:MaxPermSize=256m
 -Xms512m
--Xmx2048m</vmArgs>
-      <vmArgsLin>-XX:MaxPermSize=256m</vmArgsLin>
+-Xmx2048m</vmArgsLin>
       <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts
--XX:MaxPermSize=256m</vmArgsMac>
+-XX:MaxPermSize=256m
+-Xms512m
+-Xmx2048m</vmArgsMac>
+      <vmArgsSol>-Xms512m
+-Xmx2048m</vmArgsSol>
+      <vmArgsWin>-Xms512m
+-Xmx1024m</vmArgsWin>
    </launcherArgs>
 
    <windowImages i16="/org.eclipse.epp.package.parallel/eclipse.png" i32="/org.eclipse.epp.package.parallel/eclipse32.png" i48="/org.eclipse.epp.package.parallel/eclipse48.png"/>
