@@ -20,6 +20,7 @@
       </programArgs>
       <vmArgs>-Dosgi.requiredJavaVersion=11
 -Dosgi.instance.area.default=@user.home/eclipse-workspace
+-Dsun.java.command=Eclipse
 -Xms512m
 -Xmx2048m
 -XX:+UseG1GC
