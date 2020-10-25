@@ -14,7 +14,7 @@
    bugzillaComponentId="embedcpp-package"
    testPlan="http://www.eclipse.org/epp/testplan.php" >
     <!-- Description is wrapped in CDATA tags to allow you to insert HTML code if necessary -->
-     <description><![CDATA[An IDE for Embedded C/C++ developers.]]></description>
+     <description><![CDATA[An IDE for Embedded C/C++ developers. It includes cross (Arm and RISC-V) managed build plug-ins and debug plug-ins for SEGGER J-Link, OpenOCD, and QEMU, plus a number of templates to create ready to run blinky projects.]]></description>
     <!-- packageTesters is a list of the people that are testing the package -->
      <packageTesters>
       <tester>Liviu Ionescu</tester>
