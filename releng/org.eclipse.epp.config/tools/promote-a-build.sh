@@ -34,7 +34,7 @@ for PACKAGE in $PACKAGES; do
     NAME=$(echo *_eclipse-${PACKAGE}-${RELEASE_NAME}-${RELEASE_MILESTONE}-${PLATFORM})
     NEWNAME=`echo ${NAME} | \
              cut -d "_" -f 2- | \
-             sed 's/linux\.gtk\.aarch64\_64/linux-gtk-aarch64/' | \
+             sed 's/linux\.gtk\.aarch64/linux-gtk-aarch64/' | \
              sed 's/linux\.gtk\.x86\_64/linux-gtk-x86\_64/' | \
              sed 's/win32\.win32\.x86\_64\./win32\-x86\_64\./' | \
              sed 's/macosx\.cocoa\.x86\_64/macosx\-cocoa-x86\_64/' | \
