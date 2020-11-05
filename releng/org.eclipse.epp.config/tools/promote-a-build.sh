@@ -10,7 +10,7 @@ set -x # echo all commands used for debugging purposes
 # RELEASE_DIR=
 # BUILD_NUMBER=
 PACKAGES="committers cpp dsl embedcpp java javascript jee modeling parallel php rcp rust scout testing"
-PLATFORMS="linux.gtk.aarch64.tar.gz linux.gtk.x86_64.tar.gz macosx.cocoa.x86_64.dmg win32.win32.x86_64.zip"
+PLATFORMS="linux.gtk.aarch64.tar.gz linux.gtk.x86_64.tar.gz macosx.cocoa.x86_64.dmg macosx.cocoa.x86_64.tar.gz win32.win32.x86_64.zip"
 ARCHIVE_URL="https://ci.eclipse.org/packaging/job/simrel.epp-tycho-build/${BUILD_NUMBER}/artifact/org.eclipse.epp.packages/archive/*zip*/archive.zip"
 EPP_DOWNLOADS=/home/data/httpd/download.eclipse.org/technology/epp
 DOWNLOADS=${EPP_DOWNLOADS}/downloads/release/${RELEASE_NAME}/
