@@ -205,6 +205,7 @@ United States, other countries, or both.
    <features>
       <feature id="org.eclipse.epp.package.embedcpp.feature" version="4.18.0.qualifier"/>
       <feature id="org.eclipse.epp.package.common.feature" version="4.18.0.qualifier"/>
+
       <feature id="org.eclipse.platform"/>
       <feature id="org.eclipse.epp.mpc" installMode="root"/>
       <feature id="org.eclipse.justj.openjdk.hotspot.jre.full" installMode="root"/>
@@ -238,21 +239,23 @@ United States, other countries, or both.
       <feature id="org.eclipse.tracecompass.lttng2.control" installMode="root"/>
       <feature id="org.eclipse.tracecompass.lttng2.kernel" installMode="root"/>
       <feature id="org.eclipse.tracecompass.lttng2.ust" installMode="root"/>
-      <feature id="ilg.gnumcueclipse.managedbuild.cross.arm.feature" installMode="root"/>
-      <feature id="ilg.gnumcueclipse.managedbuild.cross.riscv.feature" installMode="root"/>
-      <feature id="ilg.gnumcueclipse.codered.feature" installMode="root"/>
-      <feature id="ilg.gnumcueclipse.debug.gdbjtag.jlink.feature" installMode="root"/>
-      <feature id="ilg.gnumcueclipse.debug.gdbjtag.openocd.feature" installMode="root"/>
-      <feature id="ilg.gnumcueclipse.debug.gdbjtag.pyocd.feature" installMode="root"/>
-      <feature id="ilg.gnumcueclipse.debug.gdbjtag.qemu.feature" installMode="root"/>
-      <feature id="ilg.gnumcueclipse.debug.gdbjtag.jumper.feature" installMode="root"/>
-      <feature id="ilg.gnumcueclipse.packs.feature" installMode="root"/>
-      <feature id="ilg.gnumcueclipse.doc.user.feature" installMode="root"/>
-      <feature id="ilg.gnumcueclipse.templates.ad.feature" installMode="root"/>
-      <feature id="ilg.gnumcueclipse.templates.cortexm.feature" installMode="root"/>
-      <feature id="ilg.gnumcueclipse.templates.freescale.feature" installMode="root"/>
-      <feature id="ilg.gnumcueclipse.templates.stm.feature" installMode="root"/>
-      <feature id="ilg.gnumcueclipse.templates.sifive.feature" installMode="root"/>
+
+      <feature id="org.eclipse.embedcdt" installMode="root"/>
+      <feature id="org.eclipse.embedcdt.managedbuild.cross.arm" installMode="root"/>
+      <feature id="org.eclipse.embedcdt.managedbuild.cross.riscv" installMode="root"/>
+      <feature id="org.eclipse.embedcdt.codered" installMode="root"/>
+      <feature id="org.eclipse.embedcdt.debug.gdbjtag.jlink" installMode="root"/>
+      <feature id="org.eclipse.embedcdt.debug.gdbjtag.openocd" installMode="root"/>
+      <feature id="org.eclipse.embedcdt.debug.gdbjtag.pyocd" installMode="root"/>
+      <feature id="org.eclipse.embedcdt.debug.gdbjtag.qemu" installMode="root"/>
+      <feature id="org.eclipse.embedcdt.debug.gdbjtag.jumper" installMode="root"/>
+      <feature id="org.eclipse.embedcdt.packs" installMode="root"/>
+      <feature id="org.eclipse.embedcdt.doc.user" installMode="root"/>
+      <feature id="org.eclipse.embedcdt.templates.ad" installMode="root"/>
+      <feature id="org.eclipse.embedcdt.templates.cortexm" installMode="root"/>
+      <feature id="org.eclipse.embedcdt.templates.freescale" installMode="root"/>
+      <feature id="org.eclipse.embedcdt.templates.stm" installMode="root"/>
+      <feature id="org.eclipse.embedcdt.templates.sifive" installMode="root"/>
    </features>
 
 
