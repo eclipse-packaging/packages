@@ -250,7 +250,6 @@ United States, other countries, or both.
       <feature id="org.eclipse.embedcdt.debug.gdbjtag.openocd" installMode="root"/>
       <feature id="org.eclipse.embedcdt.debug.gdbjtag.pyocd" installMode="root"/>
       <feature id="org.eclipse.embedcdt.debug.gdbjtag.qemu" installMode="root"/>
-      <feature id="org.eclipse.embedcdt.debug.gdbjtag.jumper" installMode="root"/>
       <feature id="org.eclipse.embedcdt.packs" installMode="root"/>
       <feature id="org.eclipse.embedcdt.doc.user" installMode="root"/>
       <feature id="org.eclipse.embedcdt.templates.ad" installMode="root"/>
