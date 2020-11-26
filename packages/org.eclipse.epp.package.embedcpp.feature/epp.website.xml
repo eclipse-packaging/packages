@@ -44,11 +44,6 @@ This package includes a new major release of the Embedded CDT plug-ins (v6); to 
     project="Eclipse EGit" />
   </MoreInfo>
 
-
-  <!-- version, the RCP version to build. This is used to determine the file
-    name of the root file archives -->
-  <rcp version="4.18.0" />
-
   <!-- name, the name of the product, used in naming the created files. -->
   <product name="eclipse-embedcpp-2020-12-M3" />
 
