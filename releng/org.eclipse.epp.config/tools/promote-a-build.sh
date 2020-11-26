@@ -149,7 +149,7 @@ else
 fi
 
 if [ "$RELEASE_MILESTONE" != "R" ]; then
-    ${ECHO} ${DOWNLOADS}/${RELEASE_MILESTONE}
+    ${ECHO} mkdir ${DOWNLOADS}/${RELEASE_MILESTONE}
     ${ECHO} cp -r downloads/* ${DOWNLOADS}/${RELEASE_MILESTONE}
 else
     ${ECHO} mkdir -p ${DOWNLOADS}/${RELEASE_DIR}
