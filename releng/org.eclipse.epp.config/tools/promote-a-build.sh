@@ -148,13 +148,14 @@ else
     echo Dry run of build:
 fi
 
-${ECHO} mkdir -p ${DOWNLOADS}/${RELEASE_DIR}
-${ECHO} mkdir -p ${REPO}
 if [ "$RELEASE_MILESTONE" != "R" ]; then
+    ${ECHO} ${DOWNLOADS}/${RELEASE_MILESTONE}
     ${ECHO} cp -r downloads/* ${DOWNLOADS}/${RELEASE_MILESTONE}
 else
+    ${ECHO} mkdir -p ${DOWNLOADS}/${RELEASE_DIR}
     ${ECHO} cp -r downloads/* ${DOWNLOADS}/${RELEASE_DIR}
 fi
+${ECHO} mkdir -p ${REPO}
 ${ECHO} cp -r p2/p2.index ${REPO}
 ${ECHO} cp -r p2/${RELEASE_DIR} ${REPO}
 ${ECHO} cp p2/compositeArtifacts.jar ${REPO}/compositeArtifacts${RELEASE_MILESTONE}.jar
