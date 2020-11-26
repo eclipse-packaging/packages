@@ -150,7 +150,11 @@ fi
 
 ${ECHO} mkdir -p ${DOWNLOADS}/${RELEASE_DIR}
 ${ECHO} mkdir -p ${REPO}
-${ECHO} cp -r downloads/* ${DOWNLOADS}/${RELEASE_DIR}
+if [ "$RELEASE_MILESTONE" != "R" ]; then
+    ${ECHO} cp -r downloads/* ${DOWNLOADS}/${RELEASE_MILESTONE}
+else
+    ${ECHO} cp -r downloads/* ${DOWNLOADS}/${RELEASE_DIR}
+fi
 ${ECHO} cp -r p2/p2.index ${REPO}
 ${ECHO} cp -r p2/${RELEASE_DIR} ${REPO}
 ${ECHO} cp p2/compositeArtifacts.jar ${REPO}/compositeArtifacts${RELEASE_MILESTONE}.jar
