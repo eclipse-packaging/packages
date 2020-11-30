@@ -29,14 +29,11 @@ This package includes a new major release of the Embedded CDT plug-ins (v6); to 
   </packageMetaData>
   <MoreInfo>
   <NewAndNoteworthy
-    url="https://wiki.eclipse.org/CDT/User/NewIn100"
-    project="Eclipse CDT" />
-  <NewAndNoteworthy
-    url="https://projects.eclipse.org/projects/iot.embed-cdt/releases/5.1.3/"
+    url="https://projects.eclipse.org/projects/iot.embed-cdt/releases/6.0.0/"
     project="Eclipse Embedded CDT" />
   <NewAndNoteworthy
-    url="https://wiki.eclipse.org/Linux_Tools_Project/News/NewIn80"
-    project="Eclipse Linux Tools" />
+    url="https://wiki.eclipse.org/CDT/User/NewIn100"
+    project="Eclipse CDT" />
   <NewAndNoteworthy
     url="https://www.eclipse.org/eclipse/news/4.18/"
     project="Eclipse Platform" />
