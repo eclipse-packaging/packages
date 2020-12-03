@@ -20,7 +20,6 @@ EPP releases happen for each milestone and release candidate according to the [E
 **Steps for all Milestones and RCs:**
 
 - [ ] Ensure that the [CI build](https://ci.eclipse.org/packaging/job/simrel.epp-tycho-build/) is green. Resolving non-green builds will require tracking down problems and incompatibilities across all Eclipse participating projects. [cross-project-issues-dev](https://accounts.eclipse.org/mailing-list/cross-project-issues-dev) mailing list is a good place to start when tracking such problems.
-- [ ] Check that there are no unexpected warnings in the console output. Especially look for warnings about failure to sign.
 - [ ] Check that packages containing incubating projects have that information reflected in Help -> About dialog. See near the end of build output for report of check-incubating.sh script.
     - `-incubation` and ` (includes Incubating components)` are not used in packageMetaData anymore (See [Bug 564214](https://bugs.eclipse.org/bugs/show_bug.cgi?id=564214))
 - [ ] Update the "new and noteworthy" version numbers: (Normally only done on M3 and RCs, requires https://projects.eclipse.org/releases/ to have been updated/created for the release)
@@ -34,6 +33,7 @@ EPP releases happen for each milestone and release candidate according to the [E
 - [ ] Update the build qualifiers to ensure that packages are all updated. See this [gerrit](https://git.eclipse.org/r/#/c/161075/) for an example. To do this run [`releng/org.eclipse.epp.config/tools/setGitDate`](https://git.eclipse.org/c/epp/org.eclipse.epp.packages.git/tree/releng/org.eclipse.epp.config/tools/setGitDate) script. This script will make a local commit you need to push.
 - [ ] Wait for announcement that the staging repo is ready on [cross-project-issues-dev](https://accounts.eclipse.org/mailing-list/cross-project-issues-dev). An [example announcement](https://www.eclipse.org/lists/cross-project-issues-dev/msg17420.html).
 - [ ] Run a [CI build](https://ci.eclipse.org/packaging/job/simrel.epp-tycho-build/) that includes the above changes.
+- [ ] Check that there are no unexpected warnings in the console output. Especially look for warnings about failure to sign.
 - [ ] Sanity check the build for the following:
     - [ ] Download a package from the build's artifacts `artifact/org.eclipse.epp.packages/archive/`
     - [ ] Made sure filenames contain expected build name and milestone, e.g. `2020-03-M2`
