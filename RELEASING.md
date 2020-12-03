@@ -52,7 +52,8 @@ eclipse.simultaneous.release.build=20191212-1212
     - [ ] Run the build once in `DRY_RUN` mode to ensure that the output is correct before it is copied to download.eclipse.org.
 - [ ] Run the [Notarize MacOSX Downloads](https://ci.eclipse.org/packaging/job/notarize-downloads/) CI job to notarize DMG packages on download.eclipse.org
 - [ ] **TO BE AUTOMATED** See [Bug 568574](https://bugs.eclipse.org/bugs/show_bug.cgi?id=568574): Touch all files for the milestone in the download area to make sure mirrors are not misreporting them as mirrored before sending announcements.
-- [ ] Send email to epp-dev to request package maintainers test it.
+- [ ] Update the [LastRecorded+1.txt](https://git.eclipse.org/c/epp/org.eclipse.epp.packages.git/tree/LastRecorded+1.txt) which any package and platform +1s that have been received since the last update.
+- [ ] Send email to epp-dev to request package maintainers test it, including the last recorded +1 details.
 - [ ] **24 Hours before Final release** Make sure files are in final location to allow downloads to mirror
     - [ ] rename the provisional release milestone to final directory (E.g. [2020-09/202009101200](https://download.eclipse.org/technology/epp/downloads/release/2020-09/202009101200/) -> [2020-09/R](https://download.eclipse.org/technology/epp/downloads/release/2020-09/R/) (to match what is in [release.xml](https://download.eclipse.org/technology/epp/downloads/release/release.xml)) - this only applies to downloads, not to packages
 - [ ] **On release days** approximately 9:30am check that the below worked:
