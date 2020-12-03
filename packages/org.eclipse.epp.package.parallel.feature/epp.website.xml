@@ -28,10 +28,10 @@
     url="https://www.eclipse.org/eclipse/news/4.18/"
     project="Eclipse Platform" />
   <NewAndNoteworthy
-    url="https://wiki.eclipse.org/CDT/User/NewIn100"
+    url="https://wiki.eclipse.org/CDT/User/NewIn101"
     project="Eclipse CDT" />
   <NewAndNoteworthy
-    url="https://wiki.eclipse.org/Linux_Tools_Project/News/NewIn80"
+    url="https://wiki.eclipse.org/Linux_Tools_Project/News/NewIn81"
     project="Eclipse Linux Tools" />
   </MoreInfo>
 

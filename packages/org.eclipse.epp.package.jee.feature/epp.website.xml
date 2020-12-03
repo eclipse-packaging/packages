@@ -30,7 +30,7 @@ Click <a href="https://github.com/eclipse/wildwebdeveloper/issues/new">here</a> 
   </packageMetaData>
   <MoreInfo>
   <NewAndNoteworthy
-    url="https://www.eclipse.org/webtools/releases/3.19/NewAndNoteworthy/"
+    url="https://www.eclipse.org/webtools/releases/3.20/NewAndNoteworthy/"
     project="Eclipse Web Tools Platform Project" />
   <NewAndNoteworthy
     url="https://www.eclipse.org/eclipse/news/4.18/"
@@ -39,7 +39,7 @@ Click <a href="https://github.com/eclipse/wildwebdeveloper/issues/new">here</a> 
     url="https://www.eclipse.org/mylyn/new/"
     project="Eclipse Mylyn" />
   <NewAndNoteworthy
-    url="https://wiki.eclipse.org/EGit/New_and_Noteworthy/5.9"
+    url="https://wiki.eclipse.org/EGit/New_and_Noteworthy/5.10"
     project="Eclipse EGit" />
   </MoreInfo>
 
