@@ -4,4 +4,5 @@
 	 so they get available in the EPP repo, so available for updates and installer -->
 	<feature id="org.eclipse.justj.openjdk.hotspot.jre.full" version="0.0.0"/>
 	<feature id="org.eclipse.corrosion.feature" version="0.0.0"/>
+	<bundle id="org.eclipse.unittest.ui" version="0.0.0"/>
 </site>
