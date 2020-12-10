@@ -31,6 +31,6 @@
 
 
 	<!-- name, the name of the product, used in naming the created files. -->
-	<product name="eclipse-java-2020-12-RC1" />
+	<product name="eclipse-java-2020-12-R" />
 
 </configuration>

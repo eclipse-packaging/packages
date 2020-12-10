@@ -133,8 +133,8 @@ cat > release.xml <<EOM
 <past>2019-12/R</past>
 <past>2020-03/R</past>
 <past>2020-06/R</past>
-<present>2020-09/R</present>
-<future>2020-12/RC1</future>
+<past>2020-09/R</past>
+<present>2020-12/R</present>
 </packages>
 EOM
 

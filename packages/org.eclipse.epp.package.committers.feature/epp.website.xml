@@ -37,6 +37,6 @@ Click <a href="https://bugs.eclipse.org/bugs/enter_bug.cgi?product=EGit">here</a
   </MoreInfo>
 
   <!-- name, the name of the product, used in naming the created files. -->
-  <product name="eclipse-committers-2020-12-RC1" />
+  <product name="eclipse-committers-2020-12-R" />
 
 </configuration>
