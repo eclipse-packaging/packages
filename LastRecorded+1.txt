@@ -4,15 +4,15 @@ packages are getting tested and reported back to epp-dev. See RELEASING.md
 Last +1 received for each package and platform.
 
 Packages:
-committers - 2020-09 RC2
-cpp - 2020-12 M3
-dsl - 2020-12 M3
-embedcpp - 2020-12 M3
-java - 2020-12 M3
-javascript - 2020-09 RC2
-jee - 2020-12 M3
+committers - 2020-12 RC1
+cpp - 2020-12 RC1
+dsl - 2020-12 RC1
+embedcpp - 2020-12 RC1
+java - 2020-12 RC1
+javascript - 2020-12 RC1
+jee - 2020-12 RC1
 modeling - 2020-12 M3
-parallel - 2020-09 RC1
+parallel - 2020-12 M3
 php - 2020-09 RC1
 rcp - 2020-09 RC2
 rust - 2020-09 RC2
@@ -20,7 +20,7 @@ scout - 2020-12 M3
 testing - 2020-12 M3
 
 Platforms:
-Linux x86_64 - 2020-12 M3
+Linux x86_64 - 2020-12 RC1
 Linux Aarch64 - 2020-12 M1
-Windows - 2019-09 RC2a
-macOS - 2020-12 M3
+Windows - 2020-12 RC1
+macOS - 2020-12 RC1
