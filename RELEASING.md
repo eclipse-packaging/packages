@@ -41,6 +41,9 @@ EPP releases happen for each milestone and release candidate according to the [E
     - [ ] Splash screen says expected release name (with no milestone), e.g. `2020-03`
     - [ ] Help -> About says expected build name and milestone, e.g. `2020-03-M2`
     - [ ] `org.eclipse.epp.package.*` features and bundles have the timestamp of the forced qualifier update or later
+    - [ ] Upgrade from previous release works. To test the upgrade an equivalent to the simrel release composite site needs to done. Add the following software sites to available software, check for updates and then make sure stuff works. In particular check error log and that core features (Such as JDT, Platform) have been upgraded.
+        - https://download.eclipse.org/staging/2020-12/
+        - https://ci.eclipse.org/packaging/job/simrel.epp-tycho-build/lastSuccessfulBuild/artifact/org.eclipse.epp.packages/archive/repository/
 - [ ] Edit the Jenkins build
     - [ ] Mark build as Keep forever
     - [ ] Edit Jenkins Build Information and name it (e.g. `2020-03 M3`)
