@@ -44,6 +44,6 @@ Click <a href="https://github.com/eclipse/wildwebdeveloper/issues/new">here</a> 
   </MoreInfo>
 
   <!-- name, the name of the product, used in naming the created files. -->
-  <product name="eclipse-jee-2020-12-R" />
+  <product name="eclipse-jee-2021-03-M1" />
 
 </configuration>

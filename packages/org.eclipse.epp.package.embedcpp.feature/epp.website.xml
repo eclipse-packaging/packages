@@ -43,6 +43,6 @@ This package includes a new major release of the Embedded CDT plug-ins (v6.x); t
   </MoreInfo>
 
   <!-- name, the name of the product, used in naming the created files. -->
-  <product name="eclipse-embedcpp-2020-12-R" />
+  <product name="eclipse-embedcpp-2021-03-M1" />
 
 </configuration>
