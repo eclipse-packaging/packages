@@ -27,14 +27,17 @@ EPP releases happen for each milestone and release candidate according to the [E
     - [ ] Use global search and replace to update the version numbers at the end of the URLs.
     - [ ] Remember that some of the features will release new versions together with the new Eclipse release. Therefore using the _currently_ released version number may be wrong. Instead lookup the feature version [to be released with the release train](https://projects.eclipse.org/releases/).
 - [ ] Update the JustJ version - look for announcements, particularly from Ed to epp-dev
-- [ ] Update name of the release in strings with a "smart" global find&replace. *Be careful on M3 that the replace did not match the Eclipse project name M2E!* See this [gerrit](https://git.eclipse.org/r/#/c/158509/) for an example. Use commit message like `Update strings for 2020-09 M2`. In particular, check:
+- [ ] Update name of the release in strings with a "smart" global find&replace. *Be careful on M3 that the replace did not match the Eclipse project name M2E!* See this [gerrit](https://git.eclipse.org/r/#/c/158509/) for an example. Use commit message like `[releng] Prepare repo for 2020-12 M1`. In particular, check:
     - [ ] `packages/*/epp.website.xml` for `product name=` line
     - [ ] Variables in parent pom `releng/org.eclipse.epp.config/parent/pom.xml`
+        - On R build, for `eclipse.simultaneous.release.name` remove qualifier i.e. it should be `2020-12 (4.18.0)`
+        - On M1 build add the qualifier back in, for `eclipse.simultaneous.release.name` remove qualifier i.e. it should be `2020-12 M1 (4.18.0 M1)`
     - [ ] release.xml template in releng/org.eclipse.epp.config/tools/promote-a-build.sh
 - [ ] Update the build qualifiers to ensure that packages are all updated. See this [gerrit](https://git.eclipse.org/r/#/c/161075/) for an example. To do this run [`releng/org.eclipse.epp.config/tools/setGitDate`](https://git.eclipse.org/c/epp/org.eclipse.epp.packages.git/tree/releng/org.eclipse.epp.config/tools/setGitDate) script. This script will make a local commit you need to push.
 - [ ] Wait for announcement that the staging repo is ready on [cross-project-issues-dev](https://accounts.eclipse.org/mailing-list/cross-project-issues-dev). An [example announcement](https://www.eclipse.org/lists/cross-project-issues-dev/msg17420.html).
 - [ ] Run a [CI build](https://ci.eclipse.org/packaging/job/simrel.epp-tycho-build/) that includes the above changes.
 - [ ] Check that there are no unexpected warnings in the console output. Especially look for warnings about failure to sign. (Warnings about Mirror tool seem to be ok and can be ignored. In a historically good build there is one `[WARNING] Mirror tool: Messages while mirroring artifact descriptors.` per package)
+    - If warnings about signings occur that leave the dmg unsigned and the build does not fail, please reopen [Bug 567916](https://bugs.eclipse.org/bugs/show_bug.cgi?id=567916)
 - [ ] Sanity check the build for the following:
     - [ ] Download a package from the build's artifacts `artifact/org.eclipse.epp.packages/archive/`
     - [ ] Made sure filenames contain expected build name and milestone, e.g. `2020-03-M2`
@@ -47,10 +50,6 @@ EPP releases happen for each milestone and release candidate according to the [E
 - [ ] Edit the Jenkins build
     - [ ] Mark build as Keep forever
     - [ ] Edit Jenkins Build Information and name it (e.g. `2020-03 M3`)
-- [ ] For a release build, the additional parameters (see parent pom) should be set in the Jenkins build job to a meaningful time/date **TODO: Move this into the build itself and/or updated by the string updates/setGitDate in the above steps**:
-```
-eclipse.simultaneous.release.build=20191212-1212
-```
 - [ ] Run the [Promote a Build](https://ci.eclipse.org/packaging/job/promote-a-build/) CI job to prepare build artifacts and copy them to download.eclipse.org
     - [ ] Run the build once in `DRY_RUN` mode to ensure that the output is correct before it is copied to download.eclipse.org.
 - [ ] Run the [Notarize MacOSX Downloads](https://ci.eclipse.org/packaging/job/notarize-downloads/) CI job to notarize DMG packages on download.eclipse.org
