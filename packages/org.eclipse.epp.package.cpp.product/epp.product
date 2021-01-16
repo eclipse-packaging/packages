@@ -234,6 +234,7 @@ United States, other countries, or both.
       <feature id="org.eclipse.linuxtools.rpm" installMode="root"/>
       <feature id="org.eclipse.linuxtools.valgrind" installMode="root"/>
       <feature id="org.eclipse.mylyn.wikitext_feature" installMode="root"/>
+      <feature id="org.eclipse.oomph.setup" installMode="root"/>
       <feature id="org.eclipse.tm.terminal.feature" installMode="root"/>
       <feature id="org.eclipse.tm.terminal.connector.cdtserial.feature" installMode="root"/>
       <feature id="org.eclipse.tracecompass.gdbtrace" installMode="root"/>

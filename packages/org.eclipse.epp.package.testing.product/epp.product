@@ -209,6 +209,7 @@ United States, other countries, or both.
       <feature id="org.eclipse.epp.mpc" installMode="root"/>
       <feature id="org.eclipse.jubula.feature" installMode="root"/>
       <feature id="org.eclipse.mylyn.wikitext_feature" installMode="root"/>
+      <feature id="org.eclipse.oomph.setup" installMode="root"/>
    </features>
 
 

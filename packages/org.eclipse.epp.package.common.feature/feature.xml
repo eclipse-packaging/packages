@@ -20,10 +20,6 @@
    </license>
 
    <requires>
-      <!-- Bug 455645: Integrate Oomph into all EPP packages
-           https://bugs.eclipse.org/bugs/show_bug.cgi?id=455645 -->
-      <import feature="org.eclipse.oomph.setup"/>
-
       <!-- Bug 568379: Workaround (temporarily!) JAXB version problems.
       By forcing all the EPPs to have both versions of JAXB it means that
       even though p2 does not resolve properly, as both versions
