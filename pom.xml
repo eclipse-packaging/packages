@@ -132,14 +132,6 @@
       </modules>
     </profile>
     <profile>
-      <id>epp.package.testing</id>
-      <modules>
-        <module>packages/org.eclipse.epp.package.testing</module>
-        <module>packages/org.eclipse.epp.package.testing.feature</module>
-        <module>packages/org.eclipse.epp.package.testing.product</module>
-      </modules>
-    </profile>
-    <profile>
       <id>epp.package.rust</id>
       <modules>
         <module>packages/org.eclipse.epp.package.rust</module>

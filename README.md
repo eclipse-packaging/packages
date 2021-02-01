@@ -62,7 +62,6 @@ Each package uses its own profile:
 - epp.package.rcp
 - epp.package.rust
 - epp.package.scout
-- epp.package.testing
 
 With the signing profiles enabled, the build artifacts (bundles, features) and the
 Windows and macOS executables are signed. This is done by using the Eclipse Foundation 
