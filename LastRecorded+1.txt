@@ -17,7 +17,6 @@ php - 2020-12 RC2
 rcp - 2020-12 RC2
 rust - 2020-12 RC2
 scout - 2020-12 RC2
-testing - 2020-12 M3
 
 Platforms:
 Linux x86_64 - 2020-12 RC2
