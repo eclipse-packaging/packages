@@ -59,6 +59,10 @@ PACKAGES="xxx ${IGNORED_PACKAGES} xxx"
 
 
 ### use the HEAD commit to find out which package directories contain a change
+### XXX: This code adds packages to the profile that were edited in the HEAD commit. However this code doesn't
+### cope with a package being removed, as happened in Bug 570821. Rather than fix this for the rare removal
+### of packages, simply adjust the build by having a new HEAD or changing the CI build parameters to ignore
+### the deleted package.
 cd ${WORKSPACE}/${GIT_REPOSITORY}
 for II in `git diff-tree --name-only --no-commit-id -r HEAD | cut -d "/" -f 2 | cut -d "." -f 5 | sort | uniq`; do
   if [[ "common" == ${II} ]]
