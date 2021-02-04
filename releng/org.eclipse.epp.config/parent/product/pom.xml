@@ -71,7 +71,7 @@
               <ius>
                 <iu>
                   <query>
-                    <expression>id ~= /*epp.package*/</expression>
+                    <expression>id ~= /org.eclipse.epp.package*/ || id ~= /${project.artifactId}/  || id ~= /epp.package*executable*/ || id ~= /toolingepp.package*/</expression>
                   </query>
                 </iu>
               </ius>

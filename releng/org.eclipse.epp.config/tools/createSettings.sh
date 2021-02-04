@@ -118,6 +118,16 @@ then
 fi
 cd ${WORKSPACE}
 
+# This is a kludge - we want to run this all the time, unless we are building
+# only packages that don't contain justj. Therefore we do this all the time,
+# unless a single package is being built.
+if [[ $(cat $PACKAGE_LIST | wc -l) == 1 ]]; then
+  echo "Will not run remove-justj-from-p2 profile"
+else
+  echo "Will run remove-justj-from-p2 profile"
+  echo "    <activeProfile>remove-justj-from-p2</activeProfile>" >>$SETTINGS_FILE
+fi
+
 ### close the settings.xml file
 echo "  </activeProfiles>" >>$SETTINGS_FILE
 echo "" >>$SETTINGS_FILE
