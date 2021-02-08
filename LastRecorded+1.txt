@@ -15,7 +15,6 @@ modeling - 2020-12 RC2
 parallel - 2020-12 M3
 php - 2020-12 RC2
 rcp - 2020-12 RC2
-rust - 2020-12 RC2
 scout - 2020-12 RC2
 
 Platforms:

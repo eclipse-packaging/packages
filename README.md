@@ -60,7 +60,6 @@ Each package uses its own profile:
 - epp.package.parallel
 - epp.package.php
 - epp.package.rcp
-- epp.package.rust
 - epp.package.scout
 
 With the signing profiles enabled, the build artifacts (bundles, features) and the
