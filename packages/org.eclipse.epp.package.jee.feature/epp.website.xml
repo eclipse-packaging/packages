@@ -14,7 +14,7 @@
    bugzillaComponentId="jee-package"
    testPlan="http://www.eclipse.org/epp/testplan.php" >
     <!-- Description is wrapped in CDATA tags to allow you to insert HTML code if necessary -->
-     <description><![CDATA[Tools for developers working with Java and Web applications, including a Java IDE, tools for Web Services, JPA and Data Tools, editors for JavaScript, TypeScript, HTML, CSS, XML, Yaml, Markdown, JavaServer Pages and JavaServer Faces, with Angular and React framework support, Mylyn, Maven and Gradle Integration, a Git client, and more.<br/>
+     <description><![CDATA[Tools for developers working with Java and Web applications, including a Java IDE, tools for JavaScript, TypeScript, JavaServer Pages and Faces, Yaml, Markdown, Web Services, JPA and Data Tools, Maven and Gradle, Git, and more.<br/>
 <br/>
 Click <a href="https://bugs.eclipse.org/bugs/enter_bug.cgi?classification=WebTools">here</a> to file a bug against Eclipse Web Tools Platform.<br/>
 Click <a href="https://bugs.eclipse.org/bugs/enter_bug.cgi?product=Platform">here</a> to file a bug against Eclipse Platform.<br/>
@@ -35,11 +35,13 @@ Click <a href="https://github.com/eclipse/wildwebdeveloper/issues/new">here</a> 
   <NewAndNoteworthy
     url="https://www.eclipse.org/eclipse/news/4.19/"
     project="Eclipse Platform" />
+  <!-- Pending new releases being added to their PMI
   <NewAndNoteworthy
     url="https://www.eclipse.org/mylyn/new/"
     project="Eclipse Mylyn" />
+  -->
   <NewAndNoteworthy
-    url="https://wiki.eclipse.org/EGit/New_and_Noteworthy/5.10"
+    url="https://wiki.eclipse.org/EGit/New_and_Noteworthy/5.11"
     project="Eclipse EGit" />
   </MoreInfo>
 
