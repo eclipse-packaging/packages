@@ -59,15 +59,6 @@
       </modules>
     </profile>
     <profile>
-      <id>epp.package.javascript</id>
-      <modules>
-        <module>packages/org.eclipse.epp.package.javascript</module>
-        <module>packages/org.eclipse.epp.package.javascript.feature</module>
-        <module>packages/org.eclipse.epp.package.javascript.product</module>
-        <!-- module>packages/org.eclipse.epp.package.frontend.tests</module-->
-      </modules>
-    </profile>
-    <profile>
       <id>epp.package.java</id>
       <modules>
         <module>packages/org.eclipse.epp.package.java</module>
