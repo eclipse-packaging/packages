@@ -69,6 +69,6 @@ md5sum "${b}" >"${b}".md5
 sha1sum "${b}" >"${b}".sha1
 sha512sum -b "${b}" >"${b}".sha512
 rm "${b}"-tonotarize
-rm "${b}"-tonotarize.md5
-rm "${b}"-tonotarize.sha1
-rm "${b}"-tonotarize.sha512
+rm -f "${b}"-tonotarize.md5
+rm -f "${b}"-tonotarize.sha1
+rm -f "${b}"-tonotarize.sha512

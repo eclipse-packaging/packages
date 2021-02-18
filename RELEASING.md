@@ -35,9 +35,11 @@ EPP releases happen for each milestone and release candidate according to the [E
         - On R build, for `eclipse.simultaneous.release.name` remove qualifier i.e. it should be `2020-12 (4.18.0)`
         - On M1 build add the qualifier back in, for `eclipse.simultaneous.release.name` remove qualifier i.e. it should be `2020-12 M1 (4.18.0 M1)`
     - [ ] release.xml template in releng/org.eclipse.epp.config/tools/promote-a-build.sh
+    - [ ] `RELEASE_NAME` and `RELEASE_MILESTONE` in `releng/org.eclipse.epp.config/tools/upload-to-staging.sh`
 - [ ] Update the build qualifiers to ensure that packages are all updated. See this [gerrit](https://git.eclipse.org/r/#/c/161075/) for an example. To do this run [`releng/org.eclipse.epp.config/tools/setGitDate`](https://git.eclipse.org/c/epp/org.eclipse.epp.packages.git/tree/releng/org.eclipse.epp.config/tools/setGitDate) script. This script will make a local commit you need to push.
 - [ ] Wait for announcement that the staging repo is ready on [cross-project-issues-dev](https://accounts.eclipse.org/mailing-list/cross-project-issues-dev). An [example announcement](https://www.eclipse.org/lists/cross-project-issues-dev/msg17420.html).
 - [ ] Run a [CI build](https://ci.eclipse.org/packaging/job/simrel.epp-tycho-build/) that includes the above changes.
+- [ ] Disable the [CI build](https://ci.eclipse.org/packaging/job/simrel.epp-tycho-build/) so that the build results are not overwritten while doing the promotion
 - [ ] Check that there are no unexpected warnings in the console output. Especially look for warnings about failure to sign. (Warnings about Mirror tool seem to be ok and can be ignored. In a historically good build there is one `[WARNING] Mirror tool: Messages while mirroring artifact descriptors.` per package)
     - If warnings about signings occur that leave the dmg unsigned and the build does not fail, please reopen [Bug 567916](https://bugs.eclipse.org/bugs/show_bug.cgi?id=567916)
 - [ ] Sanity check the build for the following:
@@ -52,10 +54,10 @@ EPP releases happen for each milestone and release candidate according to the [E
 - [ ] Edit the Jenkins build
     - [ ] Mark build as Keep forever
     - [ ] Edit Jenkins Build Information and name it (e.g. `2020-03 M3`)
-- [ ] Run the [Promote a Build](https://ci.eclipse.org/packaging/job/promote-a-build/) CI job to prepare build artifacts and copy them to download.eclipse.org
+- [ ] **TODO Update this script to account for new upload-to-staging.sh** Run the [Promote a Build](https://ci.eclipse.org/packaging/job/promote-a-build/) CI job to prepare build artifacts and copy them to download.eclipse.org
     - [ ] *Optional - useful when testing changes to the promotion scripts:* Run the build once in `DRY_RUN` mode to ensure that the output is correct before it is copied to download.eclipse.org.
-- [ ] Run the [Notarize MacOSX Downloads](https://ci.eclipse.org/packaging/job/notarize-downloads/) CI job to notarize DMG packages on download.eclipse.org
-- [ ] Run [Touch All Files](https://ci.eclipse.org/packaging/view/Packages/job/epp-touch-all-files/) See [Bug 568574](https://bugs.eclipse.org/bugs/show_bug.cgi?id=568574): Touch all files for the milestone in the download area to make sure mirrors are not misreporting them as mirrored before sending announcements.
+- [ ] **TODO add this to the promote a build script** Run [Touch All Files](https://ci.eclipse.org/packaging/view/Packages/job/epp-touch-all-files/) See [Bug 568574](https://bugs.eclipse.org/bugs/show_bug.cgi?id=568574): Touch all files for the milestone in the download area to make sure mirrors are not misreporting them as mirrored before sending announcements.
+- [ ] Re-enable the [CI build](https://ci.eclipse.org/packaging/job/simrel.epp-tycho-build/)
 - [ ] Update the [LastRecorded+1.txt](https://git.eclipse.org/c/epp/org.eclipse.epp.packages.git/tree/LastRecorded+1.txt) which any package and platform +1s that have been received since the last update.
 - [ ] Send email to epp-dev to request package maintainers test it. Include the last recorded +1 details during M3-RC2 emails.
 - [ ] **24 Hours before Final release** Make sure files are in final location to allow downloads to mirror

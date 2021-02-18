@@ -23,11 +23,17 @@
 WORKSPACE=${WORKSPACE:-"${PWD}"}
 GIT_REPOSITORY=${GIT_REPOSITORY:-"org.eclipse.epp.packages"}
 SETTINGS_FILE=${SETTINGS_FILE:-"${WORKSPACE}/settings.xml"}
+PACKAGE_LIST=${PACKAGE_LIST:-"${WORKSPACE}/packages.txt"}
 IGNORED_PACKAGES=${IGNORED_PACKAGES:-""}
 FULL_BUILD=${FULL_BUILD:-"false"}
 
 echo "Creating ${SETTINGS_FILE}"
 echo "Ignoring package(s): ${IGNORED_PACKAGES}"
+
+
+echo "Creating list of built packages"
+rm -f $PACKAGE_LIST
+
 
 ### add initial content (proxy definition) from $HOME/.m2/settings.xml
 echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" >$SETTINGS_FILE
@@ -42,13 +48,6 @@ echo "      <name>Eclipse Central Proxy</name>" >>$SETTINGS_FILE
 echo "      <url>https://repo.eclipse.org/content/repositories/maven_central/</url>" >>$SETTINGS_FILE
 echo "      <mirrorOf>central</mirrorOf>" >>$SETTINGS_FILE
 echo "    </mirror>" >>$SETTINGS_FILE
-echo "    <mirror>" >>$SETTINGS_FILE
-echo "      <id>example-mirror</id>" >>$SETTINGS_FILE
-echo "      <mirrorOf>https://download.eclipse.org/</mirrorOf>" >>$SETTINGS_FILE
-echo "      <url>file:/home/data/httpd/download.eclipse.org/</url>" >>$SETTINGS_FILE
-echo "      <layout>p2</layout>" >>$SETTINGS_FILE
-echo "      <mirrorOfLayouts>p2</mirrorOfLayouts>" >>$SETTINGS_FILE
-echo "    </mirror>" >>$SETTINGS_FILE 
 echo "  </mirrors>" >>$SETTINGS_FILE
 
 echo "  <activeProfiles>" >>$SETTINGS_FILE
@@ -78,6 +77,7 @@ for II in `git diff-tree --name-only --no-commit-id -r HEAD | cut -d "/" -f 2 | 
   fi
   PACKAGE="epp.package.${II}"
   echo "Adding package $PACKAGE"
+  echo "${II}" >>$PACKAGE_LIST
   echo "    <activeProfile>${PACKAGE}</activeProfile>" >>$SETTINGS_FILE
   PACKAGES="${PACKAGES} ${PACKAGE}"
 done
@@ -110,6 +110,7 @@ then
     else
       PACKAGE="epp.package.${II}"
       echo "Adding package $PACKAGE"
+      echo "${II}" >>$PACKAGE_LIST
       echo "    <activeProfile>${PACKAGE}</activeProfile>" >>$SETTINGS_FILE
       PACKAGES="${PACKAGES} ${PACKAGE}"
     fi
