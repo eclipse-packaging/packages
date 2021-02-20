@@ -4,6 +4,8 @@ set -u # run with unset flag error so that missing parameters cause build failur
 set -e # error out on any failed commands
 set -x # echo all commands used for debugging purposes
 
+EXITCODE=0 # default to 0, set to 124 to mark unstable or anything else for failure
+
 SSHUSER="genie.packaging@projects-storage.eclipse.org"
 SSH="ssh ${SSHUSER}"
 SCP="scp"
@@ -59,17 +61,21 @@ done
 jobs -p
 wait < <(jobs -p)
 
+
 if [[ -n `find * -name '*.dmg-tonotarize'` ]]; then
    echo "Failed to notarize the following"
    find * -name '*.dmg-tonotarize'
-   exit 1
+   # unstable - we don't want to fail the build for failed notarize because
+   # the notarization is just too flaky and we can renotarize any missed
+   # files later
+   EXITCODE=124 
 fi
 
 
 # ----------------------------------------------------------------------------------------------
 # compute the checksum files for each package
 
-for II in $(find eclipse*.zip eclipse*.tar.gz eclipse*.dmg); do
+for II in $(find eclipse*.zip eclipse*.tar.gz eclipse*.dmg eclipse*.dmg-tonotarize); do
   echo .. $II
   md5sum $II >$II.md5
   sha1sum $II >$II.sha1
@@ -85,3 +91,6 @@ ${SSH} rm -rf ${STAGING}-previous
 ${SSH} mv ${STAGING} ${STAGING}-previous
 ${SSH} mv ${STAGING}-new ${STAGING}
 ${SSH} rm -rf ${STAGING}-previous
+
+# Explicitly exit so that we can mark as unstable more easily
+exit ${EXITCODE}
