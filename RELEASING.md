@@ -10,7 +10,7 @@ EPP releases happen for each milestone and release candidate according to the [E
 **Steps for M1:**
 
 - [ ] Create new [PMI entry](https://projects.eclipse.org/projects/technology.packaging)
-- [ ] Update splash screen (once per release cycle, hopefully done before M1). See detailed [instructions](https://git.eclipse.org/c/epp/org.eclipse.epp.packages.git/tree/packages/org.eclipse.epp.package.common/splash/INSTRUCTIONS.md).
+- [ ] Update splash screen (once per release cycle, hopefully done before M1). See detailed [instructions](https://git.eclipse.org/c/epp/org.eclipse.epp.packages.git/tree/packages/org.eclipse.epp.package.common/splash/INSTRUCTIONS.md). For 2021-06 see Bug [569333](https://bugs.eclipse.org/bugs/show_bug.cgi?id=569333) for new splash screens.
 - [ ] When the year changes, e.g. between 2019-12 and 2020-03 releases, an update of the copyright year is required with a very smart search&replace. A good replacement is `/, 2021/, 2022/` excluding `*.svg`
 - [ ] In addition to the "Update Name" step on every M and RC, the whole version string is updated, including platform version; this is a large change including pom.xml, feature.xml, MANIFEST.MF, epp.website.xml, epp.product, build.xml, and p2.inf
     - [ ] `2020-12` -> `2021->03` part
