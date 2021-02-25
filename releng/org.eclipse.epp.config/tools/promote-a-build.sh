@@ -135,7 +135,7 @@ cat > release.xml <<EOM
 <past>2020-06/R</past>
 <past>2020-09/R</past>
 <present>2020-12/R</present>
-<future>2021-03/M2</future>
+<future>2021-03/M3</future>
 </packages>
 EOM
 
