@@ -49,7 +49,8 @@ echo "CI URL: ${BUILD_URL}" >> ci-info.txt
 # -----------------------------
 # Notarize macos files
 
-for i in `find * -name '*.dmg-tonotarize'`
+cd ${WORKSPACE}
+for i in $(find ${WORKSPACE}/${GIT_REPOSITORY}/archive -name '*.dmg-tonotarize')
 do
    DMG_FILE=${i/-tonotarize/}
    LOG=$(basename ${i}).log
@@ -62,14 +63,15 @@ jobs -p
 wait < <(jobs -p)
 
 
-if [[ -n `find * -name '*.dmg-tonotarize'` ]]; then
+if [[ -n `find ${WORKSPACE}/${GIT_REPOSITORY}/archive -name '*.dmg-tonotarize'` ]]; then
    echo "Failed to notarize the following"
-   find * -name '*.dmg-tonotarize'
+   find ${WORKSPACE}/${GIT_REPOSITORY}/archive -name '*.dmg-tonotarize'
    # unstable - we don't want to fail the build for failed notarize because
    # the notarization is just too flaky and we can renotarize any missed
    # files later
    EXITCODE=124 
 fi
+cd ${WORKSPACE}/${GIT_REPOSITORY}/archive
 
 
 # ----------------------------------------------------------------------------------------------
