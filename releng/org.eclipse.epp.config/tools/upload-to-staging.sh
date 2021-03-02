@@ -90,7 +90,9 @@ done
 ${SSH} rm -rf ${STAGING}-new
 ${SCP} -rp . "${SSHUSER}:"${STAGING}-new
 ${SSH} rm -rf ${STAGING}-previous
-${SSH} mv ${STAGING} ${STAGING}-previous
+if $SSH test -e ${STAGING}; then
+  ${SSH} mv ${STAGING} ${STAGING}-previous
+fi
 ${SSH} mv ${STAGING}-new ${STAGING}
 ${SSH} rm -rf ${STAGING}-previous
 
