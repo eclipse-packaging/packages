@@ -52,13 +52,14 @@ EPP releases happen for each milestone and release candidate according to the [E
     - [ ] `org.eclipse.epp.package.*` features and bundles have the timestamp of the forced qualifier update or later
     - [ ] Upgrade from previous release works. To test the upgrade an equivalent to the simrel release composite site needs to done. Add the following software sites to available software, check for updates and then make sure stuff works. In particular check error log and that core features (Such as JDT, Platform) have been upgraded.
         - `https://download.eclipse.org/staging/2021-03/`
-        - `https://ci.eclipse.org/packaging/job/simrel.epp-tycho-build/lastSuccessfulBuild/artifact/org.eclipse.epp.packages/archive/repository/`
+        - `https://download.eclipse.org/technology/epp/staging/repository/`
     - [ ] Verify no non-EPP content is in the p2 repo (especially justj, update [remove-justj-from-p2.xml]((https://git.eclipse.org/c/epp/org.eclipse.epp.packages.git/tree/releng/org.eclipse.epp.config/tools/remove-justj-from-p2.xml) if needed)
 - [ ] Edit the Jenkins build
     - [ ] Mark build as Keep forever
     - [ ] Edit Jenkins Build Information and name it (e.g. `2020-03 M3`)
-- [ ] **TODO Update this script to account for new upload-to-staging.sh** Run the [Promote a Build](https://ci.eclipse.org/packaging/job/promote-a-build/) CI job to prepare build artifacts and copy them to download.eclipse.org
+- [ ] Run the [Promote a Build](https://ci.eclipse.org/packaging/job/promote-a-build/) CI job to prepare build artifacts and copy them to download.eclipse.org
     - [ ] *Optional - useful when testing changes to the promotion scripts:* Run the build once in `DRY_RUN` mode to ensure that the output is correct before it is copied to download.eclipse.org.
+- [ ] Run the [Notarize MacOSX Downloads](https://ci.eclipse.org/packaging/job/notarize-downloads/) CI job to notarize DMG packages on download.eclipse.org if the promoted build was unstable
 - [ ] **TODO add this to the promote a build script** Run [Touch All Files](https://ci.eclipse.org/packaging/view/Packages/job/epp-touch-all-files/) See [Bug 568574](https://bugs.eclipse.org/bugs/show_bug.cgi?id=568574): Touch all files for the milestone in the download area to make sure mirrors are not misreporting them as mirrored before sending announcements.
 - [ ] Re-enable the [CI build](https://ci.eclipse.org/packaging/job/simrel.epp-tycho-build/)
 - [ ] Update the [LastRecorded+1.txt](https://git.eclipse.org/c/epp/org.eclipse.epp.packages.git/tree/LastRecorded+1.txt) which any package and platform +1s that have been received since the last update.
