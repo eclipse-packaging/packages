@@ -19,7 +19,7 @@
 An <a href="https://eclipse-embed-cdt.github.io">IDE for Embedded C/C++ developers</a>. It includes  managed cross build plug-ins (<b>Arm</b> and <b>RISC-V</b>) and debug plug-ins (SEGGER <b>J-Link</b>, <b>OpenOCD</b>, <b>pyocd</b>, and <b>QEMU</b>), plus a number of templates to create ready to run blinky projects.
 <br/>
 <br/>
-This package includes a new major release of the Embedded CDT plug-ins (v6.x); to avoid compatibility issues with previous versions, it is recommended to <b>create a new workspace</b> with the new version and <b>import the projects</b> there.
+To avoid compatibility issues with pre 6.x plug-ins, it is recommended to <b>create a new workspace</b> with the new version and <b>import the projects</b> there.
 ]]></description>
     <!-- packageTesters is a list of the people that are testing the package -->
      <packageTesters>
