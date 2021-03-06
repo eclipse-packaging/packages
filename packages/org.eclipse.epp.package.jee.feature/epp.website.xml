@@ -8,7 +8,7 @@
        testPlan is the fully qualified URL to the test plan for this package
    -->
   <packageMetaData
-   packageName="Eclipse IDE for Enterprise Java Developers"
+   packageName="Eclipse IDE for Enterprise Java and Web Developers"
    maintainer="Eclipse Packaging and Web Tools Platform Projects"
    iconurl="http://www.eclipse.org/downloads/images/javaee.png"
    bugzillaComponentId="jee-package"

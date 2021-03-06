@@ -8,7 +8,7 @@ Project description:
 
 The objectives of the Eclipse Packaging project are to
 
-- create *entry level downloads* based on defined user profiles for the [Eclipse Simultaneous Release] [2]. The project defined and created the EPP downloads of Java Developer, Java EE Developer, C/C++ Developer, RCP Developer, and more. These downloads are available from the main [Eclipse download page] [3].
+- create *entry level downloads* based on defined user profiles for the [Eclipse Simultaneous Release] [2]. The project defined and created the EPP downloads of Java Developer, Enterprise Java Developer, C/C++ Developer, RCP Developer, and more. These downloads are available from the main [Eclipse download page] [3].
 - provide a platform that allows the creation of packages (zip/tar/dmg downloads) from an p2 repository. The core technology of the project enables the creation of download packages that are created by bundling Eclipse features from one or multiple Eclipse p2 repositories.
 
 For more information, please go to the [Eclipse Packaging Project overview page] [4] or to the [EPP web site] [1]. 
