@@ -49,29 +49,29 @@ echo "CI URL: ${BUILD_URL}" >> ci-info.txt
 # -----------------------------
 # Notarize macos files
 
-cd ${WORKSPACE}
-for i in $(find ${WORKSPACE}/${GIT_REPOSITORY}/archive -name '*.dmg-tonotarize')
-do
-   DMG_FILE=${i/-tonotarize/}
-   LOG=$(basename ${i}).log
-   echo "Starting ${DMG_FILE}" >> ${WORKSPACE}/${LOG}
-   ${WORKSPACE}/${GIT_REPOSITORY}/releng/org.eclipse.epp.config/tools/macosx-notarization-single.sh ${DMG_FILE} >> ${LOG} &
-   sleep 18s # start jobs at a small interval from each other
-done
+# cd ${WORKSPACE}
+# for i in $(find ${WORKSPACE}/${GIT_REPOSITORY}/archive -name '*.dmg-tonotarize')
+# do
+#    DMG_FILE=${i/-tonotarize/}
+#    LOG=$(basename ${i}).log
+#    echo "Starting ${DMG_FILE}" >> ${WORKSPACE}/${LOG}
+#    ${WORKSPACE}/${GIT_REPOSITORY}/releng/org.eclipse.epp.config/tools/macosx-notarization-single.sh ${DMG_FILE} >> ${LOG} &
+#    sleep 18s # start jobs at a small interval from each other
+# done
 
-jobs -p
-wait < <(jobs -p)
+# jobs -p
+# wait < <(jobs -p)
 
 
-if [[ -n `find ${WORKSPACE}/${GIT_REPOSITORY}/archive -name '*.dmg-tonotarize'` ]]; then
-   echo "Failed to notarize the following"
-   find ${WORKSPACE}/${GIT_REPOSITORY}/archive -name '*.dmg-tonotarize'
-   # unstable - we don't want to fail the build for failed notarize because
-   # the notarization is just too flaky and we can renotarize any missed
-   # files later
-   EXITCODE=124 
-fi
-cd ${WORKSPACE}/${GIT_REPOSITORY}/archive
+# if [[ -n `find ${WORKSPACE}/${GIT_REPOSITORY}/archive -name '*.dmg-tonotarize'` ]]; then
+#    echo "Failed to notarize the following"
+#    find ${WORKSPACE}/${GIT_REPOSITORY}/archive -name '*.dmg-tonotarize'
+#    # unstable - we don't want to fail the build for failed notarize because
+#    # the notarization is just too flaky and we can renotarize any missed
+#    # files later
+#    EXITCODE=124 
+# fi
+# cd ${WORKSPACE}/${GIT_REPOSITORY}/archive
 
 
 # ----------------------------------------------------------------------------------------------
