@@ -5,20 +5,19 @@ Last +1 received for each package and platform.
 
 Packages:
 committers - 2020-12 RC1
-cpp - 2020-12 RC2
+cpp - 2021-03 RC1
 dsl - 2020-12 RC2
-embedcpp - 2020-12 RC1
-java - 2020-12 RC1
-javascript - 2020-12 RC2
-jee - 2020-12 RC2
-modeling - 2020-12 RC2
-parallel - 2020-12 M3
+embedcpp - 2021-03 RC1
+java - 2021-03 RC1
+jee - 2021-03 RC1
+modeling - 2021-03 RC1
+parallel - 2021-03 RC1
 php - 2020-12 RC2
 rcp - 2020-12 RC2
-scout - 2020-12 RC2
+scout - 2021-03 RC1
 
 Platforms:
-Linux x86_64 - 2020-12 RC2
-Linux Aarch64 - 2020-12 RC2
-Windows - 2020-12 RC1
-macOS - 2020-12 RC2
+Linux x86_64 - 2021-03 RC1
+Linux Aarch64 - 2021-03 RC1
+Windows - 2021-03 RC1
+macOS - 2021-03 RC1
