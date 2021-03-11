@@ -25,13 +25,13 @@
     url="https://www.eclipse.org/eclipse/news/4.19/"
     project="Eclipse Platform" />
   <NewAndNoteworthy
-    url="https://www.eclipse.org/rap/noteworthy/3.15/"
+    url="https://www.eclipse.org/rap/noteworthy/3.16/"
     project="Eclipse RAP" />
   <NewAndNoteworthy
-    url="https://wiki.eclipse.org/EGit/New_and_Noteworthy/5.10"
+    url="https://wiki.eclipse.org/EGit/New_and_Noteworthy/5.11"
     project="Eclipse EGit" />
   <NewAndNoteworthy
-    url="https://wiki.eclipse.org/Passage/Release_Notes/1.1.0"
+    url="https://wiki.eclipse.org/Passage/Release_Notes/1.2.0"
     project="Eclipse Passage" />
   </MoreInfo>
 
