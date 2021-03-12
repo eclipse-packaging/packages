@@ -60,7 +60,6 @@ EPP releases happen for each milestone and release candidate according to the [E
 - [ ] Run the [Promote a Build](https://ci.eclipse.org/packaging/job/promote-a-build/) CI job to prepare build artifacts and copy them to download.eclipse.org
     - [ ] *Optional - useful when testing changes to the promotion scripts:* Run the build once in `DRY_RUN` mode to ensure that the output is correct before it is copied to download.eclipse.org.
 - [ ] Run the [Notarize MacOSX Downloads](https://ci.eclipse.org/packaging/job/notarize-downloads/) CI job to notarize DMG packages on download.eclipse.org if the promoted build was unstable
-- [ ] **TODO add this to the promote a build script** Run [Touch All Files](https://ci.eclipse.org/packaging/job/epp-touch-all-files/) See [Bug 568574](https://bugs.eclipse.org/bugs/show_bug.cgi?id=568574): Touch all files for the milestone in the download area to make sure mirrors are not misreporting them as mirrored before sending announcements.
 - [ ] Re-enable the [CI build](https://ci.eclipse.org/packaging/job/simrel.epp-tycho-build/)
 - [ ] Update the [LastRecorded+1.txt](https://git.eclipse.org/c/epp/org.eclipse.epp.packages.git/tree/LastRecorded+1.txt) which any package and platform +1s that have been received since the last update.
 - [ ] Send email to epp-dev to request package maintainers test it. Include the last recorded +1 details during M3-RC2 emails.

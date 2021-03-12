@@ -31,8 +31,10 @@ $ECHO $SSH mkdir -p ${REPO}
 $ECHO $SSH mv ${EPP_DOWNLOADS}/staging/repository ${REPO}/${RELEASE_DIR}
 if [ "$RELEASE_MILESTONE" != "R" ]; then
     $ECHO $SSH mv ${EPP_DOWNLOADS}/staging ${DOWNLOADS}/${RELEASE_MILESTONE}
+    TOUCHDIRS="${REPO}/${RELEASE_DIR} ${DOWNLOADS}/${RELEASE_MILESTONE}"
 else
     $ECHO $SSH mv ${EPP_DOWNLOADS}/staging ${DOWNLOADS}/${RELEASE_DIR}
+    TOUCHDIRS="${REPO}/${RELEASE_DIR} ${DOWNLOADS}/${RELEASE_DIR}"
 fi
 
 # ----------------------------------------------------------------------------------------------
@@ -108,3 +110,16 @@ done
 
 echo "$ARTIFACTXML" > ./compositeArtifacts.xml
 $SCP compositeArtifacts.xml "${SSHUSER}:"${REPO}/compositeArtifacts${RELEASE_MILESTONE}.xml
+
+# ----------------------------------------------------------------------------------------------
+#  Touch All Files See Bug 568574: Touch all files for the milestone in the download area to make sure mirrors are not misreporting them as mirrored before sending announcements.
+echo Touching ${TOUCHDIRS} recursively
+$ECHO $SSH /bin/bash << EOF
+  set -u # run with unset flag error so that missing parameters cause build failure
+  set -e # error out on any failed commands
+  set -x # echo all commands used for debugging purposes
+  find ${TOUCHDIRS} | while read i
+  do
+    touch \$i
+  done
+EOF
