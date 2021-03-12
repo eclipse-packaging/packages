@@ -106,6 +106,7 @@
             </goals>
             <phase>pre-integration-test</phase>
             <configuration>
+              <serviceUrl>https://cbi.eclipse.org/macos/packager/dmg/create</serviceUrl>
               <source>${project.build.directory}/products/${build}_eclipse-${eclipse.epp.id}-${eclipse.simultaneous.release.id}-macosx.cocoa.x86_64.tar.gz</source>
               <sign>${eclipse-sign-dmg-property}</sign>
               <timeoutMillis>600000</timeoutMillis>
@@ -159,6 +160,8 @@
                   <goal>sign</goal>
                 </goals>
                 <configuration>
+                  <!-- Temporary until Bug 571897 is fully resolved -->
+                  <signerUrl>https://cbi.eclipse.org/macos/codesign/sign</signerUrl>
                   <baseSearchDir>${project.build.directory}/products/${project.artifactId}</baseSearchDir>
                   <fileNames>
                     <fileName>Eclipse.app</fileName>
