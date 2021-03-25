@@ -245,6 +245,7 @@ United States, other countries, or both.
       <feature id="org.eclipse.mylyn.wikitext_feature" installMode="root"/>
       <feature id="org.eclipse.oomph.setup" installMode="root"/>
       <feature id="org.eclipse.swt.tools.feature" installMode="root"/>
+      <feature id="org.eclipse.test" installMode="root"/>
       <feature id="org.eclipse.wildwebdeveloper.feature" installMode="root"/>
       <feature id="org.eclipse.wildwebdeveloper.embedder.node.feature" installMode="root"/>
    </features>
