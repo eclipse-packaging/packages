@@ -61,13 +61,17 @@ Each package uses its own profile:
 - epp.package.rcp
 - epp.package.scout
 
+macOS dmg files can only be created within the Eclipse Foundation network. To enable creating
+dmg files enable the eclipse-package-dmg profile. Without eclipse-package-dmg enabled, the .tar.gz
+for macOS will be created regardless.
+
 With the signing profiles enabled, the build artifacts (bundles, features) and the
 Windows and macOS executables are signed. This is done by using the Eclipse Foundation 
 internal signing service and can be activated only if the build is running there.
 
 - eclipse-sign-jar profile enables signing of the EPP bundles and jar files
 - eclipse-sign-mac profile enables usage of macOS signing service
-- eclipse-sign-dmg profile enables signing of the DMG files for the macOS platform
+- eclipse-sign-dmg profile enables signing of the DMG files for the macOS platform (the eclipse-package-dmg needs to be enabled too!)
 - eclipse-sign-windows profile enables usage of Windows signing service
 
 Additional Configuration Possibilities
