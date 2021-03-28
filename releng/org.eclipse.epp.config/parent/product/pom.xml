@@ -102,7 +102,7 @@
         <executions>
           <execution>
             <id>copy-zips-to-archive-folder</id>
-            <phase>pre-integration-test</phase>
+            <phase>integration-test</phase>
             <configuration>
               <target>
                 <copy todir="${basedir}/../../archive">
