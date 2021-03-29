@@ -30,7 +30,7 @@ Click <a href="https://github.com/eclipse/wildwebdeveloper/issues/new">here</a> 
     url="https://wiki.eclipse.org/PDT/NewIn72"
     project="Eclipse PHP Development Tools" />
   <NewAndNoteworthy
-    url="https://www.eclipse.org/eclipse/news/4.19/"
+    url="https://www.eclipse.org/eclipse/news/4.20/"
     project="Eclipse Platform" />
   <NewAndNoteworthy
     url="https://www.eclipse.org/mylyn/new/"
@@ -41,6 +41,6 @@ Click <a href="https://github.com/eclipse/wildwebdeveloper/issues/new">here</a> 
   </MoreInfo>
 
   <!-- name, the name of the product, used in naming the created files. -->
-  <product name="eclipse-php-2021-03-R" />
+  <product name="eclipse-php-2021-06-M1" />
 
 </configuration>

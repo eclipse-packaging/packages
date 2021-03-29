@@ -29,7 +29,7 @@ Click <a href="https://bugs.eclipse.org/bugs/enter_bug.cgi?product=EGit">here</a
   </packageMetaData>
   <MoreInfo>
   <NewAndNoteworthy
-    url="https://www.eclipse.org/eclipse/news/4.19/"
+    url="https://www.eclipse.org/eclipse/news/4.20/"
     project="Eclipse Platform" />
   <NewAndNoteworthy
     url="https://wiki.eclipse.org/EGit/New_and_Noteworthy/5.11"
@@ -37,6 +37,6 @@ Click <a href="https://bugs.eclipse.org/bugs/enter_bug.cgi?product=EGit">here</a
   </MoreInfo>
 
   <!-- name, the name of the product, used in naming the created files. -->
-  <product name="eclipse-committers-2021-03-R" />
+  <product name="eclipse-committers-2021-06-M1" />
 
 </configuration>
