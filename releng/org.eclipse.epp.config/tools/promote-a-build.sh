@@ -28,6 +28,7 @@ fi
 # Move the repo and downloads into their location
 
 $ECHO $SSH mkdir -p ${REPO}
+$ECHO $SSH mkdir -p ${DOWNLOADS}
 $ECHO $SSH mv ${EPP_DOWNLOADS}/staging/repository ${REPO}/${RELEASE_DIR}
 if [ "$RELEASE_MILESTONE" != "R" ]; then
     $ECHO $SSH mv ${EPP_DOWNLOADS}/staging ${DOWNLOADS}/${RELEASE_MILESTONE}
