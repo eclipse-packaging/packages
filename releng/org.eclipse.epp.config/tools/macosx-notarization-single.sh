@@ -28,7 +28,7 @@ PRIMARY_BUNDLE_ID="$(echo ${DMG} | sed  's/-macosx.cocoa.x86_64.dmg//g' | sed -E
 retryCount=3
 while [ ${retryCount} -gt 0 ]; do
 
-  RESPONSE_RAW=$(curl  --write-out "\n%{http_code}" -s -X POST -F file=@${DMG} -F 'options={"primaryBundleId": "'${PRIMARY_BUNDLE_ID}'", "staple": true};type=application/json' http://172.30.206.146:8383/macos-notarization-service/notarize)
+  RESPONSE_RAW=$(curl  --write-out "\n%{http_code}" -s -X POST -F file=@${DMG} -F 'options={"primaryBundleId": "'${PRIMARY_BUNDLE_ID}'", "staple": true};type=application/json' https://cbi.eclipse.org/macos/xcrun/notarize)
   RESPONSE=$(head -n1 <<<"${RESPONSE_RAW}")
   STATUS_CODE=$(tail -n1 <<<"${RESPONSE_RAW}")
   UUID="$(echo "${RESPONSE}" | jq -r '.uuid')"
@@ -36,7 +36,7 @@ while [ ${retryCount} -gt 0 ]; do
 
   while [[ ${STATUS} == 'IN_PROGRESS' ]]; do
     sleep 1m
-    RESPONSE_RAW=$(curl  --write-out "\n%{http_code}" -s http://172.30.206.146:8383/macos-notarization-service/${UUID}/status)
+    RESPONSE_RAW=$(curl  --write-out "\n%{http_code}" -s https://cbi.eclipse.org/macos/xcrun/${UUID}/status)
     RESPONSE=$(head -n1 <<<"${RESPONSE_RAW}")
     STATUS_CODE=$(tail -n1 <<<"${RESPONSE_RAW}")
     STATUS=$(echo ${RESPONSE} | jq -r '.notarizationStatus.status')
@@ -58,7 +58,7 @@ while [ ${retryCount} -gt 0 ]; do
 done
 
 rm "${DMG}"
-curl -JO http://172.30.206.146:8383/macos-notarization-service/${UUID}/download
+curl -JO https://cbi.eclipse.org/macos/xcrun/${UUID}/download
 cp -vf "${DMG}" "${DMG_FILE}"
 
 # Generate the checksums in the directory that the files are in
