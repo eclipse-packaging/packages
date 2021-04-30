@@ -167,8 +167,6 @@
                   <goal>sign</goal>
                 </goals>
                 <configuration>
-                  <!-- Temporary until Bug 571897 is fully resolved -->
-                  <signerUrl>https://cbi.eclipse.org/macos/codesign/sign</signerUrl>
                   <baseSearchDir>${project.build.directory}/products/${project.artifactId}</baseSearchDir>
                   <fileNames>
                     <fileName>Eclipse.app</fileName>
