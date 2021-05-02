@@ -34,7 +34,7 @@ while [ ${retryCount} -gt 0 ]; do
   UUID="$(echo "${RESPONSE}" | jq -r '.uuid')"
   STATUS="$(echo "${RESPONSE}" | jq -r '.notarizationStatus.status')"
 
-  while [[ ${STATUS} == 'IN_PROGRESS' ]]; do
+  while [[ ${STATUS} == 'IN_PROGRESS' || ${STATUS_CODE} == '503' || ${STATUS_CODE} == '502' ]]; do
     sleep 1m
     RESPONSE_RAW=$(curl  --write-out "\n%{http_code}" -s https://cbi.eclipse.org/macos/xcrun/${UUID}/status)
     RESPONSE=$(head -n1 <<<"${RESPONSE_RAW}")
