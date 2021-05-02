@@ -54,8 +54,8 @@ for i in $(find ${WORKSPACE}/${GIT_REPOSITORY}/archive -name '*.dmg-tonotarize')
 do
    DMG_FILE=${i/-tonotarize/}
    LOG=$(basename ${i}).log
-   echo "Starting ${DMG_FILE}" >> ${WORKSPACE}/${LOG}
-   ${WORKSPACE}/${GIT_REPOSITORY}/releng/org.eclipse.epp.config/tools/macosx-notarization-single.sh ${DMG_FILE} >> ${LOG} &
+   echo "Starting ${DMG_FILE}" |& tee ${WORKSPACE}/${LOG}
+   ${WORKSPACE}/${GIT_REPOSITORY}/releng/org.eclipse.epp.config/tools/macosx-notarization-single.sh ${DMG_FILE} |& tee --append ${LOG} &
    sleep 18s # start jobs at a small interval from each other
 done
 
