@@ -66,6 +66,8 @@ wait < <(jobs -p)
 if [[ -n `find ${WORKSPACE}/${GIT_REPOSITORY}/archive -name '*.dmg-tonotarize'` ]]; then
    echo "Failed to notarize the following"
    find ${WORKSPACE}/${GIT_REPOSITORY}/archive -name '*.dmg-tonotarize'
+   echo "The following files were found to not have been notarized" > tonotarize-list.log
+   find ${WORKSPACE}/${GIT_REPOSITORY}/archive -name '*.dmg-tonotarize' >> tonotarize-list.log
    # unstable - we don't want to fail the build for failed notarize because
    # the notarization is just too flaky and we can renotarize any missed
    # files later
