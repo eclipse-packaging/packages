@@ -221,8 +221,7 @@ United States, other countries, or both.
       <feature id="org.eclipse.m2e.lemminx.feature" installMode="root"/>
       <feature id="org.eclipse.m2e.logback.feature" installMode="root"/>
       <feature id="org.eclipse.oomph.setup" installMode="root"/>
-      <!-- Disabled - see Bug 572781 -->
-      <!-- <feature id="org.eclipse.rap.tools.feature" installMode="root"/> -->
+      <feature id="org.eclipse.rap.tools.feature" installMode="root"/>
       <feature id="org.eclipse.swtbot.eclipse.gef" installMode="root"/>
       <feature id="org.eclipse.swtbot.eclipse" installMode="root"/>
       <feature id="org.eclipse.swtbot.ide" installMode="root"/>
