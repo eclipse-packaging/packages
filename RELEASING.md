@@ -7,8 +7,9 @@ This guide contains the step-by-step process to complete an EPP release.
 
 EPP releases happen for each milestone and release candidate according to the [Eclipse Simultaneous Release Plan](https://wiki.eclipse.org/Simultaneous_Release).
 
-**Steps for M1:**
+**Steps at the beginning of each release cycle (i.e. before M1):**
 
+- [ ] Fix https://bugs.eclipse.org/bugs/show_bug.cgi?id=571369
 - [ ] Create new [PMI entry](https://projects.eclipse.org/projects/technology.packaging)
 - [ ] Add Target Milestones and Versions in [Bugzilla](https://dev.eclipse.org/committers/bugs/bugz_manager.php)
 - [ ] Update splash screen (once per release cycle, hopefully done before M1). See detailed [instructions](https://git.eclipse.org/c/epp/org.eclipse.epp.packages.git/tree/packages/org.eclipse.epp.package.common/splash/INSTRUCTIONS.md). For 2021-06 see Bug [569333](https://bugs.eclipse.org/bugs/show_bug.cgi?id=569333) for new splash screens.
@@ -22,7 +23,8 @@ EPP releases happen for each milestone and release candidate according to the [E
     - [ ] Remove releases from download.eclipse.org by listing releases to delete and then running https://ci.eclipse.org/packaging/job/releng-remove-old-downloads (TODO create this job)
 
 **Steps for all Milestones and RCs:**
-
+- [ ] Make sure any outstanding reviews are progressing - e.g. file IP logs, get PMC approval, etc. 
+    - [ ] For 2021-06 see [Bug 572423](https://bugs.eclipse.org/bugs/show_bug.cgi?id=572423)
 - [ ] Ensure that the [CI build](https://ci.eclipse.org/packaging/job/simrel.epp-tycho-build/) is green<!-- or yellow (yellow means some files have failed to notarize which can be handled later on in this process)-->. Resolving non-green builds will require tracking down problems and incompatibilities across all Eclipse participating projects. [cross-project-issues-dev](https://accounts.eclipse.org/mailing-list/cross-project-issues-dev) mailing list is a good place to start when tracking such problems.
 - [ ] Check that packages containing incubating projects have that information reflected in Help -> About dialog. See near the end of build output for report of check-incubating.sh script.
     - `-incubation` and ` (includes Incubating components)` are not used in packageMetaData anymore (See [Bug 564214](https://bugs.eclipse.org/bugs/show_bug.cgi?id=564214))
@@ -62,7 +64,6 @@ EPP releases happen for each milestone and release candidate according to the [E
 - [ ] Run the [Promote a Build](https://ci.eclipse.org/packaging/job/promote-a-build/) CI job to prepare build artifacts and copy them to download.eclipse.org
     - [ ] *Optional - useful when testing changes to the promotion scripts:* Run the build once in `DRY_RUN` mode to ensure that the output is correct before it is copied to download.eclipse.org.
 - [ ] Run the [Notarize MacOSX Downloads](https://ci.eclipse.org/packaging/job/notarize-downloads/) CI job to notarize DMG packages on download.eclipse.org if the promoted build was unstable
-- [ ] **TODO add this to the promote a build script** Run [Touch All Files](https://ci.eclipse.org/packaging/job/epp-touch-all-files/) See [Bug 568574](https://bugs.eclipse.org/bugs/show_bug.cgi?id=568574): Touch all files for the milestone in the download area to make sure mirrors are not misreporting them as mirrored before sending announcements.
 - [ ] Re-enable the [CI build](https://ci.eclipse.org/packaging/job/simrel.epp-tycho-build/)
 - [ ] Update the [LastRecorded+1.txt](https://git.eclipse.org/c/epp/org.eclipse.epp.packages.git/tree/LastRecorded+1.txt) which any package and platform +1s that have been received since the last update.
 - [ ] Send email to epp-dev to request package maintainers test it. Include the last recorded +1 details during M3-RC2 emails.
