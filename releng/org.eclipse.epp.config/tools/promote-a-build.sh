@@ -89,7 +89,7 @@ done
 "
 
 echo "$CONTENTXML" > ./compositeContent.xml
-$SCP compositeContent.xml "${SSHUSER}:"${REPO}/compositeContent${RELEASE_MILESTONE}.xml
+$ECHO $SCP compositeContent.xml "${SSHUSER}:"${REPO}/compositeContent${RELEASE_MILESTONE}.xml
 
 ARTIFACTXML="<?xml version='1.0' encoding='UTF-8'?>
 <?compositeArtifactRepository version='1.0.0'?>
@@ -111,7 +111,7 @@ done
 "
 
 echo "$ARTIFACTXML" > ./compositeArtifacts.xml
-$SCP compositeArtifacts.xml "${SSHUSER}:"${REPO}/compositeArtifacts${RELEASE_MILESTONE}.xml
+$ECHO $SCP compositeArtifacts.xml "${SSHUSER}:"${REPO}/compositeArtifacts${RELEASE_MILESTONE}.xml
 
 # ----------------------------------------------------------------------------------------------
 #  Touch All Files See Bug 568574: Touch all files for the milestone in the download area to make sure mirrors are not misreporting them as mirrored before sending announcements.
