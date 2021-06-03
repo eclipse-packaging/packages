@@ -46,6 +46,10 @@ done
 echo "TIMESTAMP: $(date)" > ci-info.txt
 echo "CI URL: ${BUILD_URL}" >> ci-info.txt
 
+# place a mirrors.php for easy access to links via the Eclipse mirroring
+cp ${WORKSPACE}/${GIT_REPOSITORY}/releng/org.eclipse.epp.config/tools/mirrors.php mirrors.php
+
+
 # -----------------------------
 # Notarize macos files
 
