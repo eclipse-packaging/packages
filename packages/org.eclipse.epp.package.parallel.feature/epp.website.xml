@@ -30,6 +30,6 @@
   </MoreInfo>
 
 	<!-- name, the name of the product, used in naming the created files. -->
-	<product name="eclipse-parallel-2021-06-M3" />
+	<product name="eclipse-parallel-2021-06-RC1" />
 
 </configuration>
