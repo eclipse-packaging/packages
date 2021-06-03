@@ -31,9 +31,6 @@ Click <a href="https://bugs.eclipse.org/bugs/enter_bug.cgi?product=EGit">here</a
   <NewAndNoteworthy
     url="https://www.eclipse.org/eclipse/news/4.20/"
     project="Eclipse Platform" />
-  <NewAndNoteworthy
-    url="https://wiki.eclipse.org/EGit/New_and_Noteworthy/5.11"
-    project="Eclipse EGit" />
   </MoreInfo>
 
   <!-- name, the name of the product, used in naming the created files. -->

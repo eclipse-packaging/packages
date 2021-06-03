@@ -24,15 +24,6 @@
   <NewAndNoteworthy
     url="https://www.eclipse.org/eclipse/news/4.20/"
     project="Eclipse Platform" />
-  <NewAndNoteworthy
-    url="https://www.eclipse.org/rap/noteworthy/3.16/"
-    project="Eclipse RAP" />
-  <NewAndNoteworthy
-    url="https://wiki.eclipse.org/EGit/New_and_Noteworthy/5.11"
-    project="Eclipse EGit" />
-  <NewAndNoteworthy
-    url="https://wiki.eclipse.org/Passage/Release_Notes/1.2.0"
-    project="Eclipse Passage" />
   </MoreInfo>
 
   <!-- name, the name of the product, used in naming the created files. -->

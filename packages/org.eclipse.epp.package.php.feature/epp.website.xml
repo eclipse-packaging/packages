@@ -35,9 +35,6 @@ Click <a href="https://github.com/eclipse/wildwebdeveloper/issues/new">here</a> 
   <NewAndNoteworthy
     url="https://www.eclipse.org/mylyn/new/"
     project="Eclipse Mylyn" />
-  <NewAndNoteworthy
-    url="https://wiki.eclipse.org/EGit/New_and_Noteworthy/5.11"
-    project="Eclipse EGit" />
   </MoreInfo>
 
   <!-- name, the name of the product, used in naming the created files. -->

@@ -24,9 +24,6 @@
   <NewAndNoteworthy
     url="https://www.eclipse.org/eclipse/news/4.20/"
     project="Eclipse Platform" />
-  <NewAndNoteworthy
-    url="https://wiki.eclipse.org/EGit/New_and_Noteworthy/5.11"
-    project="Eclipse EGit" />
   </MoreInfo>
 
 
