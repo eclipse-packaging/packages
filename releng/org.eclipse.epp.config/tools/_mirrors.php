@@ -12,7 +12,7 @@ if (sizeof($files)>0) { ?>
 </head>
 <body>
 <?php
-$downloadPrefix = "http://www.eclipse.org/downloads/download.php?file=";
+$downloadPrefix = "https://www.eclipse.org/downloads/download.php?file=";
 $downloadDotEclipseServer = preg_match("#download.eclipse.org#",$_SERVER["DOCUMENT_ROOT"]) || preg_match("#download.eclipse.org#",$_SERVER["SERVER_NAME"]) || preg_match("#download.eclipse.org#",$_SERVER["SCRIPT_URI"]);
 
 echo "<table>\n";
