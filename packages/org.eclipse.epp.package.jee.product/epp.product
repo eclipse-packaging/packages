@@ -4,7 +4,7 @@
 <product name="Eclipse IDE for Enterprise Java and Web Developers" uid="epp.package.jee" id="org.eclipse.epp.package.jee.product" application="org.eclipse.ui.ide.workbench" version="4.20.0.qualifier" useFeatures="true" includeLaunchers="true">
 
    <aboutInfo>
-      <image path="/org.eclipse.epp.package.jee/aboutgears_115x.png"/>
+      <image path="/org.eclipse.epp.package.jee/eclipse_lg.png"/>
       <text>
          Specified in the plugin.xml of the branding plugin.
       </text>
