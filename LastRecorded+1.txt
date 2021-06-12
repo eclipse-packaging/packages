@@ -7,17 +7,17 @@ Packages:
 committers - 2021-06 M3
 cpp - 2021-06 M3
 dsl - 2021-06 M3
-embedcpp - 2021-06 M2
-java - 2021-06 M3
+embedcpp - 2021-06 RC1
+java - 2021-06 RC1 - tested in RC1, but no +1
 jee - 2021-06 M3
 modeling - 2021-06 M1
 parallel - 2021-03 RC2
 php - 2020-12 RC2
-rcp - 2021-03 RC2
+rcp - 2021-06 RC1
 scout - 2021-03 RC2
 
 Platforms:
 Linux x86_64 - 2021-06 M2
 Linux Aarch64 - 2021-03 RC1
-Windows - 2021-06 M3
-macOS - 2021-06 M3
+Windows - 2021-06 RC1
+macOS - 2021-06 RC1
