@@ -52,32 +52,32 @@ cp ${WORKSPACE}/${GIT_REPOSITORY}/releng/org.eclipse.epp.config/tools/_mirrors.p
 
 # -----------------------------
 # Notarize macos files
+# DISABLED, running on each build can too easily exceed Apple's limits. - see https://bugs.eclipse.org/bugs/show_bug.cgi?id=571669#c42
+# cd ${WORKSPACE}
+# for i in $(find ${WORKSPACE}/${GIT_REPOSITORY}/archive -name '*.dmg-tonotarize')
+# do
+#    DMG_FILE=${i/-tonotarize/}
+#    LOG=$(basename ${i}).log
+#    echo "Starting ${DMG_FILE}" |& tee ${WORKSPACE}/${LOG}
+#    ${WORKSPACE}/${GIT_REPOSITORY}/releng/org.eclipse.epp.config/tools/macosx-notarization-single.sh ${DMG_FILE} |& tee --append ${LOG} &
+#    sleep 18s # start jobs at a small interval from each other
+# done
 
-cd ${WORKSPACE}
-for i in $(find ${WORKSPACE}/${GIT_REPOSITORY}/archive -name '*.dmg-tonotarize')
-do
-   DMG_FILE=${i/-tonotarize/}
-   LOG=$(basename ${i}).log
-   echo "Starting ${DMG_FILE}" |& tee ${WORKSPACE}/${LOG}
-   ${WORKSPACE}/${GIT_REPOSITORY}/releng/org.eclipse.epp.config/tools/macosx-notarization-single.sh ${DMG_FILE} |& tee --append ${LOG} &
-   sleep 18s # start jobs at a small interval from each other
-done
-
-jobs -p
-wait < <(jobs -p)
+# jobs -p
+# wait < <(jobs -p)
 
 
-if [[ -n `find ${WORKSPACE}/${GIT_REPOSITORY}/archive -name '*.dmg-tonotarize'` ]]; then
-   echo "Failed to notarize the following"
-   find ${WORKSPACE}/${GIT_REPOSITORY}/archive -name '*.dmg-tonotarize'
-   echo "The following files were found to not have been notarized" > tonotarize-list.log
-   find ${WORKSPACE}/${GIT_REPOSITORY}/archive -name '*.dmg-tonotarize' >> tonotarize-list.log
-   # unstable - we don't want to fail the build for failed notarize because
-   # the notarization is just too flaky and we can renotarize any missed
-   # files later
-   EXITCODE=124 
-fi
-cd ${WORKSPACE}/${GIT_REPOSITORY}/archive
+# if [[ -n `find ${WORKSPACE}/${GIT_REPOSITORY}/archive -name '*.dmg-tonotarize'` ]]; then
+#    echo "Failed to notarize the following"
+#    find ${WORKSPACE}/${GIT_REPOSITORY}/archive -name '*.dmg-tonotarize'
+#    echo "The following files were found to not have been notarized" > tonotarize-list.log
+#    find ${WORKSPACE}/${GIT_REPOSITORY}/archive -name '*.dmg-tonotarize' >> tonotarize-list.log
+#    # unstable - we don't want to fail the build for failed notarize because
+#    # the notarization is just too flaky and we can renotarize any missed
+#    # files later
+#    EXITCODE=124 
+# fi
+# cd ${WORKSPACE}/${GIT_REPOSITORY}/archive
 
 
 # ----------------------------------------------------------------------------------------------
