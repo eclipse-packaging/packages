@@ -4,10 +4,9 @@ set -u # run with unset flag error so that missing parameters cause build failur
 set -e # error out on any failed commands
 set -x # echo all commands used for debugging purposes
 
-# The commented out parameters come from Jenkinsfile
-# RELEASE_NAME=
-# RELEASE_MILESTONE=
-# RELEASE_DIR=
+RELEASE_NAME=2021-09
+RELEASE_MILESTONE=M1
+RELEASE_DIR=202107141200
 EPP_DOWNLOADS=/home/data/httpd/download.eclipse.org/technology/epp
 DOWNLOADS=${EPP_DOWNLOADS}/downloads/release/${RELEASE_NAME}/
 REPO=${EPP_DOWNLOADS}/packages/${RELEASE_NAME}/
@@ -52,6 +51,7 @@ cat > release.xml <<EOM
 <past>2020-12/R</past>
 <past>2021-03/R</past>
 <present>2021-06/R</present>
+<future>2021-09/M1</future>
 </packages>
 EOM
 $ECHO $SCP release.xml "${SSHUSER}:"${EPP_DOWNLOADS}/downloads/release/release.xml
