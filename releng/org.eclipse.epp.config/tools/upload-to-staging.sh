@@ -94,7 +94,11 @@ done
 # Copy everything to download.eclipse.org
 
 ${SSH} rm -rf ${STAGING}-new
-${SCP} -rp . "${SSHUSER}:"${STAGING}-new
+echo "find ."
+find .
+echo "find $PWD"
+find $PWD
+${SCP} -rp $PWD/. "${SSHUSER}:"${STAGING}-new
 ${SSH} rm -rf ${STAGING}-previous
 if $SSH test -e ${STAGING}; then
   ${SSH} mv ${STAGING} ${STAGING}-previous
