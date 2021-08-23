@@ -27,6 +27,6 @@
   </MoreInfo>
 
   <!-- name, the name of the product, used in naming the created files. -->
-  <product name="eclipse-rcp-2021-09-M2" />
+  <product name="eclipse-rcp-2021-09-M3" />
 
 </configuration>
