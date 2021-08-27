@@ -39,7 +39,7 @@
     <!-- Timestamp used in various places, e.g. the about dialog (see about.mappings) -->
     <eclipse.simultaneous.release.build>${maven.build.timestamp}</eclipse.simultaneous.release.build>
     <!-- Human readable name of the release, e.g. used in the about dialog (see about.mappings) -->
-    <eclipse.simultaneous.release.name>2021-09 M3a (4.21.0 Ma3)</eclipse.simultaneous.release.name>
+    <eclipse.simultaneous.release.name>2021-09 M3a (4.21.0 M3a)</eclipse.simultaneous.release.name>
     <!-- Upstream p2 repository, used as a source for pre-compiled build artifacts -->
     <eclipse.simultaneous.release.repository>https://download.eclipse.org/staging/2021-09/</eclipse.simultaneous.release.repository>
   </properties>
