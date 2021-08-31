@@ -15,6 +15,7 @@
 
    <launcherArgs>
       <programArgs>-product org.eclipse.epp.package.dsl.product
+-showsplash org.eclipse.epp.package.common
 --launcher.defaultAction openFile
       </programArgs>
       <vmArgs>-Dosgi.requiredJavaVersion=11
