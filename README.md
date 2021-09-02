@@ -29,20 +29,11 @@ This build creates output in two places:
 Windows users
 ------------- 
 
-If you are running the build on Windows, the last build step will currently fail. 
-This failure can be circumvented by skipping the last step which aggregates the 
-filtered EPP artifacts from the packages into a new p2 repository. For further 
-details see [bug 426416](https://bugs.eclipse.org/bugs/show_bug.cgi?id=426416).
-At the moment it is advised to run the build command on Windows with `package` 
-only:
+In the past the last step in the build process used to fail.
+For further  details see [bug 426416](https://bugs.eclipse.org/bugs/show_bug.cgi?id=426416).
+If that happens again
 
-    mvn clean package -Pepp.package.rcp
-
-In addition to that it is not possible to create zip and tar.gz archives on 
-Windows due to missing Bash scripting capabilities. On Windows, the output of the
-build is the `eclipse` directory that contains the usual content from the zip
-archive. This directory can be found below (e.g. RCP package) 
-`packages/org.eclipse.epp.package.rcp.product/target/products/`.
+    mvn clean package -P"epp.package.rcp"
 
 Available Profiles
 ------------------
