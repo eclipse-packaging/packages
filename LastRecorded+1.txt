@@ -4,12 +4,12 @@ packages are getting tested and reported back to epp-dev. See RELEASING.md
 Last +1 received for each package and platform.
 
 Packages:
-committers - 2021-06 M3
-cpp - 2021-06 RC2
-dsl - 2021-06 RC2
+committers - 2021-09 M3a
+cpp - 2021-09 M3a
+dsl - 2021-09 M3a
 embedcpp - 2021-06 RC2
-java - 2021-06 RC2
-jee - 2021-06 RC2
+java - 2021-09 M3a
+jee - 2021-09 M3a
 modeling - 2021-06 M1
 parallel - 2021-03 RC2
 php - 2020-12 RC2
@@ -19,5 +19,5 @@ scout - 2021-03 RC2
 Platforms:
 Linux x86_64 - 2021-06 RC2
 Linux aarch64 - 2021-06 RC2
-Windows - 2021-06 RC2
-macOS x86_64 - 2021-06 RC2
+Windows - 2021-09 M3a
+macOS x86_64 - 2021-09 M3a
