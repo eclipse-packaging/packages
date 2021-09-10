@@ -6,7 +6,7 @@ set -x # echo all commands used for debugging purposes
 
 RELEASE_NAME=2021-09
 RELEASE_MILESTONE=R
-RELEASE_DIR=202109091200
+RELEASE_DIR=202109101200
 EPP_DOWNLOADS=/home/data/httpd/download.eclipse.org/technology/epp
 DOWNLOADS=${EPP_DOWNLOADS}/downloads/release/${RELEASE_NAME}/
 REPO=${EPP_DOWNLOADS}/packages/${RELEASE_NAME}/
