@@ -134,6 +134,20 @@
             <artifactId>eclipse-dmg-packager</artifactId>
             <executions>
               <execution>
+                <id>dmg-package-platform-aarch64</id>
+                <goals>
+                  <goal>package-dmg</goal>
+                </goals>
+                <phase>pre-integration-test</phase>
+                <configuration>
+                  <serviceUrl>https://cbi.eclipse.org/macos/packager/dmg/create</serviceUrl>
+                  <source>${project.build.directory}/products/${build}_eclipse-${eclipse.epp.id}-${eclipse.simultaneous.release.id}-macosx.cocoa.aarch64.tar.gz</source>
+                  <sign>${eclipse-sign-dmg-property}</sign>
+                  <timeoutMillis>600000</timeoutMillis>
+                </configuration>
+              </execution>
+              <execution>
+                <id>dmg-package-platform-x86_64</id>
                 <goals>
                   <goal>package-dmg</goal>
                 </goals>

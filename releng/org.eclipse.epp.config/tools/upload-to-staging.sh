@@ -16,7 +16,7 @@ WORKSPACE=${WORKSPACE:-"${PWD}"}
 GIT_REPOSITORY=${GIT_REPOSITORY:-"org.eclipse.epp.packages"}
 BUILT_PACKAGES=$(cat packages.txt)
 PACKAGES=${BUILT_PACKAGES:-"committers cpp dsl embedcpp java jee modeling parallel php rcp scout"}
-PLATFORMS=${PLATFORMS:-"linux.gtk.aarch64.tar.gz linux.gtk.x86_64.tar.gz macosx.cocoa.x86_64.dmg macosx.cocoa.x86_64.tar.gz win32.win32.x86_64.zip"}
+PLATFORMS=${PLATFORMS:-"linux.gtk.aarch64.tar.gz linux.gtk.x86_64.tar.gz macosx.cocoa.aarch64.dmg macosx.cocoa.aarch64.tar.gz macosx.cocoa.x86_64.dmg macosx.cocoa.x86_64.tar.gz win32.win32.x86_64.zip"}
 STAGING=${STAGING:-"/home/data/httpd/download.eclipse.org/technology/epp/staging"}
 
 cd ${WORKSPACE}/${GIT_REPOSITORY}/archive
@@ -28,6 +28,7 @@ for PACKAGE in $PACKAGES; do
              sed 's/linux\.gtk\.aarch64/linux-gtk-aarch64/' | \
              sed 's/linux\.gtk\.x86\_64/linux-gtk-x86\_64/' | \
              sed 's/win32\.win32\.x86\_64\./win32\-x86\_64\./' | \
+             sed 's/macosx-cocoa-aarch64.dmg/macosx-cocoa-aarch64.dmg-tonotarize/'`
              sed 's/macosx\.cocoa\.x86\_64/macosx\-cocoa-x86\_64/' | \
              sed 's/macosx-cocoa-x86_64.dmg/macosx-cocoa-x86_64.dmg-tonotarize/'`
     # Move and rename file

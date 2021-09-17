@@ -23,7 +23,11 @@ DMG_FILE="$1"
 DMG="$(basename "${DMG_FILE}")"
 cp "${DMG_FILE}"-tonotarize "${DMG}"
 
-PRIMARY_BUNDLE_ID="$(echo ${DMG} | sed  's/-macosx.cocoa.x86_64.dmg//g' | sed -E 's/^[0-9\-]*_(.*)/\1/g')"
+# Prior to Mac M1 the primar bundle ID used was the name of the package with platform info stripped.
+# However, the ID seems to be allowed to be arbitrary, therefore use the full file name so that
+# aarch an x86_64 make the id unique.
+# See https://developer.apple.com/forums/thread/120421
+PRIMARY_BUNDLE_ID="${DMG}"
 
 retryCount=5
 while [ ${retryCount} -gt 0 ]; do
