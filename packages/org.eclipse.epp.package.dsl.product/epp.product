@@ -210,7 +210,7 @@ United States, other countries, or both.
       <feature id="org.eclipse.emf.ecore.xcore.sdk" installMode="root"/>
       <feature id="org.eclipse.emf.mwe2.language.sdk" installMode="root"/>
       <feature id="org.eclipse.emf.sdk" installMode="root"/>
-      <feature id="org.eclipse.oomph.setup" installMode="root"/>
+      <!-- Bug 576490: Disable feature that is (hopefully temporarily) disabled in simrel <feature id="org.eclipse.oomph.setup" installMode="root"/> -->
       <feature id="org.eclipse.xtext.sdk" installMode="root"/>
       <feature id="org.eclipse.lsp4j.sdk" installMode="root"/>
    </features>

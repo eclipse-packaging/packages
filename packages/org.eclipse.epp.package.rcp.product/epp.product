@@ -220,7 +220,7 @@ United States, other countries, or both.
       <feature id="org.eclipse.m2e.pde.feature" installMode="root"/>
       <feature id="org.eclipse.m2e.lemminx.feature" installMode="root"/>
       <feature id="org.eclipse.m2e.logback.feature" installMode="root"/>
-      <feature id="org.eclipse.oomph.setup" installMode="root"/>
+      <!-- Bug 576490: Disable feature that is (hopefully temporarily) disabled in simrel <feature id="org.eclipse.oomph.setup" installMode="root"/> -->
       <feature id="org.eclipse.rap.tools.feature" installMode="root"/>
       <feature id="org.eclipse.swtbot.eclipse.gef" installMode="root"/>
       <feature id="org.eclipse.swtbot.eclipse" installMode="root"/>
