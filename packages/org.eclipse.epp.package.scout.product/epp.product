@@ -216,7 +216,7 @@ United States, other countries, or both.
       <feature id="org.eclipse.m2e.feature" installMode="root"/>
       <feature id="org.eclipse.m2e.lemminx.feature" installMode="root"/>
       <feature id="org.eclipse.mylyn.wikitext_feature" installMode="root"/>
-      <!-- Bug 576490: Disable feature that is (hopefully temporarily) disabled in simrel <feature id="org.eclipse.oomph.setup" installMode="root"/> -->
+      <feature id="org.eclipse.oomph.setup" installMode="root"/>
       <feature id="org.eclipse.scout.sdk-feature" installMode="root"/>
       <feature id="org.eclipse.wst.xml_ui.feature" installMode="root"/>
       <feature id="org.eclipse.wst.web_ui.feature" installMode="root"/>

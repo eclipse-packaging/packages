@@ -243,7 +243,7 @@ United States, other countries, or both.
       <feature id="org.eclipse.mylyn.team_feature" installMode="root"/>
       <feature id="org.eclipse.mylyn.versions" installMode="root"/>
       <feature id="org.eclipse.mylyn.wikitext_feature" installMode="root"/>
-      <!-- Bug 576490: Disable feature that is (hopefully temporarily) disabled in simrel <feature id="org.eclipse.oomph.setup" installMode="root"/> -->
+      <feature id="org.eclipse.oomph.setup" installMode="root"/>
       <feature id="org.eclipse.swt.tools.feature" installMode="root"/>
       <feature id="org.eclipse.test" installMode="root"/>
       <feature id="org.eclipse.wildwebdeveloper.feature" installMode="root"/>

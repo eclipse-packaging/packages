@@ -218,7 +218,7 @@ United States, other countries, or both.
       <feature id="org.eclipse.egit" installMode="root"/>
       <feature id="org.eclipse.jgit" installMode="root"/>
       <feature id="org.eclipse.mylyn.wikitext_feature" installMode="root"/>
-      <!-- Bug 576490: Disable feature that is (hopefully temporarily) disabled in simrel <feature id="org.eclipse.oomph.setup" installMode="root"/> -->
+      <feature id="org.eclipse.oomph.setup" installMode="root"/>
       <feature id="org.eclipse.ptp" installMode="root"/>
       <feature id="org.eclipse.ptp.debug.sdm" installMode="root"/>
       <feature id="org.eclipse.ptp.fortran" installMode="root"/>
