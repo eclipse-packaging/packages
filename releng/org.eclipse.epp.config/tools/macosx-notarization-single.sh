@@ -25,9 +25,9 @@ cp "${DMG_FILE}"-tonotarize "${DMG}"
 
 # Prior to Mac M1 the primar bundle ID used was the name of the package with platform info stripped.
 # However, the ID seems to be allowed to be arbitrary, therefore use the full file name so that
-# aarch an x86_64 make the id unique.
+# aarch an x86_64 make the id unique. Except that it appears that _ is not permitted.
 # See https://developer.apple.com/forums/thread/120421
-PRIMARY_BUNDLE_ID="${DMG}"
+PRIMARY_BUNDLE_ID="$(echo ${DMG} | sed  's/_/-/g')"
 
 retryCount=5
 while [ ${retryCount} -gt 0 ]; do
