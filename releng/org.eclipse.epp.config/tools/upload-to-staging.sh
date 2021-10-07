@@ -10,8 +10,8 @@ SSHUSER="genie.packaging@projects-storage.eclipse.org"
 SSH="ssh ${SSHUSER}"
 SCP="scp"
 
-RELEASE_NAME=2021-09
-RELEASE_MILESTONE=R
+RELEASE_NAME=2021-12
+RELEASE_MILESTONE=M1
 WORKSPACE=${WORKSPACE:-"${PWD}"}
 GIT_REPOSITORY=${GIT_REPOSITORY:-"org.eclipse.epp.packages"}
 BUILT_PACKAGES=$(cat packages.txt)
