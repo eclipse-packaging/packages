@@ -22,8 +22,6 @@ For 2021-06 -> 2022-03 see [Bug 569333](https://bugs.eclipse.org/bugs/show_bug.c
 
 **When:** Before every M1
 
-**TODO figure out where in the instructions to add this for Bug 575679:** Make the splash.bmp 72 DPI.
-
-The splash screen needs to be an (approximately) 450x300 pixels .bmp file, 24-bits RGB (maybe other depth work too, but it's not tested), **without color space information** (some SWT bug). To produce it, if the initial splash screens aren't of that form (they're usually .jpg files), open the desired splash screen variation file from the `org.eclipse.epp.package.common/splash/` folder in Gimp, resize it to approximately 450x300 with *Image > Scale*, then *File > Export* it: choose the location `org.eclipse.epp.package.common/splash.bmp` press *Save*, and in the Export options, tick *Compatibility Options > Do not write color space information*. Apply.
+The splash screen needs to be an (approximately) 450x300 pixels .bmp file, 24-bits RGB (maybe other depth work too, but it's not tested), **without color space information** (some SWT bug). To produce it, if the initial splash screens aren't of that form (they're usually .jpg files), open the desired splash screen variation file from the `org.eclipse.epp.package.common/splash/` folder in Gimp, resize it to approximately 450x300 with *Image > Scale*, then set DPI to 72 with *Image > Print Size*, then *File > Export* it: choose the location `org.eclipse.epp.package.common/splash.bmp` press *Save*, and in the Export options, tick *Compatibility Options > Do not write color space information*. Apply.
 
 Then, commit the change locally, test it by building whichever EPP package via command-line and then starting this package. The new splash screen should be in place. Then, push the change to Gerrit.
