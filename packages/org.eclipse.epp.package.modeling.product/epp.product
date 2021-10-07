@@ -213,7 +213,7 @@ United States, other countries, or both.
       <feature id="org.eclipse.emf.compare.ide.ui.source" installMode="root"/>
       <feature id="org.eclipse.emf.compare.source" installMode="root"/>
       <feature id="org.eclipse.emf.compare.diagram.sirius.source" installMode="root"/>
-      <feature id="org.eclipse.emf.compare.egit" installMode="root"/>
+      <!-- Bug 576488: Disable feature that is (hopefully temporarily) disabled in simrel <feature id="org.eclipse.emf.compare.egit" installMode="root"/> -->
       <feature id="org.eclipse.emf.ecoretools.design" installMode="root"/>
       <feature id="org.eclipse.emf.ecp.emfforms.sdk.feature" installMode="root"/>
       <feature id="org.eclipse.emf.parsley.sdk" installMode="root"/>
