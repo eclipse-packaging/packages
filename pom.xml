@@ -163,6 +163,24 @@
           </execution>
         </executions>
       </plugin>
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>tycho-p2-repository-plugin</artifactId>
+        <version>${tycho.version}</version>
+        <executions>
+          <execution>
+            <id>add-missing-checksums</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>fix-artifacts-metadata</goal>
+            </goals>
+            <configuration>
+              <repositoryLocation>${basedir}/archive/repository</repositoryLocation>
+              <repositoryName>EPP</repositoryName>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
     </plugins>
   </build>
 </project>
