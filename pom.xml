@@ -122,53 +122,47 @@
         <module>packages/org.eclipse.epp.package.committers.product</module>
       </modules>
     </profile>
-    <profile>
-      <!-- This runs as a profile (see createSettings.sh for enablemnt) because it fails
-           if building a single package that doesn't include justj -->
-      <id>remove-justj-from-p2</id>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.eclipse.tycho.extras</groupId>
-            <artifactId>tycho-eclipserun-plugin</artifactId>
-            <version>${tycho.version}</version>
-            <executions>
-              <execution>
-                <id>remove-justj-from-p2</id>
-                <phase>verify</phase>
-                <goals>
-                  <goal>eclipse-run</goal>
-                </goals>
-                <configuration>
-                  <appArgLine>-data target/antrun-workspace -application org.eclipse.ant.core.antRunner -buildfile ${basedir}/releng/org.eclipse.epp.config/tools/remove-justj-from-p2.xml</appArgLine>
-                  <repositories>
-                    <repository>
-                      <id>eclipse</id>
-                      <layout>p2</layout>
-                      <url>http://download.eclipse.org/releases/latest</url>
-                    </repository>
-                  </repositories>
-                  <dependencies>
-                    <dependency>
-                      <artifactId>org.eclipse.ant.core</artifactId>
-                      <type>eclipse-plugin</type>
-                    </dependency>
-                    <dependency>
-                      <artifactId>org.apache.ant</artifactId>
-                      <type>eclipse-plugin</type>
-                    </dependency>
-                    <dependency>
-                      <artifactId>org.eclipse.pde.api.tools</artifactId>
-                      <type>eclipse-plugin</type>
-                    </dependency>
-                  </dependencies>
-                </configuration>
-              </execution>
-            </executions>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
   </profiles>
-
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.eclipse.tycho.extras</groupId>
+        <artifactId>tycho-eclipserun-plugin</artifactId>
+        <version>${tycho.version}</version>
+        <executions>
+          <execution>
+            <id>remove-justj-from-p2</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>eclipse-run</goal>
+            </goals>
+            <configuration>
+              <appArgLine>-data target/antrun-workspace -application org.eclipse.ant.core.antRunner -buildfile ${basedir}/releng/org.eclipse.epp.config/tools/remove-justj-from-p2.xml</appArgLine>
+              <repositories>
+                <repository>
+                  <id>eclipse</id>
+                  <layout>p2</layout>
+                  <url>http://download.eclipse.org/releases/latest</url>
+                </repository>
+              </repositories>
+              <dependencies>
+                <dependency>
+                  <artifactId>org.eclipse.ant.core</artifactId>
+                  <type>eclipse-plugin</type>
+                </dependency>
+                <dependency>
+                  <artifactId>org.apache.ant</artifactId>
+                  <type>eclipse-plugin</type>
+                </dependency>
+                <dependency>
+                  <artifactId>org.eclipse.pde.api.tools</artifactId>
+                  <type>eclipse-plugin</type>
+                </dependency>
+              </dependencies>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
 </project>
