@@ -24,7 +24,7 @@ EPP releases happen for each milestone and release candidate according to the [E
 
 **Steps for all Milestones and RCs:**
 - [ ] Make sure any outstanding reviews are progressing - e.g. file IP logs, get PMC approval, etc. 
-    - For 2021-09 there is no review planned, next review expected to be a progress review around Spring 2022
+    - For 2021-12 there is no review planned, next review expected to be a progress review around Spring 2022
 - [ ] Ensure that the [CI build](https://ci.eclipse.org/packaging/job/simrel.epp-tycho-build/) is green<!-- or yellow (yellow means some files have failed to notarize which can be handled later on in this process)-->. Resolving non-green builds will require tracking down problems and incompatibilities across all Eclipse participating projects. [cross-project-issues-dev](https://accounts.eclipse.org/mailing-list/cross-project-issues-dev) mailing list is a good place to start when tracking such problems.
 - [ ] Check that packages containing incubating projects have that information reflected in Help -> About dialog. See near the end of build output for report of check-incubating.sh script.
     - `-incubation` and ` (includes Incubating components)` are not used in packageMetaData anymore (See [Bug 564214](https://bugs.eclipse.org/bugs/show_bug.cgi?id=564214))
@@ -59,7 +59,7 @@ EPP releases happen for each milestone and release candidate according to the [E
     - [ ] Help -> About says expected build name and milestone, e.g. `2020-03-M2`
     - [ ] `org.eclipse.epp.package.*` features and bundles have the timestamp of the forced qualifier update or later
     - [ ] Upgrade from previous release works. To test the upgrade an equivalent to the simrel release composite site needs to done. Add the following software sites to available software, check for updates and then make sure stuff works. In particular check error log and that core features (Such as JDT, Platform) have been upgraded.
-        - `https://download.eclipse.org/staging/2021-09/`
+        - `https://download.eclipse.org/staging/2021-12/`
         - `https://download.eclipse.org/technology/epp/staging/repository/`
     - [ ] Verify no non-EPP content is in the p2 repo (especially justj, update [remove-justj-from-p2.xml](https://git.eclipse.org/c/epp/org.eclipse.epp.packages.git/tree/releng/org.eclipse.epp.config/tools/remove-justj-from-p2.xml) if needed)
 - [ ] Edit the [Jenkins build](https://ci.eclipse.org/packaging/job/simrel.epp-tycho-build/)
