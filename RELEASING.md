@@ -18,6 +18,7 @@ EPP releases happen for each milestone and release candidate according to the [E
     - [ ] `2020-12` -> `2021->03` part
     - [ ] `4.14` -> `4.15` part
 - [ ] rsync the downloads area to archive.eclipse.org and remove non-R downloads.
+    - This can be done either through the web ui at https://download.eclipse.org/technology/epp/ or with the following steps:
     - [ ] Remove the old M and RC builds with https://ci.eclipse.org/packaging/job/releng-delete-old-M-RC-downloads
     - [ ] rsync the last release to the archives with https://ci.eclipse.org/packaging/job/releng-rsync-epp-downloads-to-archive
     - [ ] Remove releases from download.eclipse.org by listing releases to delete and then running https://ci.eclipse.org/packaging/job/releng-remove-old-downloads (TODO create this job)
