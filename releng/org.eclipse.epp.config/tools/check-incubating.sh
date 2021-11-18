@@ -25,7 +25,7 @@ for i in *eclipse*linux.gtk.x86_64.tar.gz; do
         grep -v "org\\.eclipse\\.tracecompass\\..*" | \
         grep -v "org\\.eclipse\\.m2e\\.workspace\\.cli.*" | \
         grep -v "org\\.eclipse\\.jface\\.notifications" | \
-        grep -v "org\\.eclipse\\.cdt\\.debug\\.core\\.memory" \
+        grep -v "org\\.eclipse\\.cdt\\.debug\\.core\\.memory" | \
         grep -v "org\\.eclipse\\.pde\\.spy" \
         || echo "  No incubating plug-ins identified"
 done
