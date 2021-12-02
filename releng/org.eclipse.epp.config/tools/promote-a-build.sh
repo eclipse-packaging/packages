@@ -5,8 +5,8 @@ set -e # error out on any failed commands
 set -x # echo all commands used for debugging purposes
 
 RELEASE_NAME=2021-12
-RELEASE_MILESTONE=RC1
-RELEASE_DIR=202111251200
+RELEASE_MILESTONE=R
+RELEASE_DIR=202112021200
 EPP_DOWNLOADS=/home/data/httpd/download.eclipse.org/technology/epp
 DOWNLOADS=${EPP_DOWNLOADS}/downloads/release/${RELEASE_NAME}/
 REPO=${EPP_DOWNLOADS}/packages/${RELEASE_NAME}/
@@ -51,8 +51,8 @@ cat > release.xml <<EOM
 <past>2020-12/R</past>
 <past>2021-03/R</past>
 <past>2021-06/R</past>
-<present>2021-09/R</present>
-<future>2021-12/RC1</future>
+<past>2021-09/R</past>
+<present>2021-12/R</present>
 </packages>
 EOM
 $ECHO $SCP release.xml "${SSHUSER}:"${EPP_DOWNLOADS}/downloads/release/release.xml
