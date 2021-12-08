@@ -39,6 +39,7 @@ fi
 
 # ----------------------------------------------------------------------------------------------
 # Update the release.xml for Web team to consume and create the entries in https://www.eclipse.org/downloads/packages/
+# The other consumer of this is some external packagers, see Bug 577659 Comment 3 for an example
 cat > release.xml <<EOM
 <packages>
 <past>2019-03/R</past>
