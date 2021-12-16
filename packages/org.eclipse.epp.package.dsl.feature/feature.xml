@@ -32,14 +32,6 @@
         Since the DSL package already moved some of the dependencies to the product
         definition, no need to change anything here.
      -->
-      <import feature="org.eclipse.sdk"/>
-      <import feature="org.eclipse.egit"/>
-      <import feature="org.eclipse.egit.import"/>
-      <import feature="org.eclipse.m2e.feature"/>
-      <import feature="org.eclipse.m2e.lemminx.feature"/>
-      <import feature="org.eclipse.m2e.logback.feature"/>
-      <import feature="org.eclipse.wst.xml_ui.feature"/>
-      <import feature="org.eclipse.buildship"/>
    </requires>
 
    <plugin
