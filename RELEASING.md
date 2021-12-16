@@ -52,6 +52,8 @@ EPP releases happen for each milestone and release candidate according to the [E
     - [ ] Check the build script output to make sure that the curl calls were successful (e.g. no `curl: (92) HTTP/2 stream 0 was not closed cleanly: INTERNAL_ERROR (err 2)
 ` messages)
     - If there is an error like the above the .dmg file that is copied to download.eclipse.org is corrupt. Manually rename the `.dmg-signed` to `.dmg-tonotarize` and rerun the notarization
+    - **NOTE** It seems perfectly normal that the notarize job needs to be run multiple times as so many notarization attempts fail due to 500 and 000 response codes from the notarization server. See [Bug 571669](https://bugs.eclipse.org/bugs/show_bug.cgi?id=571669)
+    - **NOTE** Sometimes the notarization server has an error that causes a failure that requires Webmaster support. Error looks like "an existing transporter instance is currently uploading this package". To resolve request assistance in [Bug 571669](https://bugs.eclipse.org/bugs/show_bug.cgi?id=571669) (like what was done in Comment 11 of that bug). (TODO it may be possible to workaround this error by always using a different random ID when doing the notarization.)
 - [ ] Check that there are no unexpected warnings in the console output. Especially look for warnings about failure to sign. (Warnings about Mirror tool seem to be ok and can be ignored. In a historically good build there is one `[WARNING] Mirror tool: Messages while mirroring artifact descriptors.` per package)
     - If warnings about signings occur that leave the dmg unsigned and the build does not fail, please reopen [Bug 567916](https://bugs.eclipse.org/bugs/show_bug.cgi?id=567916)
 - [ ] Sanity check the build for the following:
@@ -75,6 +77,7 @@ EPP releases happen for each milestone and release candidate according to the [E
 - [ ] Re-enable the [CI build](https://ci.eclipse.org/packaging/job/simrel.epp-tycho-build/)
 - [ ] Update the [LastRecorded+1.txt](https://git.eclipse.org/c/epp/org.eclipse.epp.packages.git/tree/LastRecorded+1.txt) which any package and platform +1s that have been received since the last update.
 - [ ] Send email to epp-dev to request package maintainers test it. Include the last recorded +1 details during M3-RC2 emails.
+- [ ] Archive old milestones/RCs so that they don't accumulate on the mirrors
 - [ ] **24 Hours before Final release** Make sure files are in final location to allow downloads to mirror
     - [ ] Tag the release, e.g. with 2020-03_R. Example command line: `git tag -s -a 2020-03_R -m"2020-03 Release" 1b7a1c1af156e3ac57768b87be258cd22b49456b`
     - [ ] rename the provisional release milestone to final directory (E.g. [2020-09/202009101200](https://download.eclipse.org/technology/epp/downloads/release/2020-09/202009101200/) -> [2020-09/R](https://download.eclipse.org/technology/epp/downloads/release/2020-09/R/) (to match what is in [release.xml](https://download.eclipse.org/technology/epp/downloads/release/release.xml)) - this only applies to downloads, not to packages
