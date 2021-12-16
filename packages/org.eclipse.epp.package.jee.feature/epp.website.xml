@@ -30,11 +30,11 @@ Click <a href="https://github.com/eclipse/wildwebdeveloper/issues/new">here</a> 
   </packageMetaData>
   <MoreInfo>
   <NewAndNoteworthy
-    url="https://www.eclipse.org/eclipse/news/4.22/"
+    url="https://www.eclipse.org/eclipse/news/4.23/"
     project="Eclipse Platform" />
   </MoreInfo>
 
   <!-- name, the name of the product, used in naming the created files. -->
-  <product name="eclipse-jee-2021-12-R" />
+  <product name="eclipse-jee-2022-03-M1" />
 
 </configuration>
