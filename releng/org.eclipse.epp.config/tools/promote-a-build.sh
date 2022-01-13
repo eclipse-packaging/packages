@@ -13,7 +13,11 @@ function get_property
 }
 
 echo Create the epp.properties file
-mvn clean package -f ${DIR}
+MVN=/opt/tools/apache-maven/latest/bin/mvn
+if [ ! -f "$MVN" ]; then
+    MVN=mvn
+fi
+${MVN} clean package -f ${DIR}
 
 RELEASE_NAME=$(get_property RELEASE_NAME)
 RELEASE_MILESTONE=$(get_property RELEASE_MILESTONE)
