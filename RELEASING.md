@@ -78,7 +78,7 @@ EPP releases happen for each milestone and release candidate according to the [E
 - [ ] Update `SIMREL_REPO` to the staging repo so CI builds run against CI of SimRel
 - [ ] Re-enable the [CI build](https://ci.eclipse.org/packaging/job/simrel.epp-tycho-build/)
 - [ ] Update the [LastRecorded+1.txt](https://git.eclipse.org/c/epp/org.eclipse.epp.packages.git/tree/LastRecorded+1.txt) which any package and platform +1s that have been received since the last update.
-- [ ] Send email to epp-dev to request package maintainers test it. Include the last recorded +1 details during M3-RC2 emails.
+- [ ] Send email to epp-dev to request package maintainers test it. The email is templated in email.txt in the release directory.
 - [ ] Archive old milestones/RCs so that they don't accumulate on the mirrors
 - [ ] **24 Hours before Final release** Make sure files are in final location to allow downloads to mirror
     - [ ] Tag the release, e.g. with 2020-03_R. Example command line: `git tag -s -a 2020-03_R -m"2020-03 Release" 1b7a1c1af156e3ac57768b87be258cd22b49456b`

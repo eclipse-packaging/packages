@@ -9,16 +9,16 @@ DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 # Usage: get_property KEY
 function get_property
 {
-    grep "^$1=" "${DIR}/epp.properties" | cut -d'=' -f2
+    grep "^$1=" "${DIR}/epp.properties" | cut -d'=' -f2 | sed '-es,\\:,:,'
 }
 
 echo Create the epp.properties file
 mvn clean package -f ${DIR}
 
-
 RELEASE_NAME=$(get_property RELEASE_NAME)
 RELEASE_MILESTONE=$(get_property RELEASE_MILESTONE)
 RELEASE_DIR=$(get_property RELEASE_DIR)
+SIMREL_REPO=$(get_property SIMREL_REPO)
 EPP_DOWNLOADS=/home/data/httpd/download.eclipse.org/technology/epp
 DOWNLOADS=${EPP_DOWNLOADS}/downloads/release/${RELEASE_NAME}/
 REPO=${EPP_DOWNLOADS}/packages/${RELEASE_NAME}/
@@ -71,6 +71,55 @@ cat > release.xml <<EOM
 EOM
 $ECHO $SCP release.xml "${SSHUSER}:"${EPP_DOWNLOADS}/downloads/release/release.xml
 
+
+# -------------------------
+# Prepare template email with all the correct information
+cat > email.txt <<EOM
+Hi everyone,
+
+Our next milestone build is available for testing: EPP ${RELEASE_NAME} ${RELEASE_MILESTONE}
+
+TODO say: No special issues to report! or write the issues to bring to the attention of the group when sending the email.
+
+I have been following the steps on https://hackmd.io/@jonahgraham/eclipse-epp-release-process - you can see the checkmarks as to what is done.
+
+Download link: https://download.eclipse.org/technology/epp/downloads/release/${RELEASE_NAME}/${RELEASE_DIR}/_mirrors.php - This URL will change early next week to the release URL ahead of the release on Wednesday - assuming no respins!
+
+EPP was built with the p2 repositories at:
+
+${SIMREL_REPO} and
+https://download.eclipse.org/technology/epp/packages/${RELEASE_NAME}/${RELEASE_DIR}/
+
+Please test and send your +1 to this mailing list. +1s are optional as the package will be published anyway.
+
+Last +1 received for each package and platform (apologies if I missed one of your +1 emails, just let me know and I will update Last Recorded +1) I have highlighted those packages/platforms that I haven't seen any confirmation in this release cycle on.
+
+Packages:
+committers - 2021-12 M2
+cpp - 2021-12 RC1
+dsl - 2021-12 M3
+embedcpp - 2021-12 M3
+java - 2021-12 M2
+jee - 2021-12 RC1
+modeling - 2021-12 M3
+parallel - 2021-09 RC2
+php - 2020-12 RC2
+rcp - 2021-06 RC1
+scout - 2021-12 M3
+
+Platforms:
+Linux x86_64 - 2021-12 M3
+Linux aarch64 - 2021-09 RC1
+Windows - 2021-12 RC1
+macOS x86_64 - 2021-12 M3
+macOS aarch64 - 2021-12 M3
+
+Thank you for testing!
+
+Regards,
+Jonah
+EOM
+$ECHO $SCP email.txt "${SSHUSER}:"${DOWNLOADS}/email.txt
 
 # ----------------------------------------------------------------------------------------------
 # Prepare compositeArtifacts.xml/compositeContent.xml that will be made visible with https://ci.eclipse.org/packaging/job/epp-makeVisible/
