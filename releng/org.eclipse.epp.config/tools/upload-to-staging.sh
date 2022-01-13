@@ -10,8 +10,19 @@ SSHUSER="genie.packaging@projects-storage.eclipse.org"
 SSH="ssh ${SSHUSER}"
 SCP="scp"
 
-RELEASE_NAME=2022-03
-RELEASE_MILESTONE=M1
+DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+# Read a property from the epp.properties file (which needs to be generated)
+# Usage: get_property KEY
+function get_property
+{
+    grep "^$1=" "${DIR}/epp.properties" | cut -d'=' -f2
+}
+
+echo Create the epp.properties file
+mvn clean package -f ${DIR}
+
+RELEASE_NAME=$(get_property RELEASE_NAME)
+RELEASE_MILESTONE=$(get_property RELEASE_MILESTONE)
 WORKSPACE=${WORKSPACE:-"${PWD}"}
 GIT_REPOSITORY=${GIT_REPOSITORY:-"org.eclipse.epp.packages"}
 BUILT_PACKAGES=$(cat packages.txt)

@@ -13,7 +13,7 @@ EPP releases happen for each milestone and release candidate according to the [E
 - [ ] Create new [PMI entry](https://projects.eclipse.org/projects/technology.packaging)
 - [ ] Add Target Milestones in [Bugzilla](https://dev.eclipse.org/committers/bugs/bugz_manager.php)
 - [ ] Update splash screen (once per release cycle, hopefully done before M1). See detailed [instructions](https://git.eclipse.org/c/epp/org.eclipse.epp.packages.git/tree/packages/org.eclipse.epp.package.common/splash/INSTRUCTIONS.md). For 2021-06 see Bug [569333](https://bugs.eclipse.org/bugs/show_bug.cgi?id=569333) for new splash screens.
-- [ ] When the year changes, e.g. between 2019-12 and 2020-03 releases, an update of the copyright year is required with a very smart search&replace. A good replacement is `/, 2022/, 2022/` excluding `*.svg`
+- [ ] When the year changes, e.g. between 2019-12 and 2020-03 releases, an update of the copyright year is required with a very smart search&replace. A good replacement is `/, 2021/, 2022/` excluding `*.svg`
 - [ ] In addition to the "Update Name" step on every M and RC, the whole version string is updated, including platform version; this is a large change including pom.xml, feature.xml, MANIFEST.MF, epp.website.xml, epp.product, build.xml, and p2.inf
     - [ ] `2020-12` -> `2021->03` part
     - [ ] `4.14` -> `4.15` part
@@ -25,7 +25,7 @@ EPP releases happen for each milestone and release candidate according to the [E
 
 **Steps for all Milestones and RCs:**
 - [ ] Make sure any outstanding reviews are progressing - e.g. file IP logs, get PMC approval, etc. 
-    - For 2022-03 there is no review planned, next review expected to be a progress review around Spring 2022
+    - For 2022-03 there is no review planned, next review expected to be a progress review around 2022-06
 - [ ] Ensure that the [CI build](https://ci.eclipse.org/packaging/job/simrel.epp-tycho-build/) is green<!-- or yellow (yellow means some files have failed to notarize which can be handled later on in this process)-->. Resolving non-green builds will require tracking down problems and incompatibilities across all Eclipse participating projects. [cross-project-issues-dev](https://accounts.eclipse.org/mailing-list/cross-project-issues-dev) mailing list is a good place to start when tracking such problems.
 - [ ] Check that packages containing incubating projects have that information reflected in Help -> About dialog. See near the end of build output for report of check-incubating.sh script.
     - `-incubation` and ` (includes Incubating components)` are not used in packageMetaData anymore (See [Bug 564214](https://bugs.eclipse.org/bugs/show_bug.cgi?id=564214))
@@ -36,16 +36,17 @@ EPP releases happen for each milestone and release candidate according to the [E
     - Coordination may be needed with JustJ and Platform projects to make sure we are all on the same page.
     - [ ] Update the full names of the JRE bundles in [remove-justj-from-p2.xml](https://git.eclipse.org/c/epp/org.eclipse.epp.packages.git/tree/releng/org.eclipse.epp.config/tools/remove-justj-from-p2.xml)
 - [ ] Update name of the release in strings with a "smart" global find&replace. *Be careful on M3 that the replace did not match the Eclipse project name M2E!* See this [gerrit](https://git.eclipse.org/r/#/c/158509/) for an example. Use commit message like `[releng] Prepare repo for 2020-12 M1`. In particular, check:
-    - On M1 add the M1 qualifier (e.g. `2021-03-R` -> `2021-06-M1`, on RC2 set it to `R` the qualifier e.g. `2021-03-RC1` -> `2021-03-R`). **Except** for `eclipse.simultaneous.release.name` which should go from `2021-03 (4.19.0)` -> `2021-06 M1 (4.20.0 M1)` on M1 and `2021-03 RC1 (4.19.0 RC1)` -> `2021-03 (4.19.0)` on RC2
+    -  **TODO can this be automated** On M1 add the M1 qualifier (e.g. `2021-03-R` -> `2021-06-M1`, on RC2 set it to `R` the qualifier e.g. `2021-03-RC1` -> `2021-03-R`). **Except** for `eclipse.simultaneous.release.name` which should go from `2021-03 (4.19.0)` -> `2021-06 M1 (4.20.0 M1)` on M1 and `2021-03 RC1 (4.19.0 RC1)` -> `2021-03 (4.19.0)` on RC2
     - [ ] `packages/*/epp.website.xml` for `product name=` line
-    - [ ] Variables in parent pom `releng/org.eclipse.epp.config/parent/pom.xml`
+    - [ ] `RELEASE_NAME`, `RELEASE_MILESTONE`, `RELEASE_DIR`, `SIMREL_REPO` Variables in parent pom `releng/org.eclipse.epp.config/parent/pom.xml`
+        - `SIMREL_REPO` should be updated to the URL published in the email to cross-project-issues announcing SimRel repo is ready for EPP build
+    - **TODO can this part below be automated**
         - On R build, for `eclipse.simultaneous.release.name` remove qualifier i.e. it should be `2020-12 (4.18.0)`
         - On M1 build add the qualifier back in, for `eclipse.simultaneous.release.name` remove qualifier i.e. it should be `2020-12 M1 (4.18.0 M1)`
-    - [ ] release.xml template in `releng/org.eclipse.epp.config/tools/promote-a-build.sh`
-    - [ ] `RELEASE_NAME`, `RELEASE_MILESTONE` and `RELEASE_DIR` in `releng/org.eclipse.epp.config/tools/promote-a-build.sh`
-    - [ ] `RELEASE_NAME` and `RELEASE_MILESTONE` in `releng/org.eclipse.epp.config/tools/upload-to-staging.sh`
+    - [ ] **TODO can this be automated** on release builds release.xml template in `releng/org.eclipse.epp.config/tools/promote-a-build.sh` needs updating
 - [ ] Update the build qualifiers to ensure that packages are all updated. See this [gerrit](https://git.eclipse.org/r/#/c/161075/) for an example. To do this run [`releng/org.eclipse.epp.config/tools/setGitDate`](https://git.eclipse.org/c/epp/org.eclipse.epp.packages.git/tree/releng/org.eclipse.epp.config/tools/setGitDate) script. This script will make a local commit you need to push.
 - [ ] Wait for announcement that the staging repo is ready on [cross-project-issues-dev](https://accounts.eclipse.org/mailing-list/cross-project-issues-dev). An [example announcement](https://www.eclipse.org/lists/cross-project-issues-dev/msg17420.html).
+    - [ ] Update `SIMREL_REPO` if not done above.
 - [ ] Run a [CI build](https://ci.eclipse.org/packaging/job/simrel.epp-tycho-build/) that includes the above changes.
 - [ ] Disable the [CI build](https://ci.eclipse.org/packaging/job/simrel.epp-tycho-build/) so that the build results are not overwritten while doing the promotion
 - [ ] Run the [Notarize MacOSX Downloads](https://ci.eclipse.org/packaging/job/notarize-downloads/) CI job to notarize DMG packages on download.eclipse.org if the promoted build was unstable. *This can be done after promotion if time is tight or the notarization fails repeatedly. See [Bug 571669](https://bugs.eclipse.org/bugs/show_bug.cgi?id=571669) for an example of failures.*
@@ -63,7 +64,7 @@ EPP releases happen for each milestone and release candidate according to the [E
     - [ ] Help -> About says expected build name and milestone, e.g. `2020-03-M2`
     - [ ] `org.eclipse.epp.package.*` features and bundles have the timestamp of the forced qualifier update or later
     - [ ] Upgrade from previous release works. To test the upgrade an equivalent to the simrel release composite site needs to done. Add the following software sites to available software, check for updates and then make sure stuff works. In particular check error log and that core features (Such as JDT, Platform) have been upgraded.
-        - `https://download.eclipse.org/staging/2022-03/`
+        - `https://download.eclipse.org/staging/2021-12/`
         - `https://download.eclipse.org/technology/epp/staging/repository/`
     - [ ] Verify no non-EPP content is in the p2 repo (especially justj, update [remove-justj-from-p2.xml](https://git.eclipse.org/c/epp/org.eclipse.epp.packages.git/tree/releng/org.eclipse.epp.config/tools/remove-justj-from-p2.xml) if needed)
 - [ ] Edit the [Jenkins build](https://ci.eclipse.org/packaging/job/simrel.epp-tycho-build/)
@@ -74,6 +75,7 @@ EPP releases happen for each milestone and release candidate according to the [E
     - This is done late in the day to try and reduce impact of adding dozens of GB on the download server and having all the mirrors start to pick it up right away. See [epp-dev emails that led to this decision](https://www.eclipse.org/lists/epp-dev/msg06317.html).
     - The `DRY_RUN` can be done earlier in the day and is a good way to increase the chance that the final promotion step will be successful.
 - [ ] Run the [Notarize MacOSX Downloads](https://ci.eclipse.org/packaging/job/notarize-downloads/) CI job to notarize DMG packages on download.eclipse.org if the promoted build was unstable
+- [ ] Update `SIMREL_REPO` to the staging repo so CI builds run against CI of SimRel
 - [ ] Re-enable the [CI build](https://ci.eclipse.org/packaging/job/simrel.epp-tycho-build/)
 - [ ] Update the [LastRecorded+1.txt](https://git.eclipse.org/c/epp/org.eclipse.epp.packages.git/tree/LastRecorded+1.txt) which any package and platform +1s that have been received since the last update.
 - [ ] Send email to epp-dev to request package maintainers test it. Include the last recorded +1 details during M3-RC2 emails.

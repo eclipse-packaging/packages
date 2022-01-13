@@ -4,9 +4,21 @@ set -u # run with unset flag error so that missing parameters cause build failur
 set -e # error out on any failed commands
 set -x # echo all commands used for debugging purposes
 
-RELEASE_NAME=2022-03
-RELEASE_MILESTONE=M1
-RELEASE_DIR=202201131200
+DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+# Read a property from the epp.properties file (which needs to be generated)
+# Usage: get_property KEY
+function get_property
+{
+    grep "^$1=" "${DIR}/epp.properties" | cut -d'=' -f2
+}
+
+echo Create the epp.properties file
+mvn clean package -f ${DIR}
+
+
+RELEASE_NAME=$(get_property RELEASE_NAME)
+RELEASE_MILESTONE=$(get_property RELEASE_MILESTONE)
+RELEASE_DIR=$(get_property RELEASE_DIR)
 EPP_DOWNLOADS=/home/data/httpd/download.eclipse.org/technology/epp
 DOWNLOADS=${EPP_DOWNLOADS}/downloads/release/${RELEASE_NAME}/
 REPO=${EPP_DOWNLOADS}/packages/${RELEASE_NAME}/
@@ -54,7 +66,7 @@ cat > release.xml <<EOM
 <past>2021-06/R</past>
 <past>2021-09/R</past>
 <present>2021-12/R</present>
-<future>2022-03/M1</future>
+<future>${RELEASE_NAME}/${RELEASE_MILESTONE}</future>
 </packages>
 EOM
 $ECHO $SCP release.xml "${SSHUSER}:"${EPP_DOWNLOADS}/downloads/release/release.xml

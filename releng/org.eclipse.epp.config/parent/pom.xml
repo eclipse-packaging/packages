@@ -34,14 +34,24 @@
     <eclipse.epp.archiveDirectory>${basedir}/../../archive/</eclipse.epp.archiveDirectory>
     <!-- The location that is used to assemble the single EPP configuration p2 repository -->
     <eclipse.epp.targetRepository>${eclipse.epp.archiveDirectory}/repository/</eclipse.epp.targetRepository>
+    <!-- Name of the release (no milestone) -->
+    <RELEASE_NAME>2022-03</RELEASE_NAME>
+    <!-- Name of the milestone -->
+    <RELEASE_MILESTONE>M1</RELEASE_MILESTONE>
+    <!-- Version of the release -->
+    <RELEASE_VERSION>4.23.0</RELEASE_VERSION>
+    <!-- Name release directory on download.eclipse.org -->
+    <RELEASE_DIR>202201131200</RELEASE_DIR>
+    <!-- SimRel Repo to build from -->
+    <SIMREL_REPO>https://download.eclipse.org/staging/2022-03/</SIMREL_REPO>
     <!-- ID used to generate the filename of the packages -->
-    <eclipse.simultaneous.release.id>2022-03-M1</eclipse.simultaneous.release.id>
+    <eclipse.simultaneous.release.id>${RELEASE_NAME}-${RELEASE_MILESTONE}</eclipse.simultaneous.release.id>
     <!-- Timestamp used in various places, e.g. the about dialog (see about.mappings) -->
     <eclipse.simultaneous.release.build>${maven.build.timestamp}</eclipse.simultaneous.release.build>
     <!-- Human readable name of the release, e.g. used in the about dialog (see about.mappings) -->
-    <eclipse.simultaneous.release.name>2022-03 M1 (4.23.0 M1)</eclipse.simultaneous.release.name>
+    <eclipse.simultaneous.release.name>${RELEASE_NAME} ${RELEASE_MILESTONE} (${RELEASE_VERSION} ${RELEASE_MILESTONE})</eclipse.simultaneous.release.name>
     <!-- Upstream p2 repository, used as a source for pre-compiled build artifacts -->
-    <eclipse.simultaneous.release.repository>https://download.eclipse.org/staging/2022-03/</eclipse.simultaneous.release.repository>
+    <eclipse.simultaneous.release.repository>${SIMREL_REPO}</eclipse.simultaneous.release.repository>
   </properties>
 
   <prerequisites>
@@ -79,7 +89,6 @@
 
   <build>
     <plugins>
-
       <plugin>
         <groupId>org.eclipse.tycho</groupId>
         <artifactId>tycho-maven-plugin</artifactId>
@@ -187,6 +196,11 @@
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>build-helper-maven-plugin</artifactId>
           <version>3.2.0</version>
+        </plugin>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>properties-maven-plugin</artifactId>
+          <version>1.0.0</version>
         </plugin>
         <plugin>
           <groupId>org.eclipse.tycho</groupId>
