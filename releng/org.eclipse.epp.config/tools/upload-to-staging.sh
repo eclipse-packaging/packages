@@ -27,6 +27,8 @@ ${MVN} clean package -f ${DIR}
 
 RELEASE_NAME=$(get_property RELEASE_NAME)
 RELEASE_MILESTONE=$(get_property RELEASE_MILESTONE)
+RELEASE_DIR=$(get_property RELEASE_DIR)
+SIMREL_REPO=$(get_property SIMREL_REPO)
 WORKSPACE=${WORKSPACE:-"${PWD}"}
 GIT_REPOSITORY=${GIT_REPOSITORY:-"org.eclipse.epp.packages"}
 BUILT_PACKAGES=$(cat packages.txt)
@@ -81,7 +83,7 @@ TODO say: No special issues to report! or write the issues to bring to the atten
 
 I have been following the steps on https://hackmd.io/@jonahgraham/eclipse-epp-release-process - you can see the checkmarks as to what is done.
 
-Download link: https://download.eclipse.org/technology/epp/downloads/release/${RELEASE_NAME}/${RELEASE_DIR}/_mirrors.php
+Download link: https://download.eclipse.org/technology/epp/downloads/release/${RELEASE_NAME}/${RELEASE_MILESTONE}/_mirrors.php
 
 EPP was built with the p2 repositories at:
 
