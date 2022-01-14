@@ -67,6 +67,58 @@ echo "CI URL: ${BUILD_URL}" >> ci-info.txt
 cp ${WORKSPACE}/${GIT_REPOSITORY}/releng/org.eclipse.epp.config/tools/_mirrors.php _mirrors.php
 
 
+# -------------------------
+# Prepare template email with all the correct information
+cat > email.txt <<EOM
+This is the template email sent to the epp-dev mailing list. Please update the TODO section when sending emails to
+advise of last minute issues, etc.
+
+Hi everyone,
+
+Our next milestone build is available for testing: EPP ${RELEASE_NAME} ${RELEASE_MILESTONE}
+
+TODO say: No special issues to report! or write the issues to bring to the attention of the group when sending the email.
+
+I have been following the steps on https://hackmd.io/@jonahgraham/eclipse-epp-release-process - you can see the checkmarks as to what is done.
+
+Download link: https://download.eclipse.org/technology/epp/downloads/release/${RELEASE_NAME}/${RELEASE_DIR}/_mirrors.php
+
+EPP was built with the p2 repositories at:
+
+${SIMREL_REPO} and
+https://download.eclipse.org/technology/epp/packages/${RELEASE_NAME}/${RELEASE_DIR}/
+
+Please test and send your +1 to this mailing list. +1s are optional as the package will be published anyway.
+
+Last +1 received for each package and platform (apologies if I missed one of your +1 emails, just let me know and I will update Last Recorded +1) I have highlighted those packages/platforms that I haven't seen any confirmation in this release cycle on.
+
+Packages:
+committers - 2021-12 RC2
+cpp - 2021-12 RC2
+dsl - 2021-12 M3
+embedcpp - 2021-12 M3
+java - 2021-12 RC2
+jee - 2021-12 RC1
+modeling - 2021-12 RC2
+parallel - 2021-09 RC2
+php - 2020-12 RC2
+rcp - 2021-12 RC2
+scout - 2021-12 RC2
+
+Platforms:
+Linux x86_64 - 2021-12 RC2
+Linux aarch64 - 2021-09 RC1
+Windows - 2021-12 RC2
+macOS x86_64 - 2021-12 RC2
+macOS aarch64 - 2021-12 M3
+
+Thank you for testing!
+
+Regards,
+Jonah
+EOM
+
+
 # -----------------------------
 # Notarize macos files
 # DISABLED, running on each build can too easily exceed Apple's limits. - see https://bugs.eclipse.org/bugs/show_bug.cgi?id=571669#c42
