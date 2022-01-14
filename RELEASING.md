@@ -49,15 +49,36 @@ EPP releases happen for each milestone and release candidate according to the [E
 - [ ] Wait for announcement that the staging repo is ready on [cross-project-issues-dev](https://accounts.eclipse.org/mailing-list/cross-project-issues-dev). An [example announcement](https://www.eclipse.org/lists/cross-project-issues-dev/msg17420.html).
     - [ ] Update `SIMREL_REPO` if not done above.
 - [ ] Run a [CI build](https://ci.eclipse.org/packaging/job/simrel.epp-tycho-build/) that includes the above changes.
+- [ ] Check that there are no unexpected warnings in the console output. Especially look for warnings about failure to sign. (Warnings about Mirror tool seem to be ok and can be ignored. In a historically good build there is one `[WARNING] Mirror tool: Messages while mirroring artifact descriptors.` per package)
+    - If warnings about signings occur that leave the dmg unsigned and the build does not fail, please reopen [Bug 567916](https://bugs.eclipse.org/bugs/show_bug.cgi?id=567916)
 - [ ] Disable the [CI build](https://ci.eclipse.org/packaging/job/simrel.epp-tycho-build/) so that the build results are not overwritten while doing the promotion
 - [ ] Run the [Notarize MacOSX Downloads](https://ci.eclipse.org/packaging/job/notarize-downloads/) CI job to notarize DMG packages on download.eclipse.org if the promoted build was unstable. *This can be done after promotion if time is tight or the notarization fails repeatedly. See [Bug 571669](https://bugs.eclipse.org/bugs/show_bug.cgi?id=571669) for an example of failures.*
     - [ ] Check the build script output to make sure that the curl calls were successful (e.g. no `curl: (92) HTTP/2 stream 0 was not closed cleanly: INTERNAL_ERROR (err 2)
 ` messages)
     - If there is an error like the above the .dmg file that is copied to download.eclipse.org is corrupt. Manually rename the `.dmg-signed` to `.dmg-tonotarize` and rerun the notarization
+        - A script like this works - I use https://ci.eclipse.org/packaging/job/jonah-releng-test/ job **TODO** add this to git?:
+```
+#!/bin/bash
+
+set -u # run with unset flag error so that missing parameters cause build failure
+set -e # error out on any failed commands
+set -x # echo all commands used for debugging purposes
+
+SSHUSER="genie.packaging@projects-storage.eclipse.org"
+SSH="ssh ${SSHUSER}"
+SCP="scp"
+
+ssh genie.packaging@projects-storage.eclipse.org /bin/bash << EOF
+  set -u # run with unset flag error so that missing parameters cause build failure
+  set -e # error out on any failed commands
+  set -x # echo all commands used for debugging purposes
+  mv -v /home/data/httpd/download.eclipse.org/technology/epp/staging/eclipse-cpp-2022-03-M1-macosx-cocoa-aarch64.dmg-signed /home/data/httpd/download.eclipse.org/technology/epp/staging/eclipse-cpp-2022-03-M1-macosx-cocoa-aarch64.dmg-tonotarize
+EOF
+```
+
+- Other notes about notarization
     - **NOTE** It seems perfectly normal that the notarize job needs to be run multiple times as so many notarization attempts fail due to 500 and 000 response codes from the notarization server. See [Bug 571669](https://bugs.eclipse.org/bugs/show_bug.cgi?id=571669)
     - **NOTE** Sometimes the notarization server has an error that causes a failure that requires Webmaster support. Error looks like "an existing transporter instance is currently uploading this package". To resolve request assistance in [Bug 571669](https://bugs.eclipse.org/bugs/show_bug.cgi?id=571669) (like what was done in Comment 11 of that bug). (TODO it may be possible to workaround this error by always using a different random ID when doing the notarization.)
-- [ ] Check that there are no unexpected warnings in the console output. Especially look for warnings about failure to sign. (Warnings about Mirror tool seem to be ok and can be ignored. In a historically good build there is one `[WARNING] Mirror tool: Messages while mirroring artifact descriptors.` per package)
-    - If warnings about signings occur that leave the dmg unsigned and the build does not fail, please reopen [Bug 567916](https://bugs.eclipse.org/bugs/show_bug.cgi?id=567916)
 - [ ] Sanity check the build for the following:
     - [ ] Download a package from the build's [staging output](https://download.eclipse.org/technology/epp/staging/)
     - [ ] Made sure filenames contain expected build name and milestone, e.g. `2020-03-M2`
@@ -65,7 +86,7 @@ EPP releases happen for each milestone and release candidate according to the [E
     - [ ] Help -> About says expected build name and milestone, e.g. `2020-03-M2`
     - [ ] `org.eclipse.epp.package.*` features and bundles have the timestamp of the forced qualifier update or later
     - [ ] Upgrade from previous release works. To test the upgrade an equivalent to the simrel release composite site needs to done. Add the following software sites to available software, check for updates and then make sure stuff works. In particular check error log and that core features (Such as JDT, Platform) have been upgraded.
-        - `https://download.eclipse.org/staging/2021-12/`
+        - `https://download.eclipse.org/staging/2022-03/` - *NOTE* Use `SIMREL_REPO` if the staging repo has been updated since the `SIMREL_REPO` location was created.
         - `https://download.eclipse.org/technology/epp/staging/repository/`
     - [ ] Verify no non-EPP content is in the p2 repo (especially justj, update [remove-justj-from-p2.xml](https://git.eclipse.org/c/epp/org.eclipse.epp.packages.git/tree/releng/org.eclipse.epp.config/tools/remove-justj-from-p2.xml) if needed)
 - [ ] Edit the [Jenkins build](https://ci.eclipse.org/packaging/job/simrel.epp-tycho-build/)
