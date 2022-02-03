@@ -24,6 +24,9 @@ EPP releases happen for each milestone and release candidate according to the [E
     - [ ] Remove releases from download.eclipse.org by listing releases to delete and then running https://ci.eclipse.org/packaging/job/releng-remove-old-downloads (TODO create this job)
 
 **Steps for all Milestones and RCs:**
+- [ ] Fix/check links in email, the mirrors link was wrong for M1
+- [ ] Look at renaming zips for mac
+- [ ] at beginning of 2022-06 apply removal of Orbit from simrel
 - [ ] Make sure any outstanding reviews are progressing - e.g. file IP logs, get PMC approval, etc. 
     - For 2022-03 there is no review planned, next review expected to be a progress review around 2022-06
 - [ ] Ensure that the [CI build](https://ci.eclipse.org/packaging/job/simrel.epp-tycho-build/) is green<!-- or yellow (yellow means some files have failed to notarize which can be handled later on in this process)-->. Resolving non-green builds will require tracking down problems and incompatibilities across all Eclipse participating projects. [cross-project-issues-dev](https://accounts.eclipse.org/mailing-list/cross-project-issues-dev) mailing list is a good place to start when tracking such problems.
@@ -97,7 +100,7 @@ EOF
     - This is done late in the day to try and reduce impact of adding dozens of GB on the download server and having all the mirrors start to pick it up right away. See [epp-dev emails that led to this decision](https://www.eclipse.org/lists/epp-dev/msg06317.html).
     - The `DRY_RUN` can be done earlier in the day and is a good way to increase the chance that the final promotion step will be successful.
 - [ ] Run the [Notarize MacOSX Downloads](https://ci.eclipse.org/packaging/job/notarize-downloads/) CI job to notarize DMG packages on download.eclipse.org if the promoted build was unstable
-- [ ] Update `SIMREL_REPO` to the staging repo so CI builds run against CI of SimRel
+- [ ] Update `SIMREL_REPO` to the staging repo so CI builds run against CI of SimRel (e.g. [see this gerrit](https://git.eclipse.org/r/c/epp/org.eclipse.epp.packages/+/189618))
 - [ ] Re-enable the [CI build](https://ci.eclipse.org/packaging/job/simrel.epp-tycho-build/)
 - [ ] Send email to epp-dev to request package maintainers test it. The email is templated in email.txt in the release directory.
 - [ ] Archive old milestones/RCs so that they don't accumulate on the mirrors
