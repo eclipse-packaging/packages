@@ -44,7 +44,7 @@
   <repositories>
     <repository>
       <id>justj-11</id>
-      <url>https://download.eclipse.org/justj/jres/11/updates/release/11.0.13/</url>
+      <url>https://download.eclipse.org/justj/jres/11/updates/release/11.0.14/</url>
       <layout>p2</layout>
     </repository>
   </repositories>
