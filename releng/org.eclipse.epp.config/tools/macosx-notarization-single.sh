@@ -29,7 +29,7 @@ cp "${DMG_FILE}"-tonotarize "${DMG}"
 # See https://developer.apple.com/forums/thread/120421
 PRIMARY_BUNDLE_ID="$(echo ${DMG} | sed  's/_/-/g')"
 
-retryCount=5
+retryCount=1
 while [ ${retryCount} -gt 0 ]; do
 
   RESPONSE_RAW=$(curl  --write-out "\n%{http_code}" -s -X POST -F file=@${DMG} -F 'options={"primaryBundleId": "'${PRIMARY_BUNDLE_ID}'", "staple": true};type=application/json' https://cbi.eclipse.org/macos/xcrun/notarize)
@@ -54,7 +54,7 @@ while [ ${retryCount} -gt 0 ]; do
     echo "Notarization failed: ${RESPONSE}"
     retryCount=$(expr $retryCount - 1)
     if [ $retryCount -eq 0 ]; then
-      echo "Notarization failed 3 times. Exiting"
+      echo "Notarization failed. Exiting"
       exit 1
     else
       echo "Retrying..."
