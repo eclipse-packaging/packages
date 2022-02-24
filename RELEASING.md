@@ -58,30 +58,10 @@ EPP releases happen for each milestone and release candidate according to the [E
 - [ ] Run the [Notarize MacOSX Downloads](https://ci.eclipse.org/packaging/job/notarize-downloads/) CI job to notarize DMG packages on download.eclipse.org if the promoted build was unstable. *This can be done after promotion if time is tight or the notarization fails repeatedly. See [Bug 571669](https://bugs.eclipse.org/bugs/show_bug.cgi?id=571669) for an example of failures.*
     - [ ] Check the build script output to make sure that the curl calls were successful (e.g. no `curl: (92) HTTP/2 stream 0 was not closed cleanly: INTERNAL_ERROR (err 2)
 ` messages)
-    - If there is an error like the above the .dmg file that is copied to download.eclipse.org is corrupt. Manually rename the `.dmg-signed` to `.dmg-tonotarize` and rerun the notarization
-        - A script like this works - I use https://ci.eclipse.org/packaging/job/jonah-releng-test/ job **TODO** add this to git?:
-```
-#!/bin/bash
-
-set -u # run with unset flag error so that missing parameters cause build failure
-set -e # error out on any failed commands
-set -x # echo all commands used for debugging purposes
-
-SSHUSER="genie.packaging@projects-storage.eclipse.org"
-SSH="ssh ${SSHUSER}"
-SCP="scp"
-
-ssh genie.packaging@projects-storage.eclipse.org /bin/bash << EOF
-  set -u # run with unset flag error so that missing parameters cause build failure
-  set -e # error out on any failed commands
-  set -x # echo all commands used for debugging purposes
-  mv -v /home/data/httpd/download.eclipse.org/technology/epp/staging/eclipse-cpp-2022-03-M1-macosx-cocoa-aarch64.dmg-signed /home/data/httpd/download.eclipse.org/technology/epp/staging/eclipse-cpp-2022-03-M1-macosx-cocoa-aarch64.dmg-tonotarize
-EOF
-```
-
+    - If there is an error like the above the .dmg file that is copied to download.eclipse.org is corrupt. Run [notarize-prepare-to-redo](https://ci.eclipse.org/packaging/job/notarize-prepare-to-redo/) to rename the -signed file back to -tonotarize and then re-run the [notarize job](https://ci.eclipse.org/packaging/job/notarize-downloads/)
 - Other notes about notarization
     - **NOTE** It seems perfectly normal that the notarize job needs to be run multiple times as so many notarization attempts fail due to 500 and 000 response codes from the notarization server. See [Bug 571669](https://bugs.eclipse.org/bugs/show_bug.cgi?id=571669)
-    - **NOTE** Sometimes the notarization server has an error that causes a failure that requires Webmaster support. Error looks like "an existing transporter instance is currently uploading this package". To resolve request assistance in [Bug 571669](https://bugs.eclipse.org/bugs/show_bug.cgi?id=571669) (like what was done in Comment 11 of that bug). (TODO it may be possible to workaround this error by always using a different random ID when doing the notarization.)
+    - **NOTE** Sometimes the notarization server has an error that causes a failure that requires Webmaster support. Error looks like "an existing transporter instance is currently uploading this package". To resolve request assistance in [Bug 573875](https://bugs.eclipse.org/bugs/show_bug.cgi?id=573875) (like what was done in Comment 11 of that bug). (TODO it may be possible to workaround this error by always using a different random ID when doing the notarization.)
 - [ ] Sanity check the build for the following:
     - [ ] Download a package from the build's [staging output](https://download.eclipse.org/technology/epp/staging/)
     - [ ] Made sure filenames contain expected build name and milestone, e.g. `2020-03-M2`
