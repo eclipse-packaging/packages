@@ -37,19 +37,19 @@
     <!-- Name of the release (no milestone) -->
     <RELEASE_NAME>2022-03</RELEASE_NAME>
     <!-- Name of the milestone -->
-    <RELEASE_MILESTONE>RC1</RELEASE_MILESTONE>
+    <RELEASE_MILESTONE>R</RELEASE_MILESTONE>
     <!-- Version of the release -->
     <RELEASE_VERSION>4.23.0</RELEASE_VERSION>
     <!-- Name release directory on download.eclipse.org -->
-    <RELEASE_DIR>202203031200</RELEASE_DIR>
+    <RELEASE_DIR>202203101200</RELEASE_DIR>
     <!-- SimRel Repo to build from -->
-    <SIMREL_REPO>https://download.eclipse.org/releases/2022-03/202203041000</SIMREL_REPO>
+    <SIMREL_REPO>https://download.eclipse.org/releases/2022-03/202203161000</SIMREL_REPO>
     <!-- ID used to generate the filename of the packages -->
     <eclipse.simultaneous.release.id>${RELEASE_NAME}-${RELEASE_MILESTONE}</eclipse.simultaneous.release.id>
     <!-- Timestamp used in various places, e.g. the about dialog (see about.mappings) -->
     <eclipse.simultaneous.release.build>${maven.build.timestamp}</eclipse.simultaneous.release.build>
     <!-- Human readable name of the release, e.g. used in the about dialog (see about.mappings) -->
-    <eclipse.simultaneous.release.name>${RELEASE_NAME} ${RELEASE_MILESTONE} (${RELEASE_VERSION} ${RELEASE_MILESTONE})</eclipse.simultaneous.release.name>
+    <eclipse.simultaneous.release.name>${RELEASE_NAME} (${RELEASE_VERSION})</eclipse.simultaneous.release.name>
     <!-- Upstream p2 repository, used as a source for pre-compiled build artifacts -->
     <eclipse.simultaneous.release.repository>${SIMREL_REPO}</eclipse.simultaneous.release.repository>
   </properties>
