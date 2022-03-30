@@ -14,7 +14,7 @@
    bugzillaComponentId="php-package"
    testPlan="http://www.eclipse.org/epp/testplan.php" >
     <!-- Description is wrapped in CDATA tags to allow you to insert HTML code if necessary -->
-    <description><![CDATA[The essential tools for any PHP developer, including PHP language support, Git client, Mylyn and editors for JavaScript, TypeScript, HTML, CSS and XML.<br />
+    <description><![CDATA[The essential tools for any PHP developer, including PHP language support, Git client and editors for JavaScript, TypeScript, HTML, CSS and XML.<br />
 Click <a href="https://github.com/eclipse/pdt/issues/new/choose">here</a> to report an issue against Eclipse PHP Development Tools.<br />
 Click <a href="https://bugs.eclipse.org/bugs/enter_bug.cgi?classification=WebTools">here</a> to file a bug against Eclipse Web Tools Platform.<br />
 Click <a href="https://bugs.eclipse.org/bugs/enter_bug.cgi?product=Platform">here</a> to file a bug against Eclipse Platform.<br />
@@ -32,9 +32,6 @@ Click <a href="https://github.com/eclipse/wildwebdeveloper/issues/new">here</a> 
   <NewAndNoteworthy
     url="https://www.eclipse.org/eclipse/news/4.23/"
     project="Eclipse Platform" />
-  <NewAndNoteworthy
-    url="https://www.eclipse.org/mylyn/new/"
-    project="Eclipse Mylyn" />
   </MoreInfo>
 
   <!-- name, the name of the product, used in naming the created files. -->

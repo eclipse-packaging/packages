@@ -229,27 +229,8 @@ United States, other countries, or both.
       <feature id="org.eclipse.m2e.feature" installMode="root"/>
       <feature id="org.eclipse.m2e.pde.feature" installMode="root"/>
       <feature id="org.eclipse.m2e.lemminx.feature" installMode="root"/>
-      <feature id="org.eclipse.egit.mylyn" installMode="root"/>
       <feature id="org.eclipse.egit.gitflow.feature" installMode="root"/>
       <feature id="org.eclipse.jgit.http.apache" installMode="root"/>
-      <feature id="org.eclipse.mylyn.bugzilla_feature" installMode="root"/>
-      <feature id="org.eclipse.mylyn.builds" installMode="root"/>
-      <feature id="org.eclipse.mylyn.commons" installMode="root"/>
-      <feature id="org.eclipse.mylyn.commons.identity" installMode="root"/>
-      <feature id="org.eclipse.mylyn.commons.notifications" installMode="root"/>
-      <feature id="org.eclipse.mylyn.commons.repositories" installMode="root"/>
-      <feature id="org.eclipse.mylyn.commons.repositories.http" installMode="root"/>
-      <feature id="org.eclipse.mylyn.discovery" installMode="root"/>
-      <feature id="org.eclipse.mylyn_feature" installMode="root"/>
-      <feature id="org.eclipse.mylyn.gerrit.dashboard.feature" installMode="root"/>
-      <feature id="org.eclipse.mylyn.gerrit.feature" installMode="root"/>
-      <feature id="org.eclipse.mylyn.git" installMode="root"/>
-      <feature id="org.eclipse.mylyn.hudson" installMode="root"/>
-      <feature id="org.eclipse.mylyn.monitor" installMode="root"/>
-      <feature id="org.eclipse.mylyn.reviews.feature" installMode="root"/>
-      <feature id="org.eclipse.mylyn.team_feature" installMode="root"/>
-      <feature id="org.eclipse.mylyn.versions" installMode="root"/>
-      <feature id="org.eclipse.mylyn.wikitext_feature" installMode="root"/>
       <feature id="org.eclipse.swt.tools.feature" installMode="root"/>
       <feature id="org.eclipse.wildwebdeveloper.feature" installMode="root"/>
       <feature id="org.eclipse.wildwebdeveloper.embedder.node.feature" installMode="root"/>
