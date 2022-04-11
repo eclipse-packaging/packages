@@ -35,22 +35,10 @@
       <plugin>
         <groupId>org.eclipse.tycho</groupId>
         <artifactId>tycho-p2-repository-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>default-assemble-repository</id>
-            <phase></phase>
-            <configuration>
-              <skip>true</skip>
-            </configuration>
-          </execution>
-          <execution>
-            <id>default-archive-repository</id>
-            <phase></phase>
-            <configuration>
-              <skip>true</skip>
-            </configuration>
-          </execution>
-        </executions>
+        <configuration>
+           <includeAllDependencies>true</includeAllDependencies>
+            <skipArchive>true</skipArchive>
+        </configuration>
       </plugin>
 
       <plugin>
