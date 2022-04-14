@@ -43,7 +43,7 @@ EPP releases happen for each milestone and release candidate according to the [E
     - [ ] `packages/*/epp.website.xml` for `product name=` line
     - [ ] `RELEASE_NAME`, `RELEASE_MILESTONE`, `RELEASE_DIR`, `SIMREL_REPO` Variables in parent pom `releng/org.eclipse.epp.config/parent/pom.xml`
         - `SIMREL_REPO` should be updated to the URL published in the email to cross-project-issues announcing SimRel repo is ready for EPP build
-    - **TODO can this part below be automated**
+    - [ ] **TODO can this part below be automated**
         - On R build, for `eclipse.simultaneous.release.name` remove qualifier i.e. it should be `2020-12 (4.18.0)`
         - On M1 build add the qualifier back in, for `eclipse.simultaneous.release.name` remove qualifier i.e. it should be `2020-12 M1 (4.18.0 M1)`
     - [ ] **TODO can this be automated** on release builds release.xml template in `releng/org.eclipse.epp.config/tools/promote-a-build.sh` needs updating
