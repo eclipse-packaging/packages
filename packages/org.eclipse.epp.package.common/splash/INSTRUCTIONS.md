@@ -26,4 +26,6 @@ For 2022-06 -> 2023-03 see [Bug 575781](https://bugs.eclipse.org/bugs/show_bug.c
 
 The splash screen needs to be an (approximately) 450x300 pixels .bmp file, 24-bits RGB (maybe other depth work too, but it's not tested), **without color space information** (some SWT bug). To produce it, if the initial splash screens aren't of that form (they're usually .jpg files), open the desired splash screen variation file from the `org.eclipse.epp.package.common/splash/` folder in Gimp, resize it to approximately 450x300 with *Image > Scale*, then set DPI to 72 with *Image > Print Size*, then *File > Export* it: choose the location `org.eclipse.epp.package.common/splash.bmp` press *Save*, and in the Export options, tick *Compatibility Options > Do not write color space information*. Apply.
 
+Repeat process, but for About dialog image which exists in each EPP package as `packages/org.eclipse.epp.package.*/eclipse_lg.png` (approx 115 x 302) and `packages/org.eclipse.epp.package.*/eclipse_lg@2x.png` (2x other image, approx 230 x 604).
+
 Then, commit the change locally, test it by building whichever EPP package via command-line and then starting this package. The new splash screen should be in place. Then, push the change to Gerrit.
