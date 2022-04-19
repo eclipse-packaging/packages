@@ -72,6 +72,9 @@ EPP releases happen for each milestone and release candidate according to the [E
         - `https://download.eclipse.org/staging/2022-03/` - *NOTE* Use `SIMREL_REPO` if the staging repo has been updated since the `SIMREL_REPO` location was created.
         - `https://download.eclipse.org/technology/epp/staging/repository/`
     - [ ] Verify no non-EPP content is in the p2 repo (especially justj, update [remove-justj-from-p2.xml](https://git.eclipse.org/c/epp/org.eclipse.epp.packages.git/tree/releng/org.eclipse.epp.config/tools/remove-justj-from-p2.xml) if needed)
+    - [ ] See [this email](https://www.eclipse.org/lists/cross-project-issues-dev/msg19145.html) for background on these tests to run about multiple versions of ASM as a test of the PGP vs Orbit flow
+        - [ ] Which bundles ends up SimRel - or do both end up there. I assume that it will be the Orbit one because it is more recent as far as p2 is concerned (not sure, just best guess).
+        - [ ] Starting from the SDK, does installing features from SimRel cause both to be installed, and if so, are both resolved.
 - [ ] Edit the [Jenkins build](https://ci.eclipse.org/packaging/job/simrel.epp-tycho-build/)
     - [ ] Mark build as Keep forever
     - [ ] Edit Jenkins Build Information and name it (e.g. `2020-03 M3`)
