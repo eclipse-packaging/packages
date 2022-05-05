@@ -77,3 +77,44 @@ following argument to the Maven command line, the EPP build will read its input 
 composite Eclipse 2020-03 repository:
 
     -Declipse.simultaneous.release.repository="http://download.eclipse.org/releases/2020-03"
+
+EPP Configuration File format
+-----------------------------
+
+The individual EPP packages have a special file called epp.website.xml that defines various
+pieces of information about the package. The format of the file is:
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+ <!-- Package Description information to be picked up by www.eclipse.org/packages -->
+ <!-- PackageName is the title of your package
+      maintainer is the project or persons that are maintaining the package
+      iconurl is the fully qualified URL to the icon you wish to use on the site (48x48)
+      bugzillaComponentID is used to gather bugzilla information about your package.
+         This should be given to you after provisioning of the package is finished
+      testPlan is the fully qualified URL to the test plan for this package
+   -->
+  <packageMetaData
+   packageName="Eclipse IDE for C/C++ Developers"
+   maintainer="Eclipse Packaging Project"
+   iconurl="http://www.eclipse.org/downloads/images/c.jpg"
+   bugzillaComponentId="cpp-package"
+   testPlan="http://www.eclipse.org/epp/testplan.php" >
+
+     <!-- Description is wrapped in CDATA tags to allow you to insert HTML code if necessary -->
+     <description><![CDATA[An IDE for C/C++ developers.]]></description>
+
+     <!-- packageTesters is a list of the people that are testing the package -->
+     <packageTesters>
+       <tester>Markus Knauer</tester>
+    </packageTesters>
+
+  </packageMetaData>
+
+...
+
+</configuration>
+```
+
+This content in this section has been migrated from the [wiki](https://wiki.eclipse.org/EPP/Packaging_Site)
