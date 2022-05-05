@@ -96,7 +96,7 @@ Last +1 received for each package and platform (apologies if I missed one of you
 
 Packages:
 committers - 2021-12 RC2 (tested by Ed in 2022-03 RC2)
-cpp - 2022-03 RC2
+cpp - 2022-06 M1
 dsl - 2022-03 RC1
 embedcpp - 2022-03 RC2
 java - 2022-03 M1
@@ -108,7 +108,7 @@ rcp - 2021-12 RC2 (tested by Ed in 2022-03 RC2)
 scout - 2022-03 RC2
 
 Platforms:
-Linux x86_64 - 2022-03 RC2
+Linux x86_64 - 2022-06 M1
 Linux aarch64 - 2021-09 RC1
 Windows - 2022-03 RC2
 macOS x86_64 - 2022-03 RC2
