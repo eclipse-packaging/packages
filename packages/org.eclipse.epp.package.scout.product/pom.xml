@@ -41,12 +41,4 @@
     </plugins>
   </build>
 
-  <repositories>
-    <repository>
-      <id>justj-11</id>
-      <url>https://download.eclipse.org/justj/jres/11/updates/release/11.0.15/</url>
-      <layout>p2</layout>
-    </repository>
-  </repositories>
-
 </project>
