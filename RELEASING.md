@@ -24,9 +24,8 @@ EPP releases happen for each milestone and release candidate according to the [E
     - [ ] Remove releases from download.eclipse.org by listing releases to delete and then running https://ci.eclipse.org/packaging/job/releng-remove-old-downloads (TODO create this job)
 
 **Steps for all Milestones and RCs:**
-- [ ] Fix/check links in email, the mirrors link was wrong for M1
+- [ ] In 2022-09 stop making p2 repos composites of all milestones - see https://wiki.eclipse.org/Planning_Council/2022-06-01
 - [ ] Look at renaming zips for mac
-- [ ] at beginning of 2022-06 apply removal of Orbit from simrel
 - [ ] Make sure any outstanding reviews are progressing - e.g. file IP logs, get PMC approval, etc. 
     - For 2022-03 there is no review planned, next review expected to be a progress review around 2022-06
 - [ ] Ensure that the [CI build](https://ci.eclipse.org/packaging/job/simrel.epp-tycho-build/) is green<!-- or yellow (yellow means some files have failed to notarize which can be handled later on in this process)-->. Resolving non-green builds will require tracking down problems and incompatibilities across all Eclipse participating projects. [cross-project-issues-dev](https://accounts.eclipse.org/mailing-list/cross-project-issues-dev) mailing list is a good place to start when tracking such problems.
@@ -69,12 +68,9 @@ EPP releases happen for each milestone and release candidate according to the [E
     - [ ] Help -> About says expected build name and milestone, e.g. `2020-03-M2`
     - [ ] `org.eclipse.epp.package.*` features and bundles have the timestamp of the forced qualifier update or later
     - [ ] Upgrade from previous release works. To test the upgrade an equivalent to the simrel release composite site needs to done. Add the following software sites to available software, check for updates and then make sure stuff works. In particular check error log and that core features (Such as JDT, Platform) have been upgraded.
-        - `https://download.eclipse.org/staging/2022-03/` - *NOTE* Use `SIMREL_REPO` if the staging repo has been updated since the `SIMREL_REPO` location was created.
+        - `https://download.eclipse.org/staging/2022-06/` - *NOTE* Use `SIMREL_REPO` if the staging repo has been updated since the `SIMREL_REPO` location was created.
         - `https://download.eclipse.org/technology/epp/staging/repository/`
     - [ ] Verify no non-EPP content is in the p2 repo (especially justj, update [remove-justj-from-p2.xml](https://git.eclipse.org/c/epp/org.eclipse.epp.packages.git/tree/releng/org.eclipse.epp.config/tools/remove-justj-from-p2.xml) if needed)
-    - [ ] See [this email](https://www.eclipse.org/lists/cross-project-issues-dev/msg19145.html) for background on these tests to run about multiple versions of ASM as a test of the PGP vs Orbit flow
-        - [ ] Which bundles ends up SimRel - or do both end up there. I assume that it will be the Orbit one because it is more recent as far as p2 is concerned (not sure, just best guess).
-        - [ ] Starting from the SDK, does installing features from SimRel cause both to be installed, and if so, are both resolved.
 - [ ] Edit the [Jenkins build](https://ci.eclipse.org/packaging/job/simrel.epp-tycho-build/)
     - [ ] Mark build as Keep forever
     - [ ] Edit Jenkins Build Information and name it (e.g. `2020-03 M3`)
