@@ -212,6 +212,7 @@ United States, other countries, or both.
       <feature id="org.eclipse.justj.openjdk.hotspot.jre.full" installMode="root"/>
       <feature id="org.eclipse.egit" installMode="root"/>
       <feature id="org.eclipse.jgit" installMode="root"/>
+      <feature id="org.eclipse.mylyn.wikitext_feature" installMode="root"/>
 
       <!-- product specific contents -->
       <feature id="org.eclipse.epp.package.rcp.feature" version="4.24.0.qualifier"/>
