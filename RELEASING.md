@@ -18,7 +18,7 @@ EPP releases happen for each milestone and release candidate according to the [E
     - [ ] `2020-12` -> `2021->03` part
     - [ ] `4.14` -> `4.15` part
 - [ ] rsync the downloads area to archive.eclipse.org and remove non-R downloads.
-    - This can be done either through the web ui at https://download.eclipse.org/technology/epp/ or with the following steps:
+    - This can be done either through the web ui at https://download.eclipse.org/technology/epp/ or with the following steps: (**NOTE** as of 2022-06 I do this all from the web UI. Please file [helpdesk](https://gitlab.eclipse.org/eclipsefdn/helpdesk/-/issues/new) tickets to request new features to make it easier)
     - [ ] Remove the old M and RC builds with https://ci.eclipse.org/packaging/job/releng-delete-old-M-RC-downloads
     - [ ] rsync the last release to the archives with https://ci.eclipse.org/packaging/job/releng-rsync-epp-downloads-to-archive
     - [ ] Remove releases from download.eclipse.org by listing releases to delete and then running https://ci.eclipse.org/packaging/job/releng-remove-old-downloads (TODO create this job)
@@ -43,6 +43,7 @@ EPP releases happen for each milestone and release candidate according to the [E
     - [ ] `RELEASE_NAME`, `RELEASE_MILESTONE`, `RELEASE_DIR`, `SIMREL_REPO` Variables in parent pom `releng/org.eclipse.epp.config/parent/pom.xml`
         - `SIMREL_REPO` should be updated to the URL published in the email to cross-project-issues announcing SimRel repo is ready for EPP build
     - [ ] **TODO can this part below be automated**
+        - See comment in the pom.xml file around `eclipse.simultaneous.release.name`
         - On R build, for `eclipse.simultaneous.release.name` remove qualifier i.e. it should be `2020-12 (4.18.0)`
         - On M1 build add the qualifier back in, for `eclipse.simultaneous.release.name` remove qualifier i.e. it should be `2020-12 M1 (4.18.0 M1)`
     - [ ] **TODO can this be automated** on release builds release.xml template in `releng/org.eclipse.epp.config/tools/promote-a-build.sh` needs updating
@@ -84,7 +85,7 @@ EPP releases happen for each milestone and release candidate according to the [E
 - [ ] Send email to epp-dev to request package maintainers test it. The email is templated in email.txt in the release directory.
 - [ ] Archive old milestones/RCs so that they don't accumulate on the mirrors
 - [ ] **24 Hours before Final release** Make sure files are in final location to allow downloads to mirror
-    - [ ] Tag the release, e.g. with 2020-03_R. Example command line: `git tag -s -a 2020-03_R -m"2020-03 Release" 1b7a1c1af156e3ac57768b87be258cd22b49456b`
+    - [ ] Tag the release, e.g. with 2020-03_R. Example command line: `git tag --annotate 2020-03_R -m"2020-03 Release" 1b7a1c1af156e3ac57768b87be258cd22b49456b`
     - [ ] rename the provisional release milestone to final directory (E.g. [2020-09/202009101200](https://download.eclipse.org/technology/epp/downloads/release/2020-09/202009101200/) -> [2020-09/R](https://download.eclipse.org/technology/epp/downloads/release/2020-09/R/) (to match what is in [release.xml](https://download.eclipse.org/technology/epp/downloads/release/release.xml)) - this only applies to downloads, not to packages
     This can be done with a script like **TODO: make a job for this** :
 ```
