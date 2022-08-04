@@ -104,11 +104,11 @@ jee - 2022-06 RC2
 modeling - 2022-06 M3
 parallel - 2022-03 RC2
 php - 2020-12 RC2 (tested by Ed in 2022-03 RC2)
-rcp - 2022-06 RC2
+rcp - 2022-09 M1
 scout - 2022-06 RC1
 
 Platforms:
-Linux x86_64 - 2022-06 RC2
+Linux x86_64 - 2022-09 M1
 Linux aarch64 - 2022-06 RC2
 Windows - 2022-06 RC2
 macOS x86_64 - 2022-06 RC2
