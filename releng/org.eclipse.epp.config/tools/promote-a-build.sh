@@ -81,14 +81,7 @@ $ECHO $SCP release.xml "${SSHUSER}:"${EPP_DOWNLOADS}/downloads/release/release.x
 # ----------------------------------------------------------------------------------------------
 # Prepare compositeArtifacts.xml/compositeContent.xml that will be made visible with https://ci.eclipse.org/packaging/job/epp-makeVisible/
 
-if [ "$RELEASE_MILESTONE" == "R" ]; then
-  UPDATE_SITES=${RELEASE_DIR}
-else
-  UPDATE_SITES=$($SSH "cd ${REPO} && find * -maxdepth 0 -type d | sort -u")
-fi
-
 TIMESTAMP=$(date +%s000)
-NUMBER_UPDATE_SITES=$(echo "$UPDATE_SITES" | wc -w)
 
 CONTENTXML="<?xml version='1.0' encoding='UTF-8'?>
 <?compositeMetadataRepository version='1.0.0'?>
@@ -98,13 +91,8 @@ CONTENTXML="<?xml version='1.0' encoding='UTF-8'?>
   <properties size='1'>
     <property name='p2.timestamp' value='${TIMESTAMP}'/>
   </properties>
-  <children size='${NUMBER_UPDATE_SITES}'>
-$(
-for site in $UPDATE_SITES
-do
-printf "    <child location='${site}'/>\n"
-done
-)
+  <children size='1'>
+    <child location='${RELEASE_DIR}'/>
   </children>
 </repository>
 "
@@ -120,13 +108,8 @@ ARTIFACTXML="<?xml version='1.0' encoding='UTF-8'?>
   <properties size='1'>
     <property name='p2.timestamp' value='${TIMESTAMP}'/>
   </properties>
-  <children size='${NUMBER_UPDATE_SITES}'>
-$(
-for site in $UPDATE_SITES
-do
-printf "    <child location='${site}'/>\n"
-done
-)
+  <children size='1'>
+    <child location='${RELEASE_DIR}'/>
   </children>
 </repository>
 "
