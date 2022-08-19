@@ -257,6 +257,7 @@ United States, other countries, or both.
       <feature id="org.eclipse.embedcdt.templates.freescale" installMode="root"/>
       <feature id="org.eclipse.embedcdt.templates.stm" installMode="root"/>
       <feature id="org.eclipse.embedcdt.templates.sifive" installMode="root"/>
+      <feature id="org.eclipse.embedcdt.templates.xpack" installMode="root"/>
    </features>
 
 
