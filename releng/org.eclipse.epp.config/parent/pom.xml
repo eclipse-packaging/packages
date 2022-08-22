@@ -24,7 +24,8 @@
 
   <properties>
     <maven.version>3.6.3</maven.version>
-    <tycho.version>2.7.4</tycho.version>
+    <!-- Due to Bug 580592 we are currently stuck with older version of Tycho -->
+    <tycho.version>2.7.1</tycho.version>
     <tycho.scmUrl>scm:git:git://git.eclipse.org/gitroot/epp/org.eclipse.epp.packages.git</tycho.scmUrl>
     <cbi.version>1.3.2</cbi.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
