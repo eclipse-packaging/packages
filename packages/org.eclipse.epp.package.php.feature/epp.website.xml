@@ -35,6 +35,6 @@ Click <a href="https://github.com/eclipse/wildwebdeveloper/issues/new">here</a> 
   </MoreInfo>
 
   <!-- name, the name of the product, used in naming the created files. -->
-  <product name="eclipse-php-2022-09-M2" />
+  <product name="eclipse-php-2022-09-M3" />
 
 </configuration>
