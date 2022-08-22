@@ -24,7 +24,6 @@ EPP releases happen for each milestone and release candidate according to the [E
     - [ ] Remove releases from download.eclipse.org by listing releases to delete and then running https://ci.eclipse.org/packaging/job/releng-remove-old-downloads (TODO create this job)
 
 **Steps for all Milestones and RCs:**
-- [ ] In 2022-09 stop making p2 repos composites of all milestones - see https://wiki.eclipse.org/Planning_Council/2022-06-01
 - [ ] Look at renaming zips for mac
 - [ ] Make sure any outstanding reviews are progressing - e.g. file IP logs, get PMC approval, etc. 
     - For 2022-03 there is no review planned, next review expected to be a progress review around 2022-06
@@ -52,7 +51,9 @@ EPP releases happen for each milestone and release candidate according to the [E
 - [ ] Wait for announcement that the staging repo is ready on [cross-project-issues-dev](https://accounts.eclipse.org/mailing-list/cross-project-issues-dev). An [example announcement](https://www.eclipse.org/lists/cross-project-issues-dev/msg17420.html).
     - [ ] Update `SIMREL_REPO` if not done above.
 - [ ] Run a [CI build](https://ci.eclipse.org/packaging/job/simrel.epp-tycho-build/) that includes the above changes.
-- [ ] Check that there are no unexpected warnings in the console output. Especially look for warnings about failure to sign. (Warnings about Mirror tool seem to be ok and can be ignored. In a historically good build there is one `[WARNING] Mirror tool: Messages while mirroring artifact descriptors.` per package)
+- [ ] Check that there are no unexpected warnings in the console output. Especially look for warnings about failure to sign. 
+    - Warnings about Mirror tool seem to be ok and can be ignored. In a historically good build there is one `[WARNING] Mirror tool: Messages while mirroring artifact descriptors.` per package
+    - Warning about pack200 like `Pack200 is not supported when running on Java 14 and higher` should be resolved by upgrading to Tycho 3.0.0 when we are ready
     - If warnings about signings occur that leave the dmg unsigned and the build does not fail, please reopen [Bug 567916](https://bugs.eclipse.org/bugs/show_bug.cgi?id=567916)
 - [ ] Disable the [CI build](https://ci.eclipse.org/packaging/job/simrel.epp-tycho-build/) so that the build results are not overwritten while doing the promotion
 - [ ] Run the [Notarize MacOSX Downloads](https://ci.eclipse.org/packaging/job/notarize-downloads/) CI job to notarize DMG packages on download.eclipse.org. *This can be done after promotion if time is tight or the notarization fails repeatedly. See [Bug 571669](https://bugs.eclipse.org/bugs/show_bug.cgi?id=571669) for an example of failures.*
