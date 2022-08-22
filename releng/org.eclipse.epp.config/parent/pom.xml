@@ -86,7 +86,7 @@
     </repository>
     <repository>
       <id>justj</id>
-      <url>https://download.eclipse.org/justj/jres/17/updates/release/17.0.3/</url>
+      <url>https://download.eclipse.org/justj/jres/17/updates/release/17.0.4/</url>
       <layout>p2</layout>
     </repository>
   </repositories>
