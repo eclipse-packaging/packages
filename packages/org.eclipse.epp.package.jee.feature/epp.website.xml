@@ -16,10 +16,10 @@
     <!-- Description is wrapped in CDATA tags to allow you to insert HTML code if necessary -->
      <description><![CDATA[Tools for developers working with Java and Web applications, including a Java IDE, tools for JavaScript, TypeScript, JavaServer Pages and Faces, Yaml, Markdown, Web Services, JPA and Data Tools, Maven and Gradle, Git, and more.<br/>
 <br/>
-Click <a href="https://bugs.eclipse.org/bugs/enter_bug.cgi?classification=WebTools">here</a> to file a bug against Eclipse Web Tools Platform.<br/>
-Click <a href="https://bugs.eclipse.org/bugs/enter_bug.cgi?product=Platform">here</a> to file a bug against Eclipse Platform.<br/>
-Click <a href="https://bugs.eclipse.org/bugs/enter_bug.cgi?product=M2E-WTP">here</a> to file a bug against Maven integration for web projects.<br/>
-Click <a href="https://github.com/eclipse/wildwebdeveloper/issues/new">here</a> to report an issue against Eclipse Wild Web Developer (incubating).<br/>
+Click <a href="https://bugs.eclipse.org/bugs/enter_bug.cgi?classification=WebTools">here</a> to open a bug report with the Eclipse Web Tools Platform.<br/>
+Click <a href="https://github.com/eclipse-platform#reporting-issues">here</a> to raise an issue with the Eclipse Platform.<br/>
+Click <a href="https://github.com/eclipse-m2e/m2e-wtp/issues">here</a> to raise an issue with Maven integration for web projects.<br/>
+Click <a href="https://github.com/eclipse/wildwebdeveloper/issues">here</a> to raise an issue with Eclipse Wild Web Developer (incubating).<br/>
 <br/>
 ]]></description>
     <!-- packageTesters is a list of the people that are testing the package -->
