@@ -95,24 +95,24 @@ Please test and send your +1 to this mailing list. +1s are optional as the packa
 Last +1 received for each package and platform (apologies if I missed one of your +1 emails, just let me know and I will update Last Recorded +1) I have highlighted those packages/platforms that I haven't seen any confirmation in this release cycle on.
 
 Packages:
-committers - 2022-06 RC2
-cpp - 2022-09 M2
-dsl - 2022-09 M3
+committers - 2022-06 RC2 (tested by Ed in 2022-09 RC1)
+cpp - 2022-09 RC1
+dsl - 2022-09 RC1
 embedcpp - 2022-09 M3
 java - 2022-09 M2
 jee - 2022-09 M3
-modeling - 2022-06 M3
-parallel - 2022-03 RC2
-php - 2020-12 RC2 (tested by Ed in 2022-03 RC2)
+modeling - 2022-06 M3 (tested by Ed in 2022-09 RC1)
+parallel - 2022-03 RC2 (tested by Ed in 2022-09 RC1)
+php - 2020-12 RC2 (tested by Ed in 2022-09 RC1)
 rcp - 2022-09 M2
 scout - 2022-09 M3
 
 Platforms:
-Linux x86_64 - 2022-09 M2
+Linux x86_64 - 2022-09 RC1
 Linux aarch64 - 2022-06 RC2
 Windows - 2022-09 M2
 macOS x86_64 - 2022-09 M3
-macOS aarch64 - 2022-09 M3
+macOS aarch64 - 2022-09 RC1
 
 Thank you for testing!
 
