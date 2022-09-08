@@ -24,6 +24,8 @@ EPP releases happen for each milestone and release candidate according to the [E
     - [ ] Remove releases from download.eclipse.org by listing releases to delete and then running https://ci.eclipse.org/packaging/job/releng-remove-old-downloads (TODO create this job)
 
 **Steps for all Milestones and RCs:**
+
+- [ ] Check for bad links to Bugzilla (other things?) especially in `epp.website.xml`
 - [ ] Look at renaming zips for mac
 - [ ] Make sure any outstanding reviews are progressing - e.g. file IP logs, get PMC approval, etc. 
     - For 2022-03 there is no review planned, next review expected to be a progress review around 2022-06
