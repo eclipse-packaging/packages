@@ -17,9 +17,12 @@
       <programArgs>-product org.eclipse.epp.package.embedcpp.product
 -showsplash org.eclipse.epp.package.common
 --launcher.defaultAction openFile
+--launcher.appendVmargs
       </programArgs>
       <vmArgs>-Dosgi.requiredJavaVersion=17
 -Dosgi.instance.area.default=@user.home/eclipse-workspace
+-Dosgi.dataAreaRequiresExplicitInit=true
+-Dorg.eclipse.swt.graphics.Resource.reportNonDisposed=true
 -Dsun.java.command=Eclipse
 -Xms256m
 -Xmx2048m
@@ -29,6 +32,7 @@
       </vmArgs>
       <vmArgsMac>-XstartOnFirstThread
 -Dorg.eclipse.swt.internal.carbon.smallFonts
+-Xdock:icon=../Resources/Eclipse.icns
       </vmArgsMac>
    </launcherArgs>
 
@@ -40,6 +44,8 @@
       startupMessageRect="7,265,320,20"
       startupForegroundColor="ffffff" />
    <launcher name="eclipse">
+      <linux icon="../../icons/icon.xpm"/>
+      <macosx icon="../../icons/Eclipse.icns"/>
       <win useIco="false">
          <bmp/>
       </win>
@@ -48,10 +54,22 @@
    <intro introId="org.eclipse.ui.intro.universal"/>
 
    <vm>
-      <linux include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-11</linux>
-      <macos include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-11</macos>
-      <windows include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-11</windows>
+      <linux include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-17</linux>
+      <macos include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-17</macos>
+      <windows include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-17</windows>
    </vm>
+
+   <configurations>
+      <plugin id="org.apache.felix.scr" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.core.runtime" autoStart="true" startLevel="4" />
+      <plugin id="org.eclipse.equinox.common" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.equinox.event" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.equinox.p2.reconciler.dropins" autoStart="true" startLevel="4" />
+      <plugin id="org.eclipse.equinox.simpleconfigurator" autoStart="true" startLevel="1" />
+      <property name="org.eclipse.update.reconcile" value="false" />
+      <property name="eclipse.buildId" value="${unqualifiedVersion}.${buildQualifier}" />
+      <property name="osgi.bundles.defaultStartLevel" value="4" />
+   </configurations>
 
    <license>
         <url>http://eclipse.org/legal/epl/notice.php</url>
@@ -206,6 +224,7 @@ United States, other countries, or both.
       <!-- common features that all products have -->
       <feature id="org.eclipse.epp.package.common.feature" version="4.25.0.qualifier"/>
       <feature id="org.eclipse.platform"/>
+      <feature id="org.eclipse.equinox.p2.user.ui"/>
       <feature id="org.eclipse.epp.mpc" installMode="root"/>
       <feature id="org.eclipse.oomph.setup" installMode="root"/>
       <feature id="org.eclipse.tm.terminal.feature" installMode="root"/>

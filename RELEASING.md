@@ -34,6 +34,9 @@ EPP releases happen for each milestone and release candidate according to the [E
 - [ ] On RC1 check "new and noteworthy" version numbers - If any N&N are out of date, remove the N&N entries and notify the corresponding package maintainer.
   - [ ] Search for ` url=` (notice the blank before url) in `epp.website.xml` to see which ones are contained in the different packages.
   - [ ] Remember that some of the features will release new versions together with the new Eclipse release. Therefore using the _currently_ released version number may be wrong. Instead lookup the feature version [to be released with the release train](https://projects.eclipse.org/releases/).
+- [ ] Synchronize any changes to [platform.product](https://github.com/eclipse-platform/eclipse.platform.releng.aggregator/blob/master/eclipse.platform.releng.tychoeclipsebuilder/eclipse.platform.repository/platform.product) into all the `epp.product` files.
+- [ ] Synchronize any changes to [platform.p2.inf](https://github.com/eclipse-platform/eclipse.platform.releng.aggregator/blob/master/eclipse.platform.releng.tychoeclipsebuilder/eclipse.platform.repository/platform.p2.inf) into all the `*.product/p2.inf` files.
+- [ ] Synchronize any changes to [platform's icons'](https://github.com/eclipse-platform/eclipse.platform.releng.aggregator/tree/master/eclipse.platform.releng.tychoeclipsebuilder/eclipse.platform.repository/icons) into `icons` root directory.
 - [ ] Update the JustJ version - look for announcements, particularly from Ed to epp-dev and for the EOL and new release dates of JDKs
   - Coordination may be needed with JustJ and Platform projects to make sure we are all on the same page.
   - [ ] Update the full names of the JRE bundles in [remove-justj-from-p2.xml](https://git.eclipse.org/c/epp/org.eclipse.epp.packages.git/tree/releng/org.eclipse.epp.config/tools/remove-justj-from-p2.xml)
