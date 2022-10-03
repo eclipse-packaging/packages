@@ -29,11 +29,11 @@ Click <a href="https://bugs.eclipse.org/bugs/enter_bug.cgi?product=EGit">here</a
   </packageMetaData>
   <MoreInfo>
   <NewAndNoteworthy
-    url="https://www.eclipse.org/eclipse/news/4.25/"
+    url="https://www.eclipse.org/eclipse/news/4.26/"
     project="Eclipse Platform" />
   </MoreInfo>
 
   <!-- name, the name of the product, used in naming the created files. -->
-  <product name="eclipse-committers-2022-09-R" />
+  <product name="eclipse-committers-2022-12-M1" />
 
 </configuration>
