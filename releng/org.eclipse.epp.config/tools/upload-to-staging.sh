@@ -96,21 +96,21 @@ Last +1 received for each package and platform (apologies if I missed one of you
 
 Packages:
 committers - 2022-06 RC2 (tested by Ed in 2022-09 RC1)
-cpp - 2022-09 RC1
+cpp - 2022-09 RC2
 dsl - 2022-09 RC1
-embedcpp - 2022-09 M3
+embedcpp - 2022-09 RC2
 java - 2022-09 M2
-jee - 2022-09 M3
-modeling - 2022-06 M3 (tested by Ed in 2022-09 RC1)
+jee - 2022-09 RC2
+modeling - 2022-09 RC2
 parallel - 2022-03 RC2 (tested by Ed in 2022-09 RC1)
 php - 2020-12 RC2 (tested by Ed in 2022-09 RC1)
-rcp - 2022-09 M2
-scout - 2022-09 M3
+rcp - 2022-09 RC2
+scout - 2022-09 RC2
 
 Platforms:
-Linux x86_64 - 2022-09 RC1
-Linux aarch64 - 2022-06 RC2
-Windows - 2022-09 M2
+Linux x86_64 - 2022-09 RC2
+Linux aarch64 - 2022-09 RC2
+Windows - 2022-09 RC2
 macOS x86_64 - 2022-09 M3
 macOS aarch64 - 2022-09 RC1
 
