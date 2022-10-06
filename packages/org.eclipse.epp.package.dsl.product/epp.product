@@ -221,6 +221,8 @@ United States, other countries, or both.
    </plugins>
 
    <features>
+      <!-- all features added here as installMode="root" need to be added to p2.inf as well -->
+
       <!-- common features that all products have -->
       <feature id="org.eclipse.epp.package.common.feature" version="4.26.0.qualifier"/>
       <feature id="org.eclipse.platform"/>

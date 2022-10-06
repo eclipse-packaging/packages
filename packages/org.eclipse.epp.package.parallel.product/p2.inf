@@ -65,3 +65,104 @@ properties.1.value = 2022-12 Release of the Eclipse IDE for Scientific Computing
 
 properties.2.name = org.eclipse.equinox.p2.provider
 properties.2.value = Eclipse Packaging Project
+
+#######################################################################
+# The requires below this line should match the items installed as root
+# that are listed in the epp.product file's dependent features
+
+requires.100.namespace = org.eclipse.equinox.p2.iu
+requires.100.name = org.eclipse.epp.mpc.feature.group
+requires.100.filter = (org.eclipse.epp.install.roots=true)
+
+requires.101.namespace = org.eclipse.equinox.p2.iu
+requires.101.name = org.eclipse.oomph.setup.feature.group
+requires.101.filter = (org.eclipse.epp.install.roots=true)
+
+requires.102.namespace = org.eclipse.equinox.p2.iu
+requires.102.name = org.eclipse.tm.terminal.feature.feature.group
+requires.102.filter = (org.eclipse.epp.install.roots=true)
+
+requires.103.namespace = org.eclipse.equinox.p2.iu
+requires.103.name = org.eclipse.justj.openjdk.hotspot.jre.full.feature.group
+requires.103.filter = (org.eclipse.epp.install.roots=true)
+
+requires.104.namespace = org.eclipse.equinox.p2.iu
+requires.104.name = org.eclipse.egit.feature.group
+requires.104.filter = (org.eclipse.epp.install.roots=true)
+
+requires.105.namespace = org.eclipse.equinox.p2.iu
+requires.105.name = org.eclipse.jgit.feature.group
+requires.105.filter = (org.eclipse.epp.install.roots=true)
+
+requires.106.namespace = org.eclipse.equinox.p2.iu
+requires.106.name = org.eclipse.mylyn.wikitext_feature.feature.group
+requires.106.filter = (org.eclipse.epp.install.roots=true)
+
+requires.107.namespace = org.eclipse.equinox.p2.iu
+requires.107.name = org.eclipse.cdt.feature.group
+requires.107.filter = (org.eclipse.epp.install.roots=true)
+
+requires.108.namespace = org.eclipse.equinox.p2.iu
+requires.108.name = org.eclipse.cdt.autotools.feature.group
+requires.108.filter = (org.eclipse.epp.install.roots=true)
+
+requires.109.namespace = org.eclipse.equinox.p2.iu
+requires.109.name = org.eclipse.cdt.build.crossgcc.feature.group
+requires.109.filter = (org.eclipse.epp.install.roots=true)
+
+requires.110.namespace = org.eclipse.equinox.p2.iu
+requires.110.name = org.eclipse.cdt.cmake.feature.group
+requires.110.filter = (org.eclipse.epp.install.roots=true)
+
+requires.111.namespace = org.eclipse.equinox.p2.iu
+requires.111.name = org.eclipse.cdt.debug.standalone.feature.group
+requires.111.filter = (org.eclipse.epp.install.roots=true)
+
+requires.112.namespace = org.eclipse.equinox.p2.iu
+requires.112.name = org.eclipse.cdt.debug.ui.memory.feature.group
+requires.112.filter = (org.eclipse.epp.install.roots=true)
+
+requires.113.namespace = org.eclipse.equinox.p2.iu
+requires.113.name = org.eclipse.cdt.launch.remote.feature.group
+requires.113.filter = (org.eclipse.epp.install.roots=true)
+
+requires.114.namespace = org.eclipse.equinox.p2.iu
+requires.114.name = org.eclipse.cdt.testsrunner.feature.feature.group
+requires.114.filter = (org.eclipse.epp.install.roots=true)
+
+requires.115.namespace = org.eclipse.equinox.p2.iu
+requires.115.name = org.eclipse.ptp.feature.group
+requires.115.filter = (org.eclipse.epp.install.roots=true)
+
+requires.116.namespace = org.eclipse.equinox.p2.iu
+requires.116.name = org.eclipse.ptp.debug.sdm.feature.group
+requires.116.filter = (org.eclipse.epp.install.roots=true)
+
+requires.117.namespace = org.eclipse.equinox.p2.iu
+requires.117.name = org.eclipse.ptp.fortran.feature.group
+requires.117.filter = (org.eclipse.epp.install.roots=true)
+
+requires.118.namespace = org.eclipse.equinox.p2.iu
+requires.118.name = org.eclipse.ptp.rdt.sync.feature.group
+requires.118.filter = (org.eclipse.epp.install.roots=true)
+
+requires.119.namespace = org.eclipse.equinox.p2.iu
+requires.119.name = org.eclipse.ptp.remote.terminal.feature.group
+requires.119.filter = (org.eclipse.epp.install.roots=true)
+
+requires.120.namespace = org.eclipse.equinox.p2.iu
+requires.120.name = org.eclipse.ptp.rm.jaxb.contrib.feature.group
+requires.120.filter = (org.eclipse.epp.install.roots=true)
+
+requires.121.namespace = org.eclipse.equinox.p2.iu
+requires.121.name = org.eclipse.remote.feature.group
+requires.121.filter = (org.eclipse.epp.install.roots=true)
+
+requires.122.namespace = org.eclipse.equinox.p2.iu
+requires.122.name = org.eclipse.remote.console.feature.group
+requires.122.filter = (org.eclipse.epp.install.roots=true)
+
+requires.123.namespace = org.eclipse.equinox.p2.iu
+requires.123.name = org.eclipse.wst.xml_ui.feature.feature.group
+requires.123.filter = (org.eclipse.epp.install.roots=true)
+
