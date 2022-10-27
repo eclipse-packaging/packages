@@ -1,6 +1,6 @@
 #!/bin/bash
 
-GIT_DATE=`date --utc --iso-8601=seconds --date='12:01 today'`
+GIT_DATE=`date --utc --iso-8601=seconds --date='12:00 today'`
 echo "Setting GIT dates to ${GIT_DATE}"
 
 export GIT_AUTHOR_DATE="${GIT_DATE}"
