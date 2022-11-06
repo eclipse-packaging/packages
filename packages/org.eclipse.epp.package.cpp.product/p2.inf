@@ -83,7 +83,7 @@ requires.102.name = org.eclipse.tm.terminal.feature.feature.group
 requires.102.filter = (org.eclipse.epp.install.roots=true)
 
 requires.103.namespace = org.eclipse.equinox.p2.iu
-requires.103.name = org.eclipse.justj.openjdk.hotspot.jre.full.feature.group
+requires.103.name = org.eclipse.justj.epp.feature.group
 requires.103.filter = (org.eclipse.epp.install.roots=true)
 
 requires.104.namespace = org.eclipse.equinox.p2.iu
