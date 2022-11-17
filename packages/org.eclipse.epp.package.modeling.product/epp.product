@@ -238,7 +238,7 @@ United States, other countries, or both.
       <!-- product specific contents -->
       <feature id="org.eclipse.epp.package.modeling.feature" version="4.26.0.qualifier"/>
       <feature id="org.eclipse.e4.core.tools.feature" installMode="root"/>
-      <feature id="org.eclipse.emf.cdo.epp" installMode="root"/>
+      <feature id="org.eclipse.emf.cdo.sdk" installMode="root"/>
       <feature id="org.eclipse.emf.compare.ide.ui.source" installMode="root"/>
       <feature id="org.eclipse.emf.compare.source" installMode="root"/>
       <feature id="org.eclipse.emf.compare.diagram.sirius.source" installMode="root"/>
