@@ -8,7 +8,6 @@ EPP releases happen for each milestone and release candidate according to the [E
 
 **Steps at the beginning of each release cycle (i.e. before M1):**
 
-- [ ] Fix https://bugs.eclipse.org/bugs/show_bug.cgi?id=571369
 - [ ] Create new [PMI entry](https://projects.eclipse.org/projects/technology.packaging)
 - [ ] Add Target Milestones in [Bugzilla](https://dev.eclipse.org/committers/bugs/bugz_manager.php)
 - [ ] Update splash screen (once per release cycle, hopefully done before M1). See detailed [instructions](https://git.eclipse.org/c/epp/org.eclipse.epp.packages.git/tree/packages/org.eclipse.epp.package.common/splash/INSTRUCTIONS.md). For 2022-06 see Bug [575781](https://bugs.eclipse.org/bugs/show_bug.cgi?id=575781) for new splash screens.
@@ -44,9 +43,6 @@ EPP releases happen for each milestone and release candidate according to the [E
 - [ ] Synchronize any changes to [platform.product](https://github.com/eclipse-platform/eclipse.platform.releng.aggregator/blob/master/eclipse.platform.releng.tychoeclipsebuilder/eclipse.platform.repository/platform.product) into all the `epp.product` files.
 - [ ] Synchronize any changes to [platform.p2.inf](https://github.com/eclipse-platform/eclipse.platform.releng.aggregator/blob/master/eclipse.platform.releng.tychoeclipsebuilder/eclipse.platform.repository/platform.p2.inf) into all the `*.product/p2.inf` files.
 - [ ] Synchronize any changes to [platform's icons'](https://github.com/eclipse-platform/eclipse.platform.releng.aggregator/tree/master/eclipse.platform.releng.tychoeclipsebuilder/eclipse.platform.repository/icons) into `icons` root directory.
-- [ ] Update the JustJ version - look for announcements, particularly from Ed to epp-dev and for the EOL and new release dates of JDKs
-  - Coordination may be needed with JustJ and Platform projects to make sure we are all on the same page.
-  - [ ] Update the full names of the JRE bundles in [remove-justj-from-p2.xml](https://git.eclipse.org/c/epp/org.eclipse.epp.packages.git/tree/releng/org.eclipse.epp.config/tools/remove-justj-from-p2.xml)
 - [ ] Update name of the release in strings with a "smart" global find&replace. _Be careful on M3 that the replace did not match the Eclipse project name M2E!_ See this [gerrit](https://git.eclipse.org/r/#/c/158509/) for an example. Use commit message like `[releng] Prepare repo for 2020-12 M1`. In particular, check:
   - **TODO can this be automated** On M1 add the M1 qualifier (e.g. `2021-03-R` -> `2021-06-M1`, on RC2 set it to `R` the qualifier e.g. `2021-03-RC1` -> `2021-03-R`). **Except** for `eclipse.simultaneous.release.name` which should go from `2021-03 (4.19.0)` -> `2021-06 M1 (4.20.0 M1)` on M1 and `2021-03 RC1 (4.19.0 RC1)` -> `2021-03 (4.19.0)` on RC2
   - [ ] `packages/*/epp.website.xml` for `product name=` line
@@ -58,9 +54,9 @@ EPP releases happen for each milestone and release candidate according to the [E
     - On M1 build add the qualifier back in, for `eclipse.simultaneous.release.name` remove qualifier i.e. it should be `2020-12 M1 (4.18.0 M1)`
   - [ ] **TODO can this be automated** on release builds release.xml template in `releng/org.eclipse.epp.config/tools/promote-a-build.sh` needs updating
 - [ ] Update the [Last Recorded +1 in the email template](https://git.eclipse.org/c/epp/org.eclipse.epp.packages.git/tree/releng/org.eclipse.epp.config/tools/upload-to-staging.sh) which any package and platform +1s that have been received since the last update.
-- [ ] Update the build qualifiers to ensure that packages are all updated. See this [gerrit](https://git.eclipse.org/r/#/c/161075/) for an example. To do this run `releng/org.eclipse.epp.config/tools/setGitDate` ([link](https://git.eclipse.org/c/epp/org.eclipse.epp.packages.git/tree/releng/org.eclipse.epp.config/tools/setGitDate)) script. This script will make a local commit you need to push.
 - [ ] Wait for announcement that the staging repo is ready on [cross-project-issues-dev](https://accounts.eclipse.org/mailing-list/cross-project-issues-dev). An [example announcement](https://www.eclipse.org/lists/cross-project-issues-dev/msg17420.html).
   - [ ] Update `SIMREL_REPO` if not done above.
+- [ ] Update the build qualifiers to ensure that packages are all updated. See this [gerrit](https://git.eclipse.org/r/#/c/161075/) for an example. To do this run `releng/org.eclipse.epp.config/tools/setGitDate` ([link](https://git.eclipse.org/c/epp/org.eclipse.epp.packages.git/tree/releng/org.eclipse.epp.config/tools/setGitDate)) script. This script will make a local commit you need to push.
 - [ ] Run a [CI build](https://ci.eclipse.org/packaging/job/simrel.epp-tycho-build/) that includes the above changes.
 - [ ] Check that there are no unexpected warnings in the console output. Especially look for warnings about failure to sign.
   - Warnings about Mirror tool seem to be ok and can be ignored. In a historically good build there is one `[WARNING] Mirror tool: Messages while mirroring artifact descriptors.` per package
