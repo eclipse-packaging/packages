@@ -103,7 +103,7 @@ requires.107.name = org.eclipse.e4.core.tools.feature.feature.group
 requires.107.filter = (org.eclipse.epp.install.roots=true)
 
 requires.108.namespace = org.eclipse.equinox.p2.iu
-requires.108.name = org.eclipse.emf.cdo.epp.feature.group
+requires.108.name = org.eclipse.emf.cdo.sdk.feature.group
 requires.108.filter = (org.eclipse.epp.install.roots=true)
 
 requires.109.namespace = org.eclipse.equinox.p2.iu
