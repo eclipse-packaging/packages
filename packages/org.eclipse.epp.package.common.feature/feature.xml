@@ -26,12 +26,4 @@
          version="0.0.0"
          unpack="true"/>
 
-   <!-- JDT core is needed to make help work. See https://github.com/eclipse-platform/eclipse.platform.ua/issues/18 -->
-   <plugin
-         id="org.eclipse.jdt.core"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="true"/>
-
 </feature>
