@@ -1,6 +1,6 @@
 #!/bin/bash
 ###############################################################################
-# Copyright (c) 2020, 2022 Kichwa Coders Canada Inc and others.
+# Copyright (c) 2020, 2023 Kichwa Coders Canada Inc and others.
 #
 # This program and the accompanying materials
 # are made available under the terms of the Eclipse Public License 2.0
