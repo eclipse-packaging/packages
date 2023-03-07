@@ -276,6 +276,7 @@ United States, other countries, or both.
       <feature id="org.eclipse.buildship" installMode="root"/>
       <feature id="org.eclipse.eclemma.feature" installMode="root"/>
       <feature id="org.eclipse.jdt" installMode="root"/>
+      <feature id="org.eclipse.jdt.bcoview.feature" installMode="root"/>
       <feature id="org.eclipse.jpt.common.eclipselink.feature" installMode="root"/>
       <feature id="org.eclipse.jpt.common.feature" installMode="root"/>
       <feature id="org.eclipse.jpt.jaxb.eclipselink.feature" installMode="root"/>

@@ -130,3 +130,7 @@ requires.114.namespace = org.eclipse.equinox.p2.iu
 requires.114.name = org.eclipse.tips.feature.feature.group
 requires.114.filter = (org.eclipse.epp.install.roots=true)
 
+requires.115.namespace = org.eclipse.equinox.p2.iu
+requires.115.name = org.eclipse.jdt.bcoview.feature.feature.group
+requires.115.filter = (org.eclipse.epp.install.roots=true)
+

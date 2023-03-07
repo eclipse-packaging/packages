@@ -394,3 +394,7 @@ requires.180.namespace = org.eclipse.equinox.p2.iu
 requires.180.name = org.eclipse.tips.feature.feature.group
 requires.180.filter = (org.eclipse.epp.install.roots=true)
 
+requires.181.namespace = org.eclipse.equinox.p2.iu
+requires.181.name = org.eclipse.jdt.bcoview.feature.feature.group
+requires.181.filter = (org.eclipse.epp.install.roots=true)
+

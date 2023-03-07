@@ -238,6 +238,7 @@ United States, other countries, or both.
       <!-- product specific contents -->
       <feature id="org.eclipse.epp.package.rcp.feature" version="4.27.0.qualifier"/>
       <feature id="org.eclipse.jdt"/>
+      <feature id="org.eclipse.jdt.bcoview.feature" installMode="root"/>
       <feature id="org.eclipse.pde"/>
       <feature id="org.eclipse.platform.source"/>
       <feature id="org.eclipse.rcp.source"/>

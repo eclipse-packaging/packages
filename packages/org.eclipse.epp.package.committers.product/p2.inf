@@ -166,3 +166,6 @@ requires.123.namespace = org.eclipse.equinox.p2.iu
 requires.123.name = org.eclipse.wildwebdeveloper.embedder.node.feature.feature.group
 requires.123.filter = (org.eclipse.epp.install.roots=true)
 
+requires.124.namespace = org.eclipse.equinox.p2.iu
+requires.124.name = org.eclipse.jdt.bcoview.feature.feature.group
+requires.124.filter = (org.eclipse.epp.install.roots=true)

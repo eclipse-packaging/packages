@@ -134,3 +134,6 @@ requires.115.namespace = org.eclipse.equinox.p2.iu
 requires.115.name = org.eclipse.wst.web_ui.feature.feature.group
 requires.115.filter = (org.eclipse.epp.install.roots=true)
 
+requires.116.namespace = org.eclipse.equinox.p2.iu
+requires.116.name = org.eclipse.jdt.bcoview.feature.feature.group
+requires.116.filter = (org.eclipse.epp.install.roots=true)
