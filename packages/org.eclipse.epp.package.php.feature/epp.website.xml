@@ -30,11 +30,11 @@ Click <a href="https://github.com/eclipse/wildwebdeveloper/issues">here</a> to r
     url="https://wiki.eclipse.org/PDT/NewIn72"
     project="Eclipse PHP Development Tools" />
   <NewAndNoteworthy
-    url="https://www.eclipse.org/eclipse/news/4.27/"
+    url="https://www.eclipse.org/eclipse/news/4.28/"
     project="Eclipse Platform" />
   </MoreInfo>
 
   <!-- name, the name of the product, used in naming the created files. -->
-  <product name="eclipse-php-2023-03-R" />
+  <product name="eclipse-php-2023-06-M1" />
 
 </configuration>

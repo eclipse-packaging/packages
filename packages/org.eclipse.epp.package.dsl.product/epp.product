@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="Eclipse DSL Tools" uid="epp.package.dsl" id="org.eclipse.epp.package.dsl.product" application="org.eclipse.ui.ide.workbench" version="4.27.0.qualifier" useFeatures="true" includeLaunchers="true">
+<product name="Eclipse DSL Tools" uid="epp.package.dsl" id="org.eclipse.epp.package.dsl.product" application="org.eclipse.ui.ide.workbench" version="4.28.0.qualifier" useFeatures="true" includeLaunchers="true">
 
    <aboutInfo>
       <image path="/org.eclipse.epp.package.dsl/eclipse_lg.png"/>
@@ -224,7 +224,7 @@ United States, other countries, or both.
       <!-- all features added here as installMode="root" need to be added to p2.inf as well -->
 
       <!-- common features that all products have -->
-      <feature id="org.eclipse.epp.package.common.feature" version="4.27.0.qualifier"/>
+      <feature id="org.eclipse.epp.package.common.feature" version="4.28.0.qualifier"/>
       <feature id="org.eclipse.platform"/>
       <feature id="org.eclipse.equinox.p2.user.ui"/>
       <feature id="org.eclipse.epp.mpc" installMode="root"/>
@@ -236,7 +236,7 @@ United States, other countries, or both.
       <feature id="org.eclipse.mylyn.wikitext_feature" installMode="root"/>
 
       <!-- product specific contents -->
-      <feature id="org.eclipse.epp.package.dsl.feature" version="4.27.0.qualifier"/>
+      <feature id="org.eclipse.epp.package.dsl.feature" version="4.28.0.qualifier"/>
       <feature id="org.eclipse.sdk" installMode="root"/>
       <feature id="org.eclipse.emf.ecore.xcore.sdk" installMode="root"/>
       <feature id="org.eclipse.emf.mwe2.language.sdk" installMode="root"/>
