@@ -10,15 +10,13 @@ When ready, the Eclipse Foundation marketing team will submit some splashscreen,
 
 For 2021-06 -> 2022-03 see [Bug 569333](https://bugs.eclipse.org/bugs/show_bug.cgi?id=569333)
 For 2022-06 -> 2023-03 see [Bug 575781](https://bugs.eclipse.org/bugs/show_bug.cgi?id=575781)
+For 2023-06 -> 2024-03 see [Helpdesk 2335](https://gitlab.eclipse.org/eclipsefdn/helpdesk/-/issues/2336)
 
 ### Copy splash screen series into `org.eclipse.epp.package.common/splash/`
 
 Once the Foundation and community agree on a splash screen, some EPP contributor must copy the new splash screen into `org.eclipse.epp.package.common/splash/` for further usage in EPP.
 
 Some raw image files are welcome, but as those artifacts may have to be changed unexpectedly, keeping the "image project" files (Photoshop or Illustrator files) in the repository can also help later.
-
-For 2021-06 -> 2022-03 see [Bug 569333](https://bugs.eclipse.org/bugs/show_bug.cgi?id=569333)
-For 2022-06 -> 2023-03 see [Bug 575781](https://bugs.eclipse.org/bugs/show_bug.cgi?id=575781)
 
 ### Changing EPP splashscreen
 
