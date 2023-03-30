@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<setup:Configuration
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:setup="http://www.eclipse.org/oomph/setup/1.0"
+    label="Eclipse Packaging Project">
+  <annotation
+      source="http://www.eclipse.org/oomph/setup/BrandingInfo">
+    <detail
+        key="imageURI">
+      <value>https://www.eclipse.org/downloads/images/committers.png</value>
+    </detail>
+    <detail
+        key="badgeLabel">
+      <value>EPP</value>
+    </detail>
+  </annotation>
+  <installation
+      name="epp.installation"
+      label="EPP Installation">
+    <setupTask
+        xsi:type="setup:VariableTask"
+        name="installation.id.default"
+        value="epp"/>
+    <productVersion
+        href="index:/org.eclipse.setup#//@productCatalogs[name='org.eclipse.products']/@products[name='epp.package.committers']/@versions[name='latest']"/>
+    <description>The EPP installation provides the latest tools needed to work with the Eclipse Packaging Project's source code.</description>
+  </installation>
+  <workspace
+      name="epp.workspace"
+      label="EPP Workspace">
+    <setupTask
+        xsi:type="setup:VariableTask"
+        name="workspace.id.default"
+        value="epp-ws"/>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="User Preferences">
+      <annotation
+          source="http://www.eclipse.org/oomph/setup/UserPreferences">
+        <detail
+            key="/instance/org.eclipse.oomph.setup.ui/showToolBarContributions">
+          <value>record</value>
+        </detail>
+      </annotation>
+      <setupTask
+          xsi:type="setup:CompoundTask"
+          name="org.eclipse.oomph.setup.ui">
+        <setupTask
+            xsi:type="setup:PreferenceTask"
+            key="/instance/org.eclipse.oomph.setup.ui/showToolBarContributions"
+            value="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="setup:CompoundTask"
+          name="org.eclipse.ui.ide">
+        <setupTask
+            xsi:type="setup:PreferenceTask"
+            key="/instance/org.eclipse.ui.ide/WORKSPACE_NAME"
+            value="EPP"/>
+      </setupTask>
+    </setupTask>
+    <stream
+        href="index:/org.eclipse.setup#//@projectCatalogs[name='org.eclipse']/@projects[name='epp.packages']/@streams[name='master']"/>
+    <description>The EPP workspace provides all the source code of the Eclipse Packaging Project.</description>
+  </workspace>
+  <description>
+    &lt;p>
+    The EPP configuration provisions a dedicated development environment for the set projects that comprise the &lt;a href=&quot;https://projects.eclipse.org/projects/technology.packaging/&quot;>Eclipse Packaging Project&lt;/a>,
+    i.e., the source projects used to produce the &lt;a href=&quot;https://www.eclipse.org/downloads/packages/&quot;>Eclipse Packages downloads&lt;/a>
+    &lt;/p>
+    &lt;p>
+    The installation is based on the latest Eclipse IDE for Eclipse Committers,
+    the workspace consists of projects from the EPP Git clone, organized into workings sets,
+    and the PDE target platform is based on the &lt;a href=&quot;https://download.eclipse.org/staging/>latest staging repository&lt;/a>.
+    &lt;p>
+    &lt;/p>
+    Please &lt;a href=&quot;https://wiki.eclipse.org/Eclipse_Platform_SDK_Provisioning&quot;>read the analgous tutorial instructions&lt;/a> for more details.
+    &lt;/p>
+  </description>
+</setup:Configuration>
