@@ -24,6 +24,11 @@ Information regarding source code management, builds, coding standards, and more
 - Nightly builds are created on the project's Jenkins instance at <https://ci.eclipse.org/packaging/>.
 - For instructions on how to run a build locally, follow the instructions of the README included in the root of this Git repository.
 
+Create an Eclipse Development Environment
+-----------------------------------------
+
+[![Create Eclipse Development Environment for EPP](https://download.eclipse.org/oomph/www/setups/svg/EPP.svg)](https://www.eclipse.org/setups/installer/?url=https://raw.githubusercontent.com/eclipse-packaging/packages/master/releng/org.eclipse.epp.config/oomph/EPPConfiguration.setup&show=true "Click to open Eclipse-Installer Auto Launch or drag onto your running installer's title area")
+
 Contributor License Agreement:
 ------------------------------
 
