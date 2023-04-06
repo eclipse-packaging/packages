@@ -257,6 +257,7 @@ United States, other countries, or both.
       <feature id="org.eclipse.jdt.bcoview.feature" installMode="root"/>
       <feature id="org.eclipse.ocl.all.sdk" installMode="root"/>
       <feature id="org.eclipse.pde" installMode="root"/>
+      <feature id="org.eclipse.pde.spies" installMode="root"/>
       <feature id="org.eclipse.sdk" installMode="root"/>
       <feature id="org.eclipse.uml2.sdk" installMode="root"/>
       <feature id="org.eclipse.xsd.sdk" installMode="root"/>

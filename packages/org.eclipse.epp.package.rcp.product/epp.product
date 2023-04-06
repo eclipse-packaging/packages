@@ -240,6 +240,7 @@ United States, other countries, or both.
       <feature id="org.eclipse.jdt"/>
       <feature id="org.eclipse.jdt.bcoview.feature" installMode="root"/>
       <feature id="org.eclipse.pde"/>
+      <feature id="org.eclipse.pde.spies"/>
       <feature id="org.eclipse.platform.source"/>
       <feature id="org.eclipse.rcp.source"/>
       <feature id="org.eclipse.buildship" installMode="root"/>
