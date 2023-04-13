@@ -100,7 +100,7 @@ cpp - 2023-03 RC1
 dsl - 2023-03 RC1
 embedcpp - 2023-03 RC1
 java - 2023-03 M2
-jee - 2023-03 RC1
+jee - 2023-03 RC2
 modeling - 2022-12 M3
 parallel - 2022-03 RC2 (tested by Ed in 2022-09 RC1)
 php - 2020-12 RC2 (tested by Ed in 2022-09 RC1)
@@ -109,7 +109,7 @@ scout - 2023-03 M1
 
 Platforms:
 Linux x86_64 - 2023-03 RC1
-Linux aarch64 - 2022-12 RC1
+Linux aarch64 - 2023-03 RC2
 Windows - 2023-03 M2
 macOS x86_64 - 2023-03 RC1
 macOS aarch64 - 2023-03 RC1
