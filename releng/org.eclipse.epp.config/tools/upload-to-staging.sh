@@ -109,7 +109,7 @@ scout - 2023-03 M1
 
 Platforms:
 Linux x86_64 - 2023-03 RC1
-Linux aarch64 - 2023-03 RC2
+Linux aarch64 - 2023-03 RC1
 Windows - 2023-03 M2
 macOS x86_64 - 2023-03 RC1
 macOS aarch64 - 2023-03 RC1
