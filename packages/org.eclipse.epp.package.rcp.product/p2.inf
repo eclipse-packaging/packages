@@ -162,3 +162,6 @@ requires.122.namespace = org.eclipse.equinox.p2.iu
 requires.122.name = org.eclipse.jdt.bcoview.feature.feature.group
 requires.122.filter = (org.eclipse.epp.install.roots=true)
 
+requires.123.namespace = org.eclipse.equinox.p2.iu
+requires.123.name = org.eclipse.pde.spies.feature.group
+requires.123.filter = (org.eclipse.epp.install.roots=true)
