@@ -14,7 +14,7 @@ This checklist is only used once per release cycle. Scroll down for the per-mile
 - [ ] Create new [PMI entry](https://projects.eclipse.org/projects/technology.packaging)
 - [ ] Add Target Milestones in [Bugzilla](https://dev.eclipse.org/committers/bugs/bugz_manager.php)
 - [ ] Look at renaming zips for mac
-- [ ] Update splash screen (once per release cycle, hopefully done before M1). See detailed [instructions](https://git.eclipse.org/c/epp/org.eclipse.epp.packages.git/tree/packages/org.eclipse.epp.package.common/splash/INSTRUCTIONS.md). For 2022-06 see Bug [575781](https://bugs.eclipse.org/bugs/show_bug.cgi?id=575781) for new splash screens.
+- [ ] Update splash screen (once per release cycle, hopefully done before M1). See detailed [instructions](https://github.com/eclipse-packaging/packages/blob/master/packages/org.eclipse.epp.package.common/splash/INSTRUCTIONS.md). For 2022-06 see Bug [575781](https://bugs.eclipse.org/bugs/show_bug.cgi?id=575781) for new splash screens.
 - [ ] When the year changes, e.g. between 2019-12 and 2020-03 releases, an update of the copyright year is required with a very smart search&replace. A good replacement is `/, 2021/, 2022/` excluding `*.svg`
 - [ ] In addition to the "Update Name" step on every M and RC, the whole version string is updated, including platform version; this is a large change including
   - [ ] pom.xml
@@ -60,10 +60,10 @@ This checklist is only used once per release cycle. Scroll down for the per-mile
     - On R build, for `eclipse.simultaneous.release.name` remove qualifier i.e. it should be `2020-12 (4.18.0)`
     - On M1 build add the qualifier back in, for `eclipse.simultaneous.release.name` remove qualifier i.e. it should be `2020-12 M1 (4.18.0 M1)`
   - [ ] **TODO can this be automated** on release builds release.xml template in `releng/org.eclipse.epp.config/tools/promote-a-build.sh` needs updating
-- [ ] Update the [Last Recorded +1 in the email template](https://git.eclipse.org/c/epp/org.eclipse.epp.packages.git/tree/releng/org.eclipse.epp.config/tools/upload-to-staging.sh) which any package and platform +1s that have been received since the last update.
+- [ ] Update the [Last Recorded +1 in the email template](https://github.com/eclipse-packaging/packages/blob/master/releng/org.eclipse.epp.config/tools/upload-to-staging.sh) which any package and platform +1s that have been received since the last update.
 - [ ] Wait for announcement that the staging repo is ready on [cross-project-issues-dev](https://accounts.eclipse.org/mailing-list/cross-project-issues-dev). An [example announcement](https://www.eclipse.org/lists/cross-project-issues-dev/msg17420.html).
   - [ ] Update `SIMREL_REPO` in `releng/org.eclipse.epp.config/parent/pom.xml` if not done above.
-- [ ] Update the build qualifiers to ensure that packages are all updated. See this [gerrit](https://git.eclipse.org/r/#/c/161075/) for an example. To do this run `releng/org.eclipse.epp.config/tools/setGitDate` ([link](https://git.eclipse.org/c/epp/org.eclipse.epp.packages.git/tree/releng/org.eclipse.epp.config/tools/setGitDate)) script. This script will make a local commit you need to push.
+- [ ] Update the build qualifiers to ensure that packages are all updated. See this [gerrit](https://git.eclipse.org/r/#/c/161075/) for an example. To do this run `releng/org.eclipse.epp.config/tools/setGitDate` ([link](https://github.com/eclipse-packaging/packages/blob/master/releng/org.eclipse.epp.config/tools/setGitDate)) script. This script will make a local commit you need to push.
 - [ ] Run a [CI build](https://ci.eclipse.org/packaging/job/simrel.epp-tycho-build/) that includes the above changes.
 - [ ] Disable the [CI build](https://ci.eclipse.org/packaging/job/simrel.epp-tycho-build/) so that the build results are not overwritten while doing the promotion. You can disable the project once it has fully started running, you don't have to wait for the build to finish.
 - [ ] Check that there are no unexpected warnings in the console output. Especially look for warnings about failure to sign.
@@ -83,7 +83,7 @@ This checklist is only used once per release cycle. Scroll down for the per-mile
   - [ ] Upgrade from previous release works. To test the upgrade an equivalent to the simrel release composite site needs to done. Add the following software sites to available software, check for updates and then make sure stuff works. In particular check error log and that core features (Such as JDT, Platform) have been upgraded.
     - `https://download.eclipse.org/staging/2023-06/` - _NOTE_ Use `SIMREL_REPO` if the staging repo has been updated since the `SIMREL_REPO` location was created.
     - `https://download.eclipse.org/technology/epp/staging/repository/`
-  - [ ] Verify no non-EPP content is in the p2 repo (especially justj, update [remove-justj-from-p2.xml](https://git.eclipse.org/c/epp/org.eclipse.epp.packages.git/tree/releng/org.eclipse.epp.config/tools/remove-justj-from-p2.xml) if needed)
+  - [ ] Verify no non-EPP content is in the p2 repo (especially justj, update [remove-justj-from-p2.xml](https://github.com/eclipse-packaging/packages/blob/master/releng/org.eclipse.epp.config/tools/remove-justj-from-p2.xml) if needed)
 - [ ] Edit the [Jenkins build](https://ci.eclipse.org/packaging/job/simrel.epp-tycho-build/)
   - [ ] Mark build as Keep forever
   - [ ] Edit Jenkins Build Information and name it (e.g. `2020-03 M3`)
