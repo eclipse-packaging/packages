@@ -1,8 +1,9 @@
 # The EPP Release Process
 
-An online editable version of this document is on [hackmd.io](https://hackmd.io/@jonahgraham/eclipse-epp-release-process), updates should be copied to [Eclipse's git repo](https://git.eclipse.org/c/epp/org.eclipse.epp.packages.git/tree/RELEASING.md). The Eclipse version is the official one.
-
 This guide contains the step-by-step process to complete an EPP release.
+
+The individual releases are tracked with [endgame](https://github.com/eclipse-packaging/packages/labels/endgame) issues on GitHub issues.
+For each release (M1, M2, M3, RC1, RC2) an endgame ticket is created with the appropriate contents from the rest of this document:
 
 EPP releases happen for each milestone and release candidate according to the [Eclipse Simultaneous Release Plan](https://wiki.eclipse.org/Simultaneous_Release).
 
