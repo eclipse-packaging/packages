@@ -81,7 +81,7 @@ Our next milestone build is available for testing: EPP ${RELEASE_NAME} ${RELEASE
 
 TODO say: No special issues to report! or write the issues to bring to the attention of the group when sending the email.
 
-I have been following the steps on https://hackmd.io/@jonahgraham/eclipse-epp-release-process - you can see the checkmarks as to what is done.
+I have been following the steps on https://github.com/eclipse-packaging/packages/labels/endgame - you can see the checkmarks as to what is done.
 
 Download link: https://download.eclipse.org/technology/epp/downloads/release/${RELEASE_NAME}/${RELEASE_MILESTONE}/_mirrors.php
 
@@ -92,18 +92,18 @@ https://download.eclipse.org/technology/epp/packages/${RELEASE_NAME}/${RELEASE_D
 
 Please test and send your +1 to this mailing list. +1s are optional as the package will be published anyway.
 
-Last +1 received for each package and platform (apologies if I missed one of your +1 emails, just let me know and I will update Last Recorded +1) I have highlighted those packages/platforms that I haven't seen any confirmation in this release cycle on.
+Last +1 received for each package and platform (apologies if I missed one of your +1 emails, just let me know and I will update Last Recorded +1)
 
 Packages:
-committers - 2022-12 RC1
+committers - 2022-12 RC1 (tested by Ed in 2023-03 RC2)
 cpp - 2023-03 RC2
 dsl - 2023-03 RC2
 embedcpp - 2023-03 RC1
 java - 2023-03 RC2
 jee - 2023-03 RC2
 modeling - 2023-03 RC2
-parallel - 2022-03 RC2 (tested by Ed in 2022-09 RC1)
-php - 2020-12 RC2 (tested by Ed in 2022-09 RC1)
+parallel - 2022-03 RC2 (tested by Ed in 2023-03 RC2)
+php - 2020-12 RC2 (tested by Ed in 2023-03 RC2)
 rcp - 2023-03 RC2
 scout - 2023-03 M1
 
