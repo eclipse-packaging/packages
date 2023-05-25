@@ -234,6 +234,10 @@ United States, other countries, or both.
       <feature id="org.eclipse.egit" installMode="root"/>
       <feature id="org.eclipse.jgit" installMode="root"/>
       <feature id="org.eclipse.mylyn.wikitext_feature" installMode="root"/>
+      <feature id="org.eclipse.mylyn.git" installMode="root"/>
+      <feature id="org.eclipse.mylyn.hudson" installMode="root"/>
+      <feature id="org.eclipse.mylyn.ide_feature" installMode="root"/>
+      <feature id="org.eclipse.mylyn.reviews.feature" installMode="root"/>
 
       <!-- product specific contents -->
       <feature id="org.eclipse.epp.package.scout.feature" version="4.28.0.qualifier"/>
@@ -247,6 +251,7 @@ United States, other countries, or both.
       <feature id="org.eclipse.scout.sdk-feature" installMode="root"/>
       <feature id="org.eclipse.wst.xml_ui.feature" installMode="root"/>
       <feature id="org.eclipse.wst.web_ui.feature" installMode="root"/>
+      <feature id="org.eclipse.mylyn.java_feature" installMode="root"/>
    </features>
 
 

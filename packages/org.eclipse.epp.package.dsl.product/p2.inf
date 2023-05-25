@@ -142,3 +142,22 @@ requires.117.namespace = org.eclipse.equinox.p2.iu
 requires.117.name = org.eclipse.buildship.feature.group
 requires.117.filter = (org.eclipse.epp.install.roots=true)
 
+requires.200.namespace = org.eclipse.equinox.p2.iu
+requires.200.name = org.eclipse.mylyn.ide_feature.feature.group
+requires.200.filter = (org.eclipse.epp.install.roots=true)
+
+requires.201.namespace = org.eclipse.equinox.p2.iu
+requires.201.name = org.eclipse.mylyn.git.feature.group
+requires.201.filter = (org.eclipse.epp.install.roots=true)
+
+requires.202.namespace = org.eclipse.equinox.p2.iu
+requires.202.name = org.eclipse.mylyn.hudson.feature.group
+requires.202.filter = (org.eclipse.epp.install.roots=true)
+
+requires.203.namespace = org.eclipse.equinox.p2.iu
+requires.203.name = org.eclipse.mylyn.reviews.feature.feature.group
+requires.203.filter = (org.eclipse.epp.install.roots=true)
+
+requires.204.namespace = org.eclipse.equinox.p2.iu
+requires.204.name = org.eclipse.mylyn.java_feature.feature.group
+requires.204.filter = (org.eclipse.epp.install.roots=true)
