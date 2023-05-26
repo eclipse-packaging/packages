@@ -234,9 +234,12 @@ United States, other countries, or both.
       <feature id="org.eclipse.egit" installMode="root"/>
       <feature id="org.eclipse.jgit" installMode="root"/>
       <feature id="org.eclipse.mylyn.wikitext_feature" installMode="root"/>
-      <feature id="org.eclipse.mylyn.git" installMode="root"/>
-      <feature id="org.eclipse.mylyn.hudson" installMode="root"/>
+      <feature id="org.eclipse.mylyn.commons.activity" installMode="root"/>
+      <feature id="org.eclipse.mylyn.egit.feature" installMode="root"/>
       <feature id="org.eclipse.mylyn.ide_feature" installMode="root"/>
+      <feature id="org.eclipse.mylyn.git" installMode="root"/>
+      <feature id="org.eclipse.mylyn.github.feature" installMode="root"/>
+      <feature id="org.eclipse.mylyn.hudson" installMode="root"/>
       <feature id="org.eclipse.mylyn.reviews.feature" installMode="root"/>
 
       <!-- product specific contents -->
