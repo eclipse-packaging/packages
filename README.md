@@ -21,6 +21,10 @@ the Simultaneous Release staging p2 repository:
 
     mvn clean verify -Pepp.package.rcp
 
+To build all the packages:
+
+    mvn clean verify -Pepp.package.cpp,epp.package.dsl,epp.package.embedcpp,epp.package.java,epp.package.jee,epp.package.modeling,epp.package.parallel,epp.package.php,epp.package.rcp,epp.package.scout,epp.package.committers
+
 This build creates output in two places:
 
 1. tar.gz/zip/dmg archives with the packages in `archive/` and
