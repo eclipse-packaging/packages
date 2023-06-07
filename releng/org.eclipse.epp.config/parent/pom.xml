@@ -38,11 +38,11 @@
     <!-- Name of the release (no milestone) -->
     <RELEASE_NAME>2023-06</RELEASE_NAME>
     <!-- Name of the milestone -->
-    <RELEASE_MILESTONE>RC1</RELEASE_MILESTONE>
+    <RELEASE_MILESTONE>R</RELEASE_MILESTONE>
     <!-- Version of the release -->
     <RELEASE_VERSION>4.28.0</RELEASE_VERSION>
     <!-- Name release directory on download.eclipse.org -->
-    <RELEASE_DIR>202306011200</RELEASE_DIR>
+    <RELEASE_DIR>202306081200</RELEASE_DIR>
     <!-- SimRel Repo to build from -->
     <SIMREL_REPO>https://download.eclipse.org/staging/2023-06/</SIMREL_REPO>
     <!-- ID used to generate the filename of the packages -->
@@ -52,9 +52,9 @@
     <!-- Human readable name of the release, e.g. used in the about dialog (see about.mappings) -->
     <!-- TODO the two alternative values of eclipse.simultaneous.release.name could be automated, perhaps with a profile dependent on RELEASE_MILESTONE -->
     <!-- eclipse.simultaneous.release.name value for non-R builds -->
-    <eclipse.simultaneous.release.name>${RELEASE_NAME} ${RELEASE_MILESTONE} (${RELEASE_VERSION} ${RELEASE_MILESTONE})</eclipse.simultaneous.release.name>
+    <!-- <eclipse.simultaneous.release.name>${RELEASE_NAME} ${RELEASE_MILESTONE} (${RELEASE_VERSION} ${RELEASE_MILESTONE})</eclipse.simultaneous.release.name> -->
     <!-- eclipse.simultaneous.release.name value for R builds -->
-    <!-- <eclipse.simultaneous.release.name>${RELEASE_NAME} (${RELEASE_VERSION})</eclipse.simultaneous.release.name> -->
+    <eclipse.simultaneous.release.name>${RELEASE_NAME} (${RELEASE_VERSION})</eclipse.simultaneous.release.name>
     <!-- Upstream p2 repository, used as a source for pre-compiled build artifacts -->
     <eclipse.simultaneous.release.repository>${SIMREL_REPO}</eclipse.simultaneous.release.repository>
   </properties>
