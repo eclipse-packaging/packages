@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="Eclipse IDE for Enterprise Java and Web Developers" uid="epp.package.jee" id="org.eclipse.epp.package.jee.product" application="org.eclipse.ui.ide.workbench" version="4.28.0.qualifier" useFeatures="true" includeLaunchers="true">
+<product name="Eclipse IDE for Enterprise Java and Web Developers" uid="epp.package.jee" id="org.eclipse.epp.package.jee.product" application="org.eclipse.ui.ide.workbench" version="4.29.0.qualifier" useFeatures="true" includeLaunchers="true">
 
    <aboutInfo>
       <image path="/org.eclipse.epp.package.jee/eclipse_lg.png"/>
@@ -224,7 +224,7 @@ United States, other countries, or both.
       <!-- all features added here as installMode="root" need to be added to p2.inf as well -->
 
       <!-- common features that all products have -->
-      <feature id="org.eclipse.epp.package.common.feature" version="4.28.0.qualifier"/>
+      <feature id="org.eclipse.epp.package.common.feature" version="4.29.0.qualifier"/>
       <feature id="org.eclipse.platform"/>
       <feature id="org.eclipse.equinox.p2.user.ui"/>
       <feature id="org.eclipse.epp.mpc" installMode="root"/>
@@ -245,7 +245,7 @@ United States, other countries, or both.
       <feature id="org.eclipse.mylyn.reviews.feature" installMode="root"/>
 
       <!-- product specific contents -->
-      <feature id="org.eclipse.epp.package.jee.feature" version="4.28.0.qualifier"/>
+      <feature id="org.eclipse.epp.package.jee.feature" version="4.29.0.qualifier"/>
       <feature id="org.eclipse.datatools.common.doc.user" installMode="root"/>
       <feature id="org.eclipse.datatools.connectivity.doc.user" installMode="root"/>
       <feature id="org.eclipse.datatools.connectivity.feature" installMode="root"/>

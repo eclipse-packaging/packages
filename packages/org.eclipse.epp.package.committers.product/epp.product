@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="Eclipse IDE for Eclipse Committers" uid="epp.package.committers" id="org.eclipse.epp.package.committers.product" application="org.eclipse.ui.ide.workbench" version="4.28.0.qualifier" useFeatures="true" includeLaunchers="true">
+<product name="Eclipse IDE for Eclipse Committers" uid="epp.package.committers" id="org.eclipse.epp.package.committers.product" application="org.eclipse.ui.ide.workbench" version="4.29.0.qualifier" useFeatures="true" includeLaunchers="true">
 
    <aboutInfo>
       <image path="/org.eclipse.epp.package.committers/eclipse_lg.png"/>
@@ -224,7 +224,7 @@ United States, other countries, or both.
       <!-- all features added here as installMode="root" need to be added to p2.inf as well -->
 
       <!-- common features that all products have -->
-      <feature id="org.eclipse.epp.package.common.feature" version="4.28.0.qualifier"/>
+      <feature id="org.eclipse.epp.package.common.feature" version="4.29.0.qualifier"/>
       <feature id="org.eclipse.platform"/>
       <feature id="org.eclipse.equinox.p2.user.ui"/>
       <feature id="org.eclipse.epp.mpc" installMode="root"/>
@@ -245,7 +245,7 @@ United States, other countries, or both.
       <feature id="org.eclipse.mylyn.reviews.feature" installMode="root"/>
 
       <!-- product specific contents -->
-      <feature id="org.eclipse.epp.package.committers.feature" version="4.28.0.qualifier"/>
+      <feature id="org.eclipse.epp.package.committers.feature" version="4.29.0.qualifier"/>
       <feature id="org.eclipse.help"/>
       <feature id="org.eclipse.jdt" installMode="root"/>
       <feature id="org.eclipse.jdt.bcoview.feature" installMode="root"/>
