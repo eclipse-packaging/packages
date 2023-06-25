@@ -74,7 +74,8 @@ cat > release.xml <<EOM
 <past>2022-06/R</past>
 <past>2022-09/R</past>
 <past>2022-12/R</past>
-<present>2023-03/R</present>
+<past>2023-03/R</past>
+<present>2023-06/R</present>
 <future>${RELEASE_NAME}/${RELEASE_MILESTONE}</future>
 </packages>
 EOM
