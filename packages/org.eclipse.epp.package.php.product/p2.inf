@@ -135,7 +135,7 @@ requires.115.name = org.eclipse.wildwebdeveloper.embedder.node.feature.feature.g
 requires.115.filter = (org.eclipse.epp.install.roots=true)
 
 requires.200.namespace = org.eclipse.equinox.p2.iu
-requires.200.name = org.eclipse.mylyn.commons.activity.feature.group
+requires.200.name = org.eclipse.mylyn.commons.activity.feature.feature.group
 requires.200.filter = (org.eclipse.epp.install.roots=true)
 
 requires.201.namespace = org.eclipse.equinox.p2.iu
@@ -143,11 +143,11 @@ requires.201.name = org.eclipse.mylyn.egit.feature.feature.group
 requires.201.filter = (org.eclipse.epp.install.roots=true)
 
 requires.202.namespace = org.eclipse.equinox.p2.iu
-requires.202.name = org.eclipse.mylyn.ide_feature.feature.group
+requires.202.name = org.eclipse.mylyn.ide.feature.feature.group
 requires.202.filter = (org.eclipse.epp.install.roots=true)
 
 requires.203.namespace = org.eclipse.equinox.p2.iu
-requires.203.name = org.eclipse.mylyn.git.feature.group
+requires.203.name = org.eclipse.mylyn.git.feature.feature.group
 requires.203.filter = (org.eclipse.epp.install.roots=true)
 
 requires.204.namespace = org.eclipse.equinox.p2.iu
@@ -155,14 +155,15 @@ requires.204.name = org.eclipse.mylyn.github.feature.feature.group
 requires.204.filter = (org.eclipse.epp.install.roots=true)
 
 requires.205.namespace = org.eclipse.equinox.p2.iu
-requires.205.name = org.eclipse.mylyn.hudson.feature.group
+requires.205.name = org.eclipse.mylyn.jenkins.feature.feature.group
 requires.205.filter = (org.eclipse.epp.install.roots=true)
 
 requires.206.namespace = org.eclipse.equinox.p2.iu
 requires.206.name = org.eclipse.mylyn.reviews.feature.feature.group
 requires.206.filter = (org.eclipse.epp.install.roots=true)
 
-requires.210.namespace = org.eclipse.equinox.p2.iu
-requires.210.name = org.eclipse.php.mylyn.feature.group
-requires.210.filter = (org.eclipse.epp.install.roots=true)
+# disabled due to mylyn feature changes - needs to be reenabled once PDT makes corresponding changes -->
+#requires.210.namespace = org.eclipse.equinox.p2.iu
+#requires.210.name = org.eclipse.php.mylyn.feature.group
+#requires.210.filter = (org.eclipse.epp.install.roots=true)
 

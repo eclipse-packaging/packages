@@ -236,12 +236,12 @@ United States, other countries, or both.
       <feature id="org.eclipse.mylyn.wikitext_feature" installMode="root"/>
 
       <!-- common features to almost all products -->
-      <feature id="org.eclipse.mylyn.commons.activity" installMode="root"/>
+      <feature id="org.eclipse.mylyn.commons.activity.feature" installMode="root"/>
       <feature id="org.eclipse.mylyn.egit.feature" installMode="root"/>
-      <feature id="org.eclipse.mylyn.ide_feature" installMode="root"/>
-      <feature id="org.eclipse.mylyn.git" installMode="root"/>
+      <feature id="org.eclipse.mylyn.ide.feature" installMode="root"/>
+      <feature id="org.eclipse.mylyn.git.feature" installMode="root"/>
       <feature id="org.eclipse.mylyn.github.feature" installMode="root"/>
-      <feature id="org.eclipse.mylyn.hudson" installMode="root"/>
+      <feature id="org.eclipse.mylyn.jenkins.feature" installMode="root"/>
       <feature id="org.eclipse.mylyn.reviews.feature" installMode="root"/>
 
       <!-- product specific contents -->
@@ -288,7 +288,7 @@ United States, other countries, or both.
       <feature id="org.eclipse.embedcdt.templates.stm" installMode="root"/>
       <feature id="org.eclipse.embedcdt.templates.sifive" installMode="root"/>
       <feature id="org.eclipse.embedcdt.templates.xpack" installMode="root"/>
-      <feature id="org.eclipse.cdt.mylyn" installMode="root"/>
+      <feature id="org.eclipse.mylyn.cdt.feature" installMode="root"/>
    </features>
 
 
