@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="Eclipse IDE for Eclipse Committers" uid="epp.package.committers" id="org.eclipse.epp.package.committers.product" application="org.eclipse.ui.ide.workbench" version="4.29.0.qualifier" type="features" includeLaunchers="true" autoIncludeRequirements="true">
+<product name="Eclipse IDE for Eclipse Committers" uid="epp.package.committers" id="org.eclipse.epp.package.committers.product" application="org.eclipse.ui.ide.workbench" version="4.29.0.qualifier" type="mixed" includeLaunchers="true" autoIncludeRequirements="true">
 
    <aboutInfo>
       <image path="/org.eclipse.epp.package.committers/eclipse_lg.png"/>
@@ -23,6 +23,7 @@
 -Dosgi.instance.area.default=@user.home/eclipse-workspace
 -Dosgi.dataAreaRequiresExplicitInit=true
 -Dorg.eclipse.swt.graphics.Resource.reportNonDisposed=true
+-Dorg.slf4j.simpleLogger.defaultLogLevel=off
 -Dsun.java.command=Eclipse
 -Xms256m
 -Xmx2048m
@@ -67,6 +68,7 @@
       <plugin id="org.eclipse.equinox.event" autoStart="true" startLevel="2" />
       <plugin id="org.eclipse.equinox.p2.reconciler.dropins" autoStart="true" startLevel="4" />
       <plugin id="org.eclipse.equinox.simpleconfigurator" autoStart="true" startLevel="1" />
+      <plugin id="slf4j.simple" autoStart="true" startLevel="2" />
       <property name="org.eclipse.update.reconcile" value="false" />
       <property name="eclipse.buildId" value="${unqualifiedVersion}.${buildQualifier}" />
       <property name="osgi.bundles.defaultStartLevel" value="4" />
@@ -271,6 +273,9 @@ United States, other countries, or both.
       <feature id="org.eclipse.mylyn.jdt.feature" installMode="root"/>
       <feature id="org.eclipse.mylyn.pde.feature" installMode="root"/>
    </features>
-
+   <plugins>
+      <plugin id="slf4j.api"/>
+      <plugin id="slf4j.simple"/>
+   </plugins>
 
 </product>
