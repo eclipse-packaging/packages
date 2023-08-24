@@ -256,8 +256,7 @@ United States, other countries, or both.
       <feature id="org.eclipse.wst.xml_ui.feature" installMode="root"/>
       <feature id="org.eclipse.wildwebdeveloper.feature" installMode="root"/>
       <feature id="org.eclipse.wildwebdeveloper.embedder.node.feature" installMode="root"/>
-      <!-- disabled due to mylyn feature changes - needs to be reenabled once PDT makes corresponding changes -->
-      <!-- <feature id="org.eclipse.php.mylyn" installMode="root"/> -->
+      <feature id="org.eclipse.php.mylyn" installMode="root"/>
    </features>
 
 
