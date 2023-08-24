@@ -162,8 +162,7 @@ requires.206.namespace = org.eclipse.equinox.p2.iu
 requires.206.name = org.eclipse.mylyn.reviews.feature.feature.group
 requires.206.filter = (org.eclipse.epp.install.roots=true)
 
-# disabled due to mylyn feature changes - needs to be reenabled once PDT makes corresponding changes -->
-#requires.210.namespace = org.eclipse.equinox.p2.iu
-#requires.210.name = org.eclipse.php.mylyn.feature.group
-#requires.210.filter = (org.eclipse.epp.install.roots=true)
+requires.210.namespace = org.eclipse.equinox.p2.iu
+requires.210.name = org.eclipse.php.mylyn.feature.group
+requires.210.filter = (org.eclipse.epp.install.roots=true)
 
