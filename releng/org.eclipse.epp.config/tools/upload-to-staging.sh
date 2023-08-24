@@ -101,14 +101,14 @@ dsl - 2023-06 RC2
 embedcpp - 2023-06 RC2
 java - 2023-06 RC2
 jee - 2023-06 RC2
-modeling - 2023-06 RC2
+modeling - 2023-09 M2
 parallel - 2022-03 RC2 (tested by Ed in 2023-03 RC2)
 php - 2023-06 RC2
 rcp - 2023-06 RC2
 scout - 2023-06 RC2
 
 Platforms:
-Linux x86_64 - 2023-06 RC2
+Linux x86_64 - 2023-09 M2
 Linux aarch64 - 2023-06 RC2
 Windows - 2023-06 RC2
 macOS x86_64 - 2023-06 RC2
