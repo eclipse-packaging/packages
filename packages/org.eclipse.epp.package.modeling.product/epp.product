@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="Eclipse Modeling Tools" uid="epp.package.modeling" id="org.eclipse.epp.package.modeling.product" application="org.eclipse.ui.ide.workbench" version="4.29.0.qualifier" type="features" includeLaunchers="true" autoIncludeRequirements="true">
+<product name="Eclipse Modeling Tools" uid="epp.package.modeling" id="org.eclipse.epp.package.modeling.product" application="org.eclipse.ui.ide.workbench" version="4.29.0.qualifier" type="mixed" includeLaunchers="true" autoIncludeRequirements="true">
 
    <aboutInfo>
       <image path="/org.eclipse.epp.package.modeling/eclipse_lg.png"/>
@@ -277,6 +277,10 @@ United States, other countries, or both.
       <feature id="org.eclipse.mylyn.jdt.feature" installMode="root"/>
       <feature id="org.eclipse.mylyn.pde.feature" installMode="root"/>
    </features>
+   <plugins>
+      <!-- either m2e.logback or slf4j.simple should be provided in each package -->
+      <plugin id="slf4j.simple"/>
+   </plugins>
 
 
 </product>

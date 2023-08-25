@@ -262,7 +262,7 @@ United States, other countries, or both.
       <feature id="org.eclipse.mylyn.jdt.feature" installMode="root"/>
    </features>
    <plugins>
-      <plugin id="slf4j.api"/>
+      <!-- either m2e.logback or slf4j.simple should be provided in each package -->
       <plugin id="slf4j.simple"/>
    </plugins>
 
