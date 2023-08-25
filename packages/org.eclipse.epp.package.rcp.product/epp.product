@@ -261,6 +261,7 @@ United States, other countries, or both.
       <feature id="org.eclipse.m2e.feature" installMode="root"/>
       <feature id="org.eclipse.m2e.pde.feature" installMode="root"/>
       <feature id="org.eclipse.m2e.lemminx.feature" installMode="root"/>
+      <!-- either m2e.logback or slf4j.simple should be provided in each package -->
       <feature id="org.eclipse.m2e.logback.feature" installMode="root"/>
       <feature id="org.eclipse.rap.tools.feature" installMode="root"/>
       <feature id="org.eclipse.swtbot.eclipse.gef" installMode="root"/>
