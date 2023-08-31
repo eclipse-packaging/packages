@@ -31,8 +31,7 @@ RELEASE_DIR=$(get_property RELEASE_DIR)
 SIMREL_REPO=$(get_property SIMREL_REPO)
 WORKSPACE=${WORKSPACE:-"${PWD}"}
 GIT_REPOSITORY=${GIT_REPOSITORY:-"org.eclipse.epp.packages"}
-BUILT_PACKAGES=$(cat packages.txt)
-PACKAGES=${BUILT_PACKAGES:-"committers cpp dsl embedcpp java jee modeling parallel php rcp scout"}
+PACKAGES="committers cpp dsl embedcpp java jee modeling parallel php rcp scout"
 PLATFORMS=${PLATFORMS:-"linux.gtk.aarch64.tar.gz linux.gtk.x86_64.tar.gz macosx.cocoa.aarch64.dmg macosx.cocoa.aarch64.tar.gz macosx.cocoa.x86_64.dmg macosx.cocoa.x86_64.tar.gz win32.win32.x86_64.zip"}
 STAGING=${STAGING:-"/home/data/httpd/download.eclipse.org/technology/epp/staging"}
 
