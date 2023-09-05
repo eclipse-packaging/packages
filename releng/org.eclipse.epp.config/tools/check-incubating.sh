@@ -8,7 +8,7 @@ echo "Checking all EPPs for incubating components"
 echo "The below report shows what bundles look like they may be incubating in each project"
 for i in *eclipse*linux.gtk.x86_64.tar.gz; do
     echo $i
-    tar tf $i eclipse/plugins | \
+    tar --warning=no-unknown-keyword -tf $i eclipse/plugins | \
         # get the plug-in name only (no contents or .jar)
         sed '-es,.*eclipse/plugins/,  ,g'  '-es,/.*,,g'  '-es,\.jar,,g' | \
         # Uniqify
