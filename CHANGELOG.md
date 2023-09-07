@@ -9,7 +9,7 @@ The [Eclipse IDE New & Noteworthy](https://eclipseide.org/release/noteworthy/) p
 
 - Packages now contain configuration and start levels for logging support.
 This change applies the [recommendation](https://eclipse.dev/eclipse/news/4.28/platform.php#slf4j.api-version-2) from Eclipse Platform to support SLF4J version 2.
-For implementation details refer [EPP Issue #27](https://github.com/eclipse-packaging/packages/issues/27).
+For implementation details refer to [EPP Issue #27](https://github.com/eclipse-packaging/packages/issues/27).
 - With the new Mylyn major version being released the list of features included in packages have been updated to their new names and IDs.
 
 ## 2023-06
