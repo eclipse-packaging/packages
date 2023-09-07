@@ -25,7 +25,6 @@ Click <a href="https://github.com/eclipse/wildwebdeveloper/issues">here</a> to r
     <!-- packageTesters is a list of the people that are testing the package -->
      <packageTesters>
       <tester>Nitin Dahyabhai</tester>
-      <tester>Chuck Bridgham</tester>
     </packageTesters>
   </packageMetaData>
   <MoreInfo>
