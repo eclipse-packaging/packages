@@ -32,6 +32,6 @@
   </MoreInfo>
 
   <!-- name, the name of the product, used in naming the created files. -->
-  <product name="eclipse-modeling-2023-09-RC1" />
+  <product name="eclipse-modeling-2023-09-R" />
 
 </configuration>
