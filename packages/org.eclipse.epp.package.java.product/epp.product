@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="Eclipse IDE for Java Developers" uid="epp.package.java" id="org.eclipse.epp.package.java.product" application="org.eclipse.ui.ide.workbench" version="4.29.0.qualifier" type="features" includeLaunchers="true" autoIncludeRequirements="true">
+<product name="Eclipse IDE for Java Developers" uid="epp.package.java" id="org.eclipse.epp.package.java.product" application="org.eclipse.ui.ide.workbench" version="4.30.0.qualifier" type="features" includeLaunchers="true" autoIncludeRequirements="true">
 
    <aboutInfo>
       <image path="/org.eclipse.epp.package.java/eclipse_lg.png"/>
@@ -225,7 +225,7 @@ United States, other countries, or both.
       <!-- all features added here as installMode="root" need to be added to p2.inf as well -->
 
       <!-- common features that all products have -->
-      <feature id="org.eclipse.epp.package.common.feature" version="4.29.0.qualifier"/>
+      <feature id="org.eclipse.epp.package.common.feature" version="4.30.0.qualifier"/>
       <feature id="org.eclipse.platform"/>
       <feature id="org.eclipse.equinox.p2.user.ui"/>
       <feature id="org.eclipse.epp.mpc" installMode="root"/>
@@ -246,7 +246,7 @@ United States, other countries, or both.
       <feature id="org.eclipse.mylyn.reviews.feature" installMode="root"/>
 
       <!-- product specific contents -->
-      <feature id="org.eclipse.epp.package.java.feature" version="4.29.0.qualifier"/>
+      <feature id="org.eclipse.epp.package.java.feature" version="4.30.0.qualifier"/>
       <feature id="org.eclipse.buildship" installMode="root"/>
       <feature id="org.eclipse.eclemma.feature" installMode="root"/>
       <feature id="org.eclipse.jdt" installMode="root"/>

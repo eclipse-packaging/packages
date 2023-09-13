@@ -77,6 +77,7 @@ cat > release.xml <<EOM
 <past>2023-03/R</past>
 <past>2023-06/R</past>
 <present>2023-09/R</present>
+<future>${RELEASE_NAME}/${RELEASE_MILESTONE}</future>
 </packages>
 EOM
 $ECHO $SCP release.xml "${SSHUSER}:"${EPP_DOWNLOADS}/downloads/release/release.xml

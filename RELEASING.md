@@ -85,7 +85,7 @@ This checklist is only used once per release cycle. Scroll down for the per-mile
   - [ ] Help -> About says expected build name and milestone, e.g. `2020-03-M2`
   - [ ] `org.eclipse.epp.package.*` features and bundles have the timestamp of the forced qualifier update or later
   - [ ] Upgrade from previous release works. To test the upgrade an equivalent to the simrel release composite site needs to done. Add the following software sites to available software, check for updates and then make sure stuff works. In particular check error log and that core features (Such as JDT, Platform) have been upgraded.
-    - `https://download.eclipse.org/staging/2023-09/` - _NOTE_ Use `SIMREL_REPO` if the staging repo has been updated since the `SIMREL_REPO` location was created.
+    - `https://download.eclipse.org/staging/2023-12/` - _NOTE_ Use `SIMREL_REPO` if the staging repo has been updated since the `SIMREL_REPO` location was created.
     - `https://download.eclipse.org/technology/epp/staging/repository/`
   - [ ] Verify no non-EPP content is in the p2 repo (especially justj, update [remove-justj-from-p2.xml](https://github.com/eclipse-packaging/packages/blob/master/releng/org.eclipse.epp.config/tools/remove-justj-from-p2.xml) if needed)
 - [ ] Edit the [Jenkins build](https://ci.eclipse.org/packaging/job/simrel.epp-tycho-build/)
