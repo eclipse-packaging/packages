@@ -94,6 +94,14 @@
       <url>https://download.eclipse.org/justj/epp/milestone/latest/</url>
       <layout>p2</layout>
     </repository>
+    <repository>
+      <!-- Tycho is insisting on accessing the "upstream" artifact for this Ant, see https://github.com/eclipse-packaging/packages/issues/66
+           To make this work we need to match the repo used in Orbit's build for the repository:
+             https://github.com/eclipse-orbit/orbit-simrel/blob/f6ea491f4ada5d6d6750d8118bf40d9802993376/maven-bnd/tp/MavenBND.target#L1203
+      -->
+      <id>maven-ant-repository2</id>
+      <url>https://repo.eclipse.org/content/repositories/orbit-approved-artifacts</url>
+    </repository>
   </repositories>
 
   <build>
