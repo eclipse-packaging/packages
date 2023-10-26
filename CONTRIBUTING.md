@@ -73,6 +73,6 @@ Normally, as with most other Eclipse projects, unless a committer explicitly "re
 
 
 [1]: http://eclipse.org/epp/
-[2]: http://wiki.eclipse.org/Simultaneous_Release
+[2]: https://github.com/eclipse-simrel/.github/blob/main/wiki/Simultaneous_Release.md
 [3]: https://www.eclipse.org/downloads/eclipse-packages/
 [4]: https://projects.eclipse.org/projects/technology.packaging
