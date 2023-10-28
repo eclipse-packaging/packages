@@ -73,6 +73,8 @@
       <property name="org.eclipse.update.reconcile" value="false" />
       <property name="eclipse.buildId" value="${unqualifiedVersion}.${buildQualifier}" />
       <property name="osgi.bundles.defaultStartLevel" value="4" />
+      <property name="osgi.instance.area.default" value="@user.home/workspace" />
+      <property name="osgi.instance.area.default" value="@user.home/Documents/workspace" os="macosx" />
    </configurations>
 
    <license>
@@ -279,7 +281,10 @@ United States, other countries, or both.
       <targetfile overwrite="false"/>
    </preferencesInfo>
 
-   <cssInfo>
-   </cssInfo>
+   <repositories>
+      <repository location="https://download.eclipse.org/eclipse/updates/4.30" name="The Eclipse Project Updates" enabled="true" />
+      <repository location="https://download.eclipse.org/releases/2023-12" name="2023-12" enabled="true" />
+   </repositories>
 
 </product>
+
