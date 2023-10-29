@@ -221,9 +221,6 @@ United States, other countries, or both.
          </text>
    </license>
 
-   <plugins>
-   </plugins>
-
    <features>
       <!-- all features added here as installMode="root" need to be added to p2.inf as well -->
 
