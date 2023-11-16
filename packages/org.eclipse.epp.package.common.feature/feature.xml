@@ -19,13 +19,6 @@
       %license
    </license>
 
-   <requires>
-      <!-- Workaround Eclipse Platform default filetransfer not supporting authenticated proxies
-      See also the change in p2.inf
-      see https://github.com/eclipse-packaging/packages/issues/81 -->
-      <import feature="org.eclipse.ecf.filetransfer.httpclient5.feature"/>
-   </requires>
-
    <plugin
          id="org.eclipse.epp.package.common"
          download-size="0"
