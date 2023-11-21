@@ -23,7 +23,7 @@ the Simultaneous Release staging p2 repository:
 
 To build all the packages:
 
-    mvn clean verify -Pepp.package.cpp,epp.package.dsl,epp.package.embedcpp,epp.package.java,epp.package.jee,epp.package.modeling,epp.package.parallel,epp.package.php,epp.package.rcp,epp.package.scout,epp.package.committers
+    mvn clean verify -Pepp.package.cpp,epp.package.dsl,epp.package.embedcpp,epp.package.java,epp.package.jee,epp.package.modeling,epp.package.php,epp.package.rcp,epp.package.scout,epp.package.committers
 
 This build creates output in two places:
 
@@ -51,7 +51,6 @@ Each package uses its own profile:
 - epp.package.java
 - epp.package.jee
 - epp.package.modeling
-- epp.package.parallel
 - epp.package.php
 - epp.package.rcp
 - epp.package.scout
