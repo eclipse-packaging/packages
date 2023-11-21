@@ -11,7 +11,6 @@ embedcpp - 2021-12 M3
 java - 2021-12 M2
 jee - 2021-12 M2
 modeling - 2021-12 M3
-parallel - 2021-09 RC2
 php - 2020-12 RC2
 rcp - 2021-06 RC1
 scout - 2021-12 M3

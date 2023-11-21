@@ -31,7 +31,7 @@ RELEASE_DIR=$(get_property RELEASE_DIR)
 SIMREL_REPO=$(get_property SIMREL_REPO)
 WORKSPACE=${WORKSPACE:-"${PWD}"}
 GIT_REPOSITORY=${GIT_REPOSITORY:-"org.eclipse.epp.packages"}
-PACKAGES="committers cpp dsl embedcpp java jee modeling parallel php rcp scout"
+PACKAGES="committers cpp dsl embedcpp java jee modeling php rcp scout"
 PLATFORMS=${PLATFORMS:-"linux.gtk.aarch64.tar.gz linux.gtk.x86_64.tar.gz macosx.cocoa.aarch64.dmg macosx.cocoa.aarch64.tar.gz macosx.cocoa.x86_64.dmg macosx.cocoa.x86_64.tar.gz win32.win32.x86_64.zip"}
 STAGING=${STAGING:-"/home/data/httpd/download.eclipse.org/technology/epp/staging"}
 
@@ -101,7 +101,6 @@ embedcpp - 2023-09 RC2
 java - 2023-09 RC2
 jee - 2023-09 RC2
 modeling - 2023-09 RC1
-parallel - 2022-03 RC2 (tested by Ed in 2023-03 RC2)
 php - 2023-06 RC2
 rcp - 2023-09 RC2
 scout - 2023-06 RC2

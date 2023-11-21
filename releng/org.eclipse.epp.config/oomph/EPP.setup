@@ -110,7 +110,7 @@
             project="org.eclipse.epp.package.common"/>
         <operand
             xsi:type="workingsets:ExclusionPredicate"
-            excludedWorkingSet="//'epp.workingsets'/@workingSets[name='EPP%20Committers'] //'epp.workingsets'/@workingSets[name='EPP%20CPP'] //'epp.workingsets'/@workingSets[name='EPP%20DSL'] //'epp.workingsets'/@workingSets[name='EPP%20Embedded%20CPP'] //'epp.workingsets'/@workingSets[name='EPP%20Java'] //'epp.workingsets'/@workingSets[name='EPP%20JEE'] //'epp.workingsets'/@workingSets[name='EPP%20Modeling'] //'epp.workingsets'/@workingSets[name='EPP%20Parallel'] //'epp.workingsets'/@workingSets[name='EPP%20PHP'] //'epp.workingsets'/@workingSets[name='EPP%20RCP'] //'epp.workingsets'/@workingSets[name='EPP%20Scout']"/>
+            excludedWorkingSet="//'epp.workingsets'/@workingSets[name='EPP%20Committers'] //'epp.workingsets'/@workingSets[name='EPP%20CPP'] //'epp.workingsets'/@workingSets[name='EPP%20DSL'] //'epp.workingsets'/@workingSets[name='EPP%20Embedded%20CPP'] //'epp.workingsets'/@workingSets[name='EPP%20Java'] //'epp.workingsets'/@workingSets[name='EPP%20JEE'] //'epp.workingsets'/@workingSets[name='EPP%20Modeling'] //'epp.workingsets'/@workingSets[name='EPP%20PHP'] //'epp.workingsets'/@workingSets[name='EPP%20RCP'] //'epp.workingsets'/@workingSets[name='EPP%20Scout']"/>
       </predicate>
     </workingSet>
     <workingSet
@@ -195,18 +195,6 @@
         <operand
             xsi:type="predicates:NamePredicate"
             pattern=".*\.modeling.*"/>
-      </predicate>
-    </workingSet>
-    <workingSet
-        name="EPP Parallel">
-      <predicate
-          xsi:type="predicates:AndPredicate">
-        <operand
-            xsi:type="predicates:RepositoryPredicate"
-            project="org.eclipse.epp.package.common"/>
-        <operand
-            xsi:type="predicates:NamePredicate"
-            pattern=".*\.parallel.*"/>
       </predicate>
     </workingSet>
     <workingSet
