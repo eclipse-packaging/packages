@@ -7,6 +7,7 @@ The [Eclipse IDE New & Noteworthy](https://eclipseide.org/release/noteworthy/) p
 
 ## 2023-12
 
+- The Eclipse IDE for Scientific Computing is not longer being published. If you are interested in helping maintain or resurrect this package, and the underlying Parallel Tools Project, please [leave a comment](https://github.com/eclipse-packaging/packages/issues/85). 
 - The PDE Spies has been restored to the Eclipse IDE for RCP and RAP Developers.
 
 ## 2023-09
