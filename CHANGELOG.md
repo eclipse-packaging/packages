@@ -8,6 +8,7 @@ The [Eclipse IDE New & Noteworthy](https://eclipseide.org/release/noteworthy/) p
 ## 2023-12
 
 - The Eclipse IDE for Scientific Computing is not longer being published. If you are interested in helping maintain or resurrect this package, and the underlying Parallel Tools Project, please [leave a comment](https://github.com/eclipse-packaging/packages/issues/85). 
+- Eclipse [contains a new backend](https://eclipse.dev/eclipse/news/4.30/platform.php#new-ecf-client) used by P2 to install and update software. The Eclipse Packaging Project [has disabled this by default](https://github.com/eclipse-packaging/packages/issues/81) as it is [known to not work in some corporate environments](https://github.com/eclipse-equinox/p2/issues/381). Please help test the new backend by removing `-Dorg.eclipse.ecf.provider.filetransfer.excludeContributors=org.eclipse.ecf.provider.filetransfer.httpclientjava` from eclipse.ini and [reporting any issues you have](https://github.com/eclipse-equinox/p2/issues/new/choose) so that the new backend can be the default in the near future.
 - The PDE Spies has been restored to the Eclipse IDE for RCP and RAP Developers.
 
 ## 2023-09
