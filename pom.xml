@@ -83,14 +83,6 @@
       </modules>
     </profile>
     <profile>
-      <id>epp.package.parallel</id>
-      <modules>
-        <module>packages/org.eclipse.epp.package.parallel</module>
-        <module>packages/org.eclipse.epp.package.parallel.feature</module>
-        <module>packages/org.eclipse.epp.package.parallel.product</module>
-      </modules>
-    </profile>
-    <profile>
       <id>epp.package.php</id>
       <modules>
         <module>packages/org.eclipse.epp.package.php</module>
