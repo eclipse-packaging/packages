@@ -34,6 +34,6 @@ Click <a href="https://github.com/eclipse/wildwebdeveloper/issues">here</a> to r
   </MoreInfo>
 
   <!-- name, the name of the product, used in naming the created files. -->
-  <product name="eclipse-jee-2023-12-M3" />
+  <product name="eclipse-jee-2023-12-RC1" />
 
 </configuration>
