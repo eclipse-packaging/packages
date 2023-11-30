@@ -22,14 +22,6 @@
       <tester>Remi Schnekenburger</tester>
     </packageTesters>
   </packageMetaData>
-  <MoreInfo>  
-  <NewAndNoteworthy
-    url="https://wiki.eclipse.org/Ecore_Tools/New_and_Noteworthy"
-    project="Eclipse EcoreTools" />
-  <NewAndNoteworthy
-    url="https://wiki.eclipse.org/EMF_Compare/New_and_Noteworthy/3.3.0"
-    project="Eclipse EMF Compare" />
-  </MoreInfo>
 
   <!-- name, the name of the product, used in naming the created files. -->
   <product name="eclipse-modeling-2023-12-RC1" />
