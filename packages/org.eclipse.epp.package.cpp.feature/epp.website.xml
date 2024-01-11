@@ -22,6 +22,6 @@
   </packageMetaData>
 
   <!-- name, the name of the product, used in naming the created files. -->
-  <product name="eclipse-cpp-2023-12-R" />
+  <product name="eclipse-cpp-2023-12-M1" />
 
 </configuration>

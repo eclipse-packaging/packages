@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="Eclipse IDE for Embedded C/C++ Developers" uid="epp.package.embedcpp" application="org.eclipse.ui.ide.workbench" version="4.30.0.qualifier" type="mixed" includeLaunchers="true" autoIncludeRequirements="true">
+<product name="Eclipse IDE for Embedded C/C++ Developers" uid="epp.package.embedcpp" application="org.eclipse.ui.ide.workbench" version="4.31.0.qualifier" type="mixed" includeLaunchers="true" autoIncludeRequirements="true">
 
    <aboutInfo>
       <image path="/org.eclipse.epp.package.embedcpp/eclipse_lg.png"/>
@@ -228,7 +228,7 @@ United States, other countries, or both.
       <!-- all features added here as installMode="root" need to be added to p2.inf as well -->
 
       <!-- common features that all products have -->
-      <feature id="org.eclipse.epp.package.common.feature" version="4.30.0.qualifier"/>
+      <feature id="org.eclipse.epp.package.common.feature" version="4.31.0.qualifier"/>
       <feature id="org.eclipse.platform"/>
       <feature id="org.eclipse.equinox.p2.user.ui"/>
       <feature id="org.eclipse.epp.mpc" installMode="root"/>
@@ -249,7 +249,7 @@ United States, other countries, or both.
       <feature id="org.eclipse.mylyn.reviews.feature" installMode="root"/>
 
       <!-- product specific contents -->
-      <feature id="org.eclipse.epp.package.embedcpp.feature" version="4.30.0.qualifier"/>
+      <feature id="org.eclipse.epp.package.embedcpp.feature" version="4.31.0.qualifier"/>
       <feature id="org.eclipse.cdt" installMode="root"/>
       <feature id="org.eclipse.cdt.autotools" installMode="root"/>
       <feature id="org.eclipse.cdt.build.crossgcc" installMode="root"/>
@@ -300,8 +300,8 @@ United States, other countries, or both.
    </plugins>
 
    <repositories>
-      <repository location="https://download.eclipse.org/eclipse/updates/4.30" name="The Eclipse Project Updates" enabled="true" />
-      <repository location="https://download.eclipse.org/releases/2023-12" name="2023-12" enabled="true" />
+      <repository location="https://download.eclipse.org/eclipse/updates/4.31" name="The Eclipse Project Updates" enabled="true" />
+      <repository location="https://download.eclipse.org/releases/2024-03" name="2024-03" enabled="true" />
    </repositories>
 
 </product>
