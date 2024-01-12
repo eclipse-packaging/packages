@@ -51,7 +51,7 @@ requires.105.name = org.eclipse.jgit.feature.group
 requires.105.filter = (org.eclipse.epp.install.roots=true)
 
 requires.106.namespace = org.eclipse.equinox.p2.iu
-requires.106.name = org.eclipse.mylyn.wikitext_feature.feature.group
+requires.106.name = org.eclipse.mylyn.wikitext.feature.feature.group
 requires.106.filter = (org.eclipse.epp.install.roots=true)
 
 requires.107.namespace = org.eclipse.equinox.p2.iu
