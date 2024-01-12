@@ -27,6 +27,6 @@
   </MoreInfo>
 
   <!-- name, the name of the product, used in naming the created files. -->
-  <product name="eclipse-dsl-2023-12-M1" />
+  <product name="eclipse-dsl-2024-03-M1" />
 
 </configuration>
