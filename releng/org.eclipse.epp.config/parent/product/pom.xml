@@ -83,32 +83,6 @@
         <groupId>org.eclipse.tycho</groupId>
         <artifactId>tycho-p2-director-plugin</artifactId>
       </plugin>
-
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-antrun-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>copy-zips-to-archive-folder</id>
-            <phase>integration-test</phase>
-            <configuration>
-              <target>
-                <copy todir="${basedir}/../../archive">
-                  <fileset dir="${project.build.directory}/products">
-                    <include name="*.zip" />
-                    <include name="*.tar.gz" />
-                    <include name="*.dmg" />
-                  </fileset>
-                </copy>
-              </target>
-            </configuration>
-            <goals>
-              <goal>run</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-
     </plugins>
   </build>
 
@@ -129,7 +103,7 @@
                 <phase>pre-integration-test</phase>
                 <configuration>
                   <serviceUrl>https://cbi.eclipse.org/macos/packager/dmg/create</serviceUrl>
-                  <source>${project.build.directory}/products/${build}_eclipse-${eclipse.epp.id}-${eclipse.simultaneous.release.id}-macosx.cocoa.aarch64.tar.gz</source>
+                  <source>${project.build.directory}/products/eclipse-${eclipse.epp.id}-${eclipse.simultaneous.release.id}-macosx.cocoa.aarch64.tar.gz</source>
                   <sign>${eclipse-sign-dmg-property}</sign>
                   <timeoutMillis>600000</timeoutMillis>
                 </configuration>
@@ -142,7 +116,7 @@
                 <phase>pre-integration-test</phase>
                 <configuration>
                   <serviceUrl>https://cbi.eclipse.org/macos/packager/dmg/create</serviceUrl>
-                  <source>${project.build.directory}/products/${build}_eclipse-${eclipse.epp.id}-${eclipse.simultaneous.release.id}-macosx.cocoa.x86_64.tar.gz</source>
+                  <source>${project.build.directory}/products/eclipse-${eclipse.epp.id}-${eclipse.simultaneous.release.id}-macosx.cocoa.x86_64.tar.gz</source>
                   <sign>${eclipse-sign-dmg-property}</sign>
                   <timeoutMillis>600000</timeoutMillis>
                 </configuration>

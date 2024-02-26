@@ -29,91 +29,283 @@
 
   <modules>
     <module>archive-template</module>
-    <module>packages/org.eclipse.epp.package.common</module>
-    <module>packages/org.eclipse.epp.package.common.feature</module>
   </modules>
 
   <profiles>
     <profile>
-      <id>epp.package.cpp</id>
+      <id>epp.p2.common</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+        <property>
+          <name>epp.p2.all</name>
+        </property>
+      </activation>
+      <modules>
+        <module>packages/org.eclipse.epp.package.common</module>
+        <module>packages/org.eclipse.epp.package.common.feature</module>
+      </modules>
+    </profile>
+
+    <profile>
+      <id>epp.p2.cpp</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+        <property>
+          <name>epp.p2.all</name>
+        </property>
+      </activation>
       <modules>
         <module>packages/org.eclipse.epp.package.cpp</module>
         <module>packages/org.eclipse.epp.package.cpp.feature</module>
+      </modules>
+    </profile>
+    <profile>
+      <id>epp.product.cpp</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+        <property>
+          <name>epp.product.all</name>
+        </property>
+      </activation>
+      <modules>
         <module>packages/org.eclipse.epp.package.cpp.product</module>
       </modules>
     </profile>
+
     <profile>
-      <id>epp.package.dsl</id>
+      <id>epp.p2.dsl</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+        <property>
+          <name>epp.p2.all</name>
+        </property>
+      </activation>
       <modules>
         <module>packages/org.eclipse.epp.package.dsl</module>
         <module>packages/org.eclipse.epp.package.dsl.feature</module>
+      </modules>
+    </profile>
+    <profile>
+      <id>epp.product.dsl</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+        <property>
+          <name>epp.product.all</name>
+        </property>
+      </activation>
+      <modules>
         <module>packages/org.eclipse.epp.package.dsl.product</module>
       </modules>
     </profile>
+
     <profile>
-      <id>epp.package.embedcpp</id>
+      <id>epp.p2.embedcpp</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+        <property>
+          <name>epp.p2.all</name>
+        </property>
+      </activation>
       <modules>
         <module>packages/org.eclipse.epp.package.embedcpp</module>
         <module>packages/org.eclipse.epp.package.embedcpp.feature</module>
+      </modules>
+    </profile>
+    <profile>
+      <id>epp.product.embedcpp</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+        <property>
+          <name>epp.product.all</name>
+        </property>
+      </activation>
+      <modules>
         <module>packages/org.eclipse.epp.package.embedcpp.product</module>
       </modules>
     </profile>
+
     <profile>
-      <id>epp.package.java</id>
+      <id>epp.p2.java</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+        <property>
+          <name>epp.p2.all</name>
+        </property>
+      </activation>
       <modules>
         <module>packages/org.eclipse.epp.package.java</module>
         <module>packages/org.eclipse.epp.package.java.feature</module>
+      </modules>
+    </profile>
+    <profile>
+      <id>epp.product.java</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+        <property>
+          <name>epp.product.all</name>
+        </property>
+      </activation>
+      <modules>
         <module>packages/org.eclipse.epp.package.java.product</module>
       </modules>
     </profile>
+
     <profile>
-      <id>epp.package.jee</id>
+      <id>epp.p2.jee</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+        <property>
+          <name>epp.p2.all</name>
+        </property>
+      </activation>
       <modules>
         <module>packages/org.eclipse.epp.package.jee</module>
         <module>packages/org.eclipse.epp.package.jee.feature</module>
+      </modules>
+    </profile>
+    <profile>
+      <id>epp.product.jee</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+        <property>
+          <name>epp.product.all</name>
+        </property>
+      </activation>
+      <modules>
         <module>packages/org.eclipse.epp.package.jee.product</module>
       </modules>
     </profile>
+
     <profile>
-      <id>epp.package.modeling</id>
+      <id>epp.p2.modeling</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+        <property>
+          <name>epp.p2.all</name>
+        </property>
+      </activation>
       <modules>
         <module>packages/org.eclipse.epp.package.modeling</module>
         <module>packages/org.eclipse.epp.package.modeling.feature</module>
+      </modules>
+    </profile>
+    <profile>
+      <id>epp.product.modeling</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+        <property>
+          <name>epp.product.all</name>
+        </property>
+      </activation>
+      <modules>
         <module>packages/org.eclipse.epp.package.modeling.product</module>
       </modules>
     </profile>
+
     <profile>
-      <id>epp.package.php</id>
+      <id>epp.p2.php</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+        <property>
+          <name>epp.p2.all</name>
+        </property>
+      </activation>
       <modules>
         <module>packages/org.eclipse.epp.package.php</module>
         <module>packages/org.eclipse.epp.package.php.feature</module>
+      </modules>
+    </profile>
+    <profile>
+      <id>epp.product.php</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+        <property>
+          <name>epp.product.all</name>
+        </property>
+      </activation>
+      <modules>
         <module>packages/org.eclipse.epp.package.php.product</module>
       </modules>
     </profile>
+
     <profile>
-      <id>epp.package.rcp</id>
+      <id>epp.p2.rcp</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+        <property>
+          <name>epp.p2.all</name>
+        </property>
+      </activation>
       <modules>
         <module>packages/org.eclipse.epp.package.rcp</module>
         <module>packages/org.eclipse.epp.package.rcp.feature</module>
+      </modules>
+    </profile>
+    <profile>
+      <id>epp.product.rcp</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+        <property>
+          <name>epp.product.all</name>
+        </property>
+      </activation>
+      <modules>
         <module>packages/org.eclipse.epp.package.rcp.product</module>
       </modules>
     </profile>
+
     <profile>
-      <id>epp.package.scout</id>
+      <id>epp.p2.scout</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+        <property>
+          <name>epp.p2.all</name>
+        </property>
+      </activation>
       <modules>
         <module>packages/org.eclipse.epp.package.scout</module>
         <module>packages/org.eclipse.epp.package.scout.feature</module>
-        <module>packages/org.eclipse.epp.package.scout.product</module>
       </modules>
     </profile>
     <profile>
-      <id>epp.package.committers</id>
+      <id>epp.product.scout</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+        <property>
+          <name>epp.product.all</name>
+        </property>
+      </activation>
+      <modules>
+        <module>packages/org.eclipse.epp.package.scout.product</module>
+      </modules>
+    </profile>
+
+    <profile>
+      <id>epp.p2.committers</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+        <property>
+          <name>epp.p2.all</name>
+        </property>
+      </activation>
       <modules>
         <module>packages/org.eclipse.epp.package.committers</module>
         <module>packages/org.eclipse.epp.package.committers.feature</module>
+      </modules>
+    </profile>
+    <profile>
+      <id>epp.product.committers</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+        <property>
+          <name>epp.product.all</name>
+        </property>
+      </activation>
+      <modules>
         <module>packages/org.eclipse.epp.package.committers.product</module>
       </modules>
     </profile>
+
   </profiles>
   <build>
     <plugins>

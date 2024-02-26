@@ -309,19 +309,6 @@
           <artifactId>tycho-p2-director-plugin</artifactId>
           <version>${tycho.version}</version>
           <executions>
-            <execution>
-              <id>materialize-products</id>
-              <goals>
-                <goal>materialize-products</goal>
-              </goals>
-            </execution>
-            <execution>
-              <id>archive-products</id>
-                <phase>pre-integration-test</phase>
-                <goals>
-                  <goal>archive-products</goal>
-                </goals>
-            </execution>
           </executions>
           <configuration>
             <formats>
@@ -336,7 +323,7 @@
                 <rootFolders>
                   <macosx>Eclipse.app</macosx>
                 </rootFolders>
-                <archiveFileName>${build}_eclipse-${eclipse.epp.id}-${eclipse.simultaneous.release.id}</archiveFileName>
+                <archiveFileName>eclipse-${eclipse.epp.id}-${eclipse.simultaneous.release.id}</archiveFileName>
               </product>
             </products>
             <profile>${project.artifactId}</profile>
@@ -384,6 +371,52 @@
       </repositories>
     </profile>
 
+    <profile>
+      <id>epp.p2.use-prebuilt-repo</id>
+      <activation>
+        <property>
+          <name>epp.p2.repourl</name>
+        </property>
+      </activation>
+      <repositories>
+        <repository>
+          <id>epp.p2.repourl</id>
+          <layout>p2</layout>
+          <url>${epp.p2.repourl}</url>
+        </repository>
+      </repositories>
+    </profile>
+
+
+    <profile>
+      <id>epp.materialize-products</id>
+      <build>
+        <pluginManagement>
+          <plugins>
+            <plugin>
+              <groupId>org.eclipse.tycho</groupId>
+              <artifactId>tycho-p2-director-plugin</artifactId>
+              <version>${tycho.version}</version>
+              <executions>
+                <execution>
+                  <id>materialize-products</id>
+                  <goals>
+                    <goal>materialize-products</goal>
+                  </goals>
+                </execution>
+                <execution>
+                  <id>archive-products</id>
+                    <phase>pre-integration-test</phase>
+                    <goals>
+                      <goal>archive-products</goal>
+                    </goals>
+                </execution>
+              </executions>
+            </plugin>
+          </plugins>
+        </pluginManagement>
+      </build>
+    </profile>
   </profiles>
 
 </project>
