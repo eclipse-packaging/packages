@@ -37,7 +37,7 @@ This checklist is only used once per release cycle. Scroll down for the per-mile
 - [ ] Check for bad links to Bugzilla (other things?) especially in `epp.website.xml`
 - [ ] Make sure any outstanding reviews are progressing - e.g. file IP logs, get PMC approval, etc.
   - For 2022-03 there is no review planned, next review expected to be a progress review around 2022-06
-- [ ] Ensure that the [CI build](https://ci.eclipse.org/packaging/job/simrel.epp-tycho-build/) is green<!-- or yellow (yellow means some files have failed to notarize which can be handled later on in this process)-->. Resolving non-green builds will require tracking down problems and incompatibilities across all Eclipse participating projects. [cross-project-issues-dev](https://accounts.eclipse.org/mailing-list/cross-project-issues-dev) mailing list is a good place to start when tracking such problems.
+- [ ] Ensure that the [CI build](https://ci.eclipse.org/packaging/job/epp/job/master/) is green<!-- or yellow (yellow means some files have failed to notarize which can be handled later on in this process)-->. Resolving non-green builds will require tracking down problems and incompatibilities across all Eclipse participating projects. [cross-project-issues-dev](https://accounts.eclipse.org/mailing-list/cross-project-issues-dev) mailing list is a good place to start when tracking such problems.
 - [ ] Check that packages containing incubating projects have that information reflected in Help -> About dialog. See near the end of build output for report of check-incubating.sh script.
   - `-incubation` and ` (includes Incubating components)` are not used in packageMetaData anymore (See [Bug 564214](https://bugs.eclipse.org/bugs/show_bug.cgi?id=564214))
 - [ ] On RC1 check "new and noteworthy" version numbers - If any N&N are out of date, remove the N&N entries and notify the corresponding package maintainer.
@@ -64,8 +64,9 @@ This checklist is only used once per release cycle. Scroll down for the per-mile
 - [ ] Wait for announcement that the staging repo is ready on [cross-project-issues-dev](https://accounts.eclipse.org/mailing-list/cross-project-issues-dev). An [example announcement](https://www.eclipse.org/lists/cross-project-issues-dev/msg17420.html).
   - [ ] Update `SIMREL_REPO` in `releng/org.eclipse.epp.config/parent/pom.xml` if not done above.
 - [ ] Update the build qualifiers to ensure that packages are all updated. See this [gerrit](https://git.eclipse.org/r/#/c/161075/) for an example. To do this run `releng/org.eclipse.epp.config/tools/setGitDate` ([link](https://github.com/eclipse-packaging/packages/blob/master/releng/org.eclipse.epp.config/tools/setGitDate)) script. This script will make a local commit you need to push.
-- [ ] Run a [CI build](https://ci.eclipse.org/packaging/job/simrel.epp-tycho-build/) that includes the above changes.
-- [ ] Disable the [CI build](https://ci.eclipse.org/packaging/job/simrel.epp-tycho-build/) so that the build results are not overwritten while doing the promotion. You can disable the project once it has fully started running, you don't have to wait for the build to finish.
+- [ ] Run a [CI build](https://ci.eclipse.org/packaging/job/epp/job/master/) that includes the above changes.
+  - If the build fails there may be the opportunity to continue the build rather than restart it. This is relatively underused option but enabled by the multi-step Jenkins build in the Jenkinsfile. For example, running the build with the previously successful steps commented out can produce a build.
+- [ ] Disable the [CI build](https://ci.eclipse.org/packaging/job/epp/job/master/) so that the build results are not overwritten while doing the promotion. You can disable the project once it has fully started running, you don't have to wait for the build to finish.
 - [ ] Check that there are no unexpected warnings in the console output. Especially look for warnings about failure to sign.
   - The following warnings are known to be OK but ideally should be fixed at some point
     - Warnings about Mirror tool seem to be ok and can be ignored. In a historically good build there is one `[WARNING] Mirror tool: Messages while mirroring artifact descriptors.` per package
@@ -89,7 +90,7 @@ This checklist is only used once per release cycle. Scroll down for the per-mile
     - `https://download.eclipse.org/staging/2024-03/` - _NOTE_ Use `SIMREL_REPO` if the staging repo has been updated since the `SIMREL_REPO` location was created.
     - `https://download.eclipse.org/technology/epp/staging/repository/`
   - [ ] Verify no non-EPP content is in the p2 repo (especially justj, update [remove-justj-from-p2.xml](https://github.com/eclipse-packaging/packages/blob/master/releng/org.eclipse.epp.config/tools/remove-justj-from-p2.xml) if needed)
-- [ ] Edit the [Jenkins build](https://ci.eclipse.org/packaging/job/simrel.epp-tycho-build/)
+- [ ] Edit the [Jenkins build](https://ci.eclipse.org/packaging/job/epp/job/master/)
   - [ ] Mark build as Keep forever
   - [ ] Edit Jenkins Build Information and name it (e.g. `2020-03 M3`)
 - [ ] In the evening Ottawa time, run the [Promote a Build](https://ci.eclipse.org/packaging/job/promote-a-build/) CI job to prepare build artifacts and copy them to download.eclipse.org
@@ -98,7 +99,7 @@ This checklist is only used once per release cycle. Scroll down for the per-mile
   - The `DRY_RUN` can be done earlier in the day and is a good way to increase the chance that the final promotion step will be successful.
 - [ ] Run the [Notarize MacOSX Downloads](https://ci.eclipse.org/packaging/job/notarize-downloads/) CI job to notarize DMG packages on download.eclipse.org if the promoted build was unstable
 - [ ] Update `SIMREL_REPO` to the staging repo so CI builds run against CI of SimRel (e.g. [see this gerrit](https://git.eclipse.org/r/c/epp/org.eclipse.epp.packages/+/189618))
-- [ ] Re-enable the [CI build](https://ci.eclipse.org/packaging/job/simrel.epp-tycho-build/)
+- [ ] Re-enable the [CI build](https://ci.eclipse.org/packaging/job/epp/job/master/)
 - [ ] Send email to epp-dev to request package maintainers test it. The email is templated in email.txt in the release directory.
 - [ ] Archive old milestones/RCs so that they don't accumulate on the mirrors
 - [ ] **24 Hours before Final release** Make sure files are in final location to allow downloads to mirror

@@ -1,48 +1,50 @@
 The EPP Build
 =============
 
-The [Eclipse Packaging Project (EPP)](http://www.eclipse.org/epp/) provides 
-the download packages based on the content of the yearly Simultaneous Release. 
-The download packages are provided from 
-[www.eclipse.org/downloads/eclipse-packages/](https://www.eclipse.org/downloads/eclipse-packages/).
+The [Eclipse Packaging Project (EPP)](https://www.eclipse.org/epp/) provides the download packages based on the content of the yearly Simultaneous Release.
+The download packages are provided from [www.eclipse.org/downloads/eclipse-packages/](https://www.eclipse.org/downloads/eclipse-packages/).
 
-Creating and releasing packages
--------------------------------
+## Creating and releasing packages
 
 Please see [RELEASING.md](RELEASING.md) in this repo for instructions on the release process for the EPP project.
 
-Build a Package Locally
------------------------
+## Build Locally
 
-It's *easy* to run the build locally! All you need is Maven and then you need 
-to tell Maven which package(s) to build via profile. As an example, the following 
-command from the root of the Git repository builds the RCP/RAP package against 
-the Simultaneous Release staging p2 repository:
+It's *easy* to run the build locally! All you need is Maven:
 
-    mvn clean verify -Pepp.package.rcp
+    mvn clean verify
 
-To build all the packages:
+will build all the packages (using automatically activated profiles) and the resulting zip/tar/dmg will be in `packages/org.eclipse.epp.package.${PACKAGE}.product/target/products`.
+In addition the combined p2 site will be in `archive/repository`.
 
-    mvn clean verify -Pepp.package.cpp,epp.package.dsl,epp.package.embedcpp,epp.package.java,epp.package.jee,epp.package.modeling,epp.package.php,epp.package.rcp,epp.package.scout,epp.package.committers
+### Build a single package
+
+If you want to build just a single package add the profile for the package you want to build, along with the profile to materialize the product:
+
+    mvn verify -Pepp.product.rcp -Pepp.materialize-products
 
 This build creates output in two places:
 
 1. tar.gz/zip/dmg archives with the packages in `archive/` and
 2. a p2 repository with the EPP artifacts in `archive/repository/`.
 
-Windows users
-------------- 
+### Build a single platform
+
+By default the maven build runs the build for all platforms, this can be time consuming and can be changed to only build a limited number of platforms, a useful thing to do for testing changes locally.
+There is no profile (PRs welcome!) to disabled other platforms, instead modify `releng/org.eclipse.epp.config/parent/pom.xml` to exclude the unwanted platforms in `target-platform-configuration`'s configuration.
+
+### Windows users
 
 In the past the last step in the build process used to fail.
 For further  details see [bug 426416](https://bugs.eclipse.org/bugs/show_bug.cgi?id=426416).
-If that happens again
+If that happens again you can omit the `verify` stage and simply `package`.
 
-    mvn clean package -P"epp.package.rcp"
+    mvn clean package -Pepp.package.rcp -Pepp.materialize-products
 
-Available Profiles
-------------------
+### Available Profiles
 
-Each package uses its own profile:
+Each package uses its own profile, with the zip/tar/dmg in `packages/org.eclipse.epp.package.${PACKAGE}.product/target/products`.
+With the `epp.materialize-products` profile the zip/tar/dmg will be created, otherwise only the p2 site will be created.
 
 - epp.package.committers
 - epp.package.cpp
@@ -56,33 +58,31 @@ Each package uses its own profile:
 - epp.package.scout
 
 macOS dmg files can only be created within the Eclipse Foundation network. To enable creating
-dmg files enable the eclipse-package-dmg profile. Without eclipse-package-dmg enabled, the .tar.gz
+dmg files enable the `eclipse-package-dmg` profile. Without `eclipse-package-dmg` enabled, the .tar.gz
 for macOS will be created regardless.
 
 With the signing profiles enabled, the build artifacts (bundles, features) and the
-Windows and macOS executables are signed. This is done by using the Eclipse Foundation 
+Windows and macOS executables are signed. This is done by using the Eclipse Foundation
 internal signing service and can be activated only if the build is running there.
 
-- eclipse-sign-jar profile enables signing of the EPP bundles and jar files
-- eclipse-sign-mac profile enables usage of macOS signing service
-- eclipse-sign-dmg profile enables signing of the DMG files for the macOS platform (the eclipse-package-dmg needs to be enabled too!)
-- eclipse-sign-windows profile enables usage of Windows signing service
+- `eclipse-sign-jar` profile enables signing of the EPP bundles and jar files
+- `eclipse-sign-mac` profile enables usage of macOS signing service
+- `eclipse-sign-dmg` profile enables signing of the DMG files for the macOS platform (the `eclipse-package-dmg` needs to be enabled too!)
+- `eclipse-sign-windows` profile enables usage of Windows signing service
 
-Additional Configuration Possibilities
---------------------------------------
+### Additional Configuration Possibilities
 
 By default, the EPP build uses the content of the Eclipse Simultaneous Release *Staging*
-repository at <http://download.eclipse.org/staging/2020-03/> as input. Sometimes it is
+repository at <https://download.eclipse.org/staging/2024-03/> as input. Sometimes it is
 desired to build against another release (e.g. a different milestone), or against a local
 mirror of this repository. This can be achieved by setting the Java property
 `eclipse.simultaneous.release.repository`to another URL. As an example, by adding the
 following argument to the Maven command line, the EPP build will read its input from the
-composite Eclipse 2020-03 repository:
+composite Eclipse 2024-03 repository:
 
-    -Declipse.simultaneous.release.repository="http://download.eclipse.org/releases/2020-03"
+    -Declipse.simultaneous.release.repository="https://download.eclipse.org/releases/2024-03"
 
-EPP Configuration File format
------------------------------
+### EPP Configuration File format
 
 The individual EPP packages have a special file called epp.website.xml that defines various
 pieces of information about the package. The format of the file is:
@@ -119,5 +119,3 @@ pieces of information about the package. The format of the file is:
 
 </configuration>
 ```
-
-This content in this section has been migrated from the [wiki](https://wiki.eclipse.org/EPP/Packaging_Site)
