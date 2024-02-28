@@ -113,6 +113,13 @@ pipeline {
         }
       }
     }
+    stage('Upload to staging') {
+      steps {
+        sshagent ( ['projects-storage.eclipse.org-bot-ssh']) {
+          sh "./releng/org.eclipse.epp.config/tools/upload-to-staging.sh"
+        }
+      }
+    }
   }
   post {
     cleanup {
