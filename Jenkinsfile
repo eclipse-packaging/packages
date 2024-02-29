@@ -10,7 +10,6 @@ pipeline {
   }
   environment {
     BUILDING='/home/data/httpd/download.eclipse.org/technology/epp/building/'
-    STAGING='/home/data/httpd/download.eclipse.org/technology/epp/staging/'
     SSHUSER='genie.packaging@projects-storage.eclipse.org'
     MAVEN_OPTS='-XX:MaxRAMPercentage=50.0'
   }

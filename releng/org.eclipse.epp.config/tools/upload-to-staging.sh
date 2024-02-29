@@ -23,8 +23,8 @@ RELEASE_NAME=$(get_property RELEASE_NAME)
 RELEASE_MILESTONE=$(get_property RELEASE_MILESTONE)
 RELEASE_DIR=$(get_property RELEASE_DIR)
 SIMREL_REPO=$(get_property SIMREL_REPO)
-BUILDING=${BUILDING:-"/home/data/httpd/download.eclipse.org/technology/epp/building"}
-STAGING=${STAGING:-"/home/data/httpd/download.eclipse.org/technology/epp/staging"}
+BUILDING="/home/data/httpd/download.eclipse.org/technology/epp/building"
+STAGING="/home/data/httpd/download.eclipse.org/technology/epp/staging"
 
 # -------------------------
 # Prepare template email with all the correct information
