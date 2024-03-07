@@ -24,6 +24,6 @@
   </packageMetaData>
 
   <!-- name, the name of the product, used in naming the created files. -->
-  <product name="eclipse-modeling-2024-03-RC1" />
+  <product name="eclipse-modeling-2024-03-R" />
 
 </configuration>
