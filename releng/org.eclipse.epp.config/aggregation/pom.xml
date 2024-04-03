@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<!--
+  Copyright (c) 2024 Eclipse Foundation and others.
+  All rights reserved. This program and the accompanying materials
+  are made available under the terms of the Eclipse Distribution License v1.0
+  which accompanies this distribution, and is available at
+  http://www.eclipse.org/org/documents/edl-v10.php
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.eclipse.epp</groupId>
+    <artifactId>org.eclipse.epp-parent</artifactId>
+    <version>4.32.0-SNAPSHOT</version>
+    <relativePath>../parent/</relativePath>
+  </parent>
+
+  <artifactId>org.eclipse.epp-parent-aggregation</artifactId>
+  <packaging>pom</packaging>
+
+  <properties>
+    <simrel.aggregator.repo.url.relative>nightly/latest</simrel.aggregator.repo.url.relative>
+    <simrel.aggregator.repo.url>
+      https://download.eclipse.org/cbi/updates/p2-aggregator/products/${simrel.aggregator.repo.url.relative}</simrel.aggregator.repo.url>
+    <simrel.aggregator.build.type>CLEAN_BUILD</simrel.aggregator.build.type>
+  </properties>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>tycho-eclipse-plugin</artifactId>
+        <version>${tycho.version}</version>
+        <executions>
+          <execution>
+            <id>build-repo</id>
+            <phase>package</phase>
+            <goals>
+              <goal>eclipse-run</goal>
+            </goals>
+            <configuration>
+              <applicationsArgs>
+                <applicationsArg>-application</applicationsArg>
+                <applicationsArg>
+                  org.eclipse.cbi.p2repo.cli.headless</applicationsArg>
+                <applicationsArg>aggregate</applicationsArg>
+                <applicationsArg>--buildModel</applicationsArg>
+                <applicationsArg>
+                  ${project.basedir}/packaging.aggr</applicationsArg>
+                <applicationsArg>--buildRoot</applicationsArg>
+                <applicationsArg>
+                  ${project.build.directory}/repository</applicationsArg>
+                <applicationsArg>--eclipseLogLevel</applicationsArg>
+                <applicationsArg>INFO</applicationsArg>
+                <applicationsArg>--logLevel</applicationsArg>
+                <applicationsArg>INFO</applicationsArg>
+                <applicationsArg>--action</applicationsArg>
+                <applicationsArg>${simrel.aggregator.build.type}</applicationsArg>
+              </applicationsArgs>
+              <executionEnvironment>JavaSE-17</executionEnvironment>
+              <jvmArgs>
+                <jvmArg>-Xms256M</jvmArg>
+                <jvmArg>-Xmx2048M</jvmArg>
+                <jvmArg>-Duser.home=${project.build.directory}</jvmArg>
+                <jvmArg>
+                  -Dorg.eclipse.ecf.provider.filetransfer.excludeContributors=org.eclipse.ecf.provider.filetransfer.httpclientjava</jvmArg>
+                <jvmArg>
+                  -Dpackages.clone.location.uri=${project.baseUri}/../../..</jvmArg>
+                <jvmArg>
+                  -Dsimrel.uri=${eclipse.simultaneous.release.repository}</jvmArg>
+                <jvmArg>
+                  -Djustj.jres.uri=${justj.jres.repository}</jvmArg>
+                <jvmArg>-Djustj.epp.uri=${justj.epp.repository}</jvmArg>
+              </jvmArgs>
+              <repositories>
+                <repository>
+                  <id>simrel-aggregator</id>
+                  <url>${simrel.aggregator.repo.url}</url>
+                  <layout>p2</layout>
+                </repository>
+              </repositories>
+              <dependencies>
+                <dependency>
+                  <artifactId>
+                    org.eclipse.cbi.p2repo.aggregator.engine.feature.feature.group</artifactId>
+                  <type>p2-installable-unit</type>
+                </dependency>
+                <dependency>
+                  <artifactId>
+                    org.eclipse.equinox.p2.core.feature</artifactId>
+                  <type>eclipse-feature</type>
+                </dependency>
+                <dependency>
+                  <artifactId>org.eclipse.equinox.core.feature</artifactId>
+                  <type>eclipse-feature</type>
+                </dependency>
+              </dependencies>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>

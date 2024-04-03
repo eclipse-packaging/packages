@@ -12,7 +12,7 @@ org.eclipse.pde.build.append.startlevels=false
 #
 # RCP/RAP package had been changed in Eclipse Mars (4.5)
 
-update.id = org.eclipse.epp.package.rcp.feature.feature.group
-update.range = [4.5, $version$)
-update.severity = 0
-update.description = Eclipse package upgrade from versions before Eclipse Mars (4.5) is not possible. See bug 332989.
+# update.id = org.eclipse.epp.package.rcp.feature.feature.group
+# update.range = [4.5, $version$)
+# update.severity = 0
+# update.description = Eclipse package upgrade from versions before Eclipse Mars (4.5) is not possible. See bug 332989.

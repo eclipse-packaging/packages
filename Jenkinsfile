@@ -24,9 +24,9 @@ pipeline {
     }
     stage('Build p2') {
       steps {
-        sh "mvn verify -Depp.p2.all -Depp.product.all --batch-mode --show-version -Dmaven.repo.local=.repository -Dtycho.disableP2Mirrors=true -Peclipse-sign-jar"
+        sh "mvn verify -Depp.p2.all -Depp.product.all --batch-mode --show-version -Dmaven.repo.local=.repository -Dtycho.disableP2Mirrors=true -Peclipse-sign-jar -Pepp.p2.aggregation"
         sshagent ( ['projects-storage.eclipse.org-bot-ssh']) {
-          sh "scp -rpv archive/repository/* ${SSHUSER}:${BUILDING}/repository/"
+          sh "scp -rpv releng/org.eclipse.epp.config/aggregation/target/repository/final/* ${SSHUSER}:${BUILDING}/repository/"
         }
       }
     }
