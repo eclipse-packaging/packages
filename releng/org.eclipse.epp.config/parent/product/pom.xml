@@ -17,7 +17,7 @@
   <parent>
     <groupId>org.eclipse.epp</groupId>
     <artifactId>org.eclipse.epp-parent</artifactId>
-    <version>4.31.0-SNAPSHOT</version>
+    <version>4.32.0-SNAPSHOT</version>
     <relativePath>..</relativePath>
   </parent>
 
@@ -39,44 +39,6 @@
            <includeAllDependencies>true</includeAllDependencies>
             <skipArchive>true</skipArchive>
         </configuration>
-      </plugin>
-
-      <plugin>
-        <groupId>org.eclipse.tycho.extras</groupId>
-        <artifactId>tycho-p2-extras-plugin</artifactId>
-        <version>${tycho.version}</version>
-        <executions>
-          <execution>
-            <id>mirror-to-central-epp-repository</id>
-            <phase>verify</phase>
-            <goals>
-              <goal>mirror</goal>
-            </goals>
-            <configuration>
-              <targetPlatformAsSource>true</targetPlatformAsSource>
-              <currentModuleAsSource>true</currentModuleAsSource>
-              <source/>
-              <ius>
-                <iu>
-                  <query>
-                    <expression>id ~= /org.eclipse.epp.package*/ || id ~= /${project.artifactId}/  || id ~= /epp.package*executable*/ || id ~= /toolingepp.package*/</expression>
-                  </query>
-                </iu>
-              </ius>
-              <destination>${eclipse.epp.targetRepository}</destination>
-              <followOnlyFilteredRequirements>true</followOnlyFilteredRequirements>
-              <followStrictOnly>true</followStrictOnly>
-              <includeFeatures>false</includeFeatures>
-              <includeOptional>false</includeOptional>
-              <includeNonGreedy>false</includeNonGreedy>
-              <includePacked>true</includePacked>
-              <mirrorMetadataOnly>false</mirrorMetadataOnly>
-              <append>true</append>
-              <!-- Mirror goal used to aggregate unit seem to ignore the .xz files so let's not generate them to avoid inconsistency between *.jar and *.xz -->
-              <xzCompress>false</xzCompress>
-            </configuration>
-          </execution>
-        </executions>
       </plugin>
 
       <plugin>

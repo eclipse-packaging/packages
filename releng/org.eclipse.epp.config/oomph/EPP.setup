@@ -7,6 +7,7 @@
     xmlns:jdt="http://www.eclipse.org/oomph/setup/jdt/1.0"
     xmlns:predicates="http://www.eclipse.org/oomph/predicates/1.0"
     xmlns:setup="http://www.eclipse.org/oomph/setup/1.0"
+    xmlns:setup.p2="http://www.eclipse.org/oomph/setup/p2/1.0"
     xmlns:setup.targlets="http://www.eclipse.org/oomph/setup/targlets/1.0"
     xmlns:setup.workingsets="http://www.eclipse.org/oomph/setup/workingsets/1.0"
     xmlns:workingsets="http://www.eclipse.org/oomph/workingsets/1.0"
@@ -234,6 +235,47 @@
       </predicate>
     </workingSet>
     <description>The dynamic working sets for ${scope.project.label}</description>
+  </setupTask>
+  <setupTask
+      xsi:type="setup.p2:P2Task"
+      label="CBI Aggregator">
+    <requirement
+        name="org.eclipse.cbi.p2repo.aggregator.editor.feature.feature.group"/>
+    <requirement
+        name="org.eclipse.cbi.p2repo.aggregator.analyzer.editor.feature.feature.group"/>
+    <repository
+        url="https://download.eclipse.org/cbi/updates/p2-aggregator/tools/nightly/latest"/>
+    <description>Install the tools to support opening the packaging.aggr and packaging.aggran</description>
+  </setupTask>
+  <setupTask
+      xsi:type="setup:StringSubstitutionTask"
+      name="packages.clone.location"
+      value="${github.clone.epp.packages.location}">
+    <description>The file system location of the packages git clone as used in packaging.aggr</description>
+  </setupTask>
+  <setupTask
+      xsi:type="setup:StringSubstitutionTask"
+      name="packages.clone.location.uri"
+      value="${github.clone.epp.packages.location|uri}">
+    <description>The location of the packages git clone represented as a URI as used in packaging.aggr</description>
+  </setupTask>
+  <setupTask
+      xsi:type="setup:StringSubstitutionTask"
+      name="simrel.uri"
+      value="https://download.eclipse.org/staging/2024-06">
+    <description>The SimRel train p2 repository used to build the packages as used in packaging.aggr</description>
+  </setupTask>
+  <setupTask
+      xsi:type="setup:StringSubstitutionTask"
+      name="justj.jres.uri"
+      value="https://download.eclipse.org/justj/jres/17/updates/release/latest">
+    <description>The JustJ JRE p2 repository used to build the packages as used in packaging.aggr</description>
+  </setupTask>
+  <setupTask
+      xsi:type="setup:StringSubstitutionTask"
+      name="justj.epp.uri"
+      value="https://download.eclipse.org/justj/epp/milestone/latest">
+    <description>The JustJ EPP JRE p2 repository used to build the packages as used in packaging.aggr</description>
   </setupTask>
   <stream name="master"
       label="Master">

@@ -20,16 +20,12 @@
   <parent>
     <groupId>org.eclipse.epp</groupId>
     <artifactId>org.eclipse.epp-parent</artifactId>
-    <version>4.31.0-SNAPSHOT</version>
+    <version>4.32.0-SNAPSHOT</version>
     <relativePath>releng/org.eclipse.epp.config/parent/</relativePath>
   </parent>
 
   <artifactId>org.eclipse.epp-buildall</artifactId>
   <packaging>pom</packaging>
-
-  <modules>
-    <module>archive-template</module>
-  </modules>
 
   <profiles>
     <profile>
@@ -306,65 +302,23 @@
       </modules>
     </profile>
 
+    <profile>
+      <id>epp.p2.aggregation</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+        <property>
+          <name>epp.p2.aggregation</name>
+        </property>
+      </activation>
+      <modules>
+        <module>releng/org.eclipse.epp.config/aggregation</module>
+      </modules>
+    </profile>
+
   </profiles>
+
   <build>
     <plugins>
-      <plugin>
-        <groupId>org.eclipse.tycho.extras</groupId>
-        <artifactId>tycho-eclipserun-plugin</artifactId>
-        <version>${tycho.version}</version>
-        <executions>
-          <execution>
-            <id>remove-justj-from-p2</id>
-            <phase>verify</phase>
-            <goals>
-              <goal>eclipse-run</goal>
-            </goals>
-            <configuration>
-              <appArgLine>-data target/antrun-workspace -application org.eclipse.ant.core.antRunner -buildfile ${basedir}/releng/org.eclipse.epp.config/tools/remove-justj-from-p2.xml</appArgLine>
-              <repositories>
-                <repository>
-                  <id>eclipse</id>
-                  <layout>p2</layout>
-                  <url>http://download.eclipse.org/releases/latest</url>
-                </repository>
-              </repositories>
-              <dependencies>
-                <dependency>
-                  <artifactId>org.eclipse.ant.core</artifactId>
-                  <type>eclipse-plugin</type>
-                </dependency>
-                <dependency>
-                  <artifactId>org.apache.ant</artifactId>
-                  <type>eclipse-plugin</type>
-                </dependency>
-                <dependency>
-                  <artifactId>org.eclipse.pde.api.tools</artifactId>
-                  <type>eclipse-plugin</type>
-                </dependency>
-              </dependencies>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.eclipse.tycho</groupId>
-        <artifactId>tycho-p2-repository-plugin</artifactId>
-        <version>${tycho.version}</version>
-        <executions>
-          <execution>
-            <id>add-missing-checksums</id>
-            <phase>verify</phase>
-            <goals>
-              <goal>fix-artifacts-metadata</goal>
-            </goals>
-            <configuration>
-              <repositoryLocation>${basedir}/archive/repository</repositoryLocation>
-              <repositoryName>EPP</repositoryName>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
     </plugins>
   </build>
 </project>

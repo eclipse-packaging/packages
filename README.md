@@ -1,7 +1,7 @@
 The EPP Build
 =============
 
-The [Eclipse Packaging Project (EPP)](https://www.eclipse.org/epp/) provides the download packages based on the content of the yearly Simultaneous Release.
+The [Eclipse Packaging Project (EPP)](https://projects.eclipse.org/projects/technology.packaging/) provides the download packages based on the content of the yearly Simultaneous Release.
 The download packages are provided from [www.eclipse.org/downloads/eclipse-packages/](https://www.eclipse.org/downloads/eclipse-packages/).
 
 ## Creating and releasing packages
@@ -73,14 +73,14 @@ internal signing service and can be activated only if the build is running there
 ### Additional Configuration Possibilities
 
 By default, the EPP build uses the content of the Eclipse Simultaneous Release *Staging*
-repository at <https://download.eclipse.org/staging/2024-03/> as input. Sometimes it is
+repository at <https://download.eclipse.org/staging/2024-06/> as input. Sometimes it is
 desired to build against another release (e.g. a different milestone), or against a local
 mirror of this repository. This can be achieved by setting the Java property
 `eclipse.simultaneous.release.repository`to another URL. As an example, by adding the
 following argument to the Maven command line, the EPP build will read its input from the
-composite Eclipse 2024-03 repository:
+composite Eclipse 2024-06 repository:
 
-    -Declipse.simultaneous.release.repository="https://download.eclipse.org/releases/2024-03"
+    -Declipse.simultaneous.release.repository="https://download.eclipse.org/releases/2024-06"
 
 ### EPP Configuration File format
 
