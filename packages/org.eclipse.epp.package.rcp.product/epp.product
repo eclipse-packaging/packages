@@ -227,8 +227,7 @@ United States, other countries, or both.
 
       <!-- common features that all products have -->
       <feature id="org.eclipse.epp.package.common.feature" version="4.32.0.qualifier"/>
-      <feature id="org.eclipse.platform"/>
-      <feature id="org.eclipse.equinox.p2.user.ui"/>
+      <feature id="org.eclipse.platform" installMode="root"/>
       <feature id="org.eclipse.epp.mpc" installMode="root"/>
       <feature id="org.eclipse.oomph.setup" installMode="root"/>
       <feature id="org.eclipse.tm.terminal.feature" installMode="root"/>
@@ -248,12 +247,12 @@ United States, other countries, or both.
 
       <!-- product specific contents -->
       <feature id="org.eclipse.epp.package.rcp.feature" version="4.32.0.qualifier"/>
-      <feature id="org.eclipse.jdt"/>
+      <feature id="org.eclipse.jdt" installMode="root"/>
       <feature id="org.eclipse.jdt.bcoview.feature" installMode="root"/>
-      <feature id="org.eclipse.pde"/>
+      <feature id="org.eclipse.pde" installMode="root"/>
       <feature id="org.eclipse.pde.spies" installMode="root"/>
-      <feature id="org.eclipse.platform.source"/>
-      <feature id="org.eclipse.rcp.source"/>
+      <feature id="org.eclipse.platform.source" installMode="root"/>
+      <feature id="org.eclipse.rcp.source" installMode="root"/>
       <feature id="org.eclipse.buildship" installMode="root"/>
       <feature id="org.eclipse.e4.core.tools.feature" installMode="root"/>
       <feature id="org.eclipse.eclemma.feature" installMode="root"/>
