@@ -21,8 +21,8 @@
   </annotation>
   <setupTask
       xsi:type="jdt:JRETask"
-      version="JavaSE-17"
-      location="${jre.location-17}">
+      version="JavaSE-21"
+      location="${jre.location-21}">
     <description>Define the JRE needed to compile and run the Java projects of ${scope.project.label}</description>
   </setupTask>
   <setupTask
@@ -94,7 +94,7 @@
         <repository
             url="https://download.eclipse.org/justj/epp/milestone/latest"/>
         <repository
-            url="https://download.eclipse.org/justj/jres/17/updates/release/latest"/>
+            url="https://download.eclipse.org/justj/jres/21/updates/release/latest"/>
       </repositoryList>
     </targlet>
   </setupTask>
@@ -268,7 +268,7 @@
   <setupTask
       xsi:type="setup:StringSubstitutionTask"
       name="justj.jres.uri"
-      value="https://download.eclipse.org/justj/jres/17/updates/release/latest">
+      value="https://download.eclipse.org/justj/jres/21/updates/release/latest">
     <description>The JustJ JRE p2 repository used to build the packages as used in packaging.aggr</description>
   </setupTask>
   <setupTask

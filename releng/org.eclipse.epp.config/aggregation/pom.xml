@@ -23,8 +23,7 @@
 
   <properties>
     <simrel.aggregator.repo.url.relative>nightly/latest</simrel.aggregator.repo.url.relative>
-    <simrel.aggregator.repo.url>
-      https://download.eclipse.org/cbi/updates/p2-aggregator/products/${simrel.aggregator.repo.url.relative}</simrel.aggregator.repo.url>
+    <simrel.aggregator.repo.url>https://download.eclipse.org/cbi/updates/p2-aggregator/products/${simrel.aggregator.repo.url.relative}</simrel.aggregator.repo.url>
     <simrel.aggregator.build.type>CLEAN_BUILD</simrel.aggregator.build.type>
   </properties>
 
@@ -44,15 +43,12 @@
             <configuration>
               <applicationsArgs>
                 <applicationsArg>-application</applicationsArg>
-                <applicationsArg>
-                  org.eclipse.cbi.p2repo.cli.headless</applicationsArg>
+                <applicationsArg>org.eclipse.cbi.p2repo.cli.headless</applicationsArg>
                 <applicationsArg>aggregate</applicationsArg>
                 <applicationsArg>--buildModel</applicationsArg>
-                <applicationsArg>
-                  ${project.basedir}/packaging.aggr</applicationsArg>
+                <applicationsArg>${project.basedir}/packaging.aggr</applicationsArg>
                 <applicationsArg>--buildRoot</applicationsArg>
-                <applicationsArg>
-                  ${project.build.directory}/repository</applicationsArg>
+                <applicationsArg>${project.build.directory}/repository</applicationsArg>
                 <applicationsArg>--eclipseLogLevel</applicationsArg>
                 <applicationsArg>INFO</applicationsArg>
                 <applicationsArg>--logLevel</applicationsArg>
@@ -60,19 +56,15 @@
                 <applicationsArg>--action</applicationsArg>
                 <applicationsArg>${simrel.aggregator.build.type}</applicationsArg>
               </applicationsArgs>
-              <executionEnvironment>JavaSE-17</executionEnvironment>
+              <executionEnvironment>JavaSE-21</executionEnvironment>
               <jvmArgs>
                 <jvmArg>-Xms256M</jvmArg>
                 <jvmArg>-Xmx2048M</jvmArg>
                 <jvmArg>-Duser.home=${project.build.directory}</jvmArg>
-                <jvmArg>
-                  -Dorg.eclipse.ecf.provider.filetransfer.excludeContributors=org.eclipse.ecf.provider.filetransfer.httpclientjava</jvmArg>
-                <jvmArg>
-                  -Dpackages.clone.location.uri=${project.baseUri}/../../..</jvmArg>
-                <jvmArg>
-                  -Dsimrel.uri=${eclipse.simultaneous.release.repository}</jvmArg>
-                <jvmArg>
-                  -Djustj.jres.uri=${justj.jres.repository}</jvmArg>
+                <jvmArg>-Dorg.eclipse.ecf.provider.filetransfer.excludeContributors=org.eclipse.ecf.provider.filetransfer.httpclientjava</jvmArg>
+                <jvmArg>-Dpackages.clone.location.uri=${project.baseUri}/../../..</jvmArg>
+                <jvmArg>-Dsimrel.uri=${eclipse.simultaneous.release.repository}</jvmArg>
+                <jvmArg>-Djustj.jres.uri=${justj.jres.repository}</jvmArg>
                 <jvmArg>-Djustj.epp.uri=${justj.epp.repository}</jvmArg>
               </jvmArgs>
               <repositories>
@@ -84,13 +76,11 @@
               </repositories>
               <dependencies>
                 <dependency>
-                  <artifactId>
-                    org.eclipse.cbi.p2repo.aggregator.engine.feature.feature.group</artifactId>
+                  <artifactId>org.eclipse.cbi.p2repo.aggregator.engine.feature.feature.group</artifactId>
                   <type>p2-installable-unit</type>
                 </dependency>
                 <dependency>
-                  <artifactId>
-                    org.eclipse.equinox.p2.core.feature</artifactId>
+                  <artifactId>org.eclipse.equinox.p2.core.feature</artifactId>
                   <type>eclipse-feature</type>
                 </dependency>
                 <dependency>

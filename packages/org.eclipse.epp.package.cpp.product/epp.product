@@ -19,7 +19,7 @@
 --launcher.defaultAction openFile
 --launcher.appendVmargs
       </programArgs>
-      <vmArgs>-Dosgi.requiredJavaVersion=17
+      <vmArgs>-Dosgi.requiredJavaVersion=21
 -Dosgi.instance.area.default=@user.home/eclipse-workspace
 -Dosgi.dataAreaRequiresExplicitInit=true
 -Dorg.eclipse.swt.graphics.Resource.reportNonDisposed=true
@@ -57,9 +57,9 @@
    <intro introId="org.eclipse.ui.intro.universal"/>
 
    <vm>
-      <linux include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-17</linux>
-      <macos include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-17</macos>
-      <windows include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-17</windows>
+      <linux include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-21</linux>
+      <macos include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-21</macos>
+      <windows include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-21</windows>
    </vm>
 
    <configurations>

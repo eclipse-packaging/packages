@@ -8,7 +8,7 @@
 package org.eclipse.epp.common;
 
 import java.net.MalformedURLException;
-import java.net.URL;
+import java.net.URI;
 
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
@@ -33,7 +33,7 @@ public class ContributeHandler extends AbstractHandler {
 		}
 		try {
 			IWebBrowser browser = activeWorkbenchWindow.getWorkbench().getBrowserSupport().createBrowser(getClass().getName());
-			browser.openURL(new URL(CONTRIBUTE_URL));
+			browser.openURL(URI.create(CONTRIBUTE_URL).toURL());
 			return Status.OK_STATUS;
 		} catch (PartInitException e) {
 			Program.launch(CONTRIBUTE_URL);
