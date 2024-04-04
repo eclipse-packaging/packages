@@ -53,7 +53,7 @@
     <!-- Upstream p2 repository, used as a source for pre-compiled build artifacts -->
     <eclipse.simultaneous.release.repository>${SIMREL_REPO}</eclipse.simultaneous.release.repository>
     <!-- Used for the variable below to update easily, e.g., to 21. -->
-    <execution.environment.version>17</execution.environment.version>
+    <execution.environment.version>21</execution.environment.version>
     <!-- Used for the JustJ JREs p2 repository. -->
     <justj.jres.repository>https://download.eclipse.org/justj/jres/${execution.environment.version}/updates/release/latest</justj.jres.repository> <!-- Keep URL in sync with Oomph setup-->
     <!-- Used for the JustJ EPP p2 repository. -->
