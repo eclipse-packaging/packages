@@ -229,8 +229,7 @@ United States, other countries, or both.
 
       <!-- common features that all products have -->
       <feature id="org.eclipse.epp.package.common.feature" version="4.32.0.qualifier"/>
-      <feature id="org.eclipse.platform"/>
-      <feature id="org.eclipse.equinox.p2.user.ui"/>
+      <feature id="org.eclipse.platform" installMode="root"/>
       <feature id="org.eclipse.epp.mpc" installMode="root"/>
       <feature id="org.eclipse.oomph.setup" installMode="root"/>
       <feature id="org.eclipse.tm.terminal.feature" installMode="root"/>

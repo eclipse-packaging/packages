@@ -20,81 +20,14 @@
       %license
    </license>
 
-   <includes
-         id="org.eclipse.platform"
-         version="0.0.0"
-         search-location="both"/>
-
-   <!--
-        All requirements to features and the content of the product are defined 
-        in the product configuration epp.product since Eclipse Neon. For further
-        details see the following bug:
-
-        Bug 332989 - Allow parts of a package to upgraded or removed
-        https://bugs.eclipse.org/bugs/show_bug.cgi?id=332989
-
-        Please note that there are some additional dependencies to certain
-        plugins defined within this feature; these dependencies haven't been
-        changed.
-     -->
-
-   <plugin
-         id="org.eclipse.epp.package.jee"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"/>
-
-   <!-- https://bugs.eclipse.org/bugs/show_bug.cgi?id=537117 decided to keep the intro and capabilities -->
-   <plugin
-         id="org.eclipse.wtp.epp.package.jee.intro"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"/>
-
-   <plugin
-         id="org.eclipse.wtp.javascript.capabilities"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"/>   
-
-   <plugin
-         id="org.eclipse.wtp.jee.capabilities"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"/>   
-
-   <plugin
-         id="org.eclipse.wtp.web.capabilities"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"/>   
-
-   <plugin
-         id="org.eclipse.wtp.xml.capabilities"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"/>   
-
-   <plugin
-         id="org.eclipse.wtp.epp.package.capabilities"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"/>
-
-<!-- need to confirm if these plugins in repository, or if I need to cut/copy paste their contents in our capabilities plugin.
-See also https://bugs.eclipse.org/bugs/show_bug.cgi?id=299344
- 
-   <plugin
-         id="org.eclipse.datatools.capabilities"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"/>   
-
-   <plugin
-         id="org.eclipse.mylyn.ide.capabilities"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"/>   
--->
+   <!-- This ensures these feature cannot be uninstalled. They are installed with installMode="root" in the product --> 
+   <requires>
+      <import plugin="org.eclipse.wtp.epp.package.jee.intro"/>
+      <import plugin="org.eclipse.wtp.javascript.capabilities"/>
+      <import plugin="org.eclipse.wtp.jee.capabilities"/>
+      <import plugin="org.eclipse.wtp.web.capabilities"/>
+      <import plugin="org.eclipse.wtp.xml.capabilities"/>
+      <import plugin="org.eclipse.wtp.epp.package.capabilities"/>
+   </requires>
 
 </feature>

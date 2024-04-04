@@ -20,20 +20,6 @@
       %license
    </license>
 
-   <includes
-         id="org.eclipse.platform"
-         version="0.0.0"
-         search-location="both"/>
-
-   <!--
-        All requirements to features and the content of the product are defined 
-        in the product configuration epp.product since Eclipse Neon. For further
-        details see the following bug:
-
-        Bug 332989 - Allow parts of a package to upgraded or removed
-        https://bugs.eclipse.org/bugs/show_bug.cgi?id=332989
-     -->
-
    <plugin
          id="org.eclipse.epp.package.scout"
          download-size="0"
