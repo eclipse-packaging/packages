@@ -11,13 +11,13 @@ instructions.configure=\
 # upgrades we add an artificial lower limit of the IU to the p2 metadata.
 
 # This is equivalent, but more restrictive than platform's "Restrict range so we are not an automatic update for 3.x."
-# update.id = epp.package.java
-# update.range = [4.6.0.20160301-1200, $version$)
-# update.severity = 0
-# update.description = Eclipse package upgrade from versions before Eclipse Neon (4.6) is not possible. See bug 332989.
+update.id = epp.package.cpp
+update.range = [4.6.0.20160301-1200, $version$)
+update.severity = 0
+update.description = Eclipse package upgrade from versions before Eclipse Neon (4.6) is not possible. See bug 332989.
 
 properties.1.name = org.eclipse.equinox.p2.description
-properties.1.value = 2024-06 Release of the Eclipse Java Developers package.
+properties.1.value = 2024-06 Release of the Eclipse C/C++ Developers Developers package.
 
 properties.2.name = org.eclipse.equinox.p2.provider
 properties.2.value = Eclipse Packaging Project
