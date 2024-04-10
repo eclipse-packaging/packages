@@ -92,9 +92,6 @@
       <configExtension
             configId="org.eclipse.ui.intro.universalConfig"
             content="$nl$/intro/overviewExtensionContent.xml"/>
-      <configExtension
-            configId="org.eclipse.ui.intro.universalConfig"
-            content="$nl$/intro/tutorialsExtensionContent.xml"/>
    </extension>
 
    <extension
@@ -107,26 +104,12 @@
             resolution="launchbar">
       </command>
       <command
-            id="org.eclipse.ui.file.import(importWizardId=org.eclipse.oomph.setup.ui.ImportWizard)"
-            description="%ql.importScoutDemoProjects.description"
-            icon="platform:/plugin/org.eclipse.ui.intro.universal/themes/solstice/graphics/icons/ctool/import-existing-project.png"
-            label="%ql.importScoutDemoProjects.label"
-            importance="high"
-            resolution="launchbar">
-      </command>
-      <command
             id="org.eclipse.ui.file.import(importWizardId=org.eclipse.egit.ui.internal.clone.GitCloneWizard)"
             description="%ql.checkoutGitProject.description"
             icon="platform:/plugin/org.eclipse.ui.intro.universal/themes/solstice/graphics/icons/ctool/egit-checkout.png"
             label="%ql.checkoutGitProject.label"
             importance="medium"
             resolution="launchbar">
-      </command>
-      <command
-            id="org.eclipse.oomph.setup.ui.questionnaire"
-            label="%ql.setupQuestionnaire.label"
-            icon="platform:/plugin/org.eclipse.ui.intro.universal/themes/solstice/graphics/icons/ctool/settings.png"
-            importance="low">
       </command>
       <override
             command="org.eclipse.ui.newWizard*"

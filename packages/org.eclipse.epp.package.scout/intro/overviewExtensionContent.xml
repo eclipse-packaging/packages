@@ -2,7 +2,7 @@
 <introContent>
     <extensionContent id="org.eclipse.scout.package.overview" name="Eclipse Scout" style="css/scout_intro.css" path="overview/@">
         <group style-id="content-group" id="content-group">
-            <link label="Eclipse Scout" url="https://wiki.eclipse.org/Scout" style-id="content-link" id="scout">
+            <link label="Eclipse Scout" url="https://eclipse.dev/scout/" style-id="content-link" id="scout">
                 <text>Learn about the Eclipse Scout application framework</text>
             </link>
         </group>
