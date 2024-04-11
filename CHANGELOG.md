@@ -5,6 +5,10 @@ This document aims to highlight configuration and content changes of the package
 For changes in Eclipse projects that contribute to SimRel and are included in the EPP packages, refer to the change log or New and Noteworthy document of the participating projects.
 The [Eclipse IDE New & Noteworthy](https://eclipseide.org/release/noteworthy/) page combines all those documents in one place.
 
+## 2024-06
+
+- The Eclipse IDE for C/C++ Developers now includes the [CDT-LSP](https://github.com/eclipse-cdt/cdt-lsp) set of features to provide a Language Server for C/C++ users.
+
 ## 2023-12
 
 - The Eclipse IDE for Scientific Computing is not longer being published. If you are interested in helping maintain or resurrect this package, and the underlying Parallel Tools Project, please [leave a comment](https://github.com/eclipse-packaging/packages/issues/85). 
