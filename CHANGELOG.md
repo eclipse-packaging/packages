@@ -7,6 +7,7 @@ The [Eclipse IDE New & Noteworthy](https://eclipseide.org/release/noteworthy/) p
 
 ## 2024-06
 
+- Eclipse IDE now ships with Java 21 by default and many of the individual downloads now require Java 21.
 - The Eclipse IDE for C/C++ Developers now includes the [CDT-LSP](https://github.com/eclipse-cdt/cdt-lsp) set of features to provide a Language Server for C/C++ users.
 
 ## 2023-12
