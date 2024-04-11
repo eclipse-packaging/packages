@@ -12,8 +12,6 @@ EPP releases happen for each milestone and release candidate according to the [E
 This checklist is only used once per release cycle. Scroll down for the per-milestone/RC steps.
 
 - [ ] Create new [PMI entry](https://projects.eclipse.org/projects/technology.packaging)
-- [ ] Add Target Milestones in [Bugzilla](https://dev.eclipse.org/committers/bugs/bugz_manager.php)
-- [ ] Look at renaming zips for mac
 - [ ] Update splash screen (once per release cycle, hopefully done before M1). See detailed [instructions](https://github.com/eclipse-packaging/packages/blob/master/packages/org.eclipse.epp.package.common/splash/INSTRUCTIONS.md). For 2022-06 see Bug [575781](https://bugs.eclipse.org/bugs/show_bug.cgi?id=575781) for new splash screens.
 - [ ] When the year changes, e.g. between 2019-12 and 2020-03 releases, an update of the copyright year is required with a very smart search&replace. A good replacement is `/, 2021/, 2022/` excluding `*.svg`
 - [ ] In addition to the "Update Name" step on every M and RC, the whole version string is updated, including platform version; this is a large change including
@@ -22,22 +20,19 @@ This checklist is only used once per release cycle. Scroll down for the per-mile
   - [ ] MANIFEST.MF
   - [ ] epp.website.xml
   - [ ] epp.product
-  - [ ] build.xml
   - [ ] p2.inf
+  - [ ] epp.p2.inf
   - [ ] `2020-12` -> `2021->03` part
   - [ ] `4.14` -> `4.15` part
-- [ ] rsync the downloads area to archive.eclipse.org and remove non-R downloads.
-  - This can be done either through the web ui at https://download.eclipse.org/technology/epp/ or with the following steps: (**NOTE** as of 2022-06 I do this all from the web UI. Please file [helpdesk](https://gitlab.eclipse.org/eclipsefdn/helpdesk/-/issues/new) tickets to request new features to make it easier)
-  - [ ] Remove the old M and RC builds with https://ci.eclipse.org/packaging/job/releng-delete-old-M-RC-downloads
-  - [ ] rsync the last release to the archives with https://ci.eclipse.org/packaging/job/releng-rsync-epp-downloads-to-archive
-  - [ ] Remove releases from download.eclipse.org by listing releases to delete and then running https://ci.eclipse.org/packaging/job/releng-remove-old-downloads (TODO create this job)
+- [ ] Archive old releases (two R releases should stay on download.eclipse.org) to archive.eclipse.org and remove non-R downloads.
+  - This can be done through the web ui at https://download.eclipse.org/technology/epp/
 
 **Steps for all Milestones and RCs:**
 
 - [ ] Check for bad links to Bugzilla (other things?) especially in `epp.website.xml`
-- [ ] Make sure any outstanding reviews are progressing - e.g. file IP logs, get PMC approval, etc.
-  - For 2022-03 there is no review planned, next review expected to be a progress review around 2022-06
-- [ ] Ensure that the [CI build](https://ci.eclipse.org/packaging/job/epp/job/master/) is green<!-- or yellow (yellow means some files have failed to notarize which can be handled later on in this process)-->. Resolving non-green builds will require tracking down problems and incompatibilities across all Eclipse participating projects. [cross-project-issues-dev](https://accounts.eclipse.org/mailing-list/cross-project-issues-dev) mailing list is a good place to start when tracking such problems.
+- [ ] Make sure any outstanding [reviews](https://projects.eclipse.org/projects/technology.packaging/governance) are progressing - e.g. create progress review, get PMC approval, etc.
+  - Annual progress review is normally done to line up with -06 release, e.g. 1 June
+- [ ] Ensure that the [CI build](https://ci.eclipse.org/packaging/job/epp/job/master/) is green. Resolving non-green builds will require tracking down problems and incompatibilities across all Eclipse participating projects. [cross-project-issues-dev](https://accounts.eclipse.org/mailing-list/cross-project-issues-dev) mailing list is a good place to start when tracking such problems.
 - [ ] Check that packages containing incubating projects have that information reflected in Help -> About dialog. See near the end of build output for report of check-incubating.sh script.
   - `-incubation` and ` (includes Incubating components)` are not used in packageMetaData anymore (See [Bug 564214](https://bugs.eclipse.org/bugs/show_bug.cgi?id=564214))
 - [ ] On RC1 check "new and noteworthy" version numbers - If any N&N are out of date, remove the N&N entries and notify the corresponding package maintainer.
@@ -47,9 +42,6 @@ This checklist is only used once per release cycle. Scroll down for the per-mile
     - [ ] Synchronize any changes to [platform.product](https://github.com/eclipse-platform/eclipse.platform.releng.aggregator/blob/master/eclipse.platform.releng.tychoeclipsebuilder/eclipse.platform.repository/platform.product) into all the `epp.product` files.
     - [ ] Synchronize any changes to [platform.p2.inf](https://github.com/eclipse-platform/eclipse.platform.releng.aggregator/blob/master/eclipse.platform.releng.tychoeclipsebuilder/eclipse.platform.repository/platform.p2.inf) into all the `*.product/p2.inf` files.
     - [ ] Synchronize any changes to [platform's icons'](https://github.com/eclipse-platform/eclipse.platform.releng.aggregator/tree/master/eclipse.platform.releng.tychoeclipsebuilder/eclipse.platform.repository/icons) into `icons` root directory. 
-- [ ] Synchronize the list of contents in product file with the cooresponding p2.inf
-    - The changes to .product files should match those to the p2.inf, but it they don't errors happen in the installer. See https://git.eclipse.org/r/c/epp/org.eclipse.epp.packages/+/197626 for an example of what the sync should look like, as applied to the original change in https://git.eclipse.org/r/c/epp/org.eclipse.epp.packages/+/197080
-    - One way to do this is `gitk -- **/epp.product **/p2.inf` and make sure every change to included features in epp.product has a matching change in p2.inf. You should only have to look as far back as the last M or RC build.
 - [ ] Update name of the release in strings with a "smart" global find&replace. _Be careful on M3 that the replace did not match the Eclipse project name M2E!_ See this [gerrit](https://git.eclipse.org/r/#/c/158509/) for an example. Use commit message like `[releng] Prepare repo for 2020-12 M1`. In particular, check:
   - **TODO can this be automated** On M1 add the M1 qualifier (e.g. `2021-03-R` -> `2021-06-M1`, on RC2 set it to `R` the qualifier e.g. `2021-03-RC1` -> `2021-03-R`). **Except** for `eclipse.simultaneous.release.name` which should go from `2021-03 (4.19.0)` -> `2021-06 M1 (4.20.0 M1)` on M1 and `2021-03 RC1 (4.19.0 RC1)` -> `2021-03 (4.19.0)` on RC2
   - [ ] `packages/*/epp.website.xml` for `product name=` line
@@ -64,6 +56,7 @@ This checklist is only used once per release cycle. Scroll down for the per-mile
 - [ ] Wait for announcement that the staging repo is ready on [cross-project-issues-dev](https://accounts.eclipse.org/mailing-list/cross-project-issues-dev). An [example announcement](https://www.eclipse.org/lists/cross-project-issues-dev/msg17420.html).
   - [ ] Update `SIMREL_REPO` in `releng/org.eclipse.epp.config/parent/pom.xml` if not done above.
 - [ ] Update the build qualifiers to ensure that packages are all updated. See this [gerrit](https://git.eclipse.org/r/#/c/161075/) for an example. To do this run `releng/org.eclipse.epp.config/tools/setGitDate` ([link](https://github.com/eclipse-packaging/packages/blob/master/releng/org.eclipse.epp.config/tools/setGitDate)) script. This script will make a local commit you need to push.
+  - In some cases a respin/rebuild is needed and setGitDate needs to be run again. In that case you may need to manually add a minute or two to the applied timestamp in the script.
 - [ ] Run a [CI build](https://ci.eclipse.org/packaging/job/epp/job/master/) that includes the above changes.
   - If the build fails there may be the opportunity to continue the build rather than restart it. This is relatively underused option but enabled by the multi-step Jenkins build in the Jenkinsfile. For example, running the build with the previously successful steps commented out can produce a build.
 - [ ] Disable the [CI build](https://ci.eclipse.org/packaging/job/epp/job/master/) so that the build results are not overwritten while doing the promotion. You can disable the project once it has fully started running, you don't have to wait for the build to finish.

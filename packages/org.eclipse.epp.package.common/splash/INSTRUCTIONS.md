@@ -8,9 +8,10 @@ Although, Eclipse IDE packages are shipped every 3 months, one release a year (u
 
 When ready, the Eclipse Foundation marketing team will submit some splashscreen, sometimes asking for feedback when multiple splash screens are competing. When the final splashscreen is selected, the community has to ask for the variations of this splashscreen: some saying just "Eclipse" (for the Platform artifacts) and some saying "Eclipse IDE" (for the EPP packages), and the 4 variations for each quarterly release (202x-06, 202x-09, 202x-12, 202(x+1)-03).
 
-For 2021-06 -> 2022-03 see [Bug 569333](https://bugs.eclipse.org/bugs/show_bug.cgi?id=569333)
-For 2022-06 -> 2023-03 see [Bug 575781](https://bugs.eclipse.org/bugs/show_bug.cgi?id=575781)
-For 2023-06 -> 2024-03 see [Helpdesk 2335](https://gitlab.eclipse.org/eclipsefdn/helpdesk/-/issues/2336)
+- For 2021-06 -> 2022-03 see [Bug 569333](https://bugs.eclipse.org/bugs/show_bug.cgi?id=569333)
+- For 2022-06 -> 2023-03 see [Bug 575781](https://bugs.eclipse.org/bugs/show_bug.cgi?id=575781)
+- For 2023-06 -> 2024-03 see [Helpdesk 2335](https://gitlab.eclipse.org/eclipsefdn/helpdesk/-/issues/2336)
+- For 2024-06 -> 2025-03 see [Helpdesk 3963](https://gitlab.eclipse.org/eclipsefdn/helpdesk/-/issues/3963)
 
 ### Copy splash screen series into `org.eclipse.epp.package.common/splash/`
 
