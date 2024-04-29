@@ -53,22 +53,22 @@ Last +1 received for each package and platform (apologies if I missed one of you
 
 Packages:
 committers - 2023-06 RC2
-cpp - 2024-03 RC2
-dsl - 2024-03 M2 (+0 for 2024-03 RC1)
+cpp - 2024-06 M1
+dsl - 2024-06 M1
 embedcpp - 2023-12 RC2a
 java - 2024-03 RC1
 jee - 2024-03 RC2
 modeling - 2023-12 RC2a
 php - 2023-06 RC2
 rcp - 2024-03 RC2
-scout - 2024-03 RC2
+scout - 2024-06 M1 (+0 because of https://github.com/eclipse-m2e/m2e-core/issues/1735)
 
 Platforms:
-Linux x86_64 - 2024-03 RC2
+Linux x86_64 - 2024-06 M1
 Linux aarch64 - 2023-09 RC2
 Windows - 2024-03 RC1
 macOS x86_64 - 2023-12 RC2a
-macOS aarch64 - 2024-03 RC2
+macOS aarch64 - 2024-06 M1
 
 Thank you for testing!
 
