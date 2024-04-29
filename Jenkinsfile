@@ -4,6 +4,9 @@ pipeline {
     timestamps()
     disableConcurrentBuilds()
   }
+  triggers {
+    cron('H 21 * * *') // run every day at ~9pm
+  }
   tools {
     maven 'apache-maven-latest'
     jdk 'temurin-jdk21-latest'
@@ -121,6 +124,15 @@ pipeline {
     }
   }
   post {
+    failure {
+     emailext (
+       subject: "FAILED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
+       body: """FAILED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]':
+       Check console output at ${env.BUILD_URL}""",
+       recipientProviders: [[$class: 'DevelopersRecipientProvider']],
+       to: 'jonah@kichwacoders.com'
+      )
+    }
     cleanup {
       cleanWs()
     }
