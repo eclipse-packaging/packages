@@ -37,7 +37,7 @@ pipeline {
     // For now I can't use matrix because that runs all in parallel and I don't want that here (I could if each one was on a separate node though)
     stage('Build committers') {
       steps {
-        sh "mvn verify -Pepp.product.committers -Pepp.materialize-products -Depp.p2.repourl=https://download.eclipse.org/technology/epp/building/repository/ --batch-mode --show-version -Dmaven.repo.local=.repository -Dtycho.disableP2Mirrors=true -Peclipse-sign-jar -Peclipse-sign-mac -Peclipse-sign-dmg -Peclipse-sign-windows -Peclipse-package-dmg"
+        sh "mvn verify -Pepp.product.committers -Pepp.materialize-products -Depp.p2.repourl=https://download.eclipse.org/technology/epp/building/repository/ --batch-mode --show-version -Dmaven.repo.local=.repository -Dtycho.disableP2Mirrors=true -Peclipse-sign-mac -Peclipse-sign-dmg -Peclipse-sign-windows -Peclipse-package-dmg"
         sshagent ( ['projects-storage.eclipse.org-bot-ssh']) {
           sh "./releng/org.eclipse.epp.config/tools/upload-to-building.sh ${BUILDING} committers"
         }
@@ -45,7 +45,7 @@ pipeline {
     }
     stage('Build cpp') {
       steps {
-        sh "mvn verify -Pepp.product.cpp -Pepp.materialize-products -Depp.p2.repourl=https://download.eclipse.org/technology/epp/building/repository/ --batch-mode --show-version -Dmaven.repo.local=.repository -Dtycho.disableP2Mirrors=true -Peclipse-sign-jar -Peclipse-sign-mac -Peclipse-sign-dmg -Peclipse-sign-windows -Peclipse-package-dmg"
+        sh "mvn verify -Pepp.product.cpp -Pepp.materialize-products -Depp.p2.repourl=https://download.eclipse.org/technology/epp/building/repository/ --batch-mode --show-version -Dmaven.repo.local=.repository -Dtycho.disableP2Mirrors=true -Peclipse-sign-mac -Peclipse-sign-dmg -Peclipse-sign-windows -Peclipse-package-dmg"
         sshagent ( ['projects-storage.eclipse.org-bot-ssh']) {
           sh "./releng/org.eclipse.epp.config/tools/upload-to-building.sh ${BUILDING} cpp"
         }
@@ -53,7 +53,7 @@ pipeline {
     }
     stage('Build embedcpp') {
       steps {
-        sh "mvn verify -Pepp.product.embedcpp -Pepp.materialize-products -Depp.p2.repourl=https://download.eclipse.org/technology/epp/building/repository/ --batch-mode --show-version -Dmaven.repo.local=.repository -Dtycho.disableP2Mirrors=true -Peclipse-sign-jar -Peclipse-sign-mac -Peclipse-sign-dmg -Peclipse-sign-windows -Peclipse-package-dmg"
+        sh "mvn verify -Pepp.product.embedcpp -Pepp.materialize-products -Depp.p2.repourl=https://download.eclipse.org/technology/epp/building/repository/ --batch-mode --show-version -Dmaven.repo.local=.repository -Dtycho.disableP2Mirrors=true -Peclipse-sign-mac -Peclipse-sign-dmg -Peclipse-sign-windows -Peclipse-package-dmg"
         sshagent ( ['projects-storage.eclipse.org-bot-ssh']) {
           sh "./releng/org.eclipse.epp.config/tools/upload-to-building.sh ${BUILDING} embedcpp"
         }
@@ -61,7 +61,7 @@ pipeline {
     }
     stage('Build dsl') {
       steps {
-        sh "mvn verify -Pepp.product.dsl -Pepp.materialize-products -Depp.p2.repourl=https://download.eclipse.org/technology/epp/building/repository/ --batch-mode --show-version -Dmaven.repo.local=.repository -Dtycho.disableP2Mirrors=true -Peclipse-sign-jar -Peclipse-sign-mac -Peclipse-sign-dmg -Peclipse-sign-windows -Peclipse-package-dmg"
+        sh "mvn verify -Pepp.product.dsl -Pepp.materialize-products -Depp.p2.repourl=https://download.eclipse.org/technology/epp/building/repository/ --batch-mode --show-version -Dmaven.repo.local=.repository -Dtycho.disableP2Mirrors=true -Peclipse-sign-mac -Peclipse-sign-dmg -Peclipse-sign-windows -Peclipse-package-dmg"
         sshagent ( ['projects-storage.eclipse.org-bot-ssh']) {
           sh "./releng/org.eclipse.epp.config/tools/upload-to-building.sh ${BUILDING} dsl"
         }
@@ -69,7 +69,7 @@ pipeline {
     }
     stage('Build java') {
       steps {
-        sh "mvn verify -Pepp.product.java -Pepp.materialize-products -Depp.p2.repourl=https://download.eclipse.org/technology/epp/building/repository/ --batch-mode --show-version -Dmaven.repo.local=.repository -Dtycho.disableP2Mirrors=true -Peclipse-sign-jar -Peclipse-sign-mac -Peclipse-sign-dmg -Peclipse-sign-windows -Peclipse-package-dmg"
+        sh "mvn verify -Pepp.product.java -Pepp.materialize-products -Depp.p2.repourl=https://download.eclipse.org/technology/epp/building/repository/ --batch-mode --show-version -Dmaven.repo.local=.repository -Dtycho.disableP2Mirrors=true -Peclipse-sign-mac -Peclipse-sign-dmg -Peclipse-sign-windows -Peclipse-package-dmg"
         sshagent ( ['projects-storage.eclipse.org-bot-ssh']) {
           sh "./releng/org.eclipse.epp.config/tools/upload-to-building.sh ${BUILDING} java"
         }
@@ -77,7 +77,7 @@ pipeline {
     }
     stage('Build jee') {
       steps {
-        sh "mvn verify -Pepp.product.jee -Pepp.materialize-products -Depp.p2.repourl=https://download.eclipse.org/technology/epp/building/repository/ --batch-mode --show-version -Dmaven.repo.local=.repository -Dtycho.disableP2Mirrors=true -Peclipse-sign-jar -Peclipse-sign-mac -Peclipse-sign-dmg -Peclipse-sign-windows -Peclipse-package-dmg"
+        sh "mvn verify -Pepp.product.jee -Pepp.materialize-products -Depp.p2.repourl=https://download.eclipse.org/technology/epp/building/repository/ --batch-mode --show-version -Dmaven.repo.local=.repository -Dtycho.disableP2Mirrors=true -Peclipse-sign-mac -Peclipse-sign-dmg -Peclipse-sign-windows -Peclipse-package-dmg"
         sshagent ( ['projects-storage.eclipse.org-bot-ssh']) {
           sh "./releng/org.eclipse.epp.config/tools/upload-to-building.sh ${BUILDING} jee"
         }
@@ -85,7 +85,7 @@ pipeline {
     }
     stage('Build modeling') {
       steps {
-        sh "mvn verify -Pepp.product.modeling -Pepp.materialize-products -Depp.p2.repourl=https://download.eclipse.org/technology/epp/building/repository/ --batch-mode --show-version -Dmaven.repo.local=.repository -Dtycho.disableP2Mirrors=true -Peclipse-sign-jar -Peclipse-sign-mac -Peclipse-sign-dmg -Peclipse-sign-windows -Peclipse-package-dmg"
+        sh "mvn verify -Pepp.product.modeling -Pepp.materialize-products -Depp.p2.repourl=https://download.eclipse.org/technology/epp/building/repository/ --batch-mode --show-version -Dmaven.repo.local=.repository -Dtycho.disableP2Mirrors=true -Peclipse-sign-mac -Peclipse-sign-dmg -Peclipse-sign-windows -Peclipse-package-dmg"
         sshagent ( ['projects-storage.eclipse.org-bot-ssh']) {
           sh "./releng/org.eclipse.epp.config/tools/upload-to-building.sh ${BUILDING} modeling"
         }
@@ -93,7 +93,7 @@ pipeline {
     }
     stage('Build php') {
       steps {
-        sh "mvn verify -Pepp.product.php -Pepp.materialize-products -Depp.p2.repourl=https://download.eclipse.org/technology/epp/building/repository/ --batch-mode --show-version -Dmaven.repo.local=.repository -Dtycho.disableP2Mirrors=true -Peclipse-sign-jar -Peclipse-sign-mac -Peclipse-sign-dmg -Peclipse-sign-windows -Peclipse-package-dmg"
+        sh "mvn verify -Pepp.product.php -Pepp.materialize-products -Depp.p2.repourl=https://download.eclipse.org/technology/epp/building/repository/ --batch-mode --show-version -Dmaven.repo.local=.repository -Dtycho.disableP2Mirrors=true -Peclipse-sign-mac -Peclipse-sign-dmg -Peclipse-sign-windows -Peclipse-package-dmg"
         sshagent ( ['projects-storage.eclipse.org-bot-ssh']) {
           sh "./releng/org.eclipse.epp.config/tools/upload-to-building.sh ${BUILDING} php"
         }
@@ -101,7 +101,7 @@ pipeline {
     }
     stage('Build rcp') {
       steps {
-        sh "mvn verify -Pepp.product.rcp -Pepp.materialize-products -Depp.p2.repourl=https://download.eclipse.org/technology/epp/building/repository/ --batch-mode --show-version -Dmaven.repo.local=.repository -Dtycho.disableP2Mirrors=true -Peclipse-sign-jar -Peclipse-sign-mac -Peclipse-sign-dmg -Peclipse-sign-windows -Peclipse-package-dmg"
+        sh "mvn verify -Pepp.product.rcp -Pepp.materialize-products -Depp.p2.repourl=https://download.eclipse.org/technology/epp/building/repository/ --batch-mode --show-version -Dmaven.repo.local=.repository -Dtycho.disableP2Mirrors=true -Peclipse-sign-mac -Peclipse-sign-dmg -Peclipse-sign-windows -Peclipse-package-dmg"
         sshagent ( ['projects-storage.eclipse.org-bot-ssh']) {
           sh "./releng/org.eclipse.epp.config/tools/upload-to-building.sh ${BUILDING} rcp"
         }
@@ -109,7 +109,7 @@ pipeline {
     }
     stage('Build scout') {
       steps {
-        sh "mvn verify -Pepp.product.scout -Pepp.materialize-products -Depp.p2.repourl=https://download.eclipse.org/technology/epp/building/repository/ --batch-mode --show-version -Dmaven.repo.local=.repository -Dtycho.disableP2Mirrors=true -Peclipse-sign-jar -Peclipse-sign-mac -Peclipse-sign-dmg -Peclipse-sign-windows -Peclipse-package-dmg"
+        sh "mvn verify -Pepp.product.scout -Pepp.materialize-products -Depp.p2.repourl=https://download.eclipse.org/technology/epp/building/repository/ --batch-mode --show-version -Dmaven.repo.local=.repository -Dtycho.disableP2Mirrors=true -Peclipse-sign-mac -Peclipse-sign-dmg -Peclipse-sign-windows -Peclipse-package-dmg"
         sshagent ( ['projects-storage.eclipse.org-bot-ssh']) {
           sh "./releng/org.eclipse.epp.config/tools/upload-to-building.sh ${BUILDING} scout"
         }
