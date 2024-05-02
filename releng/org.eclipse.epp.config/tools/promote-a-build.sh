@@ -53,6 +53,12 @@ else
     TOUCHDIRS="${REPO}/${RELEASE_DIR} ${DOWNLOADS}/${RELEASE_DIR}"
 fi
 
+# Restore the staging p2 repo - see https://github.com/eclipse-packaging/packages/issues/142
+# Note we copy it back rather than not mv it in the first place (done above)
+# as this was simpler for the author to write at the time.
+$ECHO $SSH mkdir -p ${EPP_DOWNLOADS}/staging/repository
+$ECHO $SSH cp -rpvf ${REPO}/${RELEASE_DIR}/* ${EPP_DOWNLOADS}/staging/repository/
+
 # ----------------------------------------------------------------------------------------------
 # Update the release.xml for Web team to consume and create the entries in https://www.eclipse.org/downloads/packages/
 # The other consumer of this is some external packagers, see Bug 577659 Comment 3 for an example
