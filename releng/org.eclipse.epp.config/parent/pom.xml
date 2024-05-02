@@ -33,11 +33,11 @@
     <!-- Name of the release (no milestone) -->
     <RELEASE_NAME>2024-06</RELEASE_NAME>
     <!-- Name of the milestone -->
-    <RELEASE_MILESTONE>M2</RELEASE_MILESTONE>
+    <RELEASE_MILESTONE>M3</RELEASE_MILESTONE>
     <!-- Version of the release -->
     <RELEASE_VERSION>4.32.0</RELEASE_VERSION>
     <!-- Name release directory on download.eclipse.org -->
-    <RELEASE_DIR>202405021000</RELEASE_DIR>
+    <RELEASE_DIR>202405231000</RELEASE_DIR>
     <!-- SimRel Repo to build from -->
     <SIMREL_REPO>https://download.eclipse.org/staging/2024-06</SIMREL_REPO>
     <!-- ID used to generate the filename of the packages -->
