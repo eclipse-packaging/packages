@@ -21,6 +21,25 @@
         href="EPPConfiguration.setup#/"/>
   </annotation>
   <setupTask
+      xsi:type="setup:CompoundTask"
+      name="User Preferences">
+    <annotation
+        source="http://www.eclipse.org/oomph/setup/UserPreferences">
+      <detail
+          key="/instance/org.eclipse.core.resources/description.disableLinking">
+        <value>record</value>
+      </detail>
+    </annotation>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="org.eclipse.core.resources">
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.core.resources/description.disableLinking"
+          value="false"/>
+    </setupTask>
+  </setupTask>
+  <setupTask
       xsi:type="jdt:JRETask"
       version="JavaSE-21"
       location="${jre.location-21}">
@@ -70,14 +89,85 @@
       </detail>
       <detail
           key="label">
-        <value>EPP Packages Github Repository</value>
+        <value>EPP's packages GitHub Repository</value>
       </detail>
       <detail
           key="target">
         <value>remoteURI</value>
       </detail>
     </annotation>
+    <configSections
+        name="branch">
+      <properties
+          key="autoSetupRebase"
+          value="always"/>
+    </configSections>
     <description>${scope.project.label}</description>
+  </setupTask>
+  <setupTask
+      xsi:type="git:GitCloneTask"
+      id="github.clone.epp.github"
+      locationQualifier="packaging"
+      remoteURI="eclipse-packaging/.github"
+      checkoutBranch="main">
+    <annotation
+        source="http://www.eclipse.org/oomph/setup/InducedChoices">
+      <detail
+          key="inherit">
+        <value>github.remoteURIs</value>
+      </detail>
+      <detail
+          key="label">
+        <value>EPP's .github GitHub Repository</value>
+      </detail>
+      <detail
+          key="target">
+        <value>remoteURI</value>
+      </detail>
+    </annotation>
+    <configSections
+        name="branch">
+      <properties
+          key="autoSetupRebase"
+          value="always"/>
+    </configSections>
+    <description>EPP .github</description>
+  </setupTask>
+  <setupTask
+      xsi:type="setup:ResourceCreationTask"
+      targetURL="${github.clone.epp.github.location|uri}/.gitignore">
+    <content>
+      .project
+      .gitignore
+      /.settings/
+    </content>
+  </setupTask>
+  <setupTask
+      xsi:type="setup:ResourceCreationTask"
+      targetURL="${github.clone.epp.github.location|uri}/.project">
+    <content>
+      &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>
+      &lt;projectDescription>
+      	&lt;name>org.eclipse.epp.github&lt;/name>
+      	&lt;comment>EPP GitHub&lt;/comment>
+      	&lt;projects>
+      	&lt;/projects>
+      	&lt;buildSpec>
+      	&lt;/buildSpec>
+      	&lt;natures>
+      	&lt;/natures>
+      &lt;/projectDescription>
+
+    </content>
+  </setupTask>
+  <setupTask
+      xsi:type="setup:ResourceCreationTask"
+      targetURL="${github.clone.epp.github.location|uri}/.settings/org.eclipse.core.resources.prefs">
+    <content>
+      eclipse.preferences.version=1
+      encoding/&lt;project>=UTF-8
+
+    </content>
   </setupTask>
   <setupTask
       xsi:type="setup.targlets:TargletTask">
@@ -88,6 +178,9 @@
           name="*"/>
       <sourceLocator
           rootFolder="${github.clone.epp.packages.location}"
+          locateNestedProjects="true"/>
+      <sourceLocator
+          rootFolder="${github.clone.epp.github.location}"
           locateNestedProjects="true"/>
       <repositoryList>
         <repository
@@ -233,6 +326,15 @@
         <operand
             xsi:type="predicates:NamePredicate"
             pattern=".*\.scout.*"/>
+      </predicate>
+    </workingSet>
+    <workingSet
+        name="EPP .github">
+      <predicate
+          xsi:type="predicates:AndPredicate">
+        <operand
+            xsi:type="predicates:RepositoryPredicate"
+            project="org.eclipse.epp.github"/>
       </predicate>
     </workingSet>
     <description>The dynamic working sets for ${scope.project.label}</description>
