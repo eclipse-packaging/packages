@@ -30,4 +30,8 @@
       <import plugin="org.eclipse.wtp.epp.package.capabilities"/>
    </requires>
 
+   <plugin
+         id="org.eclipse.epp.package.jee"
+         version="0.0.0"/>
+
 </feature>
