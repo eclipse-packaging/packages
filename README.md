@@ -21,7 +21,7 @@ In addition the combined p2 site will be in `archive/repository`.
 
 If you want to build just a single package add the profile for the package you want to build, along with the profile to materialize the product:
 
-    mvn verify -Pepp.product.rcp -Pepp.materialize-products
+    mvn verify -Pepp.p2.common -Pepp.product.cpp -Pepp.p2.cpp -Pepp.materialize-products
 
 This build creates output in two places:
 
