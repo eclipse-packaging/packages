@@ -5,7 +5,16 @@ pipeline {
     disableConcurrentBuilds()
   }
   triggers {
-    cron('H 21 * * *') // run every day at ~9pm
+    // run every day at ~9pm
+    cron('H 21 * * *')
+
+    // check every 5 minutes for changes to the staging repo's content.jar
+    URLTrigger(cronTabSpec: 'H/5 * * * *', entries: [URLTriggerEntry(
+                    url: 'https://download.eclipse.org/staging/2024-06/content.jar',
+                    contentTypes: [
+                        MD5Sum()
+                    ]
+                )])
   }
   tools {
     maven 'apache-maven-latest'

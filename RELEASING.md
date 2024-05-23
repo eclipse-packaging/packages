@@ -22,6 +22,7 @@ This checklist is only used once per release cycle. Scroll down for the per-mile
   - [ ] epp.product
   - [ ] p2.inf
   - [ ] epp.p2.inf
+  - [ ] Jenkinsfile (SimRel triggering URL)
   - [ ] `2020-12` -> `2021->03` part
   - [ ] `4.14` -> `4.15` part
 - [ ] Archive old releases (two R releases should stay on download.eclipse.org) to archive.eclipse.org and remove non-R downloads.
