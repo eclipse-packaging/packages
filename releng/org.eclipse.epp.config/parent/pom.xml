@@ -24,7 +24,7 @@
 
   <properties>
     <maven.version>3.9.0</maven.version>
-    <tycho.version>4.0.8-SNAPSHOT</tycho.version>
+    <tycho.version>4.0.8</tycho.version>
     <tycho.scmUrl>scm:git:git://git.eclipse.org/gitroot/epp/org.eclipse.epp.packages.git</tycho.scmUrl>
     <cbi.version>1.4.3</cbi.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -75,13 +75,6 @@
     <pluginRepository>
       <id>eclipse-cbi</id>
       <url>https://repo.eclipse.org/content/groups/cbi/</url>
-    </pluginRepository>
-
-    <pluginRepository>
-      <id>tycho-snapshots</id>
-      <url>https://repo.eclipse.org/content/repositories/tycho-snapshots/</url>
-      <releases><enabled>true</enabled></releases>
-      <snapshots><enabled>true</enabled></snapshots>
     </pluginRepository>
   </pluginRepositories>
 
