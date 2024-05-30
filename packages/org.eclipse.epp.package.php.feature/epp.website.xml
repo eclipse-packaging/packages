@@ -18,7 +18,7 @@
 Click <a href="https://github.com/eclipse/pdt/issues/new/choose">here</a> to raise an issue with Eclipse PHP Development Tools.<br />
 Click <a href="https://bugs.eclipse.org/bugs/enter_bug.cgi?classification=WebTools">here</a> to open a bug report with the Eclipse Web Tools Platform.<br />
 Click <a href="https://github.com/eclipse-platform#reporting-issues">here</a> to raise an issue with the Eclipse Platform.<br/>
-Click <a href="https://github.com/eclipse/wildwebdeveloper/issues">here</a> to raise an issue with Eclipse Wild Web Developer (incubating).
+Click <a href="https://github.com/eclipse-wildwebdeveloper/wildwebdeveloper/issues">here</a> to raise an issue with Eclipse Wild Web Developer (incubating).
 ]]></description>
     <!-- packageTesters is a list of the people that are testing the package -->
     <packageTesters>
