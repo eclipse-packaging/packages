@@ -60,7 +60,7 @@ java - 2024-06 RC1
 jee - 2024-06 RC1
 modeling - 2024-06 M2
 php - 2023-06 RC2
-rcp - 2024-03 RC2
+rcp - 2024-06 RC1
 scout - 2024-06 RC1
 
 Platforms:
