@@ -12,7 +12,7 @@ EPP releases happen for each milestone and release candidate according to the [E
 This checklist is only used once per release cycle. Scroll down for the per-milestone/RC steps.
 
 - [ ] Create new [PMI entry](https://projects.eclipse.org/projects/technology.packaging)
-- [ ] Update splash screen (once per release cycle, hopefully done before M1). See detailed [instructions](https://github.com/eclipse-packaging/packages/blob/master/packages/org.eclipse.epp.package.common/splash/INSTRUCTIONS.md). For 2022-06 see Bug [575781](https://bugs.eclipse.org/bugs/show_bug.cgi?id=575781) for new splash screens.
+- [ ] Update splash screen (once per release cycle, hopefully done before M1). See detailed [instructions](https://github.com/eclipse-packaging/packages/blob/master/packages/org.eclipse.epp.package.common/splash/INSTRUCTIONS.md).
 - [ ] When the year changes, e.g. between 2019-12 and 2020-03 releases, an update of the copyright year is required with a very smart search&replace. A good replacement is `/, 2021/, 2022/` excluding `*.svg`
 - [ ] In addition to the "Update Name" step on every M and RC, the whole version string is updated, including platform version; this is a large change including
   - [ ] pom.xml
