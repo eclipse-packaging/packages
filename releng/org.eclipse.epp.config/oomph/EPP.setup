@@ -365,7 +365,7 @@
   <setupTask
       xsi:type="setup:StringSubstitutionTask"
       name="simrel.uri"
-      value="https://download.eclipse.org/staging/2024-06">
+      value="https://download.eclipse.org/staging/2024-09">
     <description>The SimRel train p2 repository used to build the packages as used in packaging.aggr</description>
   </setupTask>
   <setupTask

@@ -11,7 +11,7 @@ When ready, the Eclipse Foundation marketing team will submit some splashscreen,
 - For 2021-06 -> 2022-03 see [Bug 569333](https://bugs.eclipse.org/bugs/show_bug.cgi?id=569333)
 - For 2022-06 -> 2023-03 see [Bug 575781](https://bugs.eclipse.org/bugs/show_bug.cgi?id=575781)
 - For 2023-06 -> 2024-03 see [Helpdesk 2335](https://gitlab.eclipse.org/eclipsefdn/helpdesk/-/issues/2336)
-- For 2024-06 -> 2025-03 see [Helpdesk 3963](https://gitlab.eclipse.org/eclipsefdn/helpdesk/-/issues/3963)
+- For 2024-09 -> 2025-03 see [Helpdesk 3963](https://gitlab.eclipse.org/eclipsefdn/helpdesk/-/issues/3963)
 
 ### Copy splash screen series into `org.eclipse.epp.package.common/splash/`
 
@@ -23,8 +23,8 @@ Some raw image files are welcome, but as those artifacts may have to be changed 
 
 **When:** Before every M1
 
-The splash screen needs to be an (approximately) 450x300 pixels .bmp file, 24-bits RGB (maybe other depth work too, but it's not tested), **without color space information** (some SWT bug). To produce it, if the initial splash screens aren't of that form (they're usually .jpg files), open the desired splash screen variation file from the `org.eclipse.epp.package.common/splash/` folder in Gimp, resize it to approximately 450x300 with *Image > Scale*, then set DPI to 72 with *Image > Print Size*, then *File > Export* it: choose the location `org.eclipse.epp.package.common/splash.bmp` press *Save*, and in the Export options, tick *Compatibility Options > Do not write color space information*. Apply.
+The splash screen needs to be an (approximately) 450x300 pixels .bmp file, 24-bits RGB (maybe other depth work too, but it's not tested), **without color space information** (some SWT bug). To produce it, if the initial splash screens aren't of that form (they're usually .jpg files), open the desired splash screen variation file from the `org.eclipse.epp.package.common/splash/` folder in Gimp, resize it to approximately 450x300 with _Image > Scale_, then set DPI to 72 with _Image > Print Size_, then _File > Export_ it: choose the location `org.eclipse.epp.package.common/splash.bmp` press _Save_, and in the Export options, tick _Compatibility Options > Do not write color space information_. Apply.
 
 Repeat process, but for About dialog image which exists in each EPP package as `packages/org.eclipse.epp.package.*/eclipse_lg.png` (approx 115 x 302) and `packages/org.eclipse.epp.package.*/eclipse_lg@2x.png` (2x other image, approx 230 x 604).
 
-Then, commit the change locally, test it by building whichever EPP package via command-line and then starting this package. The new splash screen should be in place. Then, push the change to Gerrit.
+Then, commit the change locally, test it by building whichever EPP package via command-line and then starting this package. The new splash screen should be in place. Then, push the change to GitHub.
