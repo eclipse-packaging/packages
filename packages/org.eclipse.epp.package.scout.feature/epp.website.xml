@@ -26,11 +26,11 @@
     url="https://eclipsescout.github.io/scout-docs/23.2/releasenotes/release-notes.html"
     project="Eclipse Scout" />
   <NewAndNoteworthy
-    url="https://eclipse.dev/eclipse/news/4.32/"
+    url="https://eclipse.dev/eclipse/news/4.33/"
     project="Eclipse Platform" />
   </MoreInfo>
 
   <!-- name, the name of the product, used in naming the created files. -->
-  <product name="eclipse-scout-2024-06-R" />
+  <product name="eclipse-scout-2024-09-M1" />
 
 </configuration>

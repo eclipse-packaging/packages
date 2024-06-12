@@ -1,5 +1,4 @@
-The EPP Build
-=============
+# The EPP Build
 
 The [Eclipse Packaging Project (EPP)](https://projects.eclipse.org/projects/technology.packaging/) provides the download packages based on the content of the yearly Simultaneous Release.
 The download packages are provided from [www.eclipse.org/downloads/eclipse-packages/](https://www.eclipse.org/downloads/eclipse-packages/).
@@ -10,7 +9,7 @@ Please see [RELEASING.md](RELEASING.md) in this repo for instructions on the rel
 
 ## Build Locally
 
-It's *easy* to run the build locally! All you need is Maven:
+It's _easy_ to run the build locally! All you need is Maven:
 
     mvn clean verify
 
@@ -36,7 +35,7 @@ There is no profile (PRs welcome!) to disabled other platforms, instead modify `
 ### Windows users
 
 In the past the last step in the build process used to fail.
-For further  details see [bug 426416](https://bugs.eclipse.org/bugs/show_bug.cgi?id=426416).
+For further details see [bug 426416](https://bugs.eclipse.org/bugs/show_bug.cgi?id=426416).
 If that happens again you can omit the `verify` stage and simply `package`.
 
     mvn clean package -Pepp.package.rcp -Pepp.materialize-products
@@ -72,15 +71,15 @@ internal signing service and can be activated only if the build is running there
 
 ### Additional Configuration Possibilities
 
-By default, the EPP build uses the content of the Eclipse Simultaneous Release *Staging*
-repository at <https://download.eclipse.org/staging/2024-06/> as input. Sometimes it is
+By default, the EPP build uses the content of the Eclipse Simultaneous Release _Staging_
+repository at <https://download.eclipse.org/staging/2024-09/> as input. Sometimes it is
 desired to build against another release (e.g. a different milestone), or against a local
 mirror of this repository. This can be achieved by setting the Java property
 `eclipse.simultaneous.release.repository`to another URL. As an example, by adding the
 following argument to the Maven command line, the EPP build will read its input from the
-composite Eclipse 2024-06 repository:
+composite Eclipse 2024-09 repository:
 
-    -Declipse.simultaneous.release.repository="https://download.eclipse.org/releases/2024-06"
+    -Declipse.simultaneous.release.repository="https://download.eclipse.org/releases/2024-09"
 
 ### EPP Configuration File format
 
