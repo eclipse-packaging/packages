@@ -104,7 +104,7 @@
             resolution="launchbar">
       </command>
       <command
-            id="org.eclipse.ui.file.import(importWizardId=org.eclipse.egit.ui.internal.clone.GitCloneWizard)"
+            id="org.eclipse.ui.file.import(importWizardId=org.eclipse.egit.ui.internal.clone.SmartImportGitWizard)"
             description="%ql.checkoutGitProject.description"
             icon="platform:/plugin/org.eclipse.ui.intro.universal/themes/solstice/graphics/icons/ctool/egit-checkout.png"
             label="%ql.checkoutGitProject.label"
