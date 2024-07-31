@@ -37,7 +37,7 @@
     <!-- Version of the release -->
     <RELEASE_VERSION>4.33.0</RELEASE_VERSION>
     <!-- Name release directory on download.eclipse.org -->
-    <RELEASE_DIR>202407111200</RELEASE_DIR>
+    <RELEASE_DIR>202408011200</RELEASE_DIR>
     <!-- SimRel Repo to build from -->
     <SIMREL_REPO>https://download.eclipse.org/staging/2024-09</SIMREL_REPO>
     <!-- ID used to generate the filename of the packages -->
