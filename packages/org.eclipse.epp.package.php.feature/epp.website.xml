@@ -16,7 +16,7 @@
     <!-- Description is wrapped in CDATA tags to allow you to insert HTML code if necessary -->
     <description><![CDATA[The essential tools for any PHP developer, including PHP language support, Git client and editors for JavaScript, TypeScript, HTML, CSS and XML.<br />
 Click <a href="https://github.com/eclipse/pdt/issues/new/choose">here</a> to raise an issue with Eclipse PHP Development Tools.<br />
-Click <a href="https://bugs.eclipse.org/bugs/enter_bug.cgi?classification=WebTools">here</a> to open a bug report with the Eclipse Web Tools Platform.<br />
+Click <a href="https://github.com/eclipse-wtp-common/webtools.common/issues">here</a> to raise an issue with the Eclipse Web Tools Platform. Maintainers will move opened issues to the right place.<br/>
 Click <a href="https://github.com/eclipse-platform#reporting-issues">here</a> to raise an issue with the Eclipse Platform.<br/>
 Click <a href="https://github.com/eclipse-wildwebdeveloper/wildwebdeveloper/issues">here</a> to raise an issue with Eclipse Wild Web Developer (incubating).
 ]]></description>
