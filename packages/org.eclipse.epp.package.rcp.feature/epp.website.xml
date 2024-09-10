@@ -22,11 +22,11 @@
   </packageMetaData>
   <MoreInfo>
   <NewAndNoteworthy
-    url="https://eclipse.dev/eclipse/news/4.33/"
+    url="https://eclipse.dev/eclipse/news/4.34/"
     project="Eclipse Platform" />
   </MoreInfo>
 
   <!-- name, the name of the product, used in naming the created files. -->
-  <product name="eclipse-rcp-2024-09-R" />
+  <product name="eclipse-rcp-2024-12-M1" />
 
 </configuration>
