@@ -55,7 +55,7 @@
     <!-- Used for the variable below to update easily, e.g., to 21. -->
     <execution.environment.version>21</execution.environment.version>
     <!-- Used for the JustJ JREs p2 repository. -->
-    <justj.jres.repository>https://download.eclipse.org/justj/jres/${execution.environment.version}/updates/release/latest</justj.jres.repository> <!-- Keep URL in sync with Oomph setup-->
+    <justj.jres.repository>https://download.eclipse.org/justj/jres/${execution.environment.version}/updates/milestone/latest</justj.jres.repository> <!-- Keep URL in sync with Oomph setup-->
     <!-- Used for the JustJ EPP p2 repository. -->
     <justj.epp.repository>https://download.eclipse.org/justj/epp/milestone/latest</justj.epp.repository> <!-- Keep URL in sync with Oomph setup-->
     <!-- The Justj execution enviroment for the target-platform-configuration. -->
@@ -139,6 +139,11 @@
               <os>linux</os>
               <ws>gtk</ws>
               <arch>aarch64</arch>
+            </environment>
+            <environment>
+              <os>linux</os>
+              <ws>gtk</ws>
+              <arch>riscv64</arch>
             </environment>
             <environment>
               <os>win32</os>
