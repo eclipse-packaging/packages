@@ -240,6 +240,8 @@ United States, other countries, or both.
       <feature id="org.eclipse.egit" installMode="root"/>
       <feature id="org.eclipse.jgit" installMode="root"/>
       <feature id="org.eclipse.mylyn.wikitext.feature" installMode="root"/>
+      <feature id="org.eclipse.tm4e.feature" installMode="root"/>
+      <feature id="org.eclipse.tm4e.language_pack.feature" installMode="root"/>
 
       <!-- common features to almost all products -->
       <feature id="org.eclipse.mylyn.commons.activity.feature" installMode="root"/>
