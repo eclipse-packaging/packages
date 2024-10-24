@@ -14,4 +14,5 @@
   <configurations operatingSystem="macosx" windowSystem="cocoa" architecture="aarch64"/>
   <configurations operatingSystem="macosx" windowSystem="cocoa" architecture="x86_64"/>
   <configurations architecture="x86_64"/>
+  <configurations architecture="aarch64"/>
 </aggregator:Aggregation>
