@@ -27,6 +27,7 @@ for PACKAGE in $PACKAGES; do
              sed 's/linux\.gtk\.riscv64/linux-gtk-riscv64/' | \
              sed 's/linux\.gtk\.x86\_64/linux-gtk-x86\_64/' | \
              sed 's/win32\.win32\.x86\_64\./win32\-x86\_64\./' | \
+             sed 's/win32\.win32\.aarch64\./win32\-aarch64\./' | \
              sed 's/macosx\.cocoa\.aarch64/macosx\-cocoa-aarch64/' | \
              sed 's/macosx\.cocoa\.x86\_64/macosx\-cocoa-x86\_64/' | \
              sed 's/macosx-cocoa-aarch64.dmg/macosx-cocoa-aarch64.dmg-tonotarize/' | \
