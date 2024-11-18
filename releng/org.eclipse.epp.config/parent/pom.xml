@@ -306,6 +306,7 @@
               <macosx>tar.gz</macosx>
               <win32>zip</win32>
             </formats>
+            <storeCreationTime>false</storeCreationTime>
             <products>
               <product>
                 <id>${project.artifactId}</id>
