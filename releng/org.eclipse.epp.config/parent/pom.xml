@@ -24,7 +24,7 @@
 
   <properties>
     <maven.version>3.9.0</maven.version>
-    <tycho.version>4.0.9</tycho.version>
+    <tycho.version>4.0.10</tycho.version>
     <tycho.scmUrl>scm:git:git://git.eclipse.org/gitroot/epp/org.eclipse.epp.packages.git</tycho.scmUrl>
     <cbi.version>1.5.0</cbi.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -33,13 +33,13 @@
     <!-- Name of the release (no milestone) -->
     <RELEASE_NAME>2024-12</RELEASE_NAME>
     <!-- Name of the milestone -->
-    <RELEASE_MILESTONE>M3</RELEASE_MILESTONE>
+    <RELEASE_MILESTONE>RC1</RELEASE_MILESTONE>
     <!-- Version of the release -->
     <RELEASE_VERSION>4.34.0</RELEASE_VERSION>
     <!-- Name release directory on download.eclipse.org -->
-    <RELEASE_DIR>202411141200</RELEASE_DIR>
+    <RELEASE_DIR>202411211200</RELEASE_DIR>
     <!-- SimRel Repo to build from -->
-    <SIMREL_REPO>https://download.eclipse.org/releases/2024-12/202411151000/</SIMREL_REPO>
+    <SIMREL_REPO>https://download.eclipse.org/staging/2024-12/</SIMREL_REPO>
     <!-- ID used to generate the filename of the packages -->
     <eclipse.simultaneous.release.id>${RELEASE_NAME}-${RELEASE_MILESTONE}</eclipse.simultaneous.release.id>
     <!-- Timestamp used in various places, e.g. the about dialog (see about.mappings) -->
