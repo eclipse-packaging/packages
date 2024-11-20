@@ -27,14 +27,11 @@ Click <a href="https://github.com/eclipse-wildwebdeveloper/wildwebdeveloper/issu
   </packageMetaData>
   <MoreInfo>
   <NewAndNoteworthy
-    url="https://github.com/eclipse-pdt/pdt/wiki/NewIn82"
-    project="Eclipse PHP Development Tools" />
-  <NewAndNoteworthy
     url="https://eclipse.dev/eclipse/news/4.34/"
     project="Eclipse Platform" />
   </MoreInfo>
 
   <!-- name, the name of the product, used in naming the created files. -->
-  <product name="eclipse-php-2024-12-M3" />
+  <product name="eclipse-php-2024-12-RC1" />
 
 </configuration>
