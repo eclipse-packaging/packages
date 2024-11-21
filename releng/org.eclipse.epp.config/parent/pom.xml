@@ -307,6 +307,7 @@
               <win32>zip</win32>
             </formats>
             <storeCreationTime>false</storeCreationTime>
+            <parallel>true</parallel>
             <products>
               <product>
                 <id>${project.artifactId}</id>
