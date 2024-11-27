@@ -8,6 +8,8 @@ The [Eclipse IDE New & Noteworthy](https://eclipseide.org/release/noteworthy/) p
 ## 2024-12
 
 - [TextMate 4 Eclipse (TM4E)](https://projects.eclipse.org/projects/technology.tm4e) is now included with all packages. The TM4E project uses the Generic Code Editor in Eclipse to support syntax highlighting for a large number of languages.
+- The Eclipse Packaging Project contains 2 new OS / CPU Architecture pairs. Windows on ARM and Linux on RISC-V are now built for all packages for each release.
+- The Windows operating system trust store is now used by default instead of the cacerts bundled with the JVM. This is controlled by the new command line options `-Djavax.net.ssl.trustStoreType=Windows-ROOT` and `-Djavax.net.ssl.trustStore=NONE` in the eclipse.ini file.
 
 ## 2024-06
 
