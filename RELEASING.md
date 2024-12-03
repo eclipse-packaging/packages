@@ -103,20 +103,9 @@ This applies to all releases, i.e. M1, M2, M3, RC1 and R. Everything except R is
 
 - [ ] **24 Hours before Final release** Make sure files are in final location to allow downloads to mirror
   - [ ] Tag the release, e.g. with 2020-03_R. Example command line: `git tag --annotate 2020-03_R -m"2020-03 Release" 1b7a1c1af156e3ac57768b87be258cd22b49456b`
-  - [ ] rename the provisional release milestone to final directory (E.g. [2020-09/202009101200](https://download.eclipse.org/technology/epp/downloads/release/2020-09/202009101200/) -> [2020-09/R](https://download.eclipse.org/technology/epp/downloads/release/2020-09/R/) (to match what is in [release.xml](https://download.eclipse.org/technology/epp/downloads/release/release.xml)) - this only applies to downloads, not to packages
+  - [ ] Run the [Rename Provisional to Final](https://ci.eclipse.org/packaging/job/rename-provisional-to-final/) CI job to rename the provisional release milestone to final directory. (E.g. [2020-09/202009101200](https://download.eclipse.org/technology/epp/downloads/release/2020-09/202009101200/) -> [2020-09/R](https://download.eclipse.org/technology/epp/downloads/release/2020-09/R/) (to match what is in [release.xml](https://download.eclipse.org/technology/epp/downloads/release/release.xml)) - this only applies to downloads, not to packages
+    - [ ] _Optional - useful when testing changes to the promotion scripts:_ Run the build once in `DRY_RUN` mode to ensure that the output is correct before it applies changes to download.eclipse.org.
   - [ ] Send an updated email to epp-dev informing that the provisional URL has been renamed to `R`.
-
-Renaming the directory can be done with a script like **TODO: make a job for this** :
-
-```sh
-ssh genie.packaging@projects-storage.eclipse.org /bin/bash << EOF
-  set -u # run with unset flag error so that missing parameters cause build failure
-  set -e # error out on any failed commands
-  set -x # echo all commands used for debugging purposes
-  mv -v /home/data/httpd/download.eclipse.org/technology/epp/downloads/release/2021-03/202103121200 /home/data/httpd/download.eclipse.org/technology/epp/downloads/release/2021-03/R
-  touch /home/data/httpd/download.eclipse.org/technology/epp/downloads/release/2021-03/R/*
-EOF
-```
 
 **On Final release day**
 
