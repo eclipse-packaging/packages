@@ -111,5 +111,7 @@ This applies to all releases, i.e. M1, M2, M3, RC1 and R. Everything except R is
 
 These jobs should be completed by approximately 10am Ottawa time on release days.
 
-- [ ] The current release needs to be promoted as "latest" under https://download.eclipse.org/technology/epp/packages/latest/ . This should be a composite pointing to specific https://download.eclipse.org/technology/epp/packages/yyyy-MM/ . This is achieved by triggering the [epp-promoteReleaseToLatest](https://ci.eclipse.org/packaging/job/epp-promoteReleaseToLatest).
-- [ ] The _next_ release sub-directory needs to be created immediately, i.e. when 2019-12 was released, a directory 2020-03 had been created with an empty p2 composite repository pointing to 2019-12 until M1. (Use Job https://ci.eclipse.org/packaging/job/epp-createNextRelease/) On M1 release day this changes to a composite p2 repository with M1 content. On other release days, add the new releases as children and on final release this changes to a composite with just the one child.
+- [ ] Run the [Finalize Release](https://ci.eclipse.org/packaging/job/finalize-release/) CI job to create the "next" release and updated the "latest" release  as follows:
+  - The current release needs to be promoted as "latest" under https://download.eclipse.org/technology/epp/packages/latest/ . This should be a composite pointing to specific https://download.eclipse.org/technology/epp/packages/yyyy-MM/ .
+  - The _next_ release sub-directory needs to be created immediately, i.e. when 2019-12 was released, a directory 2020-03 had been created with an empty p2 composite repository pointing to 2019-12 until M1. On M1 release day this changes to a composite p2 repository with M1 content.
+  - [ ] _Optional - useful when testing changes to the promotion scripts:_ Run the build once in `DRY_RUN` mode to ensure that the output is correct before it applies changes to download.eclipse.org.
