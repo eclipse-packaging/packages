@@ -43,10 +43,11 @@ fi
 
 if [ "$RELEASE_MILESTONE" != "R" ]; then
     $ECHO "This job is only inteded for R builds"
-else
-    $ECHO $SSH mv ${DOWNLOADS}/${RELEASE_DIR} ${DOWNLOADS}/R
-    TOUCHDIRS="${DOWNLOADS}/R"
+    exit 1
 fi
+
+$ECHO $SSH mv ${DOWNLOADS}/${RELEASE_DIR} ${DOWNLOADS}/R
+TOUCHDIRS="${DOWNLOADS}/R"
 
 # ----------------------------------------------------------------------------------------------
 #  Touch All Files See Bug 568574: Touch all files for the milestone in the download area to make sure mirrors are not misreporting them as mirrored before sending announcements.
