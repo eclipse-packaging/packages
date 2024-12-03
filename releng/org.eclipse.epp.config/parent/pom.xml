@@ -30,8 +30,10 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.build.timestamp.format>yyyyMMdd-HHmm</maven.build.timestamp.format>
     <build>${maven.build.timestamp}</build>
-    <!-- Name of the release (no milestone) -->
+    <!-- Name of the release (no milestone) and the prev/next release name (for where links are needed)-->
     <RELEASE_NAME>2024-12</RELEASE_NAME>
+    <PREV_RELEASE_NAME>2024-09</PREV_RELEASE_NAME>
+    <NEXT_RELEASE_NAME>2025-03</NEXT_RELEASE_NAME>
     <!-- Name of the milestone -->
     <RELEASE_MILESTONE>R</RELEASE_MILESTONE>
     <!-- Version of the release -->

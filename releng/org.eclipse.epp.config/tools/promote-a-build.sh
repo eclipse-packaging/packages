@@ -20,6 +20,8 @@ fi
 ${MVN} clean package -f ${DIR}
 
 RELEASE_NAME=$(get_property RELEASE_NAME)
+PREV_RELEASE_NAME=$(get_property PREV_RELEASE_NAME)
+NEXT_RELEASE_NAME=$(get_property NEXT_RELEASE_NAME)
 RELEASE_MILESTONE=$(get_property RELEASE_MILESTONE)
 RELEASE_DIR=$(get_property RELEASE_DIR)
 SIMREL_REPO=$(get_property SIMREL_REPO)
@@ -86,10 +88,22 @@ cat > release.xml <<EOM
 <past>2023-12/R</past>
 <past>2024-03/R</past>
 <past>2024-06/R</past>
-<past>2024-09/R</past>
-<present>2024-12/R</present>
+EOM
+if [ "$RELEASE_MILESTONE" != "R" ]; then
+  cat >> release.xml <<EOM
+<present>${PREV_RELEASE_NAME}/R</present>
+<future>${RELEASE_NAME}/${RELEASE_MILESTONE}</future>
 </packages>
 EOM
+else
+  cat >> release.xml <<EOM
+<past>${PREV_RELEASE_NAME}/R</past>
+<present>${RELEASE_NAME}/R</present>
+</packages>
+EOM
+fi
+
+
 $ECHO $SCP release.xml "${SSHUSER}:"${EPP_DOWNLOADS}/downloads/release/release.xml
 
 

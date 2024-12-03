@@ -25,6 +25,7 @@ This checklist is only used once per release cycle. Scroll down for the per-mile
   - [ ] Jenkinsfile (SimRel triggering URL)
   - [ ] `2020-12` -> `2021->03` part
   - [ ] `4.14` -> `4.15` part
+  - [ ] Adding the previous past release explicitly to list in release.xml, located in promote-a-build.sh
 - [ ] Archive old releases (two R releases should stay on download.eclipse.org) to archive.eclipse.org and remove non-R downloads.
   - This can be done through the web ui at https://download.eclipse.org/technology/epp/
 
@@ -46,13 +47,12 @@ This checklist is only used once per release cycle. Scroll down for the per-mile
 - [ ] Update name of the release in strings with a "smart" global find&replace. _Be careful on M3 that the replace did not match the Eclipse project name M2E!_ See this [gerrit](https://git.eclipse.org/r/#/c/158509/) for an example. Use commit message like `[releng] Prepare repo for 2020-12 M1`. In particular, check:
   - **TODO can this be automated** On M1 add the M1 qualifier (e.g. `2021-03-R` -> `2021-06-M1`, on RC2 set it to `R` the qualifier e.g. `2021-03-RC1` -> `2021-03-R`). **Except** for `eclipse.simultaneous.release.name` which should go from `2021-03 (4.19.0)` -> `2021-06 M1 (4.20.0 M1)` on M1 and `2021-03 RC1 (4.19.0 RC1)` -> `2021-03 (4.19.0)` on RC2
   - [ ] `packages/*/epp.website.xml` for `product name=` line
-  - [ ] `RELEASE_NAME`, `RELEASE_MILESTONE`, `RELEASE_DIR`, `SIMREL_REPO` Variables in parent pom `releng/org.eclipse.epp.config/parent/pom.xml`
+  - [ ] `RELEASE_NAME`, `PREV_RELEASE_NAME`, `NEXT_RELEASE_NAME`, `RELEASE_MILESTONE`, `RELEASE_DIR`, `SIMREL_REPO`,  Variables in parent pom `releng/org.eclipse.epp.config/parent/pom.xml`
     - `SIMREL_REPO` should be updated to the URL published in the email to cross-project-issues announcing SimRel repo is ready for EPP build
   - [ ] **TODO can this part below be automated**
     - See comment in the pom.xml file around `eclipse.simultaneous.release.name`
     - On R build, for `eclipse.simultaneous.release.name` remove qualifier i.e. it should be `2020-12 (4.18.0)`
     - On M1 build add the qualifier back in, for `eclipse.simultaneous.release.name` remove qualifier i.e. it should be `2020-12 M1 (4.18.0 M1)`
-  - [ ] **TODO can this be automated** on release builds release.xml template in `releng/org.eclipse.epp.config/tools/promote-a-build.sh` needs updating
 - [ ] Update the [Last Recorded +1 in the email template](https://github.com/eclipse-packaging/packages/blob/master/releng/org.eclipse.epp.config/tools/upload-to-staging.sh) which any package and platform +1s that have been received since the last update.
 - [ ] Wait for announcement that the staging repo is ready on [cross-project-issues-dev](https://accounts.eclipse.org/mailing-list/cross-project-issues-dev). An [example announcement](https://www.eclipse.org/lists/cross-project-issues-dev/msg17420.html).
   - [ ] Update `SIMREL_REPO` in `releng/org.eclipse.epp.config/parent/pom.xml` if not done above.
