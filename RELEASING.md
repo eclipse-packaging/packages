@@ -19,6 +19,7 @@ This checklist is only used once per release cycle. Scroll down for the per-mile
   - [ ] feature.xml
   - [ ] MANIFEST.MF
   - [ ] epp.website.xml
+    - [ ] `NewAndNoteworthy` entry needs updating which has a slightly different pattern than other versions
   - [ ] epp.product
   - [ ] p2.inf
   - [ ] epp.p2.inf
