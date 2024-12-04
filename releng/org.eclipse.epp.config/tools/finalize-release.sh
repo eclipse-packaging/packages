@@ -49,7 +49,7 @@ fi
 
 echo "----------------------------------------------------------------------------------------------"
 echo "Prepare compositeArtifacts.xml/compositeContent.xml for "latest" that points at RELEASE_NAME"
-$ECHO ${SSH} mkdir ${EPP_DOWNLOADS}/packages/latest/
+$ECHO ${SSH} mkdir -p ${EPP_DOWNLOADS}/packages/latest/
 
 TIMESTAMP=$(date +%s000)
 
@@ -96,7 +96,7 @@ $ECHO $SCP compositeArtifacts.xml "${SSHUSER}:"${EPP_DOWNLOADS}/packages/latest/
 
 echo "----------------------------------------------------------------------------------------------"
 echo "Prepare compositeArtifacts.xml/compositeContent.xml for next release that points at RELEASE_NAME"
-$ECHO ${SSH} mkdir ${EPP_DOWNLOADS}/packages/${NEXT_RELEASE_NAME}/
+$ECHO ${SSH} mkdir -p ${EPP_DOWNLOADS}/packages/${NEXT_RELEASE_NAME}/
 
 TIMESTAMP=$(date +%s000)
 
