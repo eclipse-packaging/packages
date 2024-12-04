@@ -2,7 +2,7 @@
 <feature
       id="org.eclipse.epp.package.common.feature"
       label="Eclipse Packaging Project Common Feature"
-      version="4.34.0.qualifier"
+      version="4.35.0.qualifier"
       provider-name="Eclipse Packaging Project"
       license-feature="org.eclipse.license"
       license-feature-version="0.0.0">
