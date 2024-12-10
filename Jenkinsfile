@@ -141,6 +141,7 @@ pipeline {
        recipientProviders: [[$class: 'DevelopersRecipientProvider']],
        to: 'jonah@kichwacoders.com'
       )
+      archiveArtifacts '*.log,**/*.log'
     }
     cleanup {
       cleanWs()
