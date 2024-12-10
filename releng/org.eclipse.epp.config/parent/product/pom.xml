@@ -105,6 +105,8 @@
                   <goal>sign</goal>
                 </goals>
                 <configuration>
+                  <!-- As requested by EF we are testing out new signer here https://gitlab.eclipse.org/eclipsefdn/helpdesk/-/issues/5417#note_2937220 -->
+                  <signerUrl>https://cbi-staging.eclipse.org/macos/codesign/sign</signerUrl>
                   <baseSearchDir>${project.build.directory}/products/${project.artifactId}</baseSearchDir>
                   <fileNames>
                     <fileName>Eclipse.app</fileName>
