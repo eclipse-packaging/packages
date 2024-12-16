@@ -23,7 +23,15 @@ Some raw image files are welcome, but as those artifacts may have to be changed 
 
 **When:** Before every M1
 
-The splash screen needs to be an (approximately) 450x300 pixels .bmp file, 24-bits RGB (maybe other depth work too, but it's not tested), **without color space information** (some SWT bug). To produce it, if the initial splash screens aren't of that form (they're usually .jpg files), open the desired splash screen variation file from the `org.eclipse.epp.package.common/splash/` folder in Gimp, resize it to approximately 450x300 with _Image > Scale_, then set DPI to 72 with _Image > Print Size_, then _File > Export_ it: choose the location `org.eclipse.epp.package.common/splash.bmp` press _Save_, and in the Export options, tick _Compatibility Options > Do not write color space information_. Apply.
+The splash screen needs to be an (approximately) 450x300 pixels .bmp file, 24-bits RGB (maybe other depth work too, but it's not tested), **without color space information** (some SWT bug), and 72 DPI (so it draws the correct size on macOS).
+
+To produce it, if the initial splash screens aren't of that form (they're usually .jpg files), open the desired splash screen variation file from the `org.eclipse.epp.package.common/splash/` folder in Gimp:
+
+- [ ] resize it to approximately 450x300 with _Image > Scale_
+- [ ] then set DPI to 72 with _Image > Print Size_
+- [ ] then _File > Export_ it: choose the location `org.eclipse.epp.package.common/splash.bmp` press _Save_, 
+  - [ ] and in the Export options, tick _Compatibility Options > Do not write color space information_. 
+  - [ ] Apply.
 
 Repeat process, but for About dialog image which exists in each EPP package as `packages/org.eclipse.epp.package.*/eclipse_lg.png` (approx 115 x 302) and `packages/org.eclipse.epp.package.*/eclipse_lg@2x.png` (2x other image, approx 230 x 604).
 
