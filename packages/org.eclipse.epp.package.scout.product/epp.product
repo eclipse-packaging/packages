@@ -26,8 +26,6 @@
 -Declipse.e4.inject.javax.warning=false
 -Dorg.slf4j.simpleLogger.defaultLogLevel=off
 -Dsun.java.command=Eclipse
--Xms256m
--Xmx2048m
 -XX:+UseG1GC
 -XX:+UseStringDeduplication
 --add-modules=ALL-SYSTEM
