@@ -5,6 +5,10 @@ This document aims to highlight configuration and content changes of the package
 For changes in Eclipse projects that contribute to SimRel and are included in the EPP packages, refer to the change log or New and Noteworthy document of the participating projects.
 The [Eclipse IDE New & Noteworthy](https://eclipseide.org/release/noteworthy/) page combines all those documents in one place.
 
+## 2025-03
+
+- The default `eclipse.ini` generally no longer includes `-Xmx` and `-Xms` arguments for the JVM. This means that the JVM will use its internal algorithm for determining `-Xmx` and `-Xms` values. Some users may want to add `-Xmx` and `-Xms` arguments to their `eclipse.ini` if they have particularly small or large memory.
+
 ## 2024-12
 
 - [TextMate 4 Eclipse (TM4E)](https://projects.eclipse.org/projects/technology.tm4e) is now included with all packages. The TM4E project uses the Generic Code Editor in Eclipse to support syntax highlighting for a large number of languages.
