@@ -10,9 +10,9 @@
   <packageMetaData
    packageName="Eclipse IDE for Java Developers"
    maintainer="Eclipse Packaging Project"
-   iconurl="http://www.eclipse.org/downloads/images/java.png"
+   iconurl="https://www.eclipse.org/downloads/images/java.png"
    bugzillaComponentId="java-package"
-   testPlan="http://www.eclipse.org/epp/testplan.php" >
+   testPlan="">
     <!-- Description is wrapped in CDATA tags to allow you to insert HTML code if necessary -->
      <description><![CDATA[The essential tools for any Java developer, including a Java IDE, a Git client, XML Editor, Maven and Gradle integration]]></description>
     <!-- packageTesters is a list of the people that are testing the package -->
