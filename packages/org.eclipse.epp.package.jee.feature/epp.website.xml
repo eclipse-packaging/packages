@@ -10,9 +10,9 @@
   <packageMetaData
    packageName="Eclipse IDE for Enterprise Java and Web Developers"
    maintainer="Eclipse Packaging and Web Tools Platform Projects"
-   iconurl="http://www.eclipse.org/downloads/images/javaee.png"
+   iconurl="https://www.eclipse.org/downloads/images/javaee.png"
    bugzillaComponentId="jee-package"
-   testPlan="http://www.eclipse.org/epp/testplan.php" >
+   testPlan="">
     <!-- Description is wrapped in CDATA tags to allow you to insert HTML code if necessary -->
      <description><![CDATA[Tools for developers working with Java and Web applications, including a Java IDE, tools for JavaScript, TypeScript, JavaServer Pages and Faces, Yaml, Markdown, Web Services, JPA and Data Tools, Maven and Gradle, Git, and more.<br/>
 <br/>

@@ -10,10 +10,10 @@
   <packageMetaData
    packageName="Eclipse IDE for Embedded C/C++ Developers"
    maintainer="Eclipse Packaging Project"
-   iconurl="http://www.eclipse.org/downloads/images/cdt.png"
+   iconurl="https://www.eclipse.org/downloads/images/cdt.png"
    bugzillaComponentId="embedcpp-package"
    githubName="eclipse-embed-cdt/eclipse-plugins"
-   testPlan="http://www.eclipse.org/epp/testplan.php" >
+   testPlan="">
     <!-- Description is wrapped in CDATA tags to allow you to insert HTML code if necessary -->
      <description><![CDATA[
 An <a href="https://eclipse-embed-cdt.github.io">IDE for Embedded C/C++ developers</a>. It includes  managed cross build plug-ins (<b>Arm</b> and <b>RISC-V</b>) and debug plug-ins (SEGGER <b>J-Link</b>, <b>OpenOCD</b>, <b>pyocd</b>, and <b>QEMU</b>), plus a number of templates to create ready to run blinky projects.

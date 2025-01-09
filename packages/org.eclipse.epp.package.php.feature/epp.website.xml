@@ -10,9 +10,9 @@
   <packageMetaData
    packageName="Eclipse IDE for PHP Developers"
    maintainer="Eclipse Packaging Project and PHP Development Tools Project"
-   iconurl="http://www.eclipse.org/downloads/images/php.png"
+   iconurl="https://www.eclipse.org/downloads/images/php.png"
    bugzillaComponentId="php-package"
-   testPlan="http://www.eclipse.org/epp/testplan.php" >
+   testPlan="">
     <!-- Description is wrapped in CDATA tags to allow you to insert HTML code if necessary -->
     <description><![CDATA[The essential tools for any PHP developer, including PHP language support, Git client and editors for JavaScript, TypeScript, HTML, CSS and XML.<br />
 Click <a href="https://github.com/eclipse/pdt/issues/new/choose">here</a> to raise an issue with Eclipse PHP Development Tools.<br />

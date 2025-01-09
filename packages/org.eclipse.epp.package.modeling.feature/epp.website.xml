@@ -10,9 +10,9 @@
   <packageMetaData
    packageName="Eclipse Modeling Tools"
    maintainer="Remi Schnekenburger"
-   iconurl="http://www.eclipse.org/modeling/images/modeling_about.png"
+   iconurl="https://www.eclipse.org/modeling/images/modeling_about.png"
    bugzillaComponentId="modeling-package"
-   testPlan="http://www.eclipse.org/epp/testplan.php" >
+   testPlan="">
     <!-- Description is wrapped in CDATA tags to allow you to insert HTML code if necessary -->
     <description><![CDATA[The Modeling package provides tools and runtimes for building model-based applications.
         You can use it to graphically design domain models, to leverage those models at design time by creating and editing dynamic instances, to collaborate via Eclipse's team support with facilities for comparing and merging models and model instances structurally, and finally to generate Java code from those models to produce complete applications.

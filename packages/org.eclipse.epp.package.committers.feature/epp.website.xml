@@ -11,9 +11,9 @@
   <packageMetaData
    packageName="Eclipse IDE for Eclipse Committers"
    maintainer="Eclipse Packaging Project"
-   iconurl="http://www.eclipse.org/downloads/images/committers.png"
+   iconurl="https://www.eclipse.org/downloads/images/committers.png"
    bugzillaComponentId="committers-package"
-   testPlan="" >
+   testPlan="">
     <!-- Description is wrapped in CDATA tags to allow you to insert HTML code if necessary -->
      <description><![CDATA[
 Package suited for development of Eclipse itself at Eclipse.org; based on the Eclipse Platform adding PDE, Git, Marketplace Client, source code and developer documentation.<br/>

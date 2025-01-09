@@ -10,9 +10,9 @@
   <packageMetaData
    packageName="Eclipse IDE for Scout Developers"
    maintainer="Eclipse Scout Project"
-   iconurl="http://www.eclipse.org/downloads/images/scout.jpg"
+   iconurl="https://www.eclipse.org/downloads/images/scout.jpg"
    bugzillaComponentId="scout-package"
-   testPlan="http://www.eclipse.org/epp/testplan.php" >
+   testPlan="">
     <!-- Description is wrapped in CDATA tags to allow you to insert HTML code if necessary -->
      <description><![CDATA[<a href="https://www.eclipse.org/scout">Eclipse Scout</a> is a Java/HTML5 framework to develop business applications that run on the desktop, on tablets and mobile devices. This package includes Eclipse IDE support for Scout developers and source code.]]></description>
     <!-- packageTesters is a list of the people that are testing the package -->
