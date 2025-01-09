@@ -54,23 +54,23 @@ Please test and send your +1 to this mailing list. +1s are optional as the packa
 Last +1 received for each package and platform (apologies if I missed one of your +1 emails, just let me know and I will update Last Recorded +1)
 
 Packages:
-committers - 2024-12 M3
-cpp - 2024-12 M2
+committers - 2024-12 RC2
+cpp - 2024-12 RC2
 dsl - 2024-12 M3
 embedcpp - 2024-09 RC2
-java - 2024-06 RC1
-jee - 2024-09 RC2
+java - 2024-12 RC2
+jee - 2024-12 RC1
 modeling - 2024-12 M2
 php - 2023-06 RC2
-rcp - 2024-09 RC1
+rcp - 2024-12 RC2
 scout - 2024-09 RC2
 
 Platforms:
-Linux x86_64 - 2024-09 RC2
+Linux x86_64 - 2024-12 RC2
 Linux aarch64 - 2023-09 RC2
-Linux riscv64 - 2024-12 M3
-Windows x86_64 - 2024-12 M2
-Windows on Arm - 2024-12 M3
+Linux riscv64 - 2024-12 RC2
+Windows x86_64 - 2024-12 RC2
+Windows on Arm - 2024-12 RC1
 macOS x86_64 - 2024-09 RC2
 macOS aarch64 - 2024-12 M3
 
