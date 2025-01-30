@@ -36,8 +36,12 @@ This checklist is only used once per release cycle. Scroll down for the per-mile
 - [ ] Make sure any outstanding [reviews](https://projects.eclipse.org/projects/technology.packaging/governance) are progressing - e.g. create progress review, get PMC approval, etc.
   - Annual progress review is normally done in early June
 - [ ] Ensure that the [CI build](https://ci.eclipse.org/packaging/job/epp/job/master/) is green. Resolving non-green builds will require tracking down problems and incompatibilities across all Eclipse participating projects. [cross-project-issues-dev](https://accounts.eclipse.org/mailing-list/cross-project-issues-dev) mailing list is a good place to start when tracking such problems.
-- [ ] Check that packages containing incubating projects have that information reflected in Help -> About dialog. See near the end of build output for report of check-incubating.sh script.
-  - `-incubation` and ` (includes Incubating components)` are not used in packageMetaData anymore (See [Bug 564214](https://bugs.eclipse.org/bugs/show_bug.cgi?id=564214))
+- [x] Check that packages containing incubating projects have that information reflected in Help -> About dialog. See near the end of build output for report of check-incubating.sh script.
+  - This item is not currently done per milestone/release because for a while now all packages contain incubating components and until TM4E moves out of incubation this step is redundant.
+  - The incubating indication should appear in feature.properties `description`, plugin.xml's product `aboutText` and about.properties `blurb`.
+  In the past `-incubation` had to appear in the file name and ` (includes Incubating components)` had to appear in `packageMetaData`.
+  See [Bug 564214](https://bugs.eclipse.org/bugs/show_bug.cgi?id=564214) for documentation/votes on decision making.
+
 - [ ] On RC1 check "new and noteworthy" version numbers - If any N&N are out of date, remove the N&N entries and notify the corresponding package maintainer.
   - [ ] Search for ` url=` (notice the blank before url) in `epp.website.xml` to see which ones are contained in the different packages.
   - [ ] Remember that some of the features will release new versions together with the new Eclipse release. Therefore using the _currently_ released version number may be wrong. Instead lookup the feature version [to be released with the release train](https://projects.eclipse.org/releases/).
