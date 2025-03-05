@@ -23,7 +23,7 @@ import org.eclipse.ui.handlers.HandlerUtil;
 
 public class ContributeHandler extends AbstractHandler {
 
-	private static final String CONTRIBUTE_URL = "https://www.eclipse.org/contribute/";
+	private static final String CONTRIBUTE_URL = "https://github.com/eclipse-ide";
 
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
