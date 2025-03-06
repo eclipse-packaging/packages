@@ -10,7 +10,7 @@ pipeline {
 
     // check every 5 minutes for changes to the staging repo's content.jar
     URLTrigger(cronTabSpec: 'H/5 * * * *', entries: [URLTriggerEntry(
-                    url: 'https://download.eclipse.org/staging/2025-03/content.jar',
+                    url: 'https://download.eclipse.org/staging/2025-06/content.jar',
                     contentTypes: [
                         MD5Sum()
                     ]
