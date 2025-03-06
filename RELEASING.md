@@ -35,7 +35,7 @@ This checklist is only used once per release cycle. Scroll down for the per-mile
 - [ ] Check for bad links to Bugzilla (and other things) especially in `epp.website.xml`
 - [ ] Make sure any outstanding [reviews](https://projects.eclipse.org/projects/technology.packaging/governance) are progressing - e.g. create progress review, get PMC approval, etc.
   - Annual progress review is normally done in early June
-- [ ] Ensure that the [CI build](https://ci.eclipse.org/packaging/job/epp/job/master/) is green. Resolving non-green builds will require tracking down problems and incompatibilities across all Eclipse participating projects. [cross-project-issues-dev](https://accounts.eclipse.org/mailing-list/cross-project-issues-dev) mailing list is a good place to start when tracking such problems.
+- [ ] Ensure that the [CI build](https://ci.eclipse.org/packaging/job/epp/job/master/) is green. Resolving non-green builds will require tracking down problems and incompatibilities across all Eclipse participating projects. [simrel-dev](https://accounts.eclipse.org/mailing-list/simrel-dev) mailing list is a good place to start when tracking such problems.
 - [x] Check that packages containing incubating projects have that information reflected in Help -> About dialog. See near the end of build output for report of check-incubating.sh script.
   - This item is not currently done per milestone/release because for a while now all packages contain incubating components and until TM4E moves out of incubation this step is redundant.
   - The incubating indication should appear in feature.properties `description`, plugin.xml's product `aboutText` and about.properties `blurb`.
@@ -59,7 +59,7 @@ This checklist is only used once per release cycle. Scroll down for the per-mile
     - On R build, for `eclipse.simultaneous.release.name` remove qualifier i.e. it should be `2020-12 (4.18.0)`
     - On M1 build add the qualifier back in, for `eclipse.simultaneous.release.name` remove qualifier i.e. it should be `2020-12 M1 (4.18.0 M1)`
 - [ ] Update the [Last Recorded +1 in the email template](https://github.com/eclipse-packaging/packages/blob/master/releng/org.eclipse.epp.config/tools/upload-to-staging.sh) which any package and platform +1s that have been received since the last update.
-- [ ] Wait for announcement that the staging repo is ready on [cross-project-issues-dev](https://accounts.eclipse.org/mailing-list/cross-project-issues-dev). An [example announcement](https://www.eclipse.org/lists/cross-project-issues-dev/msg17420.html).
+- [ ] Wait for announcement that the staging repo is ready on [simrel-dev](https://accounts.eclipse.org/mailing-list/simrel-dev). An [example announcement](https://www.eclipse.org/lists/simrel-dev/msg00032.html).
   - [ ] Update `SIMREL_REPO` in `releng/org.eclipse.epp.config/parent/pom.xml` if not done above.
 - [ ] Update the build qualifiers to ensure that packages are all updated. See this [gerrit](https://git.eclipse.org/r/#/c/161075/) for an example. To do this run `releng/org.eclipse.epp.config/tools/setGitDate` ([link](https://github.com/eclipse-packaging/packages/blob/master/releng/org.eclipse.epp.config/tools/setGitDate)) script. This script will make a local commit you need to push.
   - In some cases a respin/rebuild is needed and setGitDate needs to be run again. In that case you may need to manually add a minute or two to the applied timestamp in the script.
