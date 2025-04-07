@@ -27,3 +27,11 @@ requires.1.name = org.apache.commons.logging
 requires.1.range = [1.2.0.v20151023-1447,1.2.0.v20180409-1502]
 requires.1.min = 0
 requires.1.max = 0
+
+# Ensure that the selection spy and menu spy are available in every product.
+# https://github.com/eclipse-packaging/packages/issues/294
+#
+requires.2.namespace = org.eclipse.equinox.p2.iu
+requires.2.name = org.eclipse.pde.runtime
+requires.2.greedy = true
+requires.2.optional = true
