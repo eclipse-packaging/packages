@@ -12,7 +12,7 @@ When ready, the Eclipse Foundation marketing team will submit some splashscreen,
 - For 2022-06 -> 2023-03 see [Bug 575781](https://bugs.eclipse.org/bugs/show_bug.cgi?id=575781)
 - For 2023-06 -> 2024-03 see [Helpdesk 2335](https://gitlab.eclipse.org/eclipsefdn/helpdesk/-/issues/2336)
 - For 2024-06 -> 2025-03 see [Helpdesk 3963](https://gitlab.eclipse.org/eclipsefdn/helpdesk/-/issues/3963)
-- For 2025-06 -> 2025-03 see [Helpdesk 5332](https://gitlab.eclipse.org/eclipsefdn/helpdesk/-/issues/5332) - [Eclipse_IDE.zip](https://gitlab.eclipse.org/-/project/23/uploads/b449ea9c813e964d3fe480727630d651/Eclipse_IDE.zip)
+- For 2025-06 -> 2026-03 see [Helpdesk 5332](https://gitlab.eclipse.org/eclipsefdn/helpdesk/-/issues/5332) - [Eclipse_IDE.zip](https://gitlab.eclipse.org/-/project/23/uploads/b449ea9c813e964d3fe480727630d651/Eclipse_IDE.zip)
 
 ### Copy splash screen series into `org.eclipse.epp.package.common/splash/`
 
