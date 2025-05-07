@@ -23,7 +23,7 @@
   </packageMetaData>
   <MoreInfo>
   <NewAndNoteworthy
-    url="https://eclipsescout.github.io/scout-docs/24.2/releasenotes/release-notes.html"
+    url="https://eclipsescout.github.io/scout-docs/25.1/releasenotes/release-notes.html"
     project="Eclipse Scout" />
   <NewAndNoteworthy
     url="https://eclipse.dev/eclipse/news/4.36/"
@@ -31,6 +31,6 @@
   </MoreInfo>
 
   <!-- name, the name of the product, used in naming the created files. -->
-  <product name="eclipse-scout-2025-06-M1" />
+  <product name="eclipse-scout-2025-06-M2" />
 
 </configuration>
