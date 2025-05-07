@@ -55,20 +55,20 @@ Last +1 received for each package and platform (apologies if I missed one of you
 
 Packages:
 committers - 2024-12 RC2
-cpp - 2025-03 RC2
+cpp - 2025-06 M1
 dsl - 2025-03 M1
 embedcpp - 2024-09 RC2
 java - 2024-12 RC2
 jee -  2025-03 RC2
 modeling - 2025-03 RC2
-php - 2023-06 RC2
+php - 2025-06 M1
 rcp - 2024-12 RC2
 scout - 2025-03 RC2
 
 Platforms:
 Linux x86_64 - 2025-03 RC2
 Linux aarch64 - 2023-09 RC2
-Linux riscv64 - 2025-03 RC2
+Linux riscv64 - 2025-06 M1
 Windows x86_64 - 2025-03 RC2
 Windows on Arm - 2025-03 RC2
 macOS x86_64 - 2024-09 RC2
