@@ -25,7 +25,7 @@
   <properties>
     <maven.version>3.9.0</maven.version>
     <tycho.version>4.0.12</tycho.version>
-    <tycho.scmUrl>scm:git:git://git.eclipse.org/gitroot/epp/org.eclipse.epp.packages.git</tycho.scmUrl>
+    <tycho.scmUrl>scm:git:https://github.com/eclipse-packaging/packages.git</tycho.scmUrl>
     <cbi.version>1.5.2</cbi.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.build.timestamp.format>yyyyMMdd-HHmm</maven.build.timestamp.format>
@@ -41,7 +41,7 @@
     <!-- Name release directory on download.eclipse.org -->
     <RELEASE_DIR>202505081200</RELEASE_DIR>
     <!-- SimRel Repo to build from -->
-    <SIMREL_REPO>https://download.eclipse.org/staging/2025-06/</SIMREL_REPO>
+    <SIMREL_REPO>https://download.eclipse.org/releases/2025-06/202505091000/</SIMREL_REPO>
     <!-- ID used to generate the filename of the packages -->
     <eclipse.simultaneous.release.id>${RELEASE_NAME}-${RELEASE_MILESTONE}</eclipse.simultaneous.release.id>
     <!-- Timestamp used in various places, e.g. the about dialog (see about.mappings) -->
