@@ -88,9 +88,6 @@
    <extension point="org.eclipse.ui.intro.configExtension">
       <configExtension
             configId="org.eclipse.ui.intro.universalConfig"
-            content="$nl$/intro/whatsnewExtensionContent.xml"/>
-      <configExtension
-            configId="org.eclipse.ui.intro.universalConfig"
             content="$nl$/intro/overviewExtensionContent.xml"/>
    </extension>
 
