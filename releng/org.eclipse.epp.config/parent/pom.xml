@@ -35,11 +35,11 @@
     <PREV_RELEASE_NAME>2025-03</PREV_RELEASE_NAME>
     <NEXT_RELEASE_NAME>2025-09</NEXT_RELEASE_NAME>
     <!-- Name of the milestone -->
-    <RELEASE_MILESTONE>M3</RELEASE_MILESTONE>
+    <RELEASE_MILESTONE>RC1</RELEASE_MILESTONE>
     <!-- Version of the release -->
     <RELEASE_VERSION>4.36.0</RELEASE_VERSION>
     <!-- Name release directory on download.eclipse.org -->
-    <RELEASE_DIR>202505221200</RELEASE_DIR>
+    <RELEASE_DIR>202505291200</RELEASE_DIR>
     <!-- SimRel Repo to build from -->
     <SIMREL_REPO>https://download.eclipse.org/staging/2025-06/</SIMREL_REPO>
     <!-- ID used to generate the filename of the packages -->
