@@ -35,7 +35,7 @@
     <PREV_RELEASE_NAME>2025-03</PREV_RELEASE_NAME>
     <NEXT_RELEASE_NAME>2025-09</NEXT_RELEASE_NAME>
     <!-- Name of the milestone -->
-    <RELEASE_MILESTONE>RC2</RELEASE_MILESTONE>
+    <RELEASE_MILESTONE>R</RELEASE_MILESTONE>
     <!-- Version of the release -->
     <RELEASE_VERSION>4.36.0</RELEASE_VERSION>
     <!-- Name release directory on download.eclipse.org -->
