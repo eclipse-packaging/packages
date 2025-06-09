@@ -27,4 +27,8 @@
   <artifactId>epp.package.dsl</artifactId>
   <packaging>eclipse-repository</packaging>
 
+  <properties>
+    <install-sources>true</install-sources>
+  </properties>
+
 </project>

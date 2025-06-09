@@ -258,13 +258,12 @@ United States, other countries, or both.
       <feature id="org.eclipse.epp.package.modeling.feature" version="4.36.0.qualifier"/>
       <feature id="org.eclipse.e4.core.tools.feature" installMode="root"/>
       <feature id="org.eclipse.emf.cdo.sdk" installMode="root"/>
-      <feature id="org.eclipse.emf.compare.ide.ui.source" installMode="root"/>
-      <feature id="org.eclipse.emf.compare.source" installMode="root"/>
-      <feature id="org.eclipse.emf.compare.diagram.sirius.source" installMode="root"/>
+      <feature id="org.eclipse.emf.compare.ide.ui" installMode="root"/>
+      <feature id="org.eclipse.emf.compare" installMode="root"/>
+      <feature id="org.eclipse.emf.compare.diagram.sirius" installMode="root"/>
       <feature id="org.eclipse.emf.compare.egit" installMode="root"/>
       <feature id="org.eclipse.emf.ecoretools.design" installMode="root"/>
       <feature id="org.eclipse.emf.parsley.sdk" installMode="root"/>
-      <feature id="org.eclipse.emf.parsley.sdk.source" installMode="root"/>
       <feature id="org.eclipse.emf.sdk" installMode="root"/>
       <feature id="org.eclipse.emf.transaction.sdk" installMode="root"/>
       <feature id="org.eclipse.emf.validation.sdk" installMode="root"/>
