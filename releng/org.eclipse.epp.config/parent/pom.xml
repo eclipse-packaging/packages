@@ -24,7 +24,7 @@
 
   <properties>
     <maven.version>3.9.0</maven.version>
-    <tycho.version>4.0.12</tycho.version>
+    <tycho.version>4.0.13</tycho.version>
     <tycho.scmUrl>scm:git:https://github.com/eclipse-packaging/packages.git</tycho.scmUrl>
     <cbi.version>1.5.2</cbi.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -62,6 +62,8 @@
     <justj.epp.repository>https://download.eclipse.org/justj/epp/milestone/latest</justj.epp.repository> <!-- Keep URL in sync with Oomph setup-->
     <!-- The Justj execution enviroment for the target-platform-configuration. -->
     <execution.environment>org.eclipse.justj.openjdk.hotspot.jre.full-${execution.environment.version}</execution.environment>
+    <!-- Used by tycho-p2-director-plugin materialize-products to install all available sources in the product, which is false by default -->
+    <install-sources>false</install-sources>
   </properties>
 
   <prerequisites>
@@ -396,6 +398,9 @@
                   <goals>
                     <goal>materialize-products</goal>
                   </goals>
+                  <configuration>
+                    <installSources>${install-sources}</installSources>
+                  </configuration>
                 </execution>
                 <execution>
                   <id>archive-products</id>

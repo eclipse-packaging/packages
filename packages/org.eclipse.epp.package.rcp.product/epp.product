@@ -258,8 +258,7 @@ United States, other countries, or both.
       <feature id="org.eclipse.jdt.bcoview.feature" installMode="root"/>
       <feature id="org.eclipse.pde" installMode="root"/>
       <feature id="org.eclipse.pde.spies" installMode="root"/>
-      <feature id="org.eclipse.platform.source" installMode="root"/>
-      <feature id="org.eclipse.rcp.source" installMode="root"/>
+      <feature id="org.eclipse.rcp" installMode="root"/>
       <feature id="org.eclipse.buildship" installMode="root"/>
       <feature id="org.eclipse.e4.core.tools.feature" installMode="root"/>
       <feature id="org.eclipse.eclemma.feature" installMode="root"/>

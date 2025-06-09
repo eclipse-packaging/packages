@@ -22,7 +22,7 @@
 
    <!-- This ensures these features cannot be uninstalled. They are installed with installMode="root" in the product --> 
    <requires>
-      <import feature="org.eclipse.platform.source" version="4.0.0" match="compatible"/>
+      <import feature="org.eclipse.platform" version="4.0.0" match="compatible"/>
       <import feature="org.eclipse.jdt" version="3.0.0" match="compatible"/>
       <import feature="org.eclipse.pde" version="3.0.0" match="compatible"/>
    </requires>
