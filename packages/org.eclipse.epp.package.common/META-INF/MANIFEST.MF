@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Automatic-Module-Name: org.eclipse.epp.package.common
 Bundle-Name: Common EPP Bundle
 Bundle-SymbolicName: org.eclipse.epp.package.common;singleton:=true
-Bundle-Version: 4.36.0.qualifier
+Bundle-Version: 4.37.0.qualifier
 Bundle-Vendor: Eclipse Packaging Project
 Bundle-RequiredExecutionEnvironment: JavaSE-21
 Require-Bundle: org.eclipse.platform,
