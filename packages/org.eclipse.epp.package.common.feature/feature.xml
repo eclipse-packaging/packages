@@ -23,11 +23,6 @@
       <!-- This ensures this feature cannot be uninstalled. It is installed with installMode="root" in the product --> 
       <import feature="org.eclipse.platform" version="4.0.0" match="compatible"/>
       <import feature="org.eclipse.equinox.p2.user.ui"/>
-
-      <!-- Workaround Eclipse Platform default filetransfer not supporting authenticated proxies
-      See also the change in p2.inf
-      see https://github.com/eclipse-packaging/packages/issues/81 -->
-      <import feature="org.eclipse.ecf.filetransfer.httpclient5.feature"/>
    </requires>
 
    <plugin
