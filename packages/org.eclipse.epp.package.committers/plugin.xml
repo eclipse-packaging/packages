@@ -347,9 +347,6 @@
                pluginId="org.eclipse.help.ui">
             %helpActivitySupport.documentMessage
          </documentMessage>
-         <localScopeCheckbox>
-            %helpActivitySupport.localScopeCheckbox
-         </localScopeCheckbox>
       </support>
    </extension>
 
