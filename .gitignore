@@ -18,3 +18,4 @@ email.txt
 workspace/
 build.log
 .tycho-consumer-pom.xml
+/.settings/

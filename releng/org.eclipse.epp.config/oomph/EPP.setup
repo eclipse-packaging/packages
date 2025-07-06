@@ -105,6 +105,16 @@
     <description>${scope.project.label}</description>
   </setupTask>
   <setupTask
+      xsi:type="setup:ResourceCreationTask"
+      excludedTriggers="BOOTSTRAP"
+      targetURL="${github.clone.epp.packages.location|uri}/.settings/org.eclipse.core.resources.prefs">
+    <content>
+      eclipse.preferences.version=1
+      encoding/&lt;project>=UTF-8
+
+    </content>
+  </setupTask>
+  <setupTask
       xsi:type="git:GitCloneTask"
       id="github.clone.epp.github"
       locationQualifier="packaging"
