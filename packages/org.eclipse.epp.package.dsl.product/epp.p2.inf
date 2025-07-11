@@ -1,21 +1,6 @@
 instructions.configure=\
   mkdir(path:${installFolder}/dropins);
 
-# Bug 490515 - Prevent upgrade from old to new EPP package layout
-# https://bugs.eclipse.org/bugs/show_bug.cgi?id=490515
-#
-# With Eclipse Neon (4.6.0) all packages changed their structure from a single
-# feature to a product with multiple independent root features. Upgrades from
-# older versions to the new structure would result in an unexpected uninstall
-# of everything below the old main package feature. In order to prevent such
-# upgrades we add an artificial lower limit of the IU to the p2 metadata.
-
-# This is equivalent, but more restrictive than platform's "Restrict range so we are not an automatic update for 3.x."
-update.id = epp.package.dsl
-update.range = [4.6.0.20160301-1200, $version$)
-update.severity = 0
-update.description = Eclipse package upgrade from versions before Eclipse Neon (4.6) is not possible. See bug 332989.
-
 properties.1.name = org.eclipse.equinox.p2.description
 properties.1.value = 2025-09 Release of the Eclipse DSL Tools package.
 

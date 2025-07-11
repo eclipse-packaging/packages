@@ -35,3 +35,83 @@ requires.2.namespace = org.eclipse.equinox.p2.iu
 requires.2.name = org.eclipse.pde.runtime
 requires.2.greedy = true
 requires.2.optional = true
+
+# Provide fake IUs for the source features that have been removed from the Platform but were installed in packages.
+
+units.1.id = org.eclipse.platform.source.feature.group
+units.1.version = 4.37.0
+units.1.update.id = org.eclipse.platform.source.feature.group
+units.1.properties.0.name = org.eclipse.equinox.p2.name
+units.1.properties.0.value = Eclipse Platform Developer Resources - Placeholder
+units.1.properties.1.name =  org.eclipse.equinox.p2.provider
+units.1.properties.1.value = Eclipse Packaging Project
+units.1.properties.2.name =  org.eclipse.equinox.p2.description
+units.1.properties.2.value = An empty placeholder to allow updates for the discontinued source feature.
+units.1.provides.0.namespace = org.eclipse.equinox.p2.iu
+units.1.provides.0.name = org.eclipse.platform.source.feature.group
+units.1.provides.0.version = 4.37.0
+
+units.2.id = org.eclipse.rcp.source.feature.group
+units.2.version = 4.37.0
+units.2.update.id = org.eclipse.rcp.source.feature.group
+units.2.properties.0.name = org.eclipse.equinox.p2.name
+units.2.properties.0.value = Eclipse RCP Developer Resources - Placeholder
+units.2.properties.1.name =  org.eclipse.equinox.p2.provider
+units.2.properties.1.value = Eclipse Packaging Project
+units.2.properties.2.name =  org.eclipse.equinox.p2.description
+units.2.properties.2.value = An empty placeholder to allow updates for the discontinued source feature.
+units.2.provides.0.namespace = org.eclipse.equinox.p2.iu
+units.2.provides.0.name = org.eclipse.rcp.source.feature.group
+units.2.provides.0.version = 4.37.0
+
+units.3.id = org.eclipse.jdt.source.feature.group
+units.3.version = 3.20.300
+units.3.update.id = org.eclipse.jdt.source.feature.group
+units.3.properties.0.name = org.eclipse.equinox.p2.name
+units.3.properties.0.value = Eclipse JDT Plug-in Developer Resources - Placeholder
+units.3.properties.1.name =  org.eclipse.equinox.p2.provider
+units.3.properties.1.value = Eclipse Packaging Project
+units.3.properties.2.name =  org.eclipse.equinox.p2.description
+units.3.properties.2.value = An empty placeholder to allow updates for the discontinued source feature.
+units.3.provides.0.namespace = org.eclipse.equinox.p2.iu
+units.3.provides.0.name = org.eclipse.jdt.source.feature.group
+units.3.provides.0.version = 3.20.300
+
+units.4.id = org.eclipse.pde.source.feature.group
+units.4.version = 3.16.400
+units.4.update.id = org.eclipse.pde.source.feature.group
+units.4.properties.0.name = org.eclipse.equinox.p2.name
+units.4.properties.0.value = Eclipse Plug-in Development Environment Developer Resources - Placeholder
+units.4.properties.1.name =  org.eclipse.equinox.p2.provider
+units.4.properties.1.value = Eclipse Packaging Project
+units.4.properties.2.name =  org.eclipse.equinox.p2.description
+units.4.properties.2.value = An empty placeholder to allow updates for the discontinued source feature.
+units.4.provides.0.namespace = org.eclipse.equinox.p2.iu
+units.4.provides.0.name = org.eclipse.pde.source.feature.group
+units.4.provides.0.version = 3.16.400
+
+units.5.id = org.eclipse.pde.spies.source.feature.group
+units.5.version = 1.0.800
+units.5.update.id = org.eclipse.pde.spies.source.feature.group
+units.5.properties.0.name = org.eclipse.equinox.p2.name
+units.5.properties.0.value = Eclipse Plug-in Development Environment Spies Developer Resources - Placeholder
+units.5.properties.1.name =  org.eclipse.equinox.p2.provider
+units.5.properties.1.value = Eclipse Packaging Project
+units.5.properties.2.name =  org.eclipse.equinox.p2.description
+units.5.properties.2.value = An empty placeholder to allow updates for the discontinued source feature.
+units.5.provides.0.namespace = org.eclipse.equinox.p2.iu
+units.5.provides.0.name = org.eclipse.pde.spies.source.feature.group
+units.5.provides.0.version = 1.0.800
+
+units.6.id = org.eclipse.help.source.feature.group
+units.6.version = 2.3.2300
+units.6.update.id = org.eclipse.help.source.feature.group
+units.6.properties.0.name = org.eclipse.equinox.p2.name
+units.6.properties.0.value = Eclipse Help System Developer Resources - Placeholder
+units.6.properties.1.name =  org.eclipse.equinox.p2.provider
+units.6.properties.1.value = Eclipse Packaging Project
+units.6.properties.2.name =  org.eclipse.equinox.p2.description
+units.6.properties.2.value = An empty placeholder to allow updates for the discontinued source feature.
+units.6.provides.0.namespace = org.eclipse.equinox.p2.iu
+units.6.provides.0.name = org.eclipse.help.source.feature.group
+units.6.provides.0.version = 2.3.2300
