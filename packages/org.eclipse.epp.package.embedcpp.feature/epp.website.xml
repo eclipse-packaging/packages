@@ -29,6 +29,6 @@ To avoid compatibility issues with pre 6.x plug-ins, it is recommended to <b>cre
   </packageMetaData>
 
   <!-- name, the name of the product, used in naming the created files. -->
-  <product name="eclipse-embedcpp-2025-09-M2" />
+  <product name="eclipse-embedcpp-2025-09-M3" />
 
 </configuration>
