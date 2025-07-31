@@ -34,6 +34,6 @@ Click <a href="https://github.com/eclipse-wildwebdeveloper/wildwebdeveloper/issu
   </MoreInfo>
 
   <!-- name, the name of the product, used in naming the created files. -->
-  <product name="eclipse-jee-2025-09-M2" />
+  <product name="eclipse-jee-2025-09-M3" />
 
 </configuration>
