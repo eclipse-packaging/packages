@@ -5,6 +5,10 @@ This document aims to highlight configuration and content changes of the package
 For changes in Eclipse projects that contribute to SimRel and are included in the EPP packages, refer to the change log or New and Noteworthy document of the participating projects.
 The [Eclipse IDE New & Noteworthy](https://eclipseide.org/release/noteworthy/) page combines all those documents in one place.
 
+## 2025-09
+
+- The Eclipse IDE for C/C++ Developers now includes the _C/C++ LLVM-Family Compiler Build Support_ feature to provide a CDT managed build system toolchain description for Clang users.
+
 ## 2025-03
 
 - The default `eclipse.ini` generally no longer includes `-Xmx` and `-Xms` arguments for the JVM. This means that the JVM will use its internal algorithm for determining `-Xmx` and `-Xms` values. Some users may want to add `-Xmx` and `-Xms` arguments to their `eclipse.ini` if they have particularly small or large memory.
