@@ -54,7 +54,7 @@ Please test and send your +1 to this mailing list. +1s are optional as the packa
 Last +1 received for each package and platform (apologies if I missed one of your +1 emails, just let me know and I will update Last Recorded +1)
 
 Packages:
-committers - 2024-12 RC2
+committers - 2025-09 M2 
 cpp - 2025-06 RC2
 dsl - 2025-06 M2
 embedcpp - 2024-09 RC2
@@ -68,7 +68,7 @@ scout - 2025-03 RC2
 Platforms:
 Linux x86_64 - 2025-06 RC2
 Linux aarch64 - 2023-09 RC2
-Linux riscv64 - 2025-06 RC2
+Linux riscv64 - 2025-09 M2 
 Windows x86_64 - 2025-06 RC1
 Windows on Arm - 2025-06 RC2
 macOS x86_64 - 2024-09 RC2
