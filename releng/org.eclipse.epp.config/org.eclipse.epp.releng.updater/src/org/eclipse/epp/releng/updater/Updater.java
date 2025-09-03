@@ -220,6 +220,20 @@ public class Updater {
 					+ "\"\\s+name=\"" + SIMREL_VERSION_MATCHER + "\"", SIMREL_VERSION, SIMREL_VERSION);
 		} else if (fileName.equals("MANIFEST.MF")) {
 			apply(file, "Bundle-Version: " + PLATFORM_VERSION_MATCHER + "\\.0\\.qualifier", PLATFORM_VERSION);
+		} else if (fileName.equals("promote-a-build.sh")) {
+			var pattern = Pattern.compile("<past>(?<version>20[2-9][0-9]-(?:03|06|09|12))/R</past>(?<nl>\r?\n)EOM");
+			var content = getContent(file);
+			var matcher = pattern.matcher(content);
+			if (!matcher.find()) {
+				throw new IllegalStateException("Expecting a proper match in " + relativePathName);
+			}
+			var expectedPastVersion = getSimRelVersion(PLATFORM_VERSION, -2);
+			if (!expectedPastVersion.equals(matcher.group("version"))) {
+				var modifiedContent = content.substring(0, matcher.end("nl")) //
+						+ "<past>" + expectedPastVersion + "/R</past>" + matcher.group("nl")//
+						+ content.substring(matcher.end("nl"));
+				contents.put(file, modifiedContent);
+			}
 		} else if (relativePathName.equals("RELEASING.md")) {
 			// TODO
 		}
