@@ -2,7 +2,7 @@ instructions.configure=\
   mkdir(path:${installFolder}/dropins);
 
 properties.1.name = org.eclipse.equinox.p2.description
-properties.1.value = 2025-09 Release of the Eclipse Scout Developers package.
+properties.1.value = 2025-12 Release of the Eclipse Scout Developers package.
 
 properties.2.name = org.eclipse.equinox.p2.provider
 properties.2.value = Eclipse Packaging Project
