@@ -31,9 +31,9 @@ public class Updater {
 	/**
 	 * M1, M2, M3, RC1, RC2
 	 */
-	private static final String MILESTONE = "RC2";
+	private static final String MILESTONE = "M1";
 
-	private static final String PLATFORM_VERSION = "4.37";
+	private static final String PLATFORM_VERSION = "4.38";
 
 	private static final String EXECUTION_ENVIRONMENT = "21";
 

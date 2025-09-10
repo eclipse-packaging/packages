@@ -72,14 +72,14 @@ internal signing service and can be activated only if the build is running there
 ### Additional Configuration Possibilities
 
 By default, the EPP build uses the content of the Eclipse Simultaneous Release _Staging_
-repository at <https://download.eclipse.org/staging/2025-09/> as input. Sometimes it is
-desired to build against another release (e.g. a different milestone), or against a local
+repository at <https://download.eclipse.org/staging/2025-12/> as input. Sometimes it is
+desired to build against another release (e.g., a different milestone), or against a local
 mirror of this repository. This can be achieved by setting the Java property
 `eclipse.simultaneous.release.repository`to another URL. As an example, by adding the
 following argument to the Maven command line, the EPP build will read its input from the
-composite Eclipse 2025-09 repository:
+composite Eclipse 2025-12 repository:
 
-    -Declipse.simultaneous.release.repository="https://download.eclipse.org/releases/2025-09"
+    -Declipse.simultaneous.release.repository="https://download.eclipse.org/releases/2025-12"
 
 ### EPP Configuration File format
 
