@@ -2,7 +2,7 @@
 <aggregator:Aggregation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:aggregator="http://www.eclipse.org/cbi/p2repo/2011/aggregator/1.1.0" label="EPP Packages" buildRoot="${packages.clone.location}/releng/org.eclipse.epp.config/aggregation/target/repository" excludeValidationSetUnits="true">
   <validationSets label="Main">
     <contributions label="Main">
-      <repositories location="${packages.clone.location.uri}/releng/org.eclipse.epp.config/aggregation/all-repos"/>
+      <repositories location="${packages.clone.location.uri}/releng/org.eclipse.epp.config/aggregation/all-repos" mirrorArtifactRepositoryPropertiesPattern="p2\.statsURI"/>
     </contributions>
     <validationRepositories location="${simrel.uri}"/>
     <validationRepositories location="${justj.jres.uri}"/>
