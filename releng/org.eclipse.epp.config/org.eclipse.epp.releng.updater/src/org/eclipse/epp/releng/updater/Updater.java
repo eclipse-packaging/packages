@@ -54,7 +54,7 @@ public class Updater {
 	private static final String SIMREL_QUALIFIED_VERSION_MATCHER = "(20[2-9][0-9]-(?:03|06|09|12)-(?:M1|M2|M3|RC1|RC2|R))";
 
 	private static final String SIMREL__SCHEDULE = "https://raw.githubusercontent.com/eclipse-simrel/.github/refs/heads/main/wiki/SimRel/"
-			+ SIMREL_VERSION + ".md";
+			+ SIMREL_VERSION + "_dates.json";
 
 	private static final String RELEASE_DIR = getReleaseDirFromSchedule();
 
@@ -84,12 +84,11 @@ public class Updater {
 			var schedule = HttpClient.newBuilder().build()
 					.send(HttpRequest.newBuilder(URI.create(SIMREL__SCHEDULE)).GET().build(), BodyHandlers.ofString())
 					.body();
-			var milestoneDatePattern = Pattern.compile(
-					"\\|[ *]*" + SIMREL_VERSION + " " + MILESTONE + "[ *]*\\| *Friday[, ]*(?<date>[^|]+?)[ ]*\\|");
+			var milestoneDatePattern = Pattern.compile("\"" + MILESTONE + "\"\\s*:\\s*\"(?<date>20[2-9][0-9]-[01][0-9]-[0123][0-9])\"");
 			var matcher = milestoneDatePattern.matcher(schedule);
 			if (matcher.find()) {
 				var dateLiteral = matcher.group("date");
-				var temporalAccessor = DateTimeFormatter.ofPattern("LLLL d, y", Locale.US).parse(dateLiteral);
+				var temporalAccessor = DateTimeFormatter.ofPattern("yyyy-MM-dd", Locale.US).parse(dateLiteral);
 				var convertedDate = LocalDate.from(temporalAccessor);
 				var previousDay = convertedDate.minusDays(1);
 				return previousDay.format(DateTimeFormatter.ofPattern("yyyyMMdd", Locale.US)) + "1000";
