@@ -54,9 +54,9 @@ Please test and send your +1 to this mailing list. +1s are optional as the packa
 Last +1 received for each package and platform (apologies if I missed one of your +1 emails, just let me know and I will update Last Recorded +1)
 
 Packages:
-committers - 2025-09 M2 
+committers - 2025-12 M1 
 cpp - 2025-09 RC2a
-dsl - 2025-06 M2
+dsl - 2025-12 M1
 embedcpp - 2024-09 RC2
 java - 2025-06 RC1
 jee -  2025-09 RC2
@@ -68,11 +68,11 @@ scout - 2025-03 RC2
 Platforms:
 Linux x86_64 - 2025-09 RC2a
 Linux aarch64 - 2023-09 RC2
-Linux riscv64 - 2025-09 RC1 
+Linux riscv64 - 2025-12 M1 
 Windows x86_64 - 2025-09 RC1
 Windows on Arm - 2025-09 RC1
 macOS x86_64 - 2025-09 RC2
-macOS aarch64 - 2025-09 RC2
+macOS aarch64 - 2025-12 M1
 
 Thank you for testing!
 
