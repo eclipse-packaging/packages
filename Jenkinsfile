@@ -139,7 +139,7 @@ pipeline {
        body: """FAILED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]':
        Check console output at ${env.BUILD_URL}""",
        recipientProviders: [[$class: 'DevelopersRecipientProvider']],
-       to: 'jonah@kichwacoders.com'
+       to: 'jonah@kichwacoders.com,ed.merks@gmail.com'
       )
       archiveArtifacts '*.log,**/*.log'
     }
