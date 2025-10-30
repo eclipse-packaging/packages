@@ -28,6 +28,6 @@
 
 
 	<!-- name, the name of the product, used in naming the created files. -->
-	<product name="eclipse-java-2025-12-M2" />
+	<product name="eclipse-java-2025-12-M3" />
 
 </configuration>
