@@ -26,6 +26,7 @@
 -Declipse.e4.inject.javax.warning=false
 -Dorg.slf4j.simpleLogger.defaultLogLevel=off
 -Dsun.java.command=Eclipse
+-Declipse.platform.mergeTrust=true
 -XX:+UseG1GC
 -XX:+UseStringDeduplication
 --add-modules=ALL-SYSTEM
@@ -34,9 +35,6 @@
 -Dorg.eclipse.swt.internal.carbon.smallFonts
 -Xdock:icon=../Resources/Eclipse.icns
       </vmArgsMac>
-      <vmArgsWin>-Djavax.net.ssl.trustStoreType=Windows-ROOT
--Djavax.net.ssl.trustStore=NONE
-      </vmArgsWin>
    </launcherArgs>
 
    <windowImages i16="/org.eclipse.epp.package.cpp/eclipse16.png" i32="/org.eclipse.epp.package.cpp/eclipse32.png" i48="/org.eclipse.epp.package.cpp/eclipse48.png" i256="/org.eclipse.epp.package.cpp/eclipse256.png"/>
