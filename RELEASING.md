@@ -16,26 +16,7 @@ Scroll down for the per-milestone/RC steps.
 - [ ] Create new [PMI entry](https://projects.eclipse.org/projects/technology.packaging)
 - [ ] Update splash screen (once per release cycle, hopefully done before M1).
       See detailed [instructions](https://github.com/eclipse-packaging/packages/blob/master/packages/org.eclipse.epp.package.common/splash/INSTRUCTIONS.md).
-- [ ] This step is automated along with the following step.
-      ~When the year changes, e.g., between 2025-12 and 2026-03 releases, an update of the copyright year is required with a very smart search&replace. A good replacement is `/, 2021/, 2022/` excluding `*.svg`~
 - [ ] The `Update Name` step below is now fully automated.
-      ~The following manual steps can be skipped and simply document what the automation does.
-      Previously on every M and RC,
-      the whole version string was manually updated,
-      including the platform version;
-      this large automated change includes updating the following:~
-  - [ ] ~pom.xml~
-  - [ ] ~feature.xml~
-  - [ ] ~MANIFEST.MF~
-  - [ ] ~epp.website.xml~
-    - [ ] ~`NewAndNoteworthy` entry needs updating which has a slightly different pattern than other versions.~
-  - [ ] ~epp.product~
-  - [ ] ~p2.inf~
-  - [ ] ~epp.p2.inf~
-  - [ ] ~Jenkinsfile (SimRel triggering URL)~
-  - [ ] ~`2025-12` -> `2026->03` part~
-  - [ ] ~`4.38` -> `4.39` part~
-  - [ ] Adding the previous past release explicitly to list in release.xml, located in promote-a-build.sh
 - [ ] Archive old releases (two R releases should stay on download.eclipse.org) to archive.eclipse.org and remove non-R downloads.
   - This can be done through the web ui at https://download.eclipse.org/technology/epp/
 
@@ -75,23 +56,6 @@ Scroll down for the per-milestone/RC steps.
       ) to set the value of `MILESTONE`, `PLATFORM_VERSION`, and possibly `EXECUTION_ENVIRONMENT` to the current appropriate values.
      - Use `Run` tool-bar button drop-down menu to launch the `Update Versions` launch configuration
       to apply all the necessary name and version changes.
-- [ ] ~Due to automation, this step can now be skipped.~
-      ~Update name of the release in strings with a "smart" global find&replace.
-      _Be careful on M3 that the replace did not match the Eclipse project name M2E!_
-      See [this](https://github.com/eclipse-packaging/packages/commit/d7c1fc0b355185ceb9635fbc12a4af81e2295a91/) for an example.
-      Use commit message like `[releng] Prepare repo for 2025-09 M1`.In particular, check the following::~
-  - ~**TODO can this be automated**
-    On M1 add the M1 qualifier, e.g., `2025-06-R` -> `2025-09-M1`, on RC2 set it to `R` the qualifier, e.g., `2025-09-RC1` -> `2025-09-R`.
-    **Except** for `eclipse.simultaneous.release.name` which should go from `2025-06 (4.36.0)` -> `2025-09 M1 (4.37.0 M1)` on M1 and `2025-09 RC1 (4.37 RC1)` -> `2025-09 (4.37.0)` on RC2.~
-  - [ ] ~`packages/*/epp.website.xml` for `product name=` line.~
-  - [ ] ~`RELEASE_NAME`, `PREV_RELEASE_NAME`, `NEXT_RELEASE_NAME`, `RELEASE_MILESTONE`, `RELEASE_DIR`, `SIMREL_REPO`,  variables in parent pom `releng/org.eclipse.epp.config/parent/pom.xml`~
-    - ~`SIMREL_REPO` should be updated to the URL published in the email to cross-project-issues announcing SimRel repo is ready for EPP build.~
-  - [ ] ~**TODO can this part below be automated**~
-    - ~See comment in the pom.xml file around `eclipse.simultaneous.release.name`.~
-    - ~On R build, for `eclipse.simultaneous.release.name` remove qualifier,
-      i.e., it should be `2025-09 (4.37.0)`.~
-    - ~On M1 build add the qualifier back in, for `eclipse.simultaneous.release.name`,
-      i.e., it should be `2025-09 M1 (4.37.0 M1)`~
 - [ ] Update the [Last Recorded +1 in the email template](
       https://github.com/eclipse-packaging/packages/blob/master/releng/org.eclipse.epp.config/tools/upload-to-staging.sh
       ) which any package and platform +1s that have been received since the last update.
@@ -145,7 +109,7 @@ Scroll down for the per-milestone/RC steps.
         To test the upgrade an equivalent to the simrel release composite site needs to done.
         Add the following software sites to available software, check for updates and then make sure stuff works.
         In particular check error log and that core features, e.g., JDT, Platform, have been upgraded.
-    - `https://download.eclipse.org/staging/2025-09/` -
+    - `https://download.eclipse.org/staging/2025-12/` -
         _NOTE_ Use `SIMREL_REPO` if the staging repo has been updated since the `SIMREL_REPO` location was created.
     - `https://download.eclipse.org/technology/epp/staging/repository/`
     - `https://download.eclipse.org/justj/epp/milestone/latest` - 
