@@ -84,7 +84,8 @@ public class Updater {
 			var schedule = HttpClient.newBuilder().build()
 					.send(HttpRequest.newBuilder(URI.create(SIMREL__SCHEDULE)).GET().build(), BodyHandlers.ofString())
 					.body();
-			var milestoneDatePattern = Pattern.compile("\"" + MILESTONE + "\"\\s*:\\s*\"(?<date>20[2-9][0-9]-[01][0-9]-[0123][0-9])\"");
+			var milestoneDatePattern = Pattern
+					.compile("\"" + MILESTONE + "\"\\s*:\\s*\"(?<date>20[2-9][0-9]-[01][0-9]-[0123][0-9])\"");
 			var matcher = milestoneDatePattern.matcher(schedule);
 			if (matcher.find()) {
 				var dateLiteral = matcher.group("date");
@@ -234,6 +235,7 @@ public class Updater {
 				contents.put(file, modifiedContent);
 			}
 		} else if (relativePathName.equals("RELEASING.md")) {
+			apply(file, " `https://download.eclipse.org/staging/" + SIMREL_VERSION_MATCHER + "/`", SIMREL_VERSION);
 			// TODO
 		}
 	}
