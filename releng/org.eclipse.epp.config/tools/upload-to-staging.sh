@@ -60,8 +60,8 @@ dsl - 2025-12 M3
 embedcpp - 2024-09 RC2
 java - 2025-06 RC1
 jee -  2025-09 RC2
-modeling - 2025-12 M3
-php - 2025-06 M1
+modeling - 2025-12 RC1
+php - 2025-12 RC1 
 rcp - 2025-06 RC2
 scout - 2025-03 RC2
 
@@ -69,10 +69,10 @@ Platforms:
 Linux x86_64 - 2025-12 M3
 Linux aarch64 - 2023-09 RC2
 Linux riscv64 - 2025-12 M1 
-Windows x86_64 - 2025-12 M3
+Windows x86_64 - 2025-12 RC1
 Windows on Arm - 2025-09 RC1
 macOS x86_64 - 2025-09 RC2
-macOS aarch64 - 2025-12 M3
+macOS aarch64 - 2025-12 RC1
 
 Thank you for testing!
 
