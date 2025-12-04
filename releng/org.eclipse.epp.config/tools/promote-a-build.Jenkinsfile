@@ -2,7 +2,7 @@
 pipeline {
   agent any
   parameters {
-    booleanParam(defaultValue: true, description: 'Do a dry run of the build. Everything will be done except the final copy to download which will be echoed', name: 'DRY_RUN')
+    booleanParam(defaultValue: false, description: 'Do a dry run of the build. Everything will be done except the final copy to download which will be echoed', name: 'DRY_RUN')
   }
   options {
     timestamps()
