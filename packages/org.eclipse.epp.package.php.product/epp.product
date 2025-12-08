@@ -3,12 +3,18 @@
 
 <product name="Eclipse IDE for PHP Developers" uid="epp.package.php" id="org.eclipse.epp.package.php.product" application="org.eclipse.ui.ide.workbench" version="4.38.0.qualifier" type="mixed" includeLaunchers="true" autoIncludeRequirements="true">
 
-   <aboutInfo>
-      <image path="/org.eclipse.epp.package.php/eclipse_lg.png"/>
-      <text>
-         Specified in the plugin.xml of the branding plugin.
-      </text>
-   </aboutInfo>
+<!--
+
+This product definition is based on Eclipse Platform's platform.product.
+
+We need to redefine all the settings in platform.product to avoid duplicate
+settings, especially about -Dosgi.requiredJavaVersion=21
+(see a6b90b060b8c3684596e691254bf2f74a559b8aa / Bug 580807 for more history as to why)
+
+This file should be easy to compre against platform.product and non-obvious differences
+can and should be documented to keep ongoing maintenance easier.
+This file should also be easy to compare against all the other epp.product files
+-->
 
    <configIni use="default">
    </configIni>
@@ -19,6 +25,22 @@
 --launcher.defaultAction openFile
 --launcher.appendVmargs
       </programArgs>
+      <!--
+             -Dosgi.instance.area.default=@user.home/eclipse-workspace :
+             EPP has traditionally provided a different (more explicitly Eclipse) default
+
+             -Declipse.e4.inject.javax.warning=false :
+             disable javax.warning - this isn't something users can do anything about. Platform leaves them enabled because end
+             users don't typically use platform as a starting point, but ISVs who can help resolve it do
+
+             -Dsun.java.command=Eclipse :
+             When Eclipse is launched using the dll/so as the vm this provides a name
+             name for tools like jps.
+             (see 62b3bb4973a0ae375e56046f0b3ff910bc44f970 / Bug 568052 for more history as to why)
+
+             -XX:+UseG1GC and -XX:+UseStringDeduplication :
+             EPP has traditionally provided a different (more memory efficient) default
+      -->
       <vmArgs>-Dosgi.requiredJavaVersion=21
 -Dosgi.instance.area.default=@user.home/eclipse-workspace
 -Dosgi.dataAreaRequiresExplicitInit=true
@@ -31,31 +53,38 @@
 -XX:+UseStringDeduplication
 --add-modules=ALL-SYSTEM
       </vmArgs>
-      <vmArgsMac>-XstartOnFirstThread
--Dorg.eclipse.swt.internal.carbon.smallFonts
--Xdock:icon=../Resources/Eclipse.icns
+      <vmArgsMac>-Xdock:icon=../Resources/Eclipse.icns -XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts
       </vmArgsMac>
    </launcherArgs>
 
    <windowImages i16="/org.eclipse.epp.package.php/eclipse16.png" i32="/org.eclipse.epp.package.php/eclipse32.png" i48="/org.eclipse.epp.package.php/eclipse48.png" i256="/org.eclipse.epp.package.php/eclipse256.png"/>
 
+   <!-- EPP has its own splash screen that includes "IDE" in the graphic -->
    <splash
       location="org.eclipse.epp.package.common"
       startupProgressRect="2,290,448,10"
       startupMessageRect="7,265,320,20"
       startupForegroundColor="ffffff" />
    <launcher name="eclipse">
-      <linux icon="../../icons/icon.xpm"/>
+      <linux icon="../../icons/eclipse.xpm"/>
       <macosx icon="../../icons/Eclipse.icns">
          <bundleUrlTypes>
             <bundleUrlType scheme="eclipse+command" name="Eclipse Command"/>
+            <!-- include the additional handler for mpc - this needs to be defined here so macOS entitlements work properly -->
             <bundleUrlType scheme="eclipse+mpc" name="Eclipse Marketplace"/>
          </bundleUrlTypes>
       </macosx>
       <win useIco="false">
-         <bmp/>
+         <bmp/> <!-- Use default branding icon of the eclipse exe for Windows -->
       </win>
    </launcher>
+
+   <aboutInfo>
+      <image path="/org.eclipse.epp.package.php/eclipse_lg.png"/>
+      <text>
+         Specified in the plugin.xml of the branding plugin.
+      </text>
+   </aboutInfo>
 
    <intro introId="org.eclipse.ui.intro.universal"/>
 
@@ -64,22 +93,6 @@
       <macos include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-21</macos>
       <windows include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-21</windows>
    </vm>
-
-   <configurations>
-      <plugin id="org.apache.aries.spifly.dynamic.bundle" autoStart="true" startLevel="2" />
-      <plugin id="org.apache.felix.scr" autoStart="true" startLevel="2" />
-      <plugin id="org.eclipse.core.runtime" autoStart="true" startLevel="4" />
-      <plugin id="org.eclipse.equinox.common" autoStart="true" startLevel="2" />
-      <plugin id="org.eclipse.equinox.event" autoStart="true" startLevel="2" />
-      <plugin id="org.eclipse.equinox.p2.reconciler.dropins" autoStart="true" startLevel="4" />
-      <plugin id="org.eclipse.equinox.simpleconfigurator" autoStart="true" startLevel="1" />
-      <plugin id="slf4j.simple" autoStart="true" startLevel="2" />
-      <property name="org.eclipse.update.reconcile" value="false" />
-      <property name="eclipse.buildId" value="${unqualifiedVersion}.${buildQualifier}" />
-      <property name="osgi.bundles.defaultStartLevel" value="4" />
-      <property name="osgi.instance.area.default" value="@user.home/workspace" />
-      <property name="osgi.instance.area.default" value="@user.home/Documents/workspace" os="macosx" />
-   </configurations>
 
    <license>
         <url>http://eclipse.org/legal/epl/notice.php</url>
@@ -227,9 +240,12 @@ United States, other countries, or both.
          </text>
    </license>
 
+   <plugins>
+      <!-- either m2e.logback or slf4j.simple should be provided in each package -->
+      <plugin id="slf4j.simple"/>
+   </plugins>
+
    <features>
-
-
       <!-- common features that all products have -->
       <feature id="org.eclipse.epp.package.common.feature" version="4.38.0.qualifier"/>
       <feature id="org.eclipse.platform" installMode="root"/>
@@ -265,10 +281,22 @@ United States, other countries, or both.
       <feature id="org.eclipse.wildwebdeveloper.embedder.node.feature" installMode="root"/>
       <feature id="org.eclipse.php.mylyn" installMode="root"/>
    </features>
-   <plugins>
-      <!-- either m2e.logback or slf4j.simple should be provided in each package -->
-      <plugin id="slf4j.simple"/>
-   </plugins>
+
+   <configurations>
+      <plugin id="org.apache.aries.spifly.dynamic.bundle" autoStart="true" startLevel="2" />
+      <plugin id="org.apache.felix.scr" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.core.runtime" autoStart="true" startLevel="4" />
+      <plugin id="org.eclipse.equinox.common" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.equinox.event" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.equinox.p2.reconciler.dropins" autoStart="true" startLevel="4" />
+      <plugin id="org.eclipse.equinox.simpleconfigurator" autoStart="true" startLevel="1" />
+      <plugin id="slf4j.simple" autoStart="true" startLevel="2" />
+      <property name="org.eclipse.update.reconcile" value="false" />
+      <property name="eclipse.buildId" value="${unqualifiedVersion}.${buildQualifier}" />
+      <property name="osgi.bundles.defaultStartLevel" value="4" />
+      <property name="osgi.instance.area.default" value="@user.home/workspace" />
+      <property name="osgi.instance.area.default" value="@user.home/Documents/workspace" os="macosx" />
+   </configurations>
 
    <repositories>
       <repository location="https://download.eclipse.org/eclipse/updates/4.38" name="The Eclipse Project Updates" enabled="true" />
