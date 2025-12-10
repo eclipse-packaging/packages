@@ -109,7 +109,7 @@ Scroll down for the per-milestone/RC steps.
         To test the upgrade an equivalent to the simrel release composite site needs to done.
         Add the following software sites to available software, check for updates and then make sure stuff works.
         In particular check error log and that core features, e.g., JDT, Platform, have been upgraded.
-    - `https://download.eclipse.org/staging/2025-12/` -
+    - `https://download.eclipse.org/staging/2026-03/` -
         _NOTE_ Use `SIMREL_REPO` if the staging repo has been updated since the `SIMREL_REPO` location was created.
     - `https://download.eclipse.org/technology/epp/staging/repository/`
     - `https://download.eclipse.org/justj/epp/milestone/latest` - 
