@@ -20,14 +20,14 @@ fi
 ${MVN} clean package -f ${DIR}
 
 RELEASE_NAME=$(get_property RELEASE_NAME)
-PREV_RELEASE_NAME=$(get_property PREV_RELEASE_NAME)
+# PREV_RELEASE_NAME=$(get_property PREV_RELEASE_NAME)
 NEXT_RELEASE_NAME=$(get_property NEXT_RELEASE_NAME)
 RELEASE_MILESTONE=$(get_property RELEASE_MILESTONE)
-RELEASE_DIR=$(get_property RELEASE_DIR)
-SIMREL_REPO=$(get_property SIMREL_REPO)
+# RELEASE_DIR=$(get_property RELEASE_DIR)
+# SIMREL_REPO=$(get_property SIMREL_REPO)
 EPP_DOWNLOADS=/home/data/httpd/download.eclipse.org/technology/epp
 DOWNLOADS=${EPP_DOWNLOADS}/downloads/release/${RELEASE_NAME}
-REPO=${EPP_DOWNLOADS}/packages/${RELEASE_NAME}/
+# REPO=${EPP_DOWNLOADS}/packages/${RELEASE_NAME}/
 
 SSHUSER="genie.packaging@projects-storage.eclipse.org"
 SSH="ssh ${SSHUSER}"

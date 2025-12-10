@@ -2,7 +2,7 @@
 <feature
       id="org.eclipse.epp.package.embedcpp.feature"
       label="EPP Embedded CPP Feature"
-      version="4.38.0.qualifier"
+      version="4.39.0.qualifier"
       provider-name="Eclipse Packaging Project"
       plugin="org.eclipse.epp.package.embedcpp"
       license-feature="org.eclipse.license"

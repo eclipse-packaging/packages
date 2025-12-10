@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Eclipse contributors and others.
+ * Copyright (c) 2025, 2026 Eclipse contributors and others.
  *
  * This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License 2.0
@@ -31,9 +31,9 @@ public class Updater {
 	/**
 	 * M1, M2, M3, RC1, RC2
 	 */
-	private static final String MILESTONE = "RC2";
+	private static final String MILESTONE = "M1";
 
-	private static final String PLATFORM_VERSION = "4.38";
+	private static final String PLATFORM_VERSION = "4.39";
 
 	private static final String EXECUTION_ENVIRONMENT = "21";
 

@@ -27,11 +27,11 @@ Click <a href="https://github.com/eclipse-wildwebdeveloper/wildwebdeveloper/issu
   </packageMetaData>
   <MoreInfo>
   <NewAndNoteworthy
-    url="https://eclipse.dev/eclipse/news/4.38/"
+    url="https://eclipse.dev/eclipse/news/4.39/"
     project="Eclipse Platform" />
   </MoreInfo>
 
   <!-- name, the name of the product, used in naming the created files. -->
-  <product name="eclipse-php-2025-12-R" />
+  <product name="eclipse-php-2026-03-M1" />
 
 </configuration>
