@@ -6,13 +6,3 @@ properties.1.value = 2026-03 Release of the Eclipse Scout Developers package.
 
 properties.2.name = org.eclipse.equinox.p2.provider
 properties.2.value = Eclipse Packaging Project
-
-# Require the fake IUs defined in the p2.inf of org.eclipse.epp.package.common.feature's
-
-requires.1.namespace = org.eclipse.equinox.p2.iu
-requires.1.name = org.eclipse.help.source.feature.group
-requires.1.optional = true
-
-requires.2.namespace = org.eclipse.equinox.p2.iu
-requires.2.name = org.eclipse.jdt.source.feature.group
-requires.2.optional = true
