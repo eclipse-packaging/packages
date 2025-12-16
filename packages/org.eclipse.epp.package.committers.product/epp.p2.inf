@@ -6,25 +6,3 @@ properties.1.value = 2026-03 Release of the Eclipse Committers package.
 
 properties.2.name = org.eclipse.equinox.p2.provider
 properties.2.value = Eclipse Packaging Project
-
-# Require the fake IUs defined in the p2.inf of org.eclipse.epp.package.common.feature's
-
-requires.1.namespace = org.eclipse.equinox.p2.iu
-requires.1.name = org.eclipse.platform.source.feature.group
-requires.1.optional = true
-
-requires.2.namespace = org.eclipse.equinox.p2.iu
-requires.2.name = org.eclipse.rcp.source.feature.group
-requires.2.optional = true
-
-requires.3.namespace = org.eclipse.equinox.p2.iu
-requires.3.name = org.eclipse.jdt.source.feature.group
-requires.3.optional = true
-
-requires.4.namespace = org.eclipse.equinox.p2.iu
-requires.4.name = org.eclipse.pde.source.feature.group
-requires.4.optional = true
-
-requires.5.namespace = org.eclipse.equinox.p2.iu
-requires.5.name = org.eclipse.pde.spies.source.feature.group
-requires.5.optional = true
