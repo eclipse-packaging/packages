@@ -49,6 +49,8 @@ public class Updater {
 
 	private static final String SIMREL_VERSION_MATCHER = "(20[2-9][0-9]-(?:03|06|09|12))";
 
+	private static final String SIMREL_QUALIFIER_MATCHER = "(M1|M2|M3|RC1|RC2|R)";
+
 	private static final String SIMREL_QUALIFIED_VERSION = SIMREL_VERSION + "-" + MILESTONE.replace("RC2", "R");
 
 	private static final String SIMREL_QUALIFIED_VERSION_MATCHER = "(20[2-9][0-9]-(?:03|06|09|12)-(?:M1|M2|M3|RC1|RC2|R))";
@@ -236,7 +238,22 @@ public class Updater {
 			}
 		} else if (relativePathName.equals("RELEASING.md")) {
 			apply(file, " `https://download.eclipse.org/staging/" + SIMREL_VERSION_MATCHER + "/`", SIMREL_VERSION);
-			// TODO
+			apply(file, "e\\.g\\., `" + SIMREL_VERSION_MATCHER + "_R`", SIMREL_VERSION);
+			apply(file, "e\\.g\\., `" + SIMREL_VERSION_MATCHER + "`", SIMREL_VERSION);
+			apply(file, "e\\.g\\., `" + SIMREL_VERSION_MATCHER + "[- ]" + SIMREL_QUALIFIER_MATCHER + "`",
+					SIMREL_VERSION, MILESTONE.replace("RC2", "R"));
+			apply(file, "copy the composite.[*]" + SIMREL_QUALIFIER_MATCHER
+					+ ".jar files over the composite.[*].jar files in https://download.eclipse.org/technology/epp/packages/"
+					+ SIMREL_VERSION_MATCHER + "/", MILESTONE.replace("RC2", "R"), SIMREL_VERSION);
+			apply(file,
+					"`git tag --annotate " + SIMREL_VERSION_MATCHER + "_R -m\"" + SIMREL_VERSION_MATCHER + " Release\"",
+					SIMREL_VERSION, SIMREL_VERSION);
+			apply(file,
+					"When " + SIMREL_VERSION_MATCHER + " is released, a directory " + SIMREL_VERSION_MATCHER
+							+ " must be created with an empty p2 composite repository pointing to "
+							+ SIMREL_VERSION_MATCHER + " until M1",
+					SIMREL_VERSION, SIMREL_NEXT_VERSION, SIMREL_VERSION);
+			apply(file, "issue titled `EPP " + SIMREL_VERSION_MATCHER + " " + SIMREL_QUALIFIER_MATCHER + "`", SIMREL_VERSION, MILESTONE);
 		}
 	}
 
