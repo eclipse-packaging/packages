@@ -3,6 +3,13 @@
 This guide contains the step-by-step process to complete an EPP release.
 The guide assumes that you have an IDE provisioned using the [Oomph setup](CONTRIBUTING.md#create-an-eclipse-development-environment).
 
+**Before** copying this file to create a new issue titled `EPP 2026-03 M1` with label `endgame`, update the names and versions, including those in this document.
+- [ ] To update names and version, edit [org.eclipse.epp.releng.updater.Updater](
+      releng/org.eclipse.epp.config/org.eclipse.epp.releng.updater/src/org/eclipse/epp/releng/updater/Updater.java
+      ) to set the value of `MILESTONE`, `PLATFORM_VERSION`, and possibly `EXECUTION_ENVIRONMENT` to the current appropriate values.
+     - Use `Run` tool-bar button drop-down menu to launch the `Update Versions` launch configuration
+      to apply all the necessary name and version changes.
+
 The individual releases are tracked with [endgame](https://github.com/eclipse-packaging/packages/labels/endgame) issues on GitHub issues.
 For each release (M1, M2, M3, RC1, RC2) an endgame ticket is created with the appropriate contents from the rest of this document:
 
@@ -16,7 +23,6 @@ Scroll down for the per-milestone/RC steps.
 - [ ] Create new [PMI entry](https://projects.eclipse.org/projects/technology.packaging)
 - [ ] Update splash screen (once per release cycle, hopefully done before M1).
       See detailed [instructions](https://github.com/eclipse-packaging/packages/blob/master/packages/org.eclipse.epp.package.common/splash/INSTRUCTIONS.md).
-- [ ] The `Update Name` step below is now fully automated.
 - [ ] Archive old releases (two R releases should stay on download.eclipse.org) to archive.eclipse.org and remove non-R downloads.
   - This can be done through the web ui at https://download.eclipse.org/technology/epp/
 
@@ -49,13 +55,8 @@ Scroll down for the per-milestone/RC steps.
         https://github.com/eclipse-platform/eclipse.platform.releng.aggregator/blob/master/eclipse.platform.releng.tychoeclipsebuilder/eclipse.platform.repository/platform.p2.inf
         ) into all the `*.product/p2.inf` files.
   - [ ] Synchronize any changes to [platform's icons](
-        https://github.com/eclipse-platform/eclipse.platform.releng.aggregator/tree/master/eclipse.platform.releng.tychoeclipsebuilder/eclipse.platform.repository/icons
+        https://github.com/eclipse-platform/eclipse.platform.releng.aggregator/tree/master/products/icons
         ) into `icons` root directory.
-- [ ] To update names an version, edit [org.eclipse.epp.releng.updater.Updater](
-      releng/org.eclipse.epp.config/org.eclipse.epp.releng.updater/src/org/eclipse/epp/releng/updater/Updater.java
-      ) to set the value of `MILESTONE`, `PLATFORM_VERSION`, and possibly `EXECUTION_ENVIRONMENT` to the current appropriate values.
-     - Use `Run` tool-bar button drop-down menu to launch the `Update Versions` launch configuration
-      to apply all the necessary name and version changes.
 - [ ] Update the [Last Recorded +1 in the email template](
       https://github.com/eclipse-packaging/packages/blob/master/releng/org.eclipse.epp.config/tools/upload-to-staging.sh
       ) which any package and platform +1s that have been received since the last update.
@@ -101,9 +102,10 @@ Scroll down for the per-milestone/RC steps.
     TODO it may be possible to workaround this error by always using a different random ID when doing the notarization.
 - [ ] Sanity check the build for the following:
   - [ ] Download a package from the build's [staging output](https://download.eclipse.org/technology/epp/staging/).
-  - [ ] Made sure filenames contain expected build name and milestone, e.g., `2025-09-M2`.
-  - [ ] Splash screen says the expected release name with no milestone, e.g. `2025-09`.
-  - [ ] `Help -> About` says the expected build name and milestone, e.g. `2025-09-M2`.
+  - [ ] Made sure filenames contain expected build name and milestone, e.g., `2026-03-M1`.
+  - [ ] Splash screen says the expected release name with no milestone, e.g., `2026-03`.
+  - [ ] `Help -> About` says the expected build name and milestone, e.g., `2026-03-M1`.
+    [ ] From the `Console` open the `Host OSGi console` and use `ss -s INSTALLED` to verify that there are no bundles failing to resolve.
   - [ ] The `org.eclipse.epp.package.*` features and bundles have the timestamp of the forced qualifier update or later.
   - [ ] Upgrade from previous release works.
         To test the upgrade an equivalent to the simrel release composite site needs to done.
@@ -119,7 +121,7 @@ Scroll down for the per-milestone/RC steps.
        (especially justj, update [remove-justj-from-p2.xml](https://github.com/eclipse-packaging/packages/blob/master/releng/org.eclipse.epp.config/tools/remove-justj-from-p2.xml) if needed).
 - [ ] Edit the [Jenkins build](https://ci.eclipse.org/packaging/job/epp/job/master/).
   - [ ] Mark build as Keep forever.
-  - [ ] Edit Jenkins Build Information and name it, e.g., `2025-09 M3`.
+  - [ ] Edit Jenkins Build Information and name it, e.g., `2026-03 M1`.
 - [ ] Run the [Promote a Build](
       https://ci.eclipse.org/packaging/job/promote-a-build/
       ) CI job to prepare build artifacts and copy them to download.eclipse.org.
@@ -147,7 +149,7 @@ This applies to all releases, i.e. M1, M2, M3, RC1 and R.
 Everything except R is typically the Friday around 9:30am Ottawa time and the R is the following Wednesday sometime before 10am in coordination with the SimRel release engineer.
 
 - [ ] check that this worked:
-      copy the composite\*RC1.jar files over the composite\*.jar files in https://download.eclipse.org/technology/epp/packages/2025-09/ - 
+      copy the composite\*M1.jar files over the composite\*.jar files in https://download.eclipse.org/technology/epp/packages/2026-03/ - 
       this is done automatically with the 
       [EPP Make Visible job](https://ci.eclipse.org/packaging/job/epp-makeVisible/)
       which is automatically triggered by simrel's
@@ -156,8 +158,8 @@ Everything except R is typically the Friday around 9:30am Ottawa time and the R 
 **24-48 Hours Before Final release day**
 
 - [ ] **24 Hours before Final release** Make sure files are in final location to allow downloads to mirror.
-  - [ ] Tag the release, e.g., with 2025-09_R.
-        Example command line: `git tag --annotate 2025-09_R -m"2025-09 Release" 1b7a1c1af156e3ac57768b87be258cd22b49456b`.
+  - [ ] Tag the release, e.g., `2026-03_R`.
+        Example command line: `git tag --annotate 2026-03_R -m"2026-03 Release" 1b7a1c1af156e3ac57768b87be258cd22b49456b`.
   - [ ] Run the [Rename Provisional to Final](
         https://ci.eclipse.org/packaging/job/rename-provisional-to-final/
         ) CI job to rename the provisional release milestone to final directory.
@@ -182,7 +184,7 @@ These jobs should be completed by approximately 10am Ottawa time on release days
   - The current release needs to be promoted as "latest" under https://download.eclipse.org/technology/epp/packages/latest/.
     This should be a composite pointing to specific https://download.eclipse.org/technology/epp/packages/yyyy-MM/.
   - The _next_ release sub-directory needs to be created immediately.
-    - When 2019-12 was released, a directory 2020-03 had been created with an empty p2 composite repository pointing to 2019-12 until M1.
+    - When 2026-03 is released, a directory 2026-06 must be created with an empty p2 composite repository pointing to 2026-03 until M1.
     - On M1 release day this changes to a composite p2 repository with M1 content.
   - [ ] _Optional - useful when testing changes to the promotion scripts:_
        - Run the build once in `DRY_RUN` mode to ensure that the output is correct before it applies changes to download.eclipse.org.
