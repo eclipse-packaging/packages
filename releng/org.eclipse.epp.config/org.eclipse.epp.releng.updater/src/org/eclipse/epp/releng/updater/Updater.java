@@ -10,11 +10,16 @@
  */
 package org.eclipse.epp.releng.updater;
 
+import java.awt.Desktop;
+import java.awt.Toolkit;
+import java.awt.datatransfer.StringSelection;
 import java.io.IOException;
 import java.net.URI;
+import java.net.URLEncoder;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse.BodyHandlers;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.FileVisitResult;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -23,6 +28,7 @@ import java.nio.file.attribute.BasicFileAttributes;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.regex.Pattern;
@@ -72,6 +78,19 @@ public class Updater {
 		}
 		var root = currentWorkingDirectory.resolve("../../..").toRealPath();
 		new Updater(root).update();
+		if (List.of(args).contains("-open-issue")) {
+			var text = Files.readString(root.resolve("RELEASING.md"));
+			var joinedText = text.replaceAll("([,;:.a-z()-_*])\r?\n +([^-* ])", "$1 $2");
+			var issueURL = "https://github.com/eclipse-packaging/packages/issues/new?title="
+					+ encode("EPP " + SIMREL_VERSION + " " + MILESTONE) + "&labels=endgame" + "&body="
+					+ encode("<!-- paste body from clipboard -->\n");
+
+			// Can't do this because the URL is then too long + "&body=" + encode(text);
+			// So instead copy the text to the clipboard.
+			Toolkit.getDefaultToolkit().getSystemClipboard().setContents(new StringSelection(joinedText), null);
+
+			openURL(issueURL);
+		}
 	}
 
 	private Map<Path, String> contents = new LinkedHashMap<>();
@@ -253,7 +272,11 @@ public class Updater {
 							+ " must be created with an empty p2 composite repository pointing to "
 							+ SIMREL_VERSION_MATCHER + " until M1",
 					SIMREL_VERSION, SIMREL_NEXT_VERSION, SIMREL_VERSION);
-			apply(file, "issue titled `EPP " + SIMREL_VERSION_MATCHER + " " + SIMREL_QUALIFIER_MATCHER + "`", SIMREL_VERSION, MILESTONE);
+			apply(file, "issue titled `EPP " + SIMREL_VERSION_MATCHER + " " + SIMREL_QUALIFIER_MATCHER + "`",
+					SIMREL_VERSION, MILESTONE);
+			apply(file,
+					"https://github.com/eclipse-simrel/.github/blob/main/wiki/SimRel/" + SIMREL_VERSION_MATCHER + ".md",
+					SIMREL_VERSION);
 		}
 	}
 
@@ -282,5 +305,13 @@ public class Updater {
 		for (var entry : contents.entrySet()) {
 			Files.writeString(entry.getKey(), entry.getValue());
 		}
+	}
+
+	private static String encode(String value) {
+		return URLEncoder.encode(value, StandardCharsets.UTF_8);
+	}
+
+	public static void openURL(String uri) throws IOException {
+		Desktop.getDesktop().browse(URI.create(uri));
 	}
 }
