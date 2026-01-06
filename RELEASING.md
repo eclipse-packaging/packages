@@ -1,20 +1,25 @@
 # The EPP Release Process
 
-This guide contains the step-by-step process to complete an EPP release.
-The guide assumes that you have an IDE provisioned using the [Oomph setup](CONTRIBUTING.md#create-an-eclipse-development-environment).
+This guide contains the step-by-step process to complete an EPP release and assumes that you have an IDE provisioned using the [Oomph setup](
+https://github.com/eclipse-packaging/packages/blob/master/CONTRIBUTING.md#create-an-eclipse-development-environment).
 
 **Before** copying this file to create a new issue titled `EPP 2026-03 M1` with label `endgame`, update the names and versions, including those in this document.
 - [ ] To update names and versions, edit [org.eclipse.epp.releng.updater.Updater](
       releng/org.eclipse.epp.config/org.eclipse.epp.releng.updater/src/org/eclipse/epp/releng/updater/Updater.java
       ) to set the values of `MILESTONE`, `PLATFORM_VERSION`, and possibly `EXECUTION_ENVIRONMENT` to the current appropriate values.
-     - Use the `Run` toolbar button drop-down menu to launch the `Update Versions` launch configuration
-      to apply all the necessary name and version changes.
+     - Use the `Run` toolbar button drop-down menu to launch the `Update Versions` launch configuration to apply all the necessary name and version changes.
+     - Or use the `Run` toolbar button drop-down menu to launch the `Open Issue` launch configuration to apply all the necessary name and version changes,
+       and to open a new properly-titled, properly-labeled issue;
+       the body text is too long to automatically create the body of the issue,
+       but that text is copied to the system clipboard,
+       so you can use simply paste it into the body.
 
 The individual releases are tracked with [endgame](https://github.com/eclipse-packaging/packages/labels/endgame) issues on GitHub.
 
 For each release (M1, M2, M3, RC1, RC2) an endgame ticket is created with the appropriate contents from the rest of this document:
 
-EPP releases happen for each milestone and release candidate according to the [Eclipse Simultaneous Release Plan](https://github.com/eclipse-simrel/.github/blob/main/wiki/Simultaneous_Release.md).
+EPP releases happen for each milestone and release candidate according to the [Eclipse Simultaneous Release Plan](
+https://github.com/eclipse-simrel/.github/blob/main/wiki/SimRel/2026-03.md)
 
 **Steps at the beginning of each release cycle, i.e., before M1:**
 
@@ -39,7 +44,7 @@ Scroll down for the per-milestone/RC steps.
       See near the end of the build output for a report of `check-incubating.sh` script.
   - This item is not currently done per milestone/release because for a while now all packages contain incubating components and until TM4E moves out of incubation this step is redundant.
   - The incubating indication should appear in feature.properties `description`, `plugin.xml`'s product `aboutText` and `about.properties` _blurb_.
-    In the past `-incubation` had to appear in the file name and ` (includes Incubating components)` had to appear in `packageMetaData`.
+    In the past `-incubation` had to appear in the file name and `(includes Incubating components)` had to appear in `packageMetaData`.
     See [Bug 564214](https://bugs.eclipse.org/bugs/show_bug.cgi?id=564214) for documentation/votes on decision making.
 
 - [ ] On RC1 check "new and noteworthy" version numbers.
@@ -88,7 +93,7 @@ Scroll down for the per-milestone/RC steps.
       _This can be done after promotion if time is tight or the notarization fails repeatedly._
       _See [Bug 571669](https://bugs.eclipse.org/bugs/show_bug.cgi?id=571669) for an example of failures._
 - [ ] Check the build script output to make sure that the curl calls were successful, 
-      e.g. no `curl: (92) HTTP/2 stream 0 was not closed cleanly: INTERNAL_ERROR (err 2) ` messages.
+      e.g., no `curl: (92) HTTP/2 stream 0 was not closed cleanly: INTERNAL_ERROR (err 2) ` messages.
       If there is an error like the above, the .dmg file that is copied to download.eclipse.org is corrupt.
       Run [notarize-prepare-to-redo](
       https://ci.eclipse.org/packaging/job/notarize-prepare-to-redo/
@@ -151,8 +156,8 @@ This applies to all releases, i.e. M1, M2, M3, RC1 and R.
 Everything except R is typically the Friday around 9:30am Ottawa time and the R is the following Wednesday sometime before 10am in coordination with the SimRel release engineer.
 
 - [ ] Check that this worked:
-      copy the composite\*M1.jar files over the composite\*.jar files in https://download.eclipse.org/technology/epp/packages/2026-03/ - 
-      this is done automatically with the 
+      copy the composite\*M1.jar files over the composite\*.jar files in https://download.eclipse.org/technology/epp/packages/2026-03/ -
+      this is done automatically with the
       [EPP Make Visible job](https://ci.eclipse.org/packaging/job/epp-makeVisible/)
       which is automatically triggered by SimRel's
       [SimRel Make Visible Job](https://ci.eclipse.org/simrel/view/All/job/simrel.releng.makeVisible/).

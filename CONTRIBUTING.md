@@ -31,7 +31,7 @@ Contributions are always welcome!
 ## EPP Committer and Maintainer Policy
 
 For each EPP package,
-there is a commiter who is the package _maintainer_.
+there is a committer who is the package _maintainer_.
 The maintainer is expected to participate in overall project discussions and to be involved in making decisions that affect the maintained package.
 
 If someone is a committer on another Eclipse project,
