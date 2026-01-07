@@ -243,6 +243,7 @@
             <compress>true</compress>
             <!-- Mirror goal used to aggregate unit seem to ignore the .xz files so let's not generate them to avoid inconsistency between *.jar and *.xz -->
             <xzCompress>false</xzCompress>
+            <includeAllSources>${install-sources}</includeAllSources>
           </configuration>
         </plugin>
         <plugin>
@@ -305,6 +306,7 @@
           <executions>
           </executions>
           <configuration>
+            <installSources>${install-sources}</installSources>
             <formats>
               <linux>tar.gz</linux>
               <macosx>tar.gz</macosx>
@@ -398,9 +400,6 @@
                   <goals>
                     <goal>materialize-products</goal>
                   </goals>
-                  <configuration>
-                    <installSources>${install-sources}</installSources>
-                  </configuration>
                 </execution>
                 <execution>
                   <id>archive-products</id>
@@ -413,25 +412,31 @@
             </plugin>
           </plugins>
         </pluginManagement>
+      </build>
+    </profile>
+
+    <profile>
+      <id>single-env</id>
+      <activation>
+        <property>
+          <name>env.os</name>
+        </property>
+      </activation>
+      <build>
         <plugins>
           <plugin>
-            <groupId>org.codehaus.mojo</groupId>
-            <artifactId>build-helper-maven-plugin</artifactId>
-            <executions>
-              <execution>
-                <id>regex-property</id>
-                <goals>
-                  <goal>regex-property</goal>
-                </goals>
-                <configuration>
-                  <name>eclipse.epp.id</name>
-                  <value>${project.artifactId}</value>
-                  <regex>epp\.package\.(\d*)</regex>
-                  <replacement>$1</replacement>
-                  <failIfNoMatch>false</failIfNoMatch>
-                </configuration>
-              </execution>
-            </executions>
+            <groupId>org.eclipse.tycho</groupId>
+            <artifactId>target-platform-configuration</artifactId>
+            <version>${tycho.version}</version>
+            <configuration>
+              <environments>
+                <environment>
+                  <os>${env.os}</os>
+                  <ws>${env.ws}</ws>
+                  <arch>${env.arch}</arch>
+                </environment>
+              </environments>
+            </configuration>
           </plugin>
         </plugins>
       </build>

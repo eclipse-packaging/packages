@@ -6,3 +6,6 @@ properties.1.value = 2026-03 Release of the Eclipse Committers package.
 
 properties.2.name = org.eclipse.equinox.p2.provider
 properties.2.value = Eclipse Packaging Project
+
+properties.3.name = org.eclipse.update.install.sources
+properties.3.value = true

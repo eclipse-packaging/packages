@@ -112,7 +112,7 @@ Scroll down for the per-milestone/RC steps.
   - [ ] Make sure filenames contain expected build name and milestone, e.g., `2026-03-M1`.
   - [ ] Splash screen says the expected release name with no milestone, e.g., `2026-03`.
   - [ ] `Help -> About` says the expected build name and milestone, e.g., `2026-03-M1`.
-    [ ] From the `Console`, open the `Host OSGi console` and use `ss -s INSTALLED` to verify that there are no bundles failing to resolve.
+  - [ ] From the `Console`, open the `Host OSGi console` and use `ss -s INSTALLED` to verify that there are no bundles failing to resolve.
   - [ ] The `org.eclipse.epp.package.*` features and bundles have the timestamp of the forced qualifier update or later.
   - [ ] Upgrade from previous release works.
         To test the upgrade an equivalent to the simrel release composite site needs to be done.
