@@ -37,8 +37,14 @@ This build creates output in two places:
 By default the maven build runs the build for all platforms.
 This can be time consuming and can be changed to only build a limited number of platforms
 which is a useful for testing changes locally.
-There is no profile (PRs welcome!) to disable other platforms.
-Instead modify `releng/org.eclipse.epp.config/parent/pom.xml` to exclude the unwanted platforms in `target-platform-configuration`'s configuration.
+The profile `single-env` can be used to build only for a single target.
+It is actived by setting these system properties.
+
+    mvn verify ... -Denv.os=linux -Denv.ws=gtk -Denv.arch=x86_64
+
+From an [m2e](https://eclipse.dev/m2e/) launch, you can use the system properties of the host:
+
+    ... -Denv.os=${system_property:osgi.os} -Denv.ws=${system_property:osgi.ws} -Denv.arch=${system_property:osgi.arch}
 
 ### Available Profiles
 
