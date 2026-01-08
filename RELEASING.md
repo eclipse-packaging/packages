@@ -52,13 +52,13 @@ Scroll down for the per-milestone/RC steps.
   - [ ] Search for ` url=` (notice the blank before url) in `epp.website.xml` to see which ones are contained in the different packages.
   - [ ] Remember that some of the features will release new versions together with the new Eclipse release.
         Therefore using the _currently_ released version number may be wrong.
-        Instead look up the feature version [to be released with the release train](https://projects.eclipse.org/releases/).
+        Look at the news links in [2026-03 Participants](https://eclipse.dev/simrel/?file=wiki/SimRel/2026-03_participants.json).
 - [ ] Synchronize the following - Remember to check the branch; these links are to master, but around RC2 master may be set up for the next release already.
   - [ ] Synchronize any changes to [platform.product](
-        https://github.com/eclipse-platform/eclipse.platform.releng.aggregator/blob/master/eclipse.platform.releng.tychoeclipsebuilder/eclipse.platform.repository/platform.product
+        https://github.com/eclipse-platform/eclipse.platform.releng.aggregator/blob/master/products/eclipse-platform/platform.product
         ) into all the `epp.product` files.
   - [ ] Synchronize any changes to [platform.p2.inf](
-        https://github.com/eclipse-platform/eclipse.platform.releng.aggregator/blob/master/eclipse.platform.releng.tychoeclipsebuilder/eclipse.platform.repository/platform.p2.inf
+	    https://github.com/eclipse-platform/eclipse.platform.releng.aggregator/blob/master/products/eclipse-platform/platform.p2.inf
         ) into all the `*.product/p2.inf` files.
   - [ ] Synchronize any changes to [platform's icons](
         https://github.com/eclipse-platform/eclipse.platform.releng.aggregator/tree/master/products/icons
@@ -69,6 +69,8 @@ Scroll down for the per-milestone/RC steps.
 - [ ] Wait for announcement that the staging repo is ready on [simrel-dev](https://accounts.eclipse.org/mailing-list/simrel-dev).
       An [example announcement](https://www.eclipse.org/lists/simrel-dev/msg00032.html).
   - [ ] Update `SIMREL_REPO` in `releng/org.eclipse.epp.config/parent/pom.xml` if not done above.
+  - [ ] Or use the `Run` toolbar button drop-down menu to launch the `Update to Milestone Repository` launch configuration.
+        This will automatically determine the correct update site URL and will create an appropriate commit message in the system clipboard.
 - [ ] Update the build qualifiers to ensure that packages are all updated.
       See this [gerrit](https://git.eclipse.org/r/#/c/161075/) for an example.
       Commit all other changes before this step because this step will automatically create a Git commit specifically for the forced qualifier changes.
@@ -143,6 +145,8 @@ Scroll down for the per-milestone/RC steps.
       https://ci.eclipse.org/packaging/job/notarize-downloads/
       ) CI job to notarize DMG packages on download.eclipse.org if the promoted build was unstable.
 - [ ] Update `SIMREL_REPO` to the staging repo so CI builds run against CI of SimRel, e.g., [see this gerrit](https://git.eclipse.org/r/c/epp/org.eclipse.epp.packages/+/189618)).
+  - [ ] Or use the `Run` toolbar button drop-down menu to launch the `Update to Staging Repository` launch configuration.
+        This will automatically determine the correct update site URL and will create an appropriate commit message in the system clipboard.
 - [ ] Re-enable the [CI build](https://ci.eclipse.org/packaging/job/epp/job/master/).
 - [ ] Send email to epp-dev to request package maintainers test it.
       The email is templated in email.txt in the release directory.

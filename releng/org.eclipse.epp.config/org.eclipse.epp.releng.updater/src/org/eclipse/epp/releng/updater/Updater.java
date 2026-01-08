@@ -18,6 +18,7 @@ import java.net.URI;
 import java.net.URLEncoder;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
 import java.net.http.HttpResponse.BodyHandlers;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.FileVisitResult;
@@ -27,10 +28,12 @@ import java.nio.file.SimpleFileVisitor;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Comparator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.TreeSet;
 import java.util.regex.Pattern;
 
 public class Updater {
@@ -71,25 +74,31 @@ public class Updater {
 	private Path root;
 
 	public static void main(String[] args) throws IOException {
+		List<String> arguments = List.of(args);
 		var currentWorkingDirectory = Path.of(".").toRealPath();
 		if (!currentWorkingDirectory.toString().replace("\\", "/")
 				.endsWith("releng/org.eclipse.epp.config/org.eclipse.epp.releng.updater")) {
 			throw new RuntimeException("Expecting to run this from the org.eclipse.epp.releng.updater project");
 		}
 		var root = currentWorkingDirectory.resolve("../../..").toRealPath();
-		new Updater(root).update();
-		if (List.of(args).contains("-open-issue")) {
-			var text = Files.readString(root.resolve("RELEASING.md"));
-			var joinedText = text.replaceAll("([,;:.a-z()-_*])\r?\n +([^-* ])", "$1 $2");
-			var issueURL = "https://github.com/eclipse-packaging/packages/issues/new?title="
-					+ encode("EPP " + SIMREL_VERSION + " " + MILESTONE) + "&labels=endgame" + "&body="
-					+ encode("<!-- paste body from clipboard -->\n");
+		if (arguments.contains("-to-milestone-repository")) {
+			new Updater(root).toMilestoneRepository();
+		} else if (arguments.contains("-to-staging-repository")) {
+			new Updater(root).toStagingRepository();
+		} else {
+			new Updater(root).update();
+			if (arguments.contains("-open-issue")) {
+				var text = Files.readString(root.resolve("RELEASING.md"));
+				var joinedText = text.replaceAll("([,;:.a-z()-_*])\r?\n +([^-* ])", "$1 $2");
+				var issueURL = "https://github.com/eclipse-packaging/packages/issues/new?title="
+						+ encode("EPP " + SIMREL_VERSION + " " + MILESTONE) + "&labels=endgame" + "&body="
+						+ encode("<!-- paste body from clipboard -->\n");
 
-			// Can't do this because the URL is then too long + "&body=" + encode(text);
-			// So instead copy the text to the clipboard.
-			Toolkit.getDefaultToolkit().getSystemClipboard().setContents(new StringSelection(joinedText), null);
-
-			openURL(issueURL);
+				// Can't do this because the URL is then too long + "&body=" + encode(text);
+				// So instead copy the text to the clipboard.
+				copyToClipboard(joinedText);
+				openURL(issueURL);
+			}
 		}
 	}
 
@@ -277,6 +286,11 @@ public class Updater {
 			apply(file,
 					"https://github.com/eclipse-simrel/.github/blob/main/wiki/SimRel/" + SIMREL_VERSION_MATCHER + ".md",
 					SIMREL_VERSION);
+			apply(file,
+					"\\[" + SIMREL_VERSION_MATCHER
+							+ " Participants\\]\\(https://eclipse.dev/simrel/\\?file=wiki/SimRel/"
+							+ SIMREL_VERSION_MATCHER + "_participants.json\\).",
+					SIMREL_VERSION, SIMREL_VERSION);
 		}
 	}
 
@@ -302,6 +316,84 @@ public class Updater {
 			}
 		});
 
+		saveModifiedContents();
+	}
+
+	private void toMilestoneRepository() throws IOException {
+		var parentPOM = root.resolve("releng/org.eclipse.epp.config/parent/pom.xml");
+		var releaseFolderContent = getContents("https://download.eclipse.org/justj/?file=releases/" + SIMREL_VERSION);
+		var versions = new TreeSet<String>(Comparator.reverseOrder());
+		for (var matcher = Pattern
+				.compile("justj/\\?file=releases/" + SIMREL_VERSION + "/(" + COPYRIGHT_YEAR + "[0-9]+)")
+				.matcher(releaseFolderContent); matcher.find();) {
+			versions.add(matcher.group(1));
+		}
+		var latestVersion = versions.getFirst();
+		var latestRepository = "https://download.eclipse.org/releases/" + SIMREL_VERSION + "/" + latestVersion + "/";
+
+		// Verify it exists.
+		var p2Index = getContents(latestRepository + "p2.index");
+		if (!p2Index.contains("version=1")) {
+			throw new IllegalStateException("A proper p2.index is expected in " + latestRepository);
+		}
+		apply(parentPOM, "<SIMREL_REPO>([^<]+)</SIMREL_REPO>", latestRepository);
+		saveModifiedContents();
+
+		var endgameIssue = getEndgameIssue();
+		copyToClipboard(String.format("""
+				Prepare for %s %s
+
+				- Use %s
+
+				Part of %s
+				""", SIMREL_VERSION, MILESTONE, latestRepository, endgameIssue));
+	}
+
+	private void toStagingRepository() throws IOException {
+		var parentPOM = root.resolve("releng/org.eclipse.epp.config/parent/pom.xml");
+		String stagingRepository = "https://download.eclipse.org/staging/" + SIMREL_VERSION + "/";
+		apply(parentPOM, "<SIMREL_REPO>([^<]+)</SIMREL_REPO>", stagingRepository);
+		saveModifiedContents();
+
+		var endgameIssue = getEndgameIssue();
+		copyToClipboard(String.format("""
+				Back to staging
+
+				- Use %s
+
+				Part of %s
+				""", stagingRepository, endgameIssue));
+	}
+
+	private String getEndgameIssue() throws IOException {
+		var issues = getContents("https://api.github.com/repos/eclipse-packaging/packages/issues?labels=endgame");
+		var issueMatcher = Pattern
+				.compile("html_url\" *: *\"(https://github.com/eclipse-packaging/packages/issues/[0-9]+)\"")
+				.matcher(issues);
+		if (!issueMatcher.find()) {
+			throw new IllegalStateException("No issue found: " + issues);
+		}
+		return issueMatcher.group(1);
+	}
+
+	private String getContents(String urix) throws IOException {
+		try {
+			var uri = URI.create(urix);
+			var httpClient = HttpClient.newBuilder().followRedirects(HttpClient.Redirect.NORMAL).build();
+			var requestBuilder = HttpRequest.newBuilder(uri).GET();
+			var request = requestBuilder.build();
+			HttpResponse<String> response = httpClient.send(request, BodyHandlers.ofString());
+			var statusCode = response.statusCode();
+			if (statusCode != 200) {
+				throw new IOException("status code " + statusCode + " -> " + uri);
+			}
+			return response.body();
+		} catch (InterruptedException e) {
+			throw new IOException(e);
+		}
+	}
+
+	private void saveModifiedContents() throws IOException {
 		for (var entry : contents.entrySet()) {
 			Files.writeString(entry.getKey(), entry.getValue());
 		}
@@ -311,7 +403,11 @@ public class Updater {
 		return URLEncoder.encode(value, StandardCharsets.UTF_8);
 	}
 
-	public static void openURL(String uri) throws IOException {
+	private static void openURL(String uri) throws IOException {
 		Desktop.getDesktop().browse(URI.create(uri));
+	}
+
+	private static void copyToClipboard(String string) {
+		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(new StringSelection(string), null);
 	}
 }
