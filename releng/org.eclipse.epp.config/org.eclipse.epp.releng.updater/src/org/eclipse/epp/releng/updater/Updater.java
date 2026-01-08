@@ -40,7 +40,7 @@ public class Updater {
 	/**
 	 * M1, M2, M3, RC1, RC2
 	 */
-	private static final String MILESTONE = "M1";
+	private static final String MILESTONE = "M2";
 
 	private static final String PLATFORM_VERSION = "4.39";
 
@@ -305,7 +305,8 @@ public class Updater {
 			@Override
 			public FileVisitResult preVisitDirectory(Path dir, BasicFileAttributes attrs) throws IOException {
 				String fileName = dir.getFileName().toString();
-				if ("target".equals(fileName) || fileName.startsWith(".") || dir.endsWith("META-INF/maven")) {
+				if ("target".equals(fileName) || "sanity-check".equals(fileName) || fileName.startsWith(".")
+						|| dir.endsWith("META-INF/maven")) {
 					return FileVisitResult.SKIP_SUBTREE;
 				}
 				Path relativePath = root.relativize(dir);
