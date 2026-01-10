@@ -13,7 +13,7 @@ DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 # Usage: get_property KEY
 function get_property
 {
-    grep "^$1=" "${DIR}/epp.properties" | cut -d'=' -f2
+    grep "^$1=" "${DIR}/epp.properties" | cut -d'=' -f2 | sed 's/\\//g'
 }
 
 echo Create the epp.properties file
@@ -49,7 +49,10 @@ EPP was built with the p2 repositories at:
 ${SIMREL_REPO} and
 https://download.eclipse.org/technology/epp/packages/${RELEASE_NAME}/${RELEASE_DIR}/
 
-Please test and send your +1 to this mailing list. +1s are optional as the package will be published anyway.
+Please test and send your +1 to this mailing list.
+Please include links to issues that have been encountered while testing.
+Please indicate which os and arch was tested.
+Note that even with a -1, the package will be published nevertheless.
 
 Last +1 received for each package and platform (apologies if I missed one of your +1 emails, just let me know and I will update Last Recorded +1)
 
@@ -57,21 +60,21 @@ Packages:
 committers - 2025-12 M1 
 cpp - 2025-12 M3
 dsl - 2025-12 RC2
-embedcpp - 2024-09 RC2
+embedcpp - 2026-03 M1
 java - 2025-06 RC1
 jee -  2025-12 RC1
-modeling - 2025-12 RC1
+modeling - 2026-03 M1
 php - 2025-12 RC1 
 rcp - 2025-06 RC2
-scout - 2025-03 RC2
+scout - 2026-03 M1
 
 Platforms:
 Linux x86_64 - 2025-12 M3
 Linux aarch64 - 2023-09 RC2
 Linux riscv64 - 2025-12 M1 
-Windows x86_64 - 2025-12 RC1
+Windows x86_64 - 2026-03 M1
 Windows on Arm - 2025-12 RC1
-macOS x86_64 - 2025-12 RC2
+macOS x86_64 - 2026-03 M1
 macOS aarch64 - 2025-12 RC1
 
 Thank you for testing!
