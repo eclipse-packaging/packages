@@ -275,7 +275,9 @@ United States, other countries, or both.
       <feature id="org.eclipse.php.composer" installMode="root"/>
       <feature id="org.eclipse.php.phpunit.feature" installMode="root"/>
       <feature id="org.eclipse.php.profiler" installMode="root"/>
+      <!--
       <feature id="org.eclipse.php.rdt.sync" installMode="root"/>
+      -->
       <feature id="org.eclipse.wst.xml_ui.feature" installMode="root"/>
       <feature id="org.eclipse.wildwebdeveloper.feature" installMode="root"/>
       <feature id="org.eclipse.wildwebdeveloper.embedder.node.feature" installMode="root"/>
