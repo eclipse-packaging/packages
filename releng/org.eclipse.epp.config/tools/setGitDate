@@ -1,14 +1,23 @@
 #!/bin/bash
 
+# This script is expect to run in the working directory the root of the git repository.
+
 GIT_DATE=`date --utc --iso-8601=seconds --date='12:00 today'`
 echo "Setting GIT dates to ${GIT_DATE}"
 
 export GIT_AUTHOR_DATE="${GIT_DATE}"
 export GIT_COMMITTER_DATE="${GIT_DATE}"
 
+
+# Extract these values from the parent POM.
+#
+SIMREL_VERSION=$(sed -nE '1,$s%.*<RELEASE_NAME>(.*)</RELEASE_NAME>.*%\1%p' releng/org.eclipse.epp.config/parent/pom.xml)
+SIMREL_PREVIOUS_VERSION=$(sed -nE '1,$s%.*<PREV_RELEASE_NAME>(.*)</PREV_RELEASE_NAME>.*%\1%p' releng/org.eclipse.epp.config/parent/pom.xml)
+MILESTONE=$(sed -nE '1,$s%.*<RELEASE_MILESTONE>(.*)</RELEASE_MILESTONE>.*%\1%p' releng/org.eclipse.epp.config/parent/pom.xml)
+
 for II in `find . -name .forceQualifierUpdate`; do
   echo "${GIT_DATE}" >$II;
   git add $II;
 done
 
-git commit -m"Set version qualifiers with setGitDate script"
+git commit -m"Set version qualifiers for $SIMREL_VERSION $MILESTONE with setGitDate script"

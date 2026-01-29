@@ -19,3 +19,4 @@ workspace/
 build.log
 .tycho-consumer-pom.xml
 /.settings/
+sanity-check/
