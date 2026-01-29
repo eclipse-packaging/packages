@@ -31,8 +31,8 @@ STAGING="/home/data/httpd/download.eclipse.org/technology/epp/staging"
 # -------------------------
 # Prepare template email with all the correct information
 cat > _email.txt <<EOM
-This is the template email sent to the epp-dev mailing list. Please update the TODO section when sending emails to
-advise of last minute issues, etc.
+This is the template email sent to the epp-dev mailing list.
+Please update the TODO section when sending emails to advise of last minute issues, etc.
 
 Hi everyone,
 
