@@ -18,7 +18,6 @@ import java.net.URI;
 import java.net.URLEncoder;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
 import java.net.http.HttpResponse.BodyHandlers;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.FileVisitResult;
@@ -40,7 +39,7 @@ public class Updater {
 	/**
 	 * M1, M2, M3, RC1, RC2
 	 */
-	private static final String MILESTONE = "M2";
+	private static final String MILESTONE = "M3";
 
 	private static final String PLATFORM_VERSION = "4.39";
 
@@ -74,14 +73,16 @@ public class Updater {
 	private Path root;
 
 	public static void main(String[] args) throws IOException {
-		List<String> arguments = List.of(args);
+		var arguments = List.of(args);
 		var currentWorkingDirectory = Path.of(".").toRealPath();
 		if (!currentWorkingDirectory.toString().replace("\\", "/")
 				.endsWith("releng/org.eclipse.epp.config/org.eclipse.epp.releng.updater")) {
 			throw new RuntimeException("Expecting to run this from the org.eclipse.epp.releng.updater project");
 		}
 		var root = currentWorkingDirectory.resolve("../../..").toRealPath();
-		if (arguments.contains("-to-milestone-repository")) {
+		if (arguments.contains("-send-email")) {
+			new Updater(root).sendEmail();
+		} else if (arguments.contains("-to-milestone-repository")) {
 			new Updater(root).toMilestoneRepository();
 		} else if (arguments.contains("-to-staging-repository")) {
 			new Updater(root).toStagingRepository();
@@ -320,6 +321,14 @@ public class Updater {
 		saveModifiedContents();
 	}
 
+	private void sendEmail() throws IOException {
+		var text = getContents("https://download.eclipse.org/technology/epp/downloads/release/" + SIMREL_VERSION + "/"
+				+ MILESTONE + "/_email.txt");
+		text = text.replace("https://github.com/eclipse-packaging/packages/labels/endgame", getEndgameIssue());
+		openURL("mailto:simrel-dev@eclipse.org?subject=" + encode("EPP " + SIMREL_VERSION + " " + MILESTONE) + "&body="
+				+ encode(text));
+	}
+
 	private void toMilestoneRepository() throws IOException {
 		var parentPOM = root.resolve("releng/org.eclipse.epp.config/parent/pom.xml");
 		var releaseFolderContent = getContents("https://download.eclipse.org/justj/?file=releases/" + SIMREL_VERSION);
@@ -352,7 +361,7 @@ public class Updater {
 
 	private void toStagingRepository() throws IOException {
 		var parentPOM = root.resolve("releng/org.eclipse.epp.config/parent/pom.xml");
-		String stagingRepository = "https://download.eclipse.org/staging/" + SIMREL_VERSION + "/";
+		var stagingRepository = "https://download.eclipse.org/staging/" + SIMREL_VERSION + "/";
 		apply(parentPOM, "<SIMREL_REPO>([^<]+)</SIMREL_REPO>", stagingRepository);
 		saveModifiedContents();
 
@@ -377,13 +386,13 @@ public class Updater {
 		return issueMatcher.group(1);
 	}
 
-	private String getContents(String urix) throws IOException {
+	private String getContents(String location) throws IOException {
 		try {
-			var uri = URI.create(urix);
+			var uri = URI.create(location);
 			var httpClient = HttpClient.newBuilder().followRedirects(HttpClient.Redirect.NORMAL).build();
 			var requestBuilder = HttpRequest.newBuilder(uri).GET();
 			var request = requestBuilder.build();
-			HttpResponse<String> response = httpClient.send(request, BodyHandlers.ofString());
+			var response = httpClient.send(request, BodyHandlers.ofString());
 			var statusCode = response.statusCode();
 			if (statusCode != 200) {
 				throw new IOException("status code " + statusCode + " -> " + uri);
@@ -401,7 +410,7 @@ public class Updater {
 	}
 
 	private static String encode(String value) {
-		return URLEncoder.encode(value, StandardCharsets.UTF_8);
+		return URLEncoder.encode(value, StandardCharsets.UTF_8).replace("+", "%20");
 	}
 
 	private static void openURL(String uri) throws IOException {
