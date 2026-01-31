@@ -325,7 +325,7 @@ public class Updater {
 		var text = getContents("https://download.eclipse.org/technology/epp/downloads/release/" + SIMREL_VERSION + "/"
 				+ MILESTONE + "/_email.txt");
 		text = text.replace("https://github.com/eclipse-packaging/packages/labels/endgame", getEndgameIssue());
-		openURL("mailto:simrel-dev@eclipse.org?subject=" + encode("EPP " + SIMREL_VERSION + " " + MILESTONE) + "&body="
+		openURL("mailto:epp-dev@eclipse.org?subject=" + encode("EPP " + SIMREL_VERSION + " " + MILESTONE) + "&body="
 				+ encode(text));
 	}
 
