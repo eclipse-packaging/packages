@@ -80,7 +80,6 @@ Scroll down for the per-milestone/RC steps.
   - In some cases a respin/rebuild is needed and setGitDate needs to be run again.
     In that case you may need to manually add a minute or two to the applied timestamp in the script.
 - [ ] Run a [CI build](https://ci.eclipse.org/packaging/job/epp/job/master/) that includes the above changes.
-  - If the build fails, there may be the opportunity to continue the build rather than restart it.
   - If the build fails there may be the opportunity to continue the build rather than restart it.
     This is relatively underused option but enabled by the multi-step Jenkins build in the Jenkinsfile.
     For example, running the build with the previously successful steps commented out can produce a build.
@@ -94,8 +93,8 @@ Scroll down for the per-milestone/RC steps.
       ) CI job to notarize DMG packages on download.eclipse.org.
       _This can be done after promotion if time is tight or the notarization fails repeatedly._
       _See [Bug 571669](https://bugs.eclipse.org/bugs/show_bug.cgi?id=571669) for an example of failures._
-- [ ] Check the build script output to make sure that the curl calls were successful, 
-      e.g., no `curl: (92) HTTP/2 stream 0 was not closed cleanly: INTERNAL_ERROR (err 2) ` messages.
+- [ ] Check the build script output to make sure that the curl calls were successful, e.g.,
+      no `curl: (92) HTTP/2 stream 0 was not closed cleanly: INTERNAL_ERROR (err 2) ` messages.
       If there is an error like the above, the .dmg file that is copied to download.eclipse.org is corrupt.
       Run [notarize-prepare-to-redo](
       https://ci.eclipse.org/packaging/job/notarize-prepare-to-redo/
@@ -110,6 +109,8 @@ Scroll down for the per-milestone/RC steps.
     To resolve, request assistance in [Bug 573875](https://bugs.eclipse.org/bugs/show_bug.cgi?id=573875) like what was done in Comment 11 of that bug.
     TODO: it may be possible to work around this error by always using a different random ID when doing the notarization.
 - [ ] Sanity check the build for the following:
+  - [ ] Use the `External Tools` toolbar button drop-down menu to launch the `Prepare Staging Sanity Check` launch configuration. 
+        This will automatically download the packages specified in the launch configuration to subfolders in `/org.eclipse.epp.packages/sanity-check` to make the follow steps easier.
   - [ ] Download a package from the build's [staging output](https://download.eclipse.org/technology/epp/staging/).
   - [ ] Make sure filenames contain expected build name and milestone, e.g., `2026-03-M3`.
   - [ ] Splash screen says the expected release name with no milestone, e.g., `2026-03`.
@@ -117,6 +118,7 @@ Scroll down for the per-milestone/RC steps.
   - [ ] From the `Console`, open the `Host OSGi console` and use `ss -s INSTALLED` to verify that there are no bundles failing to resolve.
   - [ ] The `org.eclipse.epp.package.*` features and bundles have the timestamp of the forced qualifier update or later.
   - [ ] Upgrade from previous release works.
+        The `Prepare Staging Sanity Check` automatically configures the available updates sites for this test.
         To test the upgrade an equivalent to the simrel release composite site needs to be done.
         Add the following software sites to available software, check for updates and then make sure stuff works.
         In particular check error log and that core features, e.g., JDT, Platform, have been upgraded.
@@ -144,14 +146,18 @@ Scroll down for the per-milestone/RC steps.
 - [ ] Run the [Notarize MacOSX Downloads](
       https://ci.eclipse.org/packaging/job/notarize-downloads/
       ) CI job to notarize DMG packages on download.eclipse.org if the promoted build was unstable.
-- [ ] Update `SIMREL_REPO` to the staging repo so CI builds run against CI of SimRel, e.g., [see this gerrit](https://git.eclipse.org/r/c/epp/org.eclipse.epp.packages/+/189618)).
-  - [ ] Or use the `Run` toolbar button drop-down menu to launch the `Update to Staging Repository` launch configuration.
-        This will automatically determine the correct update site URL and will create an appropriate commit message in the system clipboard.
-- [ ] Re-enable the [CI build](https://ci.eclipse.org/packaging/job/epp/job/master/).
-- [ ] Send email to epp-dev to request package maintainers test it.
-      The email is templated in email.txt in the release directory.
+- [ ] Send an email to epp-dev to request package maintainers test it.
+      The email is templated in `email.txt` in the release directory.
+  - [ ] Or use the `Run` toolbar button drop-down menu to launch the `Send EMail` launch configuration.
+        This will automatically locate the `email.txt` to compose the email.
+        Best to get the email drafted before the next step when using the launch configuration.
   - _NOTE_ For `R` build the release is initially published to a temporary location and then moved to the `R` directory later.
     Make a note in the email where the temporary location is.
+- [ ] Update `SIMREL_REPO` to the staging repo so CI builds run against CI of SimRel, e.g., [see this gerrit](https://git.eclipse.org/r/c/epp/org.eclipse.epp.packages/+/189618).
+  - [ ] Or use the `Run` toolbar button drop-down menu to launch the `Update to Staging Repository` launch configuration.
+        This will automatically determine the correct update site URL and will create an appropriate commit message in the system clipboard.
+        At this point it's best to also update the `MILESTONE` in `Updater.java` so that staging builds produce results for the next milestone.
+- [ ] Re-enable the [CI build](https://ci.eclipse.org/packaging/job/epp/job/master/).
 - [ ] Archive old milestones/RCs so that they don't accumulate on the mirrors.
 
 **On all milestone/release days**
