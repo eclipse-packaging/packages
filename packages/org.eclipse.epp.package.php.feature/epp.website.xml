@@ -32,6 +32,6 @@ Click <a href="https://github.com/eclipse-wildwebdeveloper/wildwebdeveloper/issu
   </MoreInfo>
 
   <!-- name, the name of the product, used in naming the created files. -->
-  <product name="eclipse-php-2026-03-M3" />
+  <product name="eclipse-php-2026-03-RC1" />
 
 </configuration>

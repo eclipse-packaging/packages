@@ -3,7 +3,7 @@
 This guide contains the step-by-step process to complete an EPP release and assumes that you have an IDE provisioned using the [Oomph setup](
 https://github.com/eclipse-packaging/packages/blob/master/CONTRIBUTING.md#create-an-eclipse-development-environment).
 
-**Before** copying this file to create a new issue titled `EPP 2026-03 M3` with label `endgame`, update the names and versions, including those in this document.
+**Before** copying this file to create a new issue titled `EPP 2026-03 RC1` with label `endgame`, update the names and versions, including those in this document.
 - [ ] To update names and versions, edit [org.eclipse.epp.releng.updater.Updater](
       releng/org.eclipse.epp.config/org.eclipse.epp.releng.updater/src/org/eclipse/epp/releng/updater/Updater.java
       ) to set the values of `MILESTONE`, `PLATFORM_VERSION`, and possibly `EXECUTION_ENVIRONMENT` to the current appropriate values.
@@ -112,9 +112,9 @@ Scroll down for the per-milestone/RC steps.
   - [ ] Use the `External Tools` toolbar button drop-down menu to launch the `Prepare Staging Sanity Check` launch configuration. 
         This will automatically download the packages specified in the launch configuration to subfolders in `/org.eclipse.epp.packages/sanity-check` to make the follow steps easier.
   - [ ] Download a package from the build's [staging output](https://download.eclipse.org/technology/epp/staging/).
-  - [ ] Make sure filenames contain expected build name and milestone, e.g., `2026-03-M3`.
+  - [ ] Make sure filenames contain expected build name and milestone, e.g., `2026-03-RC1`.
   - [ ] Splash screen says the expected release name with no milestone, e.g., `2026-03`.
-  - [ ] `Help -> About` says the expected build name and milestone, e.g., `2026-03-M3`.
+  - [ ] `Help -> About` says the expected build name and milestone, e.g., `2026-03-RC1`.
   - [ ] From the `Console`, open the `Host OSGi console` and use `ss -s INSTALLED` to verify that there are no bundles failing to resolve.
   - [ ] The `org.eclipse.epp.package.*` features and bundles have the timestamp of the forced qualifier update or later.
   - [ ] Upgrade from previous release works.
@@ -132,7 +132,7 @@ Scroll down for the per-milestone/RC steps.
        (especially justj, update [remove-justj-from-p2.xml](https://github.com/eclipse-packaging/packages/blob/master/releng/org.eclipse.epp.config/tools/remove-justj-from-p2.xml) if needed).
 - [ ] Edit the [Jenkins build](https://ci.eclipse.org/packaging/job/epp/job/master/lastBuild/).
   - [ ] Mark build as Keep forever.
-  - [ ] Edit Jenkins Build Information and name it, e.g., `2026-03 M3`.
+  - [ ] Edit Jenkins Build Information and name it, e.g., `2026-03 RC1`.
 - [ ] Run the [Promote a Build](
       https://ci.eclipse.org/packaging/job/promote-a-build/
       ) CI job to prepare build artifacts and copy them to download.eclipse.org.
@@ -166,7 +166,7 @@ This applies to all releases, i.e. M1, M2, M3, RC1 and R.
 Everything except R is typically the Friday around 9:30am Ottawa time and the R is the following Wednesday sometime before 10am in coordination with the SimRel release engineer.
 
 - [ ] Check that this worked:
-      copy the composite\*M3.jar files over the composite\*.jar files in https://download.eclipse.org/technology/epp/packages/2026-03/ -
+      copy the composite\*RC1.jar files over the composite\*.jar files in https://download.eclipse.org/technology/epp/packages/2026-03/ -
       this is done automatically with the
       [EPP Make Visible job](https://ci.eclipse.org/packaging/job/epp-makeVisible/)
       which is automatically triggered by SimRel's

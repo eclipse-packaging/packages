@@ -34,6 +34,6 @@ Click <a href="https://github.com/eclipse-egit/egit/issues">here</a> to open a b
   </MoreInfo>
 
   <!-- name, the name of the product, used in naming the created files. -->
-  <product name="eclipse-committers-2026-03-M3" />
+  <product name="eclipse-committers-2026-03-RC1" />
 
 </configuration>

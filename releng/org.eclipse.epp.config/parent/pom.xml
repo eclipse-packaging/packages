@@ -35,13 +35,13 @@
     <PREV_RELEASE_NAME>2025-12</PREV_RELEASE_NAME>
     <NEXT_RELEASE_NAME>2026-06</NEXT_RELEASE_NAME>
     <!-- Name of the milestone -->
-    <RELEASE_MILESTONE>M3</RELEASE_MILESTONE>
+    <RELEASE_MILESTONE>RC1</RELEASE_MILESTONE>
     <!-- Version of the release -->
     <RELEASE_VERSION>4.39.0</RELEASE_VERSION>
     <!-- Name release directory on download.eclipse.org -->
-    <RELEASE_DIR>202602191000</RELEASE_DIR>
+    <RELEASE_DIR>202602261000</RELEASE_DIR>
     <!-- SimRel Repo to build from -->
-    <SIMREL_REPO>https://download.eclipse.org/releases/2026-03/202602201000/</SIMREL_REPO>
+    <SIMREL_REPO>https://download.eclipse.org/staging/2026-03/</SIMREL_REPO>
     <!-- ID used to generate the filename of the packages -->
     <eclipse.simultaneous.release.id>${RELEASE_NAME}-${RELEASE_MILESTONE}</eclipse.simultaneous.release.id>
     <!-- Timestamp used in various places, e.g. the about dialog (see about.mappings) -->
