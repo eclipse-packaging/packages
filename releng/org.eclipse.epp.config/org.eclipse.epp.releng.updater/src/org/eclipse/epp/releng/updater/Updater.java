@@ -171,10 +171,15 @@ public class Updater {
 		var matcher = Pattern.compile(pattern).matcher(content);
 		if (matcher.find()) {
 			var modifiedContent = new StringBuilder(content);
+			var offset = 0;
 			do {
+				var delta = modifiedContent.length();
 				for (var group = matcher.groupCount(); group >= 1; --group) {
-					modifiedContent.replace(matcher.start(group), matcher.end(group), replacements[group - 1]);
+					modifiedContent.replace(offset + matcher.start(group), offset + matcher.end(group),
+							replacements[group - 1]);
 				}
+				delta -= modifiedContent.length();
+				offset -= delta;
 			} while (matcher.find());
 			if (!modifiedContent.toString().equals(content)) {
 				contents.put(path, modifiedContent.toString());
