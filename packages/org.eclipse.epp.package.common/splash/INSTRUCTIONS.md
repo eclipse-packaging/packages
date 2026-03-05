@@ -22,6 +22,7 @@ and the 4 variations for each quarterly release (202x-06, 202x-09, 202x-12, 202(
 - For 2023-06 -> 2024-03 see [Helpdesk 2335](https://gitlab.eclipse.org/eclipsefdn/helpdesk/-/issues/2336)
 - For 2024-06 -> 2025-03 see [Helpdesk 3963](https://gitlab.eclipse.org/eclipsefdn/helpdesk/-/issues/3963)
 - For 2025-06 -> 2026-03 see [Helpdesk 5332](https://gitlab.eclipse.org/eclipsefdn/helpdesk/-/issues/5332) - [Eclipse_IDE.zip](https://gitlab.eclipse.org/-/project/23/uploads/b449ea9c813e964d3fe480727630d651/Eclipse_IDE.zip)
+- For 2026-06 -> 2027-03 see [Helpdesk 6906](https://gitlab.eclipse.org/eclipsefdn/helpdesk/-/issues/6906) - [Eclipse_IDE.zip](https://gitlab.eclipse.org/-/project/23/uploads/79a312193ad7b6b30c45816e31250138/Eclipse_IDE-_452x302.zip)
 
 ### Copy splash screen series into `org.eclipse.epp.package.common/splash/`
 
