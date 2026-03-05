@@ -327,9 +327,16 @@ public class Updater {
 	}
 
 	private void sendEmail() throws IOException {
+		var folder = "RC2".equals(MILESTONE) ? RELEASE_DIR : MILESTONE;
 		var text = getContents("https://download.eclipse.org/technology/epp/downloads/release/" + SIMREL_VERSION + "/"
-				+ MILESTONE + "/_email.txt");
+				+ folder + "/_email.txt");
 		text = text.replace("https://github.com/eclipse-packaging/packages/labels/endgame", getEndgameIssue());
+		if ("RC2".equals(MILESTONE)) {
+			text = text.replace("Download link:",
+					"Temporary download link: " + "https://download.eclipse.org/technology/epp/downloads/release/"
+							+ SIMREL_VERSION + "/" + RELEASE_DIR + "/\n" + "Final download link: ");
+		}
+
 		openURL("mailto:epp-dev@eclipse.org?subject=" + encode("EPP " + SIMREL_VERSION + " " + MILESTONE) + "&body="
 				+ encode(text));
 	}
