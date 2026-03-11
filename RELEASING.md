@@ -3,7 +3,7 @@
 This guide contains the step-by-step process to complete an EPP release and assumes that you have an IDE provisioned using the [Oomph setup](
 https://github.com/eclipse-packaging/packages/blob/master/CONTRIBUTING.md#create-an-eclipse-development-environment).
 
-**Before** copying this file to create a new issue titled `EPP 2026-03 RC2` with label `endgame`, update the names and versions, including those in this document.
+**Before** copying this file to create a new issue titled `EPP 2026-06 M1` with label `endgame`, update the names and versions, including those in this document.
 - [ ] To update names and versions, edit [org.eclipse.epp.releng.updater.Updater](
       releng/org.eclipse.epp.config/org.eclipse.epp.releng.updater/src/org/eclipse/epp/releng/updater/Updater.java
       ) to set the values of `MILESTONE`, `PLATFORM_VERSION`, and possibly `EXECUTION_ENVIRONMENT` to the current appropriate values.
@@ -19,7 +19,7 @@ The individual releases are tracked with [endgame](https://github.com/eclipse-pa
 For each release (M1, M2, M3, RC1, RC2) an endgame ticket is created with the appropriate contents from the rest of this document:
 
 EPP releases happen for each milestone and release candidate according to the [Eclipse Simultaneous Release Plan](
-https://github.com/eclipse-simrel/.github/blob/main/wiki/SimRel/2026-03.md)
+https://github.com/eclipse-simrel/.github/blob/main/wiki/SimRel/2026-06.md)
 
 **Steps at the beginning of each release cycle, i.e., before M1:**
 
@@ -52,7 +52,7 @@ Scroll down for the per-milestone/RC steps.
   - [ ] Search for ` url=` (notice the blank before url) in `epp.website.xml` to see which ones are contained in the different packages.
   - [ ] Remember that some of the features will release new versions together with the new Eclipse release.
         Therefore using the _currently_ released version number may be wrong.
-        Look at the news links in [2026-03 Participants](https://eclipse.dev/simrel/?file=wiki/SimRel/2026-03_participants.json).
+        Look at the news links in [2026-06 Participants](https://eclipse.dev/simrel/?file=wiki/SimRel/2026-06_participants.json).
 - [ ] Synchronize the following - Remember to check the branch; these links are to master, but around RC2 master may be set up for the next release already.
   - [ ] Synchronize any changes to [platform.product](
         https://github.com/eclipse-platform/eclipse.platform.releng.aggregator/blob/master/products/eclipse-platform/platform.product
@@ -112,9 +112,9 @@ Scroll down for the per-milestone/RC steps.
   - [ ] Use the `External Tools` toolbar button drop-down menu to launch the `Prepare Staging Sanity Check` launch configuration. 
         This will automatically download the packages specified in the launch configuration to subfolders in `/org.eclipse.epp.packages/sanity-check` to make the follow steps easier.
   - [ ] Download a package from the build's [staging output](https://download.eclipse.org/technology/epp/staging/).
-  - [ ] Make sure filenames contain expected build name and milestone, e.g., `2026-03-R`.
-  - [ ] Splash screen says the expected release name with no milestone, e.g., `2026-03`.
-  - [ ] `Help -> About` says the expected build name and milestone, e.g., `2026-03-R`.
+  - [ ] Make sure filenames contain expected build name and milestone, e.g., `2026-06-M1`.
+  - [ ] Splash screen says the expected release name with no milestone, e.g., `2026-06`.
+  - [ ] `Help -> About` says the expected build name and milestone, e.g., `2026-06-M1`.
   - [ ] From the `Console`, open the `Host OSGi console` and use `ss -s INSTALLED` to verify that there are no bundles failing to resolve.
   - [ ] The `org.eclipse.epp.package.*` features and bundles have the timestamp of the forced qualifier update or later.
   - [ ] Upgrade from previous release works.
@@ -122,7 +122,7 @@ Scroll down for the per-milestone/RC steps.
         To test the upgrade an equivalent to the simrel release composite site needs to be done.
         Add the following software sites to available software, check for updates and then make sure stuff works.
         In particular check error log and that core features, e.g., JDT, Platform, have been upgraded.
-    - `https://download.eclipse.org/staging/2026-03/` -
+    - `https://download.eclipse.org/staging/2026-06/` -
         _NOTE_ Use `SIMREL_REPO` if the staging repo has been updated since the `SIMREL_REPO` location was created.
     - `https://download.eclipse.org/technology/epp/staging/repository/`
     - `https://download.eclipse.org/justj/epp/milestone/latest` - 
@@ -132,7 +132,7 @@ Scroll down for the per-milestone/RC steps.
        (especially justj, update [remove-justj-from-p2.xml](https://github.com/eclipse-packaging/packages/blob/master/releng/org.eclipse.epp.config/tools/remove-justj-from-p2.xml) if needed).
 - [ ] Edit the [Jenkins build](https://ci.eclipse.org/packaging/job/epp/job/master/lastBuild/).
   - [ ] Mark build as Keep forever.
-  - [ ] Edit Jenkins Build Information and name it, e.g., `2026-03 R`.
+  - [ ] Edit Jenkins Build Information and name it, e.g., `2026-06 M1`.
 - [ ] Run the [Promote a Build](
       https://ci.eclipse.org/packaging/job/promote-a-build/
       ) CI job to prepare build artifacts and copy them to download.eclipse.org.
@@ -166,7 +166,7 @@ This applies to all releases, i.e. M1, M2, M3, RC1 and R.
 Everything except R is typically the Friday around 9:30am Ottawa time and the R is the following Wednesday sometime before 10am in coordination with the SimRel release engineer.
 
 - [ ] Check that this worked:
-      copy the composite\*R.jar files over the composite\*.jar files in https://download.eclipse.org/technology/epp/packages/2026-03/ -
+      copy the composite\*M1.jar files over the composite\*.jar files in https://download.eclipse.org/technology/epp/packages/2026-06/ -
       this is done automatically with the
       [EPP Make Visible job](https://ci.eclipse.org/packaging/job/epp-makeVisible/)
       which is automatically triggered by SimRel's
@@ -175,8 +175,8 @@ Everything except R is typically the Friday around 9:30am Ottawa time and the R 
 **24-48 Hours Before Final release day**
 
 - [ ] **24 Hours before Final release** Make sure files are in final location to allow downloads to mirror.
-  - [ ] Tag the release, e.g., `2026-03_R`.
-        Example command line: `git tag --annotate 2026-03_R -m"2026-03 Release" 1b7a1c1af156e3ac57768b87be258cd22b49456b`.
+  - [ ] Tag the release, e.g., `2026-06_R`.
+        Example command line: `git tag --annotate 2026-06_R -m"2026-06 Release" 1b7a1c1af156e3ac57768b87be258cd22b49456b`.
   - [ ] Run the [Rename Provisional to Final](
         https://ci.eclipse.org/packaging/job/rename-provisional-to-final/
         ) CI job to rename the provisional release milestone to final directory.
@@ -201,7 +201,7 @@ These jobs should be completed by approximately 10am Ottawa time on release days
   - The current release needs to be promoted as "latest" under https://download.eclipse.org/technology/epp/packages/latest/.
     This should be a composite pointing to a specific https://download.eclipse.org/technology/epp/packages/yyyy-MM/.
   - The _next_ release sub-directory needs to be created immediately.
-    - When 2026-03 is released, a directory 2026-06 must be created with an empty p2 composite repository pointing to 2026-03 until M1.
+    - When 2026-06 is released, a directory 2026-09 must be created with an empty p2 composite repository pointing to 2026-06 until M1.
     - On M1 release day this changes to a composite p2 repository with M1 content.
   - [ ] _Optional - useful when testing changes to the promotion scripts:_
        - Run the build once in `DRY_RUN` mode to ensure that the output is correct before it applies changes to download.eclipse.org.

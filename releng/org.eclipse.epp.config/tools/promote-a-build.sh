@@ -93,6 +93,7 @@ cat > release.xml <<EOM
 <past>2025-03/R</past>
 <past>2025-06/R</past>
 <past>2025-09/R</past>
+<past>2025-12/R</past>
 EOM
 if [ "$RELEASE_MILESTONE" != "R" ]; then
   cat >> release.xml <<EOM
