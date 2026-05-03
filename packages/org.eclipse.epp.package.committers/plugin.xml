@@ -382,7 +382,7 @@
             </description>
             <param
                 name="url"
-                value="http://eclipse.org/search/search.cgi?q={expression}&amp;ul=&amp;ps=20&amp;m=all">
+                value="https://eclipse.org/search/search.cgi?q={expression}&amp;ul=&amp;ps=20&amp;m=all">
             </param>
       </engine>
     </extension>

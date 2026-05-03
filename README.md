@@ -106,9 +106,9 @@ The format of the file is as follows:
   <packageMetaData
    packageName="Eclipse IDE for C/C++ Developers"
    maintainer="Eclipse Packaging Project"
-   iconurl="http://www.eclipse.org/downloads/images/c.jpg"
+   iconurl="https://www.eclipse.org/downloads/images/c.jpg"
    bugzillaComponentId="cpp-package"
-   testPlan="http://www.eclipse.org/epp/testplan.php" >
+   testPlan="" >
 
      <!-- Description is wrapped in CDATA tags to allow you to insert HTML code if necessary -->
      <description><![CDATA[An IDE for C/C++ developers.]]></description>

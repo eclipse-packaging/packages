@@ -136,7 +136,7 @@ Objenesis (1.0)
 org.apache.commons.codec (1.3.0)
 
 * License: Apache License, 2.0
-* Project: http://commons.apache.org/codec/
+* Project: https://commons.apache.org/proper/commons-codec/
 
 org.apache.commons.httpclient (3.0.1)
 
