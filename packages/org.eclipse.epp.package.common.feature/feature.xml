@@ -7,7 +7,7 @@
       license-feature="org.eclipse.license"
       license-feature-version="0.0.0">
 
-   <description url="http://eclipse.org/epp">
+   <description url="https://github.com/eclipse-packaging">
       %description
    </description>
 
