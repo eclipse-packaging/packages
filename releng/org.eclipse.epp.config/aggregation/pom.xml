@@ -14,7 +14,7 @@
   <parent>
     <groupId>org.eclipse.epp</groupId>
     <artifactId>org.eclipse.epp-parent</artifactId>
-    <version>4.40.0-SNAPSHOT</version>
+    <version>4.41.0-SNAPSHOT</version>
     <relativePath>../parent/</relativePath>
   </parent>
 
@@ -56,7 +56,7 @@
                 <applicationsArg>--action</applicationsArg>
                 <applicationsArg>${simrel.aggregator.build.type}</applicationsArg>
               </applicationsArgs>
-              <executionEnvironment>JavaSE-21</executionEnvironment>
+              <executionEnvironment>JavaSE-25</executionEnvironment>
               <jvmArgs>
                 <jvmArg>-Xms256M</jvmArg>
                 <jvmArg>-Xmx2048M</jvmArg>
