@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="Eclipse IDE for Java Developers" uid="epp.package.java" id="org.eclipse.epp.package.java.product" application="org.eclipse.ui.ide.workbench" version="4.40.0.qualifier" type="features" includeLaunchers="true" autoIncludeRequirements="true">
+<product name="Eclipse IDE for Java Developers" uid="epp.package.java" id="org.eclipse.epp.package.java.product" application="org.eclipse.ui.ide.workbench" version="4.41.0.qualifier" type="features" includeLaunchers="true" autoIncludeRequirements="true">
 
 <!--
 
 This product definition is based on Eclipse Platform's platform.product.
 
 We need to redefine all the settings in platform.product to avoid duplicate
-settings, especially about -Dosgi.requiredJavaVersion=21
+settings, especially about -Dosgi.requiredJavaVersion=25
 (see a6b90b060b8c3684596e691254bf2f74a559b8aa / Bug 580807 for more history as to why)
 
 This file should be easy to compre against platform.product and non-obvious differences
@@ -44,7 +44,7 @@ This file should also be easy to compare against all the other epp.product files
              -Dorg.slf4j.simpleLogger.defaultLogLevel=off absent:
              This produce uses m2e logback instead
       -->
-      <vmArgs>-Dosgi.requiredJavaVersion=21
+      <vmArgs>-Dosgi.requiredJavaVersion=25
 -Dosgi.instance.area.default=@user.home/eclipse-workspace
 -Dosgi.dataAreaRequiresExplicitInit=true
 -Dorg.eclipse.swt.graphics.Resource.reportNonDisposed=true
@@ -91,9 +91,9 @@ This file should also be easy to compare against all the other epp.product files
    <intro introId="org.eclipse.ui.intro.universal"/>
 
    <vm>
-      <linux include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-21</linux>
-      <macos include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-21</macos>
-      <windows include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-21</windows>
+      <linux include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-25</linux>
+      <macos include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-25</macos>
+      <windows include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-25</windows>
    </vm>
 
    <license>
@@ -249,7 +249,7 @@ United States, other countries, or both.
 
    <features>
       <!-- common features that all products have -->
-      <feature id="org.eclipse.epp.package.common.feature" version="4.40.0.qualifier"/>
+      <feature id="org.eclipse.epp.package.common.feature" version="4.41.0.qualifier"/>
       <feature id="org.eclipse.platform" installMode="root"/>
       <feature id="org.eclipse.epp.mpc" installMode="root"/>
       <feature id="org.eclipse.oomph.setup" installMode="root"/>
@@ -271,7 +271,7 @@ United States, other countries, or both.
       <feature id="org.eclipse.mylyn.reviews.feature" installMode="root"/>
 
       <!-- product specific contents -->
-      <feature id="org.eclipse.epp.package.java.feature" version="4.40.0.qualifier"/>
+      <feature id="org.eclipse.epp.package.java.feature" version="4.41.0.qualifier"/>
       <feature id="org.eclipse.buildship" installMode="root"/>
       <feature id="org.eclipse.eclemma.feature" installMode="root"/>
       <feature id="org.eclipse.jdt" installMode="root"/>
@@ -302,8 +302,8 @@ United States, other countries, or both.
    </configurations>
 
    <repositories>
-      <repository location="https://download.eclipse.org/eclipse/updates/4.40" name="The Eclipse Project Updates" enabled="true" />
-      <repository location="https://download.eclipse.org/releases/2026-06" name="2026-06" enabled="true" />
+      <repository location="https://download.eclipse.org/eclipse/updates/4.41" name="The Eclipse Project Updates" enabled="true" />
+      <repository location="https://download.eclipse.org/releases/2026-09" name="2026-09" enabled="true" />
    </repositories>
 
 </product>

@@ -5,6 +5,11 @@ This document aims to highlight configuration and content changes of the package
 For changes in Eclipse projects that contribute to SimRel and are included in the EPP packages, refer to the change log or New and Noteworthy document of the participating projects.
 The [Eclipse IDE New & Noteworthy](https://eclipseide.org/release/noteworthy/) page combines all those documents in one place.
 
+## 2026-09
+
+- Eclipse IDE now ships with Java 25 by default and the individual downloads now require Java 25.
+- Current there is no Temurin JDK for Windows aarch64 so those packages have no embedded JRE, see [https://github.com/adoptium/aqa-tests/issues/6623](https://github.com/adoptium/aqa-tests/issues/6623).
+
 ## 2025-09
 
 - The Eclipse IDE for C/C++ Developers now includes the _C/C++ LLVM-Family Compiler Build Support_ feature to provide a CDT managed build system toolchain description for Clang users.

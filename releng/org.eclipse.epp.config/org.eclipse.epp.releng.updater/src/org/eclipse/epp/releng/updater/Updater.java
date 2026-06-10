@@ -39,11 +39,11 @@ public class Updater {
 	/**
 	 * M1, M2, M3, RC1, RC2
 	 */
-	private static final String MILESTONE = "RC2";
+	private static final String MILESTONE = "M1";
 
-	private static final String PLATFORM_VERSION = "4.40";
+	private static final String PLATFORM_VERSION = "4.41";
 
-	private static final String EXECUTION_ENVIRONMENT = "21";
+	private static final String EXECUTION_ENVIRONMENT = "25";
 
 	private static final String PLATFORM_VERSION_MATCHER = "(4\\.[3-9][0-9])";
 
@@ -243,8 +243,11 @@ public class Updater {
 			apply(file, "\n *<eclipse.simultaneous.release.name>([^>]+)</eclipse.simultaneous.release.name>",
 					MILESTONE.equals("RC2") ? "${RELEASE_NAME} (${RELEASE_VERSION})"
 							: "${RELEASE_NAME} ${RELEASE_MILESTONE} (${RELEASE_VERSION} ${RELEASE_MILESTONE})");
+			apply(file, "Used for the variable below to update easily, e.g., to ([0-9]+)\\.", EXECUTION_ENVIRONMENT);
 			apply(file, "<execution.environment.version>([^<]+)</execution.environment.version>",
 					EXECUTION_ENVIRONMENT);
+			// Not strictly needed for the promotion step.
+			apply(file, "<executionEnvironment>JavaSE-([0-9]+)</executionEnvironment>", EXECUTION_ENVIRONMENT);
 		} else if (fileName.equals("epp.product")) {
 			apply(file, "<product[^>]+version=\"" + PLATFORM_VERSION_MATCHER + "\\.0\\.qualifier\"", PLATFORM_VERSION);
 
@@ -254,8 +257,25 @@ public class Updater {
 					+ PLATFORM_VERSION_MATCHER + "\"", PLATFORM_VERSION, PLATFORM_VERSION);
 			apply(file, "<repository[^>]+location=\"https://download.eclipse.org/releases/" + SIMREL_VERSION_MATCHER
 					+ "\"\\s+name=\"" + SIMREL_VERSION_MATCHER + "\"", SIMREL_VERSION, SIMREL_VERSION);
+			apply(file, "org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-([0-9]+)",
+					EXECUTION_ENVIRONMENT);
+			apply(file, "-Dosgi.requiredJavaVersion=([0-9]+)", EXECUTION_ENVIRONMENT);
+		} else if (fileName.equals("EPP.setup")) {
+			apply(file, "version=\"JavaSE-([0-9]+)\"", EXECUTION_ENVIRONMENT);
+			apply(file, "\\$\\{jre.location-([0-9]+)\\}", EXECUTION_ENVIRONMENT);
+			apply(file, "jres/([0-9]+)/updates", EXECUTION_ENVIRONMENT);
 		} else if (fileName.equals("MANIFEST.MF")) {
 			apply(file, "Bundle-Version: " + PLATFORM_VERSION_MATCHER + "\\.0\\.qualifier", PLATFORM_VERSION);
+			apply(file, "Bundle-RequiredExecutionEnvironment: JavaSE-([0-9]+)", EXECUTION_ENVIRONMENT);
+		} else if (fileName.equals("org.eclipse.jdt.core.prefs")) {
+			apply(file, "org.eclipse.jdt.core.compiler.(?:codegen.targetPlatform|compliance|source)=([0-9]+)",
+					EXECUTION_ENVIRONMENT);
+		} else if (fileName.equals(".classpath")) {
+			apply(file, "org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-([0-9]+)",
+					EXECUTION_ENVIRONMENT);
+		} else if (fileName.equals("build.yml")) {
+			apply(file, "name: Set up JDK ([0-9]+)", EXECUTION_ENVIRONMENT);
+			apply(file, "java-version: '([0-9]+)'", EXECUTION_ENVIRONMENT);
 		} else if (fileName.equals("promote-a-build.sh")) {
 			var pattern = Pattern.compile("<past>(?<version>20[2-9][0-9]-(?:03|06|09|12))/R</past>(?<nl>\r?\n)EOM");
 			var content = getContent(file);
@@ -311,7 +331,10 @@ public class Updater {
 			@Override
 			public FileVisitResult preVisitDirectory(Path dir, BasicFileAttributes attrs) throws IOException {
 				String fileName = dir.getFileName().toString();
-				if ("target".equals(fileName) || "sanity-check".equals(fileName) || fileName.startsWith(".")
+				if ("target".equals(fileName) //
+						|| "sanity-check".equals(fileName) //
+						|| (fileName.startsWith(".") && !".settings".equals(fileName) && !".classpath".equals(fileName)
+								&& !".github".equals(fileName)) //
 						|| dir.endsWith("META-INF/maven")) {
 					return FileVisitResult.SKIP_SUBTREE;
 				}
