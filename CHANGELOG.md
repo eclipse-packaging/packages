@@ -8,7 +8,8 @@ The [Eclipse IDE New & Noteworthy](https://eclipseide.org/release/noteworthy/) p
 ## 2026-09
 
 - Eclipse IDE now ships with Java 25 by default and the individual downloads now require Java 25.
-- Current there is no Temurin JDK for Windows aarch64 so those packages have no embedded JRE, see [https://github.com/adoptium/aqa-tests/issues/6623](https://github.com/adoptium/aqa-tests/issues/6623).
+- Currently there is no Temurin JDK for Windows aarch64, see [https://github.com/adoptium/aqa-tests/issues/6623](https://github.com/adoptium/aqa-tests/issues/6623);
+  a [Microsoft Open JDK](https://learn.microsoft.com/en-us/java/openjdk/download) is used for this case.
 
 ## 2025-09
 
