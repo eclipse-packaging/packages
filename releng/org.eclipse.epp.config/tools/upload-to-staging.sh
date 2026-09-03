@@ -63,7 +63,7 @@ dsl - 2026-09 M2
 embedcpp - 2026-09 RC1
 java - 2025-09 RC1
 jee -  2026-06 RC2
-modeling - 2026-09 RC1
+modeling - 2026-09 RC2
 php - 2025-12 RC1 
 rcp - 2025-06 RC2
 scout - 2026-03 M3
