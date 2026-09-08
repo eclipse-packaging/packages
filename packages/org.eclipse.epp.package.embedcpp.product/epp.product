@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="Eclipse IDE for Embedded C/C++ Developers" uid="epp.package.embedcpp" application="org.eclipse.ui.ide.workbench" version="4.41.0.qualifier" type="mixed" includeLaunchers="true" autoIncludeRequirements="true">
+<product name="Eclipse IDE for Embedded C/C++ Developers" uid="epp.package.embedcpp" application="org.eclipse.ui.ide.workbench" version="4.42.0.qualifier" type="mixed" includeLaunchers="true" autoIncludeRequirements="true">
 
 <!--
 
@@ -52,6 +52,7 @@ This file should also be easy to compare against all the other epp.product files
 -XX:+UseG1GC
 -XX:+UseStringDeduplication
 --add-modules=ALL-SYSTEM
+--enable-native-access=ALL-UNNAMED
       </vmArgs>
       <vmArgsMac>-Xdock:icon=../Resources/Eclipse.icns -XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts
       </vmArgsMac>
@@ -247,7 +248,7 @@ United States, other countries, or both.
 
    <features>
       <!-- common features that all products have -->
-      <feature id="org.eclipse.epp.package.common.feature" version="4.41.0.qualifier"/>
+      <feature id="org.eclipse.epp.package.common.feature" version="4.42.0.qualifier"/>
       <feature id="org.eclipse.platform" installMode="root"/>
       <feature id="org.eclipse.epp.mpc" installMode="root"/>
       <feature id="org.eclipse.oomph.setup" installMode="root"/>
@@ -269,7 +270,7 @@ United States, other countries, or both.
       <feature id="org.eclipse.mylyn.reviews.feature" installMode="root"/>
 
       <!-- product specific contents -->
-      <feature id="org.eclipse.epp.package.embedcpp.feature" version="4.41.0.qualifier"/>
+      <feature id="org.eclipse.epp.package.embedcpp.feature" version="4.42.0.qualifier"/>
       <feature id="org.eclipse.cdt" installMode="root"/>
       <feature id="org.eclipse.cdt.autotools" installMode="root"/>
       <feature id="org.eclipse.cdt.build.crossgcc" installMode="root"/>
@@ -332,8 +333,8 @@ United States, other countries, or both.
    </configurations>
 
    <repositories>
-      <repository location="https://download.eclipse.org/eclipse/updates/4.41" name="The Eclipse Project Updates" enabled="true" />
-      <repository location="https://download.eclipse.org/releases/2026-09" name="2026-09" enabled="true" />
+      <repository location="https://download.eclipse.org/eclipse/updates/4.42" name="The Eclipse Project Updates" enabled="true" />
+      <repository location="https://download.eclipse.org/releases/2026-12" name="2026-12" enabled="true" />
    </repositories>
 
 </product>
