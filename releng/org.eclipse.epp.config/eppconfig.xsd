@@ -72,7 +72,6 @@
   <xsd:attributeGroup ref="epp:packageMDpackageName"></xsd:attributeGroup>
   <xsd:attributeGroup ref="epp:packageMDmaintainer"></xsd:attributeGroup>
   <xsd:attributeGroup ref="epp:packageMDiconurl"></xsd:attributeGroup>
-  <xsd:attributeGroup ref="epp:packageMDbugzillaCompId"></xsd:attributeGroup>
   <xsd:attributeGroup ref="epp:packageMDtestPlan"></xsd:attributeGroup>
   </xsd:complexType>
 
@@ -162,9 +161,6 @@
   </xsd:attributeGroup>
   <xsd:attributeGroup name="packageMDiconurl">
     <xsd:attribute name="iconurl" type="xsd:anyURI" use="required" />
-  </xsd:attributeGroup>
-  <xsd:attributeGroup name="packageMDbugzillaCompId">
-    <xsd:attribute name="bugzillaComponentId" type="xsd:string" use="required" />
   </xsd:attributeGroup>
   <xsd:attributeGroup name="packageMDtestPlan">
     <xsd:attribute name="testPlan" type="xsd:anyURI" use="required" />

@@ -99,15 +99,12 @@ The format of the file is as follows:
  <!-- PackageName is the title of your package
       maintainer is the project or persons that are maintaining the package
       iconurl is the fully qualified URL to the icon you wish to use on the site (48x48)
-      bugzillaComponentID is used to gather bugzilla information about your package.
-         This should be given to you after provisioning of the package is finished
       testPlan is the fully qualified URL to the test plan for this package
    -->
   <packageMetaData
    packageName="Eclipse IDE for C/C++ Developers"
    maintainer="Eclipse Packaging Project"
    iconurl="https://www.eclipse.org/downloads/images/c.jpg"
-   bugzillaComponentId="cpp-package"
    testPlan="" >
 
      <!-- Description is wrapped in CDATA tags to allow you to insert HTML code if necessary -->
