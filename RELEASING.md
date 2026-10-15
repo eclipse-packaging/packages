@@ -81,7 +81,7 @@ Scroll down for the per-milestone/RC steps.
       You can disable the project once it has fully started running; you don't have to wait for the build to finish.
 - [ ] Check that there are no warnings in the console output. Especially look for warnings about failure to sign.
   - If warnings about signing occur that leave the DMG unsigned and the build does not fail,
-    please reopen [Bug 567916](https://bugs.eclipse.org/bugs/show_bug.cgi?id=567916).
+    please reopen a [helpdesk ticket](https://gitlab.eclipse.org/eclipsefdn/helpdesk/-/work_items/new?type=Issue) with similar information from [Bug 567916](https://bugs.eclipse.org/bugs/show_bug.cgi?id=567916).
 - [ ] Run the [Notarize MacOSX Downloads](
       https://ci.eclipse.org/packaging/job/notarize-downloads/
       ) CI job to notarize DMG packages on download.eclipse.org.
@@ -100,7 +100,7 @@ Scroll down for the per-milestone/RC steps.
   - **NOTE**
     Sometimes the notarization server has an error that causes a failure that requires Webmaster support.
     Error looks like "an existing transporter instance is currently uploading this package".
-    To resolve, request assistance in [Bug 573875](https://bugs.eclipse.org/bugs/show_bug.cgi?id=573875) like what was done in Comment 11 of that bug.
+    To resolve, request [assistance from the help desk](https://gitlab.eclipse.org/eclipsefdn/helpdesk/-/work_items/new?type=Issue) referencing the previous issue in [Bug 573875](https://bugs.eclipse.org/bugs/show_bug.cgi?id=573875) Comment 11 of that bug.
     TODO: it may be possible to work around this error by always using a different random ID when doing the notarization.
 - [ ] Sanity check the build for the following:
   - [ ] Use the `External Tools` toolbar button drop-down menu to launch the `Prepare Staging Sanity Check` launch configuration. 
