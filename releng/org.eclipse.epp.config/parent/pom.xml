@@ -177,19 +177,12 @@
         <artifactId>tycho-packaging-plugin</artifactId>
         <dependencies>
           <dependency>
-            <groupId>org.eclipse.tycho</groupId>
-            <artifactId>tycho-buildtimestamp-jgit</artifactId>
-            <version>${tycho.version}</version>
-          </dependency>
-          <dependency>
             <groupId>org.eclipse.tycho.extras</groupId>
             <artifactId>tycho-sourceref-jgit</artifactId>
             <version>${tycho.version}</version>
           </dependency>
         </dependencies>
         <configuration>
-          <timestampProvider>jgit</timestampProvider>
-          <jgit.dirtyWorkingTree>ignore</jgit.dirtyWorkingTree>
           <format>yyyyMMdd-HHmm</format>
           <sourceReferences>
             <generate>true</generate>
