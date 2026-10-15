@@ -434,23 +434,6 @@
   </setupTask>
   <setupTask
       xsi:type="setup:ResourceCreationTask"
-      targetURL="${workspace.location|uri}/.metadata/.plugins/org.eclipse.debug.core/.launches/Update%20Qualifiers.launch">
-    <content>
-      &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?>
-      &lt;launchConfiguration type=&quot;org.eclipse.ui.externaltools.ProgramLaunchConfigurationType&quot;>
-          &lt;booleanAttribute key=&quot;org.eclipse.debug.core.ATTR_FORCE_SYSTEM_CONSOLE_ENCODING&quot; value=&quot;false&quot;/>
-          &lt;mapAttribute key=&quot;org.eclipse.debug.core.environmentVariables&quot;>
-              &lt;mapEntry key=&quot;PATH&quot; value=&quot;C:\Program Files\Git\bin;$${env_var:PATH}&quot;/>
-          &lt;/mapAttribute>
-          &lt;stringAttribute key=&quot;org.eclipse.ui.externaltools.ATTR_LOCATION&quot; value=&quot;C:\Program Files\Git\bin\bash.exe&quot;/>
-          &lt;stringAttribute key=&quot;org.eclipse.ui.externaltools.ATTR_TOOL_ARGUMENTS&quot; value=&quot;-c releng/org.eclipse.epp.config/tools/setGitDate&quot;/>
-          &lt;stringAttribute key=&quot;org.eclipse.ui.externaltools.ATTR_WORKING_DIRECTORY&quot; value=&quot;$${workspace_loc:/org.eclipse.epp.packages}&quot;/>
-      &lt;/launchConfiguration>
-
-    </content>
-  </setupTask>
-  <setupTask
-      xsi:type="setup:ResourceCreationTask"
       targetURL="${workspace.location|uri}/.metadata/.plugins/org.eclipse.debug.core/.launches/Prepare%20Staging%20Sanity%20Check.launch">
     <content>
       &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?>

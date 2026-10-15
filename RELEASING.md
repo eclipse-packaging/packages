@@ -72,15 +72,7 @@ Scroll down for the per-milestone/RC steps.
   - [ ] Update `SIMREL_REPO` in `releng/org.eclipse.epp.config/parent/pom.xml` if not done above.
   - [ ] Or use the `Run` toolbar button drop-down menu to launch the `Update to Milestone Repository` launch configuration.
         This will automatically determine the correct update site URL and will create an appropriate commit message in the system clipboard.
-- [ ] Update the build qualifiers to ensure that packages are all updated.
-      See this [gerrit](https://git.eclipse.org/r/#/c/161075/) for an example.
-      Commit all other changes before this step because this step will automatically create a Git commit specifically for the forced qualifier changes.
-      Use the `External Tools` toolbar drop-down menu to launch the `Update Qualifiers` launch configuration.
-      This runs the [setGitDate](releng/org.eclipse.epp.config/tools/setGitDate) bash script.
-      This script will make a local commit you need to push; **do not amend it** because the timestamp is relevant.
-  - In some cases a respin/rebuild is needed and setGitDate needs to be run again.
-    In that case you may need to manually add a minute or two to the applied timestamp in the script.
-- [ ] Push the two commits on the new branch to your fork in order to launch a verification build and then merge the result to `main`.
+- [ ] Push the commit on the new branch to your fork in order to launch a verification build and then merge the result to `main`.
 - [ ] Run a [CI build](https://ci.eclipse.org/packaging/job/epp/job/master/) that includes the above changes.
   - If the build fails there may be the opportunity to continue the build rather than restart it.
     This is relatively underused option but enabled by the multi-step Jenkins build in the Jenkinsfile.
