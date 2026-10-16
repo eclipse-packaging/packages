@@ -243,7 +243,9 @@ United States, other countries, or both.
 
    <plugins>
       <!-- either m2e.logback or slf4j.simple should be provided in each package -->
+      <!-- this requirement is specified in the epp.p2.inf with a version range
       <plugin id="slf4j.simple"/>
+      -->
    </plugins>
 
    <features>
