@@ -71,11 +71,6 @@
 
   <pluginRepositories>
     <pluginRepository>
-      <id>eclipse-tycho</id>
-      <url>https://oss.sonatype.org/content/repositories/public/</url>
-    </pluginRepository>
-
-    <pluginRepository>
       <id>eclipse-cbi</id>
       <url>https://repo.eclipse.org/content/groups/cbi/</url>
     </pluginRepository>
